@@ -8,7 +8,7 @@ public class TankMovement : MonoBehaviour
 
     private CharacterController controller;
 
-    public float speed = 500f;
+    public float speed = 250;
     public float turnSpeed = 180f;
 
     void Start()
