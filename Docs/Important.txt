@@ -1,0 +1,7 @@
+This covers the asset side of things, setting up the rendering to match PS1 is a whole different beast.
+
+The bit depth of the game's color is still 32-bit, to drop it down to 16-bit in Unity you would have to render out to a render texture set to RGB565 as its format and display that on the screen. Dropping the render texture's resolution to 256x224 with it also set to point filtering would give the full look.
+
+Then you need to emulate the non-perspective corrected texture filtering, vertex wobble, and lack of per-pixel lighting which means lots of time writing shaders.
+
+The last part of the asset that you would also do for a full PS1 look is baking the lighting to vertex colors since even realtime vertex lighting was expensive. You could paint these by hand in your modelling program or write an editor script to do it for you.
