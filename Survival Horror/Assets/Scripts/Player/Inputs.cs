@@ -5,9 +5,13 @@ using UnityEngine.InputSystem;
 
 public class Inputs : MonoBehaviour
 {
+    // inputs
     public PlayerControls playerControls;
-
     private InputAction interact; // F key
+
+    // events
+    // https://learn.unity.com/tutorial/events-uh#
+    public delegate void interact_event();
 
     void Start()
     {
