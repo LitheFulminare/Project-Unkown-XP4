@@ -11,9 +11,9 @@ public class Collectable : MonoBehaviour
     // https://learn.unity.com/tutorial/enumerations#
     // https://www.youtube.com/watch?v=G4Qmy2sabpo
 
-    public int thing = 0;
-    
-    //public Array;
+    //public int thing = 0;
+
+    public string[] ItemType = {"pistol ammo", "healing", "puzzle item"};
 
     public Interaction player_interaction;
 

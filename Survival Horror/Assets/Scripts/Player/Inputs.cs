@@ -13,16 +13,6 @@ public class Inputs : MonoBehaviour
     // https://learn.unity.com/tutorial/events-uh#
     public delegate void interact_event();
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
     private void Awake()
     {
         playerControls = new PlayerControls();
