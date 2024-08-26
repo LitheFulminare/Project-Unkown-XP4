@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -6,28 +7,26 @@ using UnityEngine.InputSystem;
 
 public class Collectable : MonoBehaviour
 {
+    // video about enums
+    // https://learn.unity.com/tutorial/enumerations#
+    // https://www.youtube.com/watch?v=G4Qmy2sabpo
+
+    public int thing = 0;
+    
+    //public Array;
+
     public Interaction player_interaction;
 
     private bool _isInside = false;
-
-    void Start()
-    {
-        
-    }
-
-
-
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             Debug.Log("player collided");
-            player_interaction.interact();
+
+            /* player_interaction.interact();
+            Destroy(this.gameObject); */
         }
     }
 }
