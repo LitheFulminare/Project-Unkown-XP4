@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
+    // https://discussions.unity.com/t/help-with-calling-function-from-another-script-solved/869015
+
     public PlayerVars playerVars;
 
     void Start()
