@@ -21,10 +21,11 @@ public class Collectable : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("entered ammo pickup range");
+            //Debug.Log(item.GetType());
+            //Debug.Log("entered ammo pickup range");
 
-            /* player_interaction.interact(); // pass the item type parameter
-            Destroy(this.gameObject); */
+            player_interaction.interact(item);
+            Destroy(this.gameObject);
         }
     }
 

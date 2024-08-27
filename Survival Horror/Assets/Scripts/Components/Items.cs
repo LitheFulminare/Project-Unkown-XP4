@@ -4,8 +4,5 @@ public enum Items
     pistolAmmo,
 
     // consumable
-    syringe,
-
-    // puzzle
-    clockNeedle
+    syringe
 }

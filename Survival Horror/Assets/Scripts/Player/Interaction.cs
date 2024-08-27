@@ -8,8 +8,12 @@ public class Interaction : MonoBehaviour
 
     public PlayerVars playerVars;
 
-    public void interact()
+    public void interact(Items item)
     {
+        if (item == Items.pistolAmmo)
+        {
+            Debug.Log("Pistol ammo was collected");
+        }
         Debug.Log("interaction happened");
     }
 }
