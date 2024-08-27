@@ -11,9 +11,7 @@ public class Collectable : MonoBehaviour
     // https://learn.unity.com/tutorial/enumerations#
     // https://www.youtube.com/watch?v=G4Qmy2sabpo
 
-    //public int thing = 0;
-
-    public string[] ItemType = {"pistol ammo", "healing", "puzzle item"};
+    public Items item;
 
     public Interaction player_interaction;
 
@@ -23,10 +21,12 @@ public class Collectable : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("player collided");
+            Debug.Log("entered ammo pickup range");
 
-            /* player_interaction.interact();
+            /* player_interaction.interact(); // pass the item type parameter
             Destroy(this.gameObject); */
         }
     }
+
+    //public enum Items { thing }
 }
