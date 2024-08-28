@@ -14,7 +14,7 @@ public class Interactor : MonoBehaviour
     // https://learn.unity.com/tutorial/interfaces#6352660eedbc2a5f87a1aa6c
 
     public Transform InteractorSource;
-    public float InteractRange;
+    public float InteractRange = 4.0f;
 
     
 
