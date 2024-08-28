@@ -8,12 +8,25 @@ public class Interaction : MonoBehaviour
 
     public PlayerVars playerVars;
 
-    public void interact(Items item)
+    public void interact(Items item) // receives an item from the Item enum from the Collectable script
     {
-        if (item == Items.pistolAmmo)
+        switch (item)
         {
-            Debug.Log("Pistol ammo was collected");
+            case Items.pistolAmmo:
+                Debug.Log("Pistol ammo was collected");
+                break;
+
+            default:
+                Debug.Log("Invalid Item");
+                break;
         }
-        Debug.Log("interaction happened");
+
+        // old item collection script
+         
+        //if (item == Items.pistolAmmo)
+        //{
+        //    Debug.Log("Pistol ammo was collected");
+        //}
+        //Debug.Log("interaction happened");
     }
 }

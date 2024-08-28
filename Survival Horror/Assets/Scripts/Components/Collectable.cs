@@ -19,20 +19,22 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log("Interact method called");
+        //Debug.Log(item); this would print pistolAmmo
+        player_interaction.interact(item);
+        Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            //Debug.Log(item.GetType());
-            //Debug.Log("entered ammo pickup range");
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        //Debug.Log(item.GetType());
+    //        //Debug.Log("entered ammo pickup range");
 
-            player_interaction.interact(item);
-            Destroy(this.gameObject);
-        }
-    }
+    //        player_interaction.interact(item);
+    //        Destroy(this.gameObject);
+    //    }
+    //}
 
     //public enum Items { thing }
 }
