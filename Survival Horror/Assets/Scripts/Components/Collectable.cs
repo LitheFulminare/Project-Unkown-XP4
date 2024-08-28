@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Collectable : MonoBehaviour
+public class Collectable : MonoBehaviour, IInteractable
 {
     // video about enums
     // https://learn.unity.com/tutorial/enumerations#
@@ -16,6 +16,11 @@ public class Collectable : MonoBehaviour
     public Interaction player_interaction;
 
     private bool _isInside = false;
+
+    public void Interact()
+    {
+        Debug.Log("Interact method called");
+    }
 
     private void OnTriggerEnter(Collider other)
     {

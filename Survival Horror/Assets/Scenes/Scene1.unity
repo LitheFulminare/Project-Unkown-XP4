@@ -269,6 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd19eaf00b91984c92fc5965f92b100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractorSource: {fileID: 283486856}
+  InteractRange: 9999
 --- !u!1 &322381288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,9 +2136,25 @@ PrefabInstance:
       propertyPath: player_interaction
       value: 
       objectReference: {fileID: 283486862}
+    - target: {fileID: 5775915977262650384, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6395183667930787482, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_Name
       value: Pistol Ammo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.28
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_LocalPosition.x
