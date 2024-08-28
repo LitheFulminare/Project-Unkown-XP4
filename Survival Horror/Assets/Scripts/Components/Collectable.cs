@@ -15,7 +15,7 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public Interaction player_interaction;
 
-    private bool _isInside = false;
+    //private bool _isInside = false; // this var probably wont be used
 
     public void Interact()
     {
