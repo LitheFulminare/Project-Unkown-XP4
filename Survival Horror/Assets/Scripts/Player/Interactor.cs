@@ -16,8 +16,6 @@ public class Interactor : MonoBehaviour
     public Transform InteractorSource;
     public float InteractRange = 4.0f;
 
-    
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
