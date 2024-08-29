@@ -689,6 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c19cb984ab9bc246af329570f162e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 433950602}
 --- !u!1 &2106764095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7217189889865731525, guid: 04563f83b2daa694b84b95abceb25188, type: 3}
@@ -763,15 +764,15 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2100866071}
         m_TargetAssemblyTypeName: OverlayController, Assembly-CSharp
-        m_MethodName: Confirm
-        m_Mode: 1
+        m_MethodName: ButtonAction
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1001 &5770379563897317114
 PrefabInstance:
@@ -934,10 +935,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2100866069}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 433950602}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -948,8 +949,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2100866071}
         m_TargetAssemblyTypeName: OverlayController, Assembly-CSharp
-        m_MethodName: Deny
-        m_Mode: 1
+        m_MethodName: ButtonAction
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

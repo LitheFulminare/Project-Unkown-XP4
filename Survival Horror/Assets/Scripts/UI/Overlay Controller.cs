@@ -2,15 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// interfaces
+// https://learn.unity.com/tutorial/interfaces#
+
+// events
+// https://learn.unity.com/tutorial/events-uh#
+
+//public interface IButtonConfirm
+//{
+//    bool Confirm(bool confirmPressed);
+//}
+
 public class OverlayController : MonoBehaviour
 {
-    public void Confirm()
-    {
+    public GameObject canvas;
 
+    public void setActive()
+    {
+        canvas.SetActive(true);
     }
 
-    public void Deny()
+    // called by the 'confirm' and 'deny' buttons the pickup screen overlay
+    // 'confirm' returns true and 'deny' returns false
+    public void ButtonAction(bool confirm)
     {
-
+        Debug.Log(confirm);
     }
 }
