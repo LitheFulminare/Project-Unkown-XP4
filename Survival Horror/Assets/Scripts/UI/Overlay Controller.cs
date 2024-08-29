@@ -21,6 +21,9 @@ public class OverlayController : MonoBehaviour
     public delegate void PickupOverlay();
     public static PickupOverlay showUI; // this is used to show the overlay when an item is picked
 
+    public delegate bool Confirm();
+    public static Confirm confirm;
+
     public GameObject canvas;
 
     private void Start()

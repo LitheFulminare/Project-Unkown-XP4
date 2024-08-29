@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 
 public class Collectable : MonoBehaviour, IInteractable
 {
-    //public GameObject pickupOverlay;
+    public delegate bool Confirm();
+    public static Confirm confirm;
 
     // video about enums
     // https://learn.unity.com/tutorial/enumerations#
@@ -17,7 +18,10 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public Interaction player_interaction;
 
-    //private bool _isInside = false; // this var probably wont be used
+    private void Start()
+    {
+        confirm = checkIfPlayerConfirmed;
+    }
 
     public void Interact()
     {
@@ -28,17 +32,8 @@ public class Collectable : MonoBehaviour, IInteractable
         Destroy(this.gameObject);
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Player")
-    //    {
-    //        //Debug.Log(item.GetType());
-    //        //Debug.Log("entered ammo pickup range");
-
-    //        player_interaction.interact(item);
-    //        Destroy(this.gameObject);
-    //    }
-    //}
-
-    //public enum Items { thing }
+    public bool checkIfPlayerConfirmed()
+    {
+        return true;
+    }
 }
