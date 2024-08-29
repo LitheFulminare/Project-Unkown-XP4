@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 
 public class Collectable : MonoBehaviour, IInteractable
 {
+    public GameObject pickupOverlay;
+
     // video about enums
     // https://learn.unity.com/tutorial/enumerations#
     // https://www.youtube.com/watch?v=G4Qmy2sabpo

@@ -17,6 +17,11 @@ public class OverlayController : MonoBehaviour
 {
     public GameObject canvas;
 
+    private void Start()
+    {
+        canvas.SetActive(false);
+    }
+
     public void setActive()
     {
         canvas.SetActive(true);
