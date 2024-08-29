@@ -43,6 +43,6 @@ public class OverlayController : MonoBehaviour
     {
         //showUI(); // for debug
         Collectable.confirm(playerAction);      
-        Debug.Log(playerAction);
+        //Debug.Log(playerAction);
     }
 }

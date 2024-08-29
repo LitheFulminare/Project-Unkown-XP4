@@ -26,14 +26,21 @@ public class Collectable : MonoBehaviour, IInteractable
     public void Interact()
     {
         //Debug.Log(item); this would print pistolAmmo
-
         OverlayController.showUI();
-        player_interaction.interact(item);
-        Destroy(this.gameObject);
+        //player_interaction.interact(item); // this will be executed somewhere else
+        //Destroy(this.gameObject);
     }
 
     public void checkIfPlayerConfirmed(bool confirm)
     {
+        //Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
+        if (confirm)
+        {
+            player_interaction.interact(item);
+            Destroy(this.gameObject);
+            
+        }
+
         Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
     }
 }
