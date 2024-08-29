@@ -7,8 +7,8 @@ using UnityEngine.InputSystem;
 
 public class Collectable : MonoBehaviour, IInteractable
 {
-    public delegate bool Confirm();
-    public static Confirm confirm;
+    public delegate void ConfirmAction(bool playerConfirmed);
+    public static ConfirmAction confirm;
 
     // video about enums
     // https://learn.unity.com/tutorial/enumerations#
@@ -32,8 +32,8 @@ public class Collectable : MonoBehaviour, IInteractable
         Destroy(this.gameObject);
     }
 
-    public bool checkIfPlayerConfirmed()
+    public void checkIfPlayerConfirmed(bool confirm)
     {
-        return true;
+        Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
     }
 }

@@ -21,9 +21,6 @@ public class OverlayController : MonoBehaviour
     public delegate void PickupOverlay();
     public static PickupOverlay showUI; // this is used to show the overlay when an item is picked
 
-    public delegate bool Confirm();
-    public static Confirm confirm;
-
     public GameObject canvas;
 
     private void Start()
@@ -42,9 +39,10 @@ public class OverlayController : MonoBehaviour
 
     // called by the 'confirm' and 'deny' buttons the pickup screen overlay
     // 'confirm' returns true and 'deny' returns false
-    public void ButtonAction(bool confirm)
+    public void ButtonAction(bool playerAction)
     {
         //showUI(); // for debug
-        Debug.Log(confirm);
+        Collectable.confirm(playerAction);      
+        Debug.Log(playerAction);
     }
 }
