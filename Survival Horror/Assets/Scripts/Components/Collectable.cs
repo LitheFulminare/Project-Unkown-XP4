@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Collectable : MonoBehaviour, IInteractable
 {
-    public GameObject pickupOverlay;
+    //public GameObject pickupOverlay;
 
     // video about enums
     // https://learn.unity.com/tutorial/enumerations#
@@ -22,6 +22,8 @@ public class Collectable : MonoBehaviour, IInteractable
     public void Interact()
     {
         //Debug.Log(item); this would print pistolAmmo
+
+        OverlayController.showUI();
         player_interaction.interact(item);
         Destroy(this.gameObject);
     }

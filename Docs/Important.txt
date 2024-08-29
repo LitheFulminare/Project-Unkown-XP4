@@ -5,3 +5,7 @@ The bit depth of the game's color is still 32-bit, to drop it down to 16-bit in 
 Then you need to emulate the non-perspective corrected texture filtering, vertex wobble, and lack of per-pixel lighting which means lots of time writing shaders.
 
 The last part of the asset that you would also do for a full PS1 look is baking the lighting to vertex colors since even realtime vertex lighting was expensive. You could paint these by hand in your modelling program or write an editor script to do it for you.
+
+https://gameprogrammingpatterns.com/
+
+https://gamedevbeginner.com/events-and-delegates-in-unity/
