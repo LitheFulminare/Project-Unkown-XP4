@@ -16,6 +16,10 @@ public class Interaction : MonoBehaviour
                 Debug.Log("Pistol ammo was collected");
                 break;
 
+            case Items.syringe:
+                Debug.Log("Syringe was collected");
+                break;
+
             default:
                 Debug.Log("Invalid Item");
                 break;
