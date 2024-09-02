@@ -51,7 +51,7 @@ public class InventoryController : MonoBehaviour
 
         for (int i = 0; i < itemList.Length; i++) // first checks if there is the item in the inventory and adds to the stack
         {
-            if (itemList[i] == Items.empty) // checks if there is and empty space
+            if (itemList[i] == Items.empty || itemList[i] == item) // checks if there is and empty space
             {
                 itemList[i] = item; // replaces the empty space with the item received
                 switch (item)

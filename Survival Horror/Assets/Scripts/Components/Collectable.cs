@@ -39,8 +39,7 @@ public class Collectable : MonoBehaviour, IInteractable
         {
             //player_interaction.interact(item);
             InventoryController.itemReceiver(item);
-            Destroy(this.gameObject);
-            
+            Destroy(gameObject);  
         }
 
         Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
