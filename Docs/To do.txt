@@ -2,3 +2,6 @@ Use playerVars to determine how much of each item the player has on the inventor
 I should have used scriptable objects, but it's too late and I'm lazy.
 
 If the player has no empty space on the inventory, does not show the pickup overlay.
+
+Fix cant collect second ammo
+pass the gameobject as an argument and call only the function belonging to that gameobject
