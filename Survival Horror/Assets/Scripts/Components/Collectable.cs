@@ -18,6 +18,7 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public Interaction player_interaction;
 
+
     private void Start()
     {
         confirm = checkIfPlayerConfirmed;
@@ -36,7 +37,8 @@ public class Collectable : MonoBehaviour, IInteractable
         //Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
         if (confirm)
         {
-            player_interaction.interact(item);
+            //player_interaction.interact(item);
+            InventoryController.itemReceiver(item);
             Destroy(this.gameObject);
             
         }
