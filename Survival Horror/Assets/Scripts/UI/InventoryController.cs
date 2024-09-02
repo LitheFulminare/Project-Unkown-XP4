@@ -12,6 +12,7 @@ public class InventoryController : MonoBehaviour
     //public static OpenInventory inventory;
 
     public Items[] itemList = new Items[6];
+    public int[] itemCount = new int[6];
 
     public GameObject canvas;
 
@@ -48,30 +49,33 @@ public class InventoryController : MonoBehaviour
     {
         Debug.Log("addToInventory(Items item)");
 
-        for (int i = 0; i < itemList.Length; i++)
+        for (int i = 0; i < itemList.Length; i++) // first checks if there is the item in the inventory and adds to the stack
         {
             if (itemList[i] == Items.empty) // checks if there is and empty space
             {
                 itemList[i] = item; // replaces the empty space with the item received
+                switch (item)
+                {
+                    case Items.pistolAmmo:
+                        Debug.Log("Pistol ammo was collected");
+                        itemCount[i] += 6;
+                        break;
+
+                    case Items.syringe:
+                        Debug.Log("Syringe was collected");
+                        itemCount[i] += 1;
+                        break;
+
+                    default:
+                        Debug.Log("Invalid Item");
+                        break;
+                }
                 break;
             }
         }
 
         //itemList.Append(item); this adds to the 7th space, which doesnt exist
 
-        switch (item)
-        {
-            case Items.pistolAmmo:
-                Debug.Log("Pistol ammo was collected");
-                break;
-
-            case Items.syringe:
-                Debug.Log("Syringe was collected");
-                break;
-
-            default:
-                Debug.Log("Invalid Item");
-                break;
-        }
+        
     }
 }
