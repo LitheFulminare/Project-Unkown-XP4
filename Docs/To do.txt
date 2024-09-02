@@ -1,0 +1,4 @@
+Use playerVars to determine how much of each item the player has on the inventory.
+I should have used scriptable objects, but it's too late and I'm lazy.
+
+If the player has no empty space on the inventory, does not show the pickup overlay.
