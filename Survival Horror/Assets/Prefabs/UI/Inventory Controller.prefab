@@ -85,8 +85,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5842857270836169687}
   - component: {fileID: 830770681670769959}
+  - component: {fileID: 4030077655561844011}
   m_Layer: 0
-  m_Name: Inventory Screen
+  m_Name: Inventory Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +123,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemList: 000000000000000000000000000000000000000000000000
+  itemCount: 000000000000000000000000000000000000000000000000
   canvas: {fileID: 5315988315812681814}
+--- !u!114 &4030077655561844011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2931804259676809629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c646ea8c14f55446b6fe3e69be9bf4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 2
+  player_interaction: {fileID: 0}
 --- !u!1 &5315988315812681814
 GameObject:
   m_ObjectHideFlags: 0
