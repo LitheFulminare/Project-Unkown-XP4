@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Collectable : MonoBehaviour, IInteractable
 {
-    public delegate void ConfirmAction(bool playerConfirmed);
+    public delegate void ConfirmAction(bool playerConfirmed, GameObject itemChecker);
     public static ConfirmAction confirm;
 
     // video about enums
@@ -26,22 +26,29 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        //Debug.Log(item); this would print pistolAmmo
-        OverlayController.showUI();
-        //player_interaction.interact(item); // this will be executed somewhere else
-        //Destroy(this.gameObject);
+        OverlayController.showUI(gameObject);
     }
 
-    public void checkIfPlayerConfirmed(bool confirm)
+    public void checkIfPlayerConfirmed(bool confirm, GameObject itemChecker)
     {
         //Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
-        if (confirm)
+        if (confirm)// && itemChecker == gameObject)
         {
             //player_interaction.interact(item);
-            InventoryController.itemReceiver(item);
-            Destroy(gameObject);  
+             
         }
 
         Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
+    }
+
+    private void selfDestruct()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void collected()
+    {
+        InventoryController.itemReceiver(item);
+        selfDestruct();
     }
 }
