@@ -8,6 +8,7 @@ public class Interaction : MonoBehaviour
 
     public PlayerVars playerVars;
 
+    // I dont think this will be used
     public void interact(Items item) // receives an item from the Item enum from the Collectable script
     {
         switch (item)
@@ -24,13 +25,5 @@ public class Interaction : MonoBehaviour
                 Debug.Log("Invalid Item");
                 break;
         }
-
-        // old item collection script
-         
-        //if (item == Items.pistolAmmo)
-        //{
-        //    Debug.Log("Pistol ammo was collected");
-        //}
-        //Debug.Log("interaction happened");
     }
 }

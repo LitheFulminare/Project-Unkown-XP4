@@ -33,10 +33,8 @@ public class OverlayController : MonoBehaviour
     }
 
     // shows the pickup overlay
-    public void setActive(GameObject collectedItem) 
+    public void setActive(GameObject collectedItem)
     {
-        //Debug.Log("set active got called");
-
         canvas.SetActive(true);
         this.collectedItem = collectedItem;
     }
@@ -45,11 +43,10 @@ public class OverlayController : MonoBehaviour
     // 'confirm' returns true and 'deny' returns false
     public void ButtonAction(bool playerAction)
     {
-        //Collectable.confirm(playerAction, collectedItem);
 
-        // search object by name and then call the function to destroy
         if (playerAction)
-        {
+        {        
+            // search object by name and then call the function to be collected
             GameObject itemToDestroy = GameObject.Find(collectedItem.name);
             itemToDestroy.SendMessage("collected");
         }

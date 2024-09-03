@@ -6,19 +6,16 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     public delegate void ItemReceiver(Items item);
-    public static ItemReceiver itemReceiver;
+    public static ItemReceiver itemReceiver; // used to add item to inventory
 
-    //public delegate void OpenInventory();
-    //public static OpenInventory inventory;
-
-    public Items[] itemList = new Items[6];
-    public int[] itemCount = new int[6];
+    public Items[] itemList = new Items[6]; // list of the items
+    public int[] itemCount = new int[6]; // list of how many items the player has
 
     public GameObject canvas;
 
     private void Start()
     {
-        itemReceiver = addToInventory;
+        itemReceiver = addToInventory; // called by the collectable
         //inventory = toggleInventory;
 
         canvas.SetActive(false);
@@ -33,6 +30,7 @@ public class InventoryController : MonoBehaviour
 
     }
 
+    // toggles the visibility
     private void toggleInventory()
     {
         if (canvas.activeSelf == true)
@@ -45,24 +43,29 @@ public class InventoryController : MonoBehaviour
         }
     }
 
+    // called by collectable, receives the item type
     private void addToInventory(Items item)
     {
-        Debug.Log("addToInventory(Items item)");
 
-        for (int i = 0; i < itemList.Length; i++) // first checks if there is the item in the inventory and adds to the stack
+        // searches for each of the inventory slots
+        for (int i = 0; i < itemList.Length; i++)
         {
-            if (itemList[i] == Items.empty || itemList[i] == item) // checks if there is and empty space
+
+            // checks if there is and empty space or the same item
+            if (itemList[i] == Items.empty || itemList[i] == item) 
             {
-                itemList[i] = item; // replaces the empty space with the item received
-                switch (item)
+
+                // replaces the space with the item received and adds to the stack
+                itemList[i] = item; 
+                switch (item) 
                 {
                     case Items.pistolAmmo:
-                        Debug.Log("Pistol ammo was collected");
+                        //Debug.Log("Pistol ammo was collected");
                         itemCount[i] += 6;
                         break;
 
                     case Items.syringe:
-                        Debug.Log("Syringe was collected");
+                        //Debug.Log("Syringe was collected");
                         itemCount[i] += 1;
                         break;
 
@@ -70,12 +73,8 @@ public class InventoryController : MonoBehaviour
                         Debug.Log("Invalid Item");
                         break;
                 }
-                break;
+                break; 
             }
-        }
-
-        //itemList.Append(item); this adds to the 7th space, which doesnt exist
-
-        
+        }        
     }
 }

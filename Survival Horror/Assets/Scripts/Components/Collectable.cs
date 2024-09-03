@@ -29,6 +29,7 @@ public class Collectable : MonoBehaviour, IInteractable
         OverlayController.showUI(gameObject);
     }
 
+    // this probably wont be used
     public void checkIfPlayerConfirmed(bool confirm, GameObject itemChecker)
     {
         //Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
@@ -48,6 +49,7 @@ public class Collectable : MonoBehaviour, IInteractable
 
     private void collected()
     {
+        // find an empty space and adds item to the stack, then it self destructs
         InventoryController.itemReceiver(item);
         selfDestruct();
     }
