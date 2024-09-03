@@ -13,6 +13,8 @@ public class InventoryController : MonoBehaviour
 
     public GameObject canvas;
 
+    public ItemSpawner itemSpawner;
+
     private void Start()
     {
         itemReceiver = addToInventory; // called by the collectable
@@ -40,8 +42,11 @@ public class InventoryController : MonoBehaviour
         else
         {
             canvas.SetActive(true);
+            itemSpawner.showItems(itemList);
         }
     }
+
+    
 
     // called by collectable, receives the item type
     private void addToInventory(Items item)
