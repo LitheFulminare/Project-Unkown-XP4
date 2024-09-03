@@ -7,3 +7,5 @@ hasSpace is for loop checking if there is empty
 
 Fix cant collect second ammo
 pass the gameobject as an argument and call only the function belonging to that gameobject
+
+Make caracter uncontrollabe while pickup overlay and inventory are on screen
