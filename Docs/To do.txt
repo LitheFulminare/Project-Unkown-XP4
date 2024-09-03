@@ -9,3 +9,6 @@ Fix cant collect second ammo
 pass the gameobject as an argument and call only the function belonging to that gameobject
 
 Make caracter uncontrollabe while pickup overlay and inventory are on screen
+
+Use the Icon prefab i created on the UI folder, not the one on the scene.
+I'd have to manually set all images in every icon, whuch I dont wanna do.
