@@ -48,7 +48,10 @@ public class OverlayController : MonoBehaviour
         //Collectable.confirm(playerAction, collectedItem);
 
         // search object by name and then call the function to destroy
-        GameObject itemToDestroy = GameObject.Find(collectedItem.name);
-        itemToDestroy.SendMessage("collected");
+        if (playerAction)
+        {
+            GameObject itemToDestroy = GameObject.Find(collectedItem.name);
+            itemToDestroy.SendMessage("collected");
+        }
     }
 }
