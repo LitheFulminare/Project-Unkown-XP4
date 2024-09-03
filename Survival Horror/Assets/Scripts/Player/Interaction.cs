@@ -8,7 +8,7 @@ public class Interaction : MonoBehaviour
 
     public PlayerVars playerVars;
 
-    // I dont think this will be used
+    // I dont think this will be used, im using a similar funcion in InventoryController
     public void interact(Items item) // receives an item from the Item enum from the Collectable script
     {
         switch (item)

@@ -11,22 +11,13 @@ public class ItemSpawner : MonoBehaviour
     {
         for (int i = 0; i < itemList.Length; i++)
         {
+            // checkes if there's an actual item that should be shown
             if (itemList[i] != Items.empty)
             {
-                GameObject icon = GameObject.Find($"Icon ({i})");
-                icon.SendMessage("ChangeIcon", itemList[i]);
+                Debug.Log($"index value of showItems: {i}");
+                // calls each slot and passes what item should be displayed
+                GameObject.Find($"Icon ({i})").SendMessage("ChangeIcon", itemList[i]); // also pass how many of these items
             }
-
-            //switch (itemList[i])
-            //{
-            //    case Items.pistolAmmo:
-            //        Debug.Log(itemList[i]);
-            //        Debug.Log(i);
-            //        GameObject icon = GameObject.Find($"Icon ({i})");
-            //        icon.SendMessage("ChangeIcon", itemList[i]);
-
-            //        break;
-            //}
         }
     }
 }
