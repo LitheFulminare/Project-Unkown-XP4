@@ -7,6 +7,7 @@ public class ItemSpawner : MonoBehaviour
     public Sprite pistolAmmoImg;
     public Sprite syringeImg;
 
+    // called by InventoryController when Tab is pressed
     public void showItems(Items[] itemList)
     {
         for (int i = 0; i < itemList.Length; i++)
@@ -14,8 +15,7 @@ public class ItemSpawner : MonoBehaviour
             // checkes if there's an actual item that should be shown
             if (itemList[i] != Items.empty)
             {
-                Debug.Log($"index value of showItems: {i}");
-                // calls each slot and passes what item should be displayed
+                // calls each slot icon and passes what item should be displayed
                 GameObject.Find($"Icon ({i})").SendMessage("ChangeIcon", itemList[i]); // also pass how many of these items
             }
         }

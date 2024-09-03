@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InventoryController : MonoBehaviour
 {
@@ -13,13 +14,11 @@ public class InventoryController : MonoBehaviour
 
     public GameObject canvas;
 
-    public ItemSpawner itemSpawner;
+    public ItemSpawner itemSpawner; // what calls each icon to show items in inventory
 
     private void Start()
     {
         itemReceiver = addToInventory; // called by the collectable
-        //inventory = toggleInventory;
-
         canvas.SetActive(false);
     }
 
@@ -42,7 +41,7 @@ public class InventoryController : MonoBehaviour
         else
         {
             canvas.SetActive(true);
-            itemSpawner.showItems(itemList);
+            itemSpawner.showItems(itemList); // what calls each icon to show items in inventory
         }
     }
 

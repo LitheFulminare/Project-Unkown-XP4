@@ -12,9 +12,10 @@ public class ShowIcon : MonoBehaviour
     public Sprite pistolAmmoImg;
     public Sprite syringeImg;  
 
+    // called by ItemSpawner
     public void ChangeIcon(Items item) // should also receive how many of these items
     {
-        //Debug.Log($"ChangeIcon was called, the parameter {item} was passed");
+        // gets what item should be displayed and sets the Image's sprite to its icon
         switch (item)
         {
             case Items.pistolAmmo:

@@ -47,6 +47,7 @@ public class Collectable : MonoBehaviour, IInteractable
         gameObject.SetActive(false);
     }
 
+    // called by ButtonAction in the Overlay Controller if the player accepts to pick up the item
     private void collected()
     {
         // find an empty space and adds item to the stack, then it self destructs
