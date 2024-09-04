@@ -18,3 +18,7 @@ Some tips I can give you are as follows:
 - Low-quality textures. When importing a texture into Unity, you can compress the size in the Unity editor. Compressing the size makes the file smaller, but also reduces the quality. It is an easy way of getting low-texture images. When setting the Filter Mode to point, you get more pixelated textures.
 - Lower the aspect ratio. You can set a fixed aspect ratio in Unity for your game. By setting a lower aspect ratio, everything will be of lower quality as you lower the amount of pixels that can be visible.
 - Use a Render Texture. It is possible to render a camera on a texture in Unity. You can then fill the screen with this texture as a UI element. Applying effects on this texture using the Unity shader graph is fairly easy. Also, you can decrease the render texture its size, making everything look more pixelated (just like lowering the aspect ratio).
+
+---------------------------------------------------------------------
+
+https://www.reddit.com/r/gamedev/comments/24aw62/playstation_1_question_why_did_geometry_and/
