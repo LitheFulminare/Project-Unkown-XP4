@@ -9,11 +9,6 @@ using UnityEngine;
 // https://learn.unity.com/tutorial/events-uh#
 // https://gamedevbeginner.com/events-and-delegates-in-unity/
 
-//public interface IButtonConfirm
-//{
-//    bool Confirm(bool confirmPressed);
-//}
-
 
 
 public class OverlayController : MonoBehaviour
@@ -28,6 +23,8 @@ public class OverlayController : MonoBehaviour
     private void Start()
     {
         canvas.SetActive(false);
+
+        //EventSystemManager.currentSystem.SetSelectedGameObject(defaultButton, null);
 
         showUI = setActive;
     }
