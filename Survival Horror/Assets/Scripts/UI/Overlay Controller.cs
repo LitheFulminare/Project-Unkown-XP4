@@ -24,6 +24,7 @@ public class OverlayController : MonoBehaviour
     {
         canvas.SetActive(false);
 
+        //using UnityEngine.EventSystems
         //EventSystemManager.currentSystem.SetSelectedGameObject(defaultButton, null);
 
         showUI = setActive;
