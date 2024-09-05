@@ -14,7 +14,7 @@ public class ShowIcon : MonoBehaviour
 
     // images must be selected in editor
     public Sprite pistolAmmoImg;
-    public Sprite syringeImg;  
+    public Sprite syringeImg;
 
     // called by ItemSpawner
     public void ChangeIcon(Items item)//, int qtd) // should also receive how many of these items
@@ -28,6 +28,8 @@ public class ShowIcon : MonoBehaviour
             case Items.syringe:
                 iconImg.sprite = syringeImg; break;
         }
+
+
 
         //text.text = qtd.ToString();
     }
