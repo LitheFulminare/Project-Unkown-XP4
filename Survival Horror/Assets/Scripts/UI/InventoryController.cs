@@ -41,7 +41,7 @@ public class InventoryController : MonoBehaviour
         else
         {
             canvas.SetActive(true);
-            itemSpawner.showItems(itemList); // what calls each icon to show items in inventory
+            itemSpawner.showItems(itemList, itemCount); // what calls each icon to show items in inventory
         }
     }
 

@@ -4,16 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ShowIcon : MonoBehaviour
-{
+{   
+    // text compoenent to display item quantity
+    [SerializeField] public Text text;
+
     // the Image component that displays the sprites
     [SerializeField] public Image iconImg;
+    
 
     // images must be selected in editor
     public Sprite pistolAmmoImg;
     public Sprite syringeImg;  
 
     // called by ItemSpawner
-    public void ChangeIcon(Items item) // should also receive how many of these items
+    public void ChangeIcon(Items item)//, int qtd) // should also receive how many of these items
     {
         // gets what item should be displayed and sets the Image's sprite to its icon
         switch (item)
@@ -24,5 +28,12 @@ public class ShowIcon : MonoBehaviour
             case Items.syringe:
                 iconImg.sprite = syringeImg; break;
         }
+
+        //text.text = qtd.ToString();
+    }
+
+    public void ChangeText(int qtd)
+    {
+        text.text = qtd.ToString();
     }
 }
