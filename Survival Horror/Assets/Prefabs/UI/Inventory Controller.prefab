@@ -26,7 +26,7 @@ RectTransform:
   m_GameObject: {fileID: 963379646602740759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3360342312542825520}
@@ -39,8 +39,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 55, y: 70}
-  m_SizeDelta: {x: 120, y: 75}
+  m_AnchoredPosition: {x: 54.1653, y: 66.07586}
+  m_SizeDelta: {x: 116.0296, y: 69.068}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7926754880926723719
 MonoBehaviour:
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 30, y: 30}
-  m_Spacing: {x: 15, y: 15}
+  m_Spacing: {x: 12.13, y: 9}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1800700664837559419
@@ -170,14 +170,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: feb1cbffe6c43d846b39c72f5489fe27, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2007,6 +2007,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot alt (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3012301711367631153, guid: 0e81a780008a9ff458d4a045e961ef88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6642935211185258742, guid: 0e81a780008a9ff458d4a045e961ef88, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2890,6 +2894,22 @@ PrefabInstance:
     - target: {fileID: 3012301711367631153, guid: 0e81a780008a9ff458d4a045e961ef88, type: 3}
       propertyPath: m_Name
       value: Slot alt
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012301711367631153, guid: 0e81a780008a9ff458d4a045e961ef88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000810522308160646, guid: 0e81a780008a9ff458d4a045e961ef88, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000810522308160646, guid: 0e81a780008a9ff458d4a045e961ef88, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000810522308160646, guid: 0e81a780008a9ff458d4a045e961ef88, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6642935211185258742, guid: 0e81a780008a9ff458d4a045e961ef88, type: 3}
       propertyPath: m_Pivot.x
