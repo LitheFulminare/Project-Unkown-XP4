@@ -64,12 +64,10 @@ public class InventoryController : MonoBehaviour
                 switch (item) 
                 {
                     case Items.pistolAmmo:
-                        //Debug.Log("Pistol ammo was collected");
                         itemCount[i] += 6;
                         break;
 
                     case Items.syringe:
-                        //Debug.Log("Syringe was collected");
                         itemCount[i] += 1;
                         break;
 

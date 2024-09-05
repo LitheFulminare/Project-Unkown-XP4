@@ -15,9 +15,8 @@ public class ItemSpawner : MonoBehaviour
             // checkes if there's an actual item that should be shown
             if (itemList[i] != Items.empty)
             {
-                //string itemQtd = itemCount[i].ToString();
-                // calls each slot icon and passes what item should be displayed
-                GameObject.Find($"Icon ({i})").SendMessage("ChangeIcon", itemList[i]); // also pass how many of these items
+                // calls each slot icon and passes what item should be displayed and the quantity
+                GameObject.Find($"Icon ({i})").SendMessage("ChangeIcon", itemList[i]);
                 GameObject.Find($"Icon ({i})").SendMessage("ChangeText", itemCount[i]);
             }
         }

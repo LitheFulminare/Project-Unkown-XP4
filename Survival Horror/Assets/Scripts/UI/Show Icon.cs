@@ -17,7 +17,7 @@ public class ShowIcon : MonoBehaviour
     public Sprite syringeImg;
 
     // called by ItemSpawner
-    public void ChangeIcon(Items item)//, int qtd) // should also receive how many of these items
+    public void ChangeIcon(Items item)
     {
         // gets what item should be displayed and sets the Image's sprite to its icon
         switch (item)
@@ -28,12 +28,9 @@ public class ShowIcon : MonoBehaviour
             case Items.syringe:
                 iconImg.sprite = syringeImg; break;
         }
-
-
-
-        //text.text = qtd.ToString();
     }
 
+    // called by ItemSpawner
     public void ChangeText(int qtd)
     {
         text.text = qtd.ToString();
