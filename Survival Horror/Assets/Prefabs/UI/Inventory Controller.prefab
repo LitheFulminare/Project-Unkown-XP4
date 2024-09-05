@@ -749,6 +749,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6145703804583384926, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145703804583384926, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8133603937845573926, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
       propertyPath: m_Name
       value: Icon (0)
@@ -1604,6 +1612,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6253762711137838198}
     m_Modifications:
+    - target: {fileID: 1292499026373692160, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292499026373692160, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3620251187364063463, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1683,6 +1699,22 @@ PrefabInstance:
     - target: {fileID: 3620251187364063463, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145703804583384926, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145703804583384926, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145703804583384926, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145703804583384926, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7.5000005
       objectReference: {fileID: 0}
     - target: {fileID: 8133603937845573926, guid: f8c03b2076868fa40b8f6b6bde28e126, type: 3}
       propertyPath: m_Name
