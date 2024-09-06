@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour, IInteractable
     public delegate void ConfirmAction(bool playerConfirmed, GameObject itemChecker);
     public static ConfirmAction confirm;
 
-    public Items item;
+    //public Items item;
 
     public Interaction player_interaction;
 
@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        OverlayController.showUI(gameObject, item);
+        //OverlayController.showUI(gameObject, item); create other function to show custom text
     }
 
     // this probably wont be used
