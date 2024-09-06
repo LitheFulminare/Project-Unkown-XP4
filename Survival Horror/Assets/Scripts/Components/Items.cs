@@ -7,5 +7,8 @@ public enum Items
     pistolAmmo,
 
     // consumable
-    syringe
+    syringe,
+
+   // keys
+   keyDoor1
 }

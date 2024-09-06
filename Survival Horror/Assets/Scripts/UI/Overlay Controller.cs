@@ -51,6 +51,8 @@ public class OverlayController : MonoBehaviour
                 text.text = "pistol ammo"; break;
             case Items.syringe:
                 text.text = "syringe"; break;
+            case Items.keyDoor1:
+                text.text = "door key"; break;
         }
 
         

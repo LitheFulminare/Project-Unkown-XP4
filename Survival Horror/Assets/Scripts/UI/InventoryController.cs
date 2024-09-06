@@ -71,6 +71,10 @@ public class InventoryController : MonoBehaviour
                         itemCount[i] += 1;
                         break;
 
+                    case Items.keyDoor1:
+                        itemCount[i] += 1;
+                        break;
+
                     default:
                         Debug.Log("Invalid Item");
                         break;

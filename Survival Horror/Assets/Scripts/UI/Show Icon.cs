@@ -15,6 +15,7 @@ public class ShowIcon : MonoBehaviour
     // images must be selected in editor
     public Sprite pistolAmmoImg;
     public Sprite syringeImg;
+    public Sprite key1Img;
     public Sprite emptyImg;
 
     // called by ItemSpawner
@@ -25,9 +26,10 @@ public class ShowIcon : MonoBehaviour
         {
             case Items.pistolAmmo:
                 iconImg.sprite = pistolAmmoImg; break;
-
             case Items.syringe:
                 iconImg.sprite = syringeImg; break;
+            case Items.keyDoor1:
+                iconImg.sprite = key1Img; break;
             case Items.empty:
                 iconImg.sprite = emptyImg; break;
         }

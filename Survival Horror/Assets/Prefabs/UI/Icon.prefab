@@ -93,6 +93,7 @@ MonoBehaviour:
   iconImg: {fileID: 2279758641895882923}
   pistolAmmoImg: {fileID: 21300000, guid: 26b3f32d8b66b0944b9b9e8b5b5d28e8, type: 3}
   syringeImg: {fileID: 21300000, guid: ad387e68259dad048a41c272022994ff, type: 3}
+  key1Img: {fileID: 21300000, guid: 9f2bd704fa7d7c34a8ebb8df22e0193f, type: 3}
   emptyImg: {fileID: 21300000, guid: 6ec3da0579b47ca40a2d0b17062f1ce1, type: 3}
 --- !u!1001 &1757232365406433635
 PrefabInstance:
