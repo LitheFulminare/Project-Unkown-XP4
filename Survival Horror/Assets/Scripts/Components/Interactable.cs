@@ -49,7 +49,7 @@ public class Interactable : MonoBehaviour, IInteractable
     private void collected()
     {
         // find an empty space and adds item to the stack, then it self destructs
-        InventoryController.itemReceiver(item);
+        //InventoryController.itemReceiver(item);
         //selfDestruct(); the door isnt supposed to self destruct
     }
 }
