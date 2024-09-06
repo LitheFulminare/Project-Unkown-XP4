@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6983704641740195458}
   - component: {fileID: 3908614561098673612}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Bottom text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 2070007355449949723}
   - component: {fileID: 6496129527176638313}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Top text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -765,7 +765,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 3207986791921244692}
   collectedItem: {fileID: 0}
-  text: {fileID: 6173499426266651728}
+  topText: {fileID: 6496129527176638313}
+  redText: {fileID: 6173499426266651728}
+  bottomText: {fileID: 3908614561098673612}
 --- !u!1001 &1042579491055920960
 PrefabInstance:
   m_ObjectHideFlags: 0

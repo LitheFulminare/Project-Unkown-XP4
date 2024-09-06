@@ -13,6 +13,8 @@ public class Interactable : MonoBehaviour, IInteractable
 
     //public Items item;
 
+    [SerializeField] Items neededItem;
+
     public Interaction player_interaction;
 
 
@@ -24,6 +26,7 @@ public class Interactable : MonoBehaviour, IInteractable
     public void Interact()
     {
         //OverlayController.showUI(gameObject, item); create other function to show custom text
+        OverlayController.interactOverlay(gameObject, neededItem);
     }
 
     // this probably wont be used
@@ -39,6 +42,7 @@ public class Interactable : MonoBehaviour, IInteractable
         Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
     }
 
+    // probably wont be used too
     private void selfDestruct()
     {
         gameObject.SetActive(false);

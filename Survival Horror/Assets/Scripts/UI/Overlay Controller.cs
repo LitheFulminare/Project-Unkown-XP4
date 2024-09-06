@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 // interfaces
 // https://learn.unity.com/tutorial/interfaces#
@@ -18,13 +19,23 @@ public class OverlayController : MonoBehaviour
     public delegate void PickupOverlay(GameObject collectedItem, Items itemName);
     public static PickupOverlay showUI; // this is used to show the overlay when an item is picked
 
+    public delegate void InteractOverlay(GameObject interactedItem, Items neededItem);
+    public static InteractOverlay interactOverlay; // // this is used to show the overlay when the player interacts and a custom text is needed
+
     public GameObject canvas;
 
+    // used to call their functions to be collected / interacted with
     public GameObject collectedItem;
 
-    [SerializeField] Text text;
+    public GameObject interactedItem;
+    public Items itemNeeded;
+
+    [SerializeField] Text topText;
+    [SerializeField] Text redText;
+    [SerializeField] Text bottomText;
 
     private string collectedItemName;
+    
 
     private bool _isCollectable = false;
 
@@ -36,6 +47,7 @@ public class OverlayController : MonoBehaviour
         //EventSystemManager.currentSystem.SetSelectedGameObject(defaultButton, null);
 
         showUI = setActive;
+        interactOverlay = setActiveInteract;
     }
 
     // called by 'collectable', shows the pickup overlay
@@ -47,16 +59,36 @@ public class OverlayController : MonoBehaviour
         canvas.SetActive(true);
         this.collectedItem = collectedItem;
 
+        topText.text = "You found ";
+        bottomText.text = "Take it?";
+
         switch (itemName)
         {
             case Items.pistolAmmo:
-                text.text = "pistol ammo"; break;
+                redText.text = "pistol ammo"; break;
             case Items.syringe:
-                text.text = "syringe"; break;
+                redText.text = "syringe"; break;
             case Items.keyDoor1:
-                text.text = "door key"; break;
+                redText.text = "door key"; break;
         }
+
         _isCollectable = true;
+    }
+
+    public void setActiveInteract(GameObject interactedItem, Items itemNeeded)
+    {
+        canvas.SetActive(true);
+        this.interactedItem = interactedItem; 
+        this.itemNeeded = itemNeeded;
+
+        if (itemNeeded == Items.keyDoor1)
+        {
+            topText.text = "There is a "; redText.text = "door";
+
+            bottomText.text = "Use item?";
+        }     
+
+        _isCollectable = false;
     }
 
     // called by the 'confirm' and 'deny' buttons the pickup screen overlay
@@ -70,6 +102,15 @@ public class OverlayController : MonoBehaviour
                 // search object by name and then call the function to be collected
                 GameObject itemToDestroy = GameObject.Find(collectedItem.name);
                 itemToDestroy.SendMessage("collected");
+            }
+        }
+
+        else if (!_isCollectable)
+        {
+            if (playerAction)
+            {   
+                // should open inventory and set itemNeeded
+                Debug.Log("player chose to interact"); 
             }
         }
         
