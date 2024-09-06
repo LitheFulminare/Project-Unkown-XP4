@@ -71,8 +71,8 @@ public class InventoryController : MonoBehaviour
                         itemCount[i] += 1;
                         break;
 
-                    case Items.keyDoor1:
-                        itemCount[i] += 1;
+                    case Items.keyDoor1: // door key shouldnt be stackable as it has multiple uses
+                        //itemCount[i] += 1;
                         break;
 
                     default:
