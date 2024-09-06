@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,7 +27,7 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        OverlayController.showUI(gameObject);
+        OverlayController.showUI(gameObject, item);
     }
 
     // this probably wont be used

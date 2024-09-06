@@ -15,6 +15,7 @@ public class ShowIcon : MonoBehaviour
     // images must be selected in editor
     public Sprite pistolAmmoImg;
     public Sprite syringeImg;
+    public Sprite emptyImg;
 
     // called by ItemSpawner
     public void ChangeIcon(Items item)
@@ -27,7 +28,14 @@ public class ShowIcon : MonoBehaviour
 
             case Items.syringe:
                 iconImg.sprite = syringeImg; break;
+            case Items.empty:
+                iconImg.sprite = emptyImg; break;
         }
+    }
+
+    public void Show(bool shouldShow)
+    {
+        gameObject.SetActive(shouldShow);
     }
 
     // called by ItemSpawner

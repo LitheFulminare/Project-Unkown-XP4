@@ -13,12 +13,18 @@ public class ItemSpawner : MonoBehaviour
         for (int i = 0; i < itemList.Length; i++)
         {
             // checkes if there's an actual item that should be shown
-            if (itemList[i] != Items.empty)
+            //if (itemList[i] != Items.empty)
+            //{
+            //    // calls each slot icon and passes what item should be displayed and the quantity
+            //    GameObject.Find($"Icon ({i})").SendMessage("ChangeIcon", itemList[i]);
+            //    GameObject.Find($"Icon ({i})").SendMessage("ChangeText", itemCount[i]);
+            //}
+            GameObject.Find($"Icon ({i})").SendMessage("ChangeIcon", itemList[i]);
+            if (itemCount[i] !=0)
             {
-                // calls each slot icon and passes what item should be displayed and the quantity
-                GameObject.Find($"Icon ({i})").SendMessage("ChangeIcon", itemList[i]);
                 GameObject.Find($"Icon ({i})").SendMessage("ChangeText", itemCount[i]);
             }
+            
         }
     }
 }
