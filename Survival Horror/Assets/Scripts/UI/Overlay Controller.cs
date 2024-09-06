@@ -26,6 +26,8 @@ public class OverlayController : MonoBehaviour
 
     private string collectedItemName;
 
+    private bool _isCollectable = false;
+
     private void Start()
     {
         canvas.SetActive(false);
@@ -54,20 +56,22 @@ public class OverlayController : MonoBehaviour
             case Items.keyDoor1:
                 text.text = "door key"; break;
         }
-
-        
+        _isCollectable = true;
     }
 
     // called by the 'confirm' and 'deny' buttons the pickup screen overlay
     // 'confirm' returns true and 'deny' returns false
     public void ButtonAction(bool playerAction)
     {
-
-        if (playerAction)
-        {        
-            // search object by name and then call the function to be collected
-            GameObject itemToDestroy = GameObject.Find(collectedItem.name);
-            itemToDestroy.SendMessage("collected");
+        if (_isCollectable)
+        {
+            if (playerAction)
+            {        
+                // search object by name and then call the function to be collected
+                GameObject itemToDestroy = GameObject.Find(collectedItem.name);
+                itemToDestroy.SendMessage("collected");
+            }
         }
+        
     }
 }
