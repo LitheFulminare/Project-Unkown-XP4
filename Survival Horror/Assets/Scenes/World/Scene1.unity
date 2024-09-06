@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door key 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3728380553490648023, guid: 600a0c176793266499abfd67c8f89580, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 9051472989178498013, guid: 600a0c176793266499abfd67c8f89580, type: 3}
       propertyPath: player_interaction
       value: 
@@ -206,7 +210,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &261067207
 Transform:
@@ -536,7 +540,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &412174158
 Transform:
@@ -746,6 +750,10 @@ PrefabInstance:
     - target: {fileID: 6395183667930787482, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_Name
       value: Pistol Ammo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395183667930787482, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1227,7 +1235,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &553284040
 Transform:
@@ -1337,7 +1345,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &703597481
 Transform:
@@ -1571,6 +1579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Syringe (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3728380553490648023, guid: 77a0cc07548cb3345af9b9c24defcbbf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 9051472989178498013, guid: 77a0cc07548cb3345af9b9c24defcbbf, type: 3}
       propertyPath: player_interaction
       value: 
@@ -1690,11 +1702,11 @@ GameObject:
   m_Component:
   - component: {fileID: 856607831}
   m_Layer: 0
-  m_Name: '>> COLLECTABLES'
+  m_Name: '>> COLLECTABLES (st)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &856607831
 Transform:
@@ -1728,7 +1740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 945821311}
   m_Layer: 0
-  m_Name: '>> WALLS'
+  m_Name: '>> WALLS (st)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2126,7 +2138,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1016855706
 Transform:
@@ -2301,6 +2313,10 @@ PrefabInstance:
     - target: {fileID: 6395183667930787482, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_Name
       value: Pistol Ammo (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395183667930787482, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2510,7 +2526,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1223294357
 Transform:
@@ -2615,7 +2631,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1246238212
 Transform:
@@ -2729,7 +2745,7 @@ Transform:
   m_GameObject: {fileID: 1267620838}
   serializedVersion: 2
   m_LocalRotation: {x: 0.011127063, y: -0.9297416, z: 0.028186632, w: 0.36696357}
-  m_LocalPosition: {x: 19.41, y: 4.9, z: 52.82}
+  m_LocalPosition: {x: 19.41, y: 5.66, z: 52.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2792,7 +2808,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1411557484
 Transform:
@@ -2803,8 +2819,8 @@ Transform:
   m_GameObject: {fileID: 1411557483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 0}
-  m_LocalScale: {x: 40, y: 1, z: 40}
+  m_LocalPosition: {x: 0, y: 8, z: 4.86}
+  m_LocalScale: {x: 40, y: 1, z: 49.06}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1458917631}
@@ -2890,7 +2906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1458917631}
   m_Layer: 0
-  m_Name: '>> ENVIRONMENT'
+  m_Name: '>> ENVIRONMENT (st)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3300,7 +3316,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1904335146
 Transform:
@@ -3440,6 +3456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Syringe (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3728380553490648023, guid: 77a0cc07548cb3345af9b9c24defcbbf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 9051472989178498013, guid: 77a0cc07548cb3345af9b9c24defcbbf, type: 3}
       propertyPath: item
       value: 2
@@ -3530,7 +3550,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2009182436
 Transform:
@@ -3670,6 +3690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Syringe
       objectReference: {fileID: 0}
+    - target: {fileID: 3728380553490648023, guid: 77a0cc07548cb3345af9b9c24defcbbf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 9051472989178498013, guid: 77a0cc07548cb3345af9b9c24defcbbf, type: 3}
       propertyPath: player_interaction
       value: 
@@ -3694,6 +3718,10 @@ PrefabInstance:
     - target: {fileID: 6395183667930787482, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_Name
       value: Pistol Ammo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395183667930787482, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_LocalPosition.x
