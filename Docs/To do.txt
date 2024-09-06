@@ -9,7 +9,7 @@ hasSpace is for loop checking if there is empty
 
 Make caracter uncontrollabe while pickup overlay and inventory are on screen
 
-
+Inventory -> use, discard, inspect (not needed now)
 
 >> DONE
 
