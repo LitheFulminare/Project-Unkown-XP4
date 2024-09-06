@@ -18,7 +18,7 @@ namespace TMPro.Examples
         private string htmlColorTag;
         private const string fpsLabel = "{0:2}</color> <#8080ff>FPS \n<#FF8000>{1:2} <#8080ff>MS";
 
-        private TextMeshProUGUI m_TextMeshPro;
+        //private TextMeshProUGUI m_TextMeshPro;
         private RectTransform m_frameCounter_transform;
 
         private FpsCounterAnchorPositions last_AnchorPosition;
