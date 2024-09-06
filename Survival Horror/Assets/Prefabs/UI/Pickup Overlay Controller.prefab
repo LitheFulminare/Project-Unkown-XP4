@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: -1
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -772,16 +772,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1169800297736937811, guid: 04563f83b2daa694b84b95abceb25188, type: 3}
       propertyPath: m_Navigation.m_Mode
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1169800297736937811, guid: 04563f83b2daa694b84b95abceb25188, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
       objectReference: {fileID: 21300000, guid: 445ca241d72051c43a7c7ddab25c2e16, type: 3}
-    - target: {fileID: 1169800297736937811, guid: 04563f83b2daa694b84b95abceb25188, type: 3}
-      propertyPath: m_SpriteState.m_SelectedSprite
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1169800297736937811, guid: 04563f83b2daa694b84b95abceb25188, type: 3}
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
