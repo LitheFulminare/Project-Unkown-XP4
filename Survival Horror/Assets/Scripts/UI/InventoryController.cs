@@ -24,6 +24,8 @@ public class InventoryController : MonoBehaviour
 
     private Items _itemNeeded; // set when the inventory is show because of a puzzle/interaction
 
+    [SerializeField] private GameObject textPopup;
+
     private void Start()
     {
         itemReceiver = addToInventory; // called by the collectable
@@ -102,15 +104,17 @@ public class InventoryController : MonoBehaviour
             if (item == _itemNeeded)
             {
                 Debug.Log("Correct item"); // do something
-                toggleInventory();
+                
             }
             else
             {
                 Debug.Log("Incorrect item"); // do something
-                toggleInventory();
+                
             }
-
+         
             _itemNeeded = Items.empty;
+            toggleInventory();
+            Instantiate(textPopup);
         }
         
         //this._itemNeeded = item;
