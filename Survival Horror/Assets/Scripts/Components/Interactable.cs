@@ -14,18 +14,21 @@ public class Interactable : MonoBehaviour, IInteractable
     //public Items item;
 
     [SerializeField] Items neededItem;
+    
+    public bool interactable = true;
 
     public Interaction player_interaction;
-
 
     private void Start()
     {
         confirm = checkIfPlayerConfirmed;
     }
 
+    // called when the player presses 'F' near the item
     public void Interact()
     {
         //OverlayController.showUI(gameObject, item); create other function to show custom text
+        Debug.Log("interaction happened with the door");
         OverlayController.interactOverlay(gameObject, neededItem);
     }
 
