@@ -109,10 +109,9 @@ public class OverlayController : MonoBehaviour
         {
             if (playerAction)
             {
-                // should open inventory and set itemNeeded
+                // tells the Inventory Controller what the player needs and opens the screen
                 InventoryController.setItemNeeded(itemNeeded);
                 InventoryController.callInventory();
-                Debug.Log("player chose to interact"); 
             }
         }
         

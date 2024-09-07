@@ -102,10 +102,12 @@ public class InventoryController : MonoBehaviour
             if (item == _itemNeeded)
             {
                 Debug.Log("Correct item"); // do something
+                toggleInventory();
             }
             else
             {
                 Debug.Log("Incorrect item"); // do something
+                toggleInventory();
             }
 
             _itemNeeded = Items.empty;
