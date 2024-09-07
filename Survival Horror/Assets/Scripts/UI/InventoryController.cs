@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static InventoryController;
 //using static UnityEditor.Progress;
 
 public class InventoryController : MonoBehaviour
 {
     public delegate void ItemReceiver(Items item);
     public static ItemReceiver itemReceiver; // used to add item to inventory
+    public static ItemReceiver useItem; // used to complete a puzzle/interaction
+    public static ItemReceiver setItemNeeded; // self explanatory
+
+    public delegate void ToggleInventory();
+    public static ToggleInventory callInventory;
 
     public Items[] itemList = new Items[6]; // list of the items
     public int[] itemCount = new int[6]; // list of how many items the player has
@@ -16,9 +22,15 @@ public class InventoryController : MonoBehaviour
 
     public ItemSpawner itemSpawner; // what calls each icon to show items in inventory
 
+    private Items _itemNeeded; // set when the inventory is show because of a puzzle/interaction
+
     private void Start()
     {
         itemReceiver = addToInventory; // called by the collectable
+        useItem = UseItem; // called by 'ShowIcon' when the 'Button' component on the icon is pressed
+        callInventory = toggleInventory; // // called by 'OverlayController' after being called by 'Interactable'
+        setItemNeeded = setItem;
+
         canvas.SetActive(false);
     }
 
@@ -28,7 +40,6 @@ public class InventoryController : MonoBehaviour
         {
             toggleInventory();
         }
-
     }
 
     // toggles the visibility
@@ -82,5 +93,30 @@ public class InventoryController : MonoBehaviour
                 break; 
             }
         }        
+    }
+
+    private void UseItem(Items item)
+    {
+        if (_itemNeeded != Items.empty)
+        {
+            if (item == _itemNeeded)
+            {
+                Debug.Log("Correct item"); // do something
+            }
+            else
+            {
+                Debug.Log("Incorrect item"); // do something
+            }
+
+            _itemNeeded = Items.empty;
+        }
+        
+        //this._itemNeeded = item;
+        //Debug.Log($"Item needed: {_itemNeeded}");
+    }
+
+    private void setItem(Items item)
+    {
+        this._itemNeeded = item;
     }
 }

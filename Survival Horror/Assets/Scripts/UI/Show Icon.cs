@@ -10,7 +10,8 @@ public class ShowIcon : MonoBehaviour
 
     // the Image component that displays the sprites
     [SerializeField] public Image iconImg;
-    
+
+    private Items _item;
 
     // images must be selected in editor
     public Sprite pistolAmmoImg;
@@ -21,6 +22,7 @@ public class ShowIcon : MonoBehaviour
     // called by ItemSpawner
     public void ChangeIcon(Items item)
     {
+        this._item = item;
         // gets what item should be displayed and sets the Image's sprite to its icon
         switch (item)
         {
@@ -44,5 +46,12 @@ public class ShowIcon : MonoBehaviour
     public void ChangeText(int qtd)
     {
         text.text = qtd.ToString();
+    }
+
+    // called when the icon is pressed by 'Button' component
+    public void Use()
+    {
+        InventoryController.useItem(_item);
+        //Debug.Log($"Item type: {_item}");
     }
 }

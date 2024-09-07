@@ -108,8 +108,10 @@ public class OverlayController : MonoBehaviour
         else if (!_isCollectable)
         {
             if (playerAction)
-            {   
+            {
                 // should open inventory and set itemNeeded
+                InventoryController.setItemNeeded(itemNeeded);
+                InventoryController.callInventory();
                 Debug.Log("player chose to interact"); 
             }
         }
