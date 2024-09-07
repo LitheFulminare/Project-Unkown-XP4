@@ -11,6 +11,8 @@ Make caracter uncontrollabe while pickup overlay and inventory are on screen
 
 Inventory -> use, discard, inspect (not needed now)
 
+New screen similar to PickupOverlay to show dialoge, like (This can't be used here. The door was unlocked. Etc)
+
 >> DONE
 
 Fix cant collect second ammo
