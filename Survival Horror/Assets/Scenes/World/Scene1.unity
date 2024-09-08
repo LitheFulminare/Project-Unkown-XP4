@@ -3698,6 +3698,7 @@ GameObject:
   - component: {fileID: 1965391095}
   - component: {fileID: 1965391097}
   - component: {fileID: 1965391098}
+  - component: {fileID: 1965391099}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -3759,6 +3760,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ebcb69f69ea7549bbaa3980fcf1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1965391099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965391094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4973001f70aade48849b8820d222449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pistol_ammo: 10
 --- !u!1 &2009182435
 GameObject:
   m_ObjectHideFlags: 0
