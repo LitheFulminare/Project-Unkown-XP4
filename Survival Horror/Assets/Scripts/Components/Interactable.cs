@@ -14,8 +14,9 @@ public class Interactable : MonoBehaviour, IInteractable
     //public Items item;
 
     [SerializeField] Items neededItem;
+    [SerializeField] Door door; // change this according to need
     
-    public bool interactable = true;
+    public bool puzzleComplete = false;
 
     public Interaction player_interaction;
 
@@ -27,9 +28,27 @@ public class Interactable : MonoBehaviour, IInteractable
     // called when the player presses 'F' near the item
     public void Interact()
     {
-        //OverlayController.showUI(gameObject, item); create other function to show custom text
-        Debug.Log("interaction happened with the door");
-        OverlayController.interactOverlay(gameObject, neededItem);
+        // keeps track of what the player is currently interacting with
+        Manager.currentInteractionObj = gameObject; 
+
+        if (!puzzleComplete)
+        {
+            Debug.Log($"interaction happened with {gameObject}");
+            OverlayController.interactOverlay(gameObject, neededItem);
+        }
+        else
+        {
+            // makes the player interact with door
+            door.Use();
+        }
+    }
+
+    // currently being called only by "InventoryController"
+    // sets the puzzle as "complete" and wont interact with this anymore
+    // ex.: the player will interact with the door instead of interacting with the door puzzle
+    public void SetCompleted()
+    {
+        puzzleComplete = true;
     }
 
     // this probably wont be used

@@ -6,22 +6,21 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Door : MonoBehaviour, IInteractable
+public class Door : MonoBehaviour
 {
-    public delegate void ConfirmAction(bool playerConfirmed, GameObject itemChecker);
-    public static ConfirmAction confirm;
+    public bool active = false;
 
-    //public Items item;
-
-    [SerializeField] Items neededItem;
-
-    public Interaction player_interaction;
-
-    public void Interact()
+    // called by "Interactable" and if the door is unlocked
+    public void Use()
     {
-        Debug.Log("Player interacted with door");
-        //OverlayController.showUI(gameObject, item); create other function to show custom text
-        //OverlayController.interactOverlay(gameObject, neededItem);
+        Debug.Log("Player interacted with door, im happy :)");
+    }
+
+    // probably wont be used
+    // 'puzzleComplete' in 'Interactable" is a better alternative
+    public void SetActive(bool parameter)
+    {
+        active = parameter;
     }
 }
 

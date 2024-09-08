@@ -97,6 +97,7 @@ public class InventoryController : MonoBehaviour
         }        
     }
 
+    // called by 'ShowIcon' when the button is pressed
     private void UseItem(Items item)
     {
         if (_itemNeeded != Items.empty)
@@ -104,17 +105,16 @@ public class InventoryController : MonoBehaviour
             if (item == _itemNeeded)
             {
                 Debug.Log("Correct item"); // do something
-                
+                Manager.currentInteractionObj.SendMessage("SetCompleted");
             }
             else
             {
-                Debug.Log("Incorrect item"); // do something
-                
+                Instantiate(textPopup);
             }
          
             _itemNeeded = Items.empty;
             toggleInventory();
-            Instantiate(textPopup);
+            
         }
         
         //this._itemNeeded = item;
