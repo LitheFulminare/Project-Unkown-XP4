@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
     // called by "Interactable" and if the door is unlocked
     public void Use()
     {
-        Debug.Log("Player interacted with door, im happy :)");
+        Debug.Log("Player interacted with door and went to another room");
     }
 
     // probably wont be used
