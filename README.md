@@ -14,4 +14,4 @@ F is the interaction button.
 
 Tab opens/closes the inventory.
 
-RMB to select options/items.
+LMB to select options/items.
