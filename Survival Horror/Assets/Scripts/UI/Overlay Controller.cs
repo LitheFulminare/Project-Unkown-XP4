@@ -39,6 +39,11 @@ public class OverlayController : MonoBehaviour
 
     private bool _isCollectable = false;
 
+    private void Awake()
+    {
+        
+    }
+
     private void Start()
     {
         canvas.SetActive(false);
@@ -116,4 +121,6 @@ public class OverlayController : MonoBehaviour
         }
         
     }
+
+
 }
