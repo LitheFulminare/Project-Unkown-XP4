@@ -16,8 +16,9 @@ Fix cant collect second ammo
 pass the gameobject as an argument and call only the function belonging to that gameobject
 
 Use the Icon prefab i created on the UI folder, not the one on the scene.
-I'd have to manually set all images in every icon, whuch I dont wanna do.
 
 New screen similar to PickupOverlay to show dialoge, like (This can't be used here. The door was unlocked. Etc)
 
 Use playerVars to determine how much of each item the player has on the inventory. (used a list instead)
+
+Fix massive lag spike when loading the text font for the first time
