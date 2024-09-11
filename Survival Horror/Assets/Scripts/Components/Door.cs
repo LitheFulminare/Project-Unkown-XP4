@@ -9,15 +9,18 @@ using UnityEngine.InputSystem;
 
 public class Door : MonoBehaviour
 {
+    [SerializeField] SceneChanger sceneChanger;
     public bool active = false;
 
+    // type the name of the scene the player should go to
     [SerializeField] string destination;
+    
 
     // called by "Interactable" and if the door is unlocked
     public void Use()
     {
-        SceneChanger.LoadScene(destination);
-        Debug.Log("Player interacted with door and went to another room");
+        sceneChanger.LoadScene(destination);
+        //Debug.Log("Player interacted with door and went to another room");
     }
 
     // probably wont be used

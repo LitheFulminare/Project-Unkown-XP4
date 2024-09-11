@@ -44,6 +44,20 @@ public class InventoryController : MonoBehaviour
         }
     }
 
+    // called by SceneChanger right before loading the new scene
+    // sends inventory data to PlayerVars
+    public void SaveInventory()
+    {
+        PlayerVars.itemList = itemList;
+        PlayerVars.itemCount = itemCount;
+    }
+
+    public void LoadInventory(Items[] itemList, int[] itemCount)
+    {
+        this.itemList = itemList;
+        this.itemCount = itemCount;
+    }
+
     // toggles the visibility
     private void toggleInventory()
     {

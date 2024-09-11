@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public static void LoadScene(string sceneName)
+    [SerializeField] InventoryController inventoryController;  
+
+    public void LoadScene(string sceneName)
     {
+        // saves the inventory data to PlayerVars
+        inventoryController.SaveInventory();
+
         SceneManager.LoadScene(sceneName);
+
+        // PlayerVars then loads inventory data on start
     }
 }
