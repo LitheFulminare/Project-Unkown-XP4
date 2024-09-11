@@ -8,7 +8,7 @@ Make caracter uncontrollabe when any menu/ui stuff is on screen
 
 Inventory -> use, discard, inspect (not needed now)
 
-Scene change -> save and load inventory state
+Save game manager, PickupOverlay and InventoryController as one prefab
 
 >> DONE
 
@@ -22,3 +22,5 @@ New screen similar to PickupOverlay to show dialoge, like (This can't be used he
 Use playerVars to determine how much of each item the player has on the inventory. (used a list instead)
 
 Fix massive lag spike when loading the text font for the first time
+
+Scene change -> save and load inventory state
