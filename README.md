@@ -9,7 +9,7 @@ Right now the main scene is located at Assets/Scenes/World.
 
 # Controls
 
-WASD controls the character, it has tanks controls so W is always 'forward' the character's perspective.
+WASD controls the character, it has tanks controls so W is always 'forward' from the character's perspective.
 
 F is the interaction button.
 
