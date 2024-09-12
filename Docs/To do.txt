@@ -10,6 +10,8 @@ Inventory -> use, discard, inspect (not needed now)
 
 Save game manager, PickupOverlay and InventoryController as one prefab
 
+Fix massive lag spike when loading the text font for the first time
+
 >> DONE
 
 Fix cant collect second ammo
@@ -20,7 +22,5 @@ Use the Icon prefab i created on the UI folder, not the one on the scene.
 New screen similar to PickupOverlay to show dialoge, like (This can't be used here. The door was unlocked. Etc)
 
 Use playerVars to determine how much of each item the player has on the inventory. (used a list instead)
-
-Fix massive lag spike when loading the text font for the first time
 
 Scene change -> save and load inventory state
