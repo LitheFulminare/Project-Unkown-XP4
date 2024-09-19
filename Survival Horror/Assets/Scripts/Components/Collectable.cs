@@ -11,6 +11,8 @@ public class Collectable : MonoBehaviour, IInteractable
     public delegate void ConfirmAction(bool playerConfirmed, GameObject itemChecker);
     public static ConfirmAction confirm;
 
+    
+
     // video about enums
     // https://learn.unity.com/tutorial/enumerations#
     // https://www.youtube.com/watch?v=G4Qmy2sabpo
