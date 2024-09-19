@@ -11,11 +11,11 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 // events
 // https://learn.unity.com/tutorial/events-uh#
 // https://gamedevbeginner.com/events-and-delegates-in-unity/
-
-
-
 public class OverlayController : MonoBehaviour
 {
+    // used to precache font
+    private static readonly string kPrecacheFontGlyphsString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\\:;\"'<>,.?/ ";
+
     public delegate void PickupOverlay(GameObject collectedItem, Items itemName);
     public static PickupOverlay showUI; // this is used to show the overlay when an item is picked
 
@@ -41,7 +41,7 @@ public class OverlayController : MonoBehaviour
 
     private void Awake()
     {
-        
+        //PreCacheFontData();
     }
 
     private void Start()
@@ -53,6 +53,11 @@ public class OverlayController : MonoBehaviour
 
         showUI = setActive;
         interactOverlay = setActiveInteract;
+    }
+
+    void PreCacheFontData()
+    {
+        redText.text = kPrecacheFontGlyphsString;
     }
 
     // called by 'collectable', shows the pickup overlay
