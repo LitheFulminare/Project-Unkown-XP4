@@ -18,11 +18,15 @@ public class TankMovement : MonoBehaviour
 
     void Update()
     {
-        Vector3 moveDir;
+        if (!PlayerVars.isMovementBlocked)
+        {
+            Vector3 moveDir;
 
-        transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
-        moveDir = transform.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime;
+            transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
+            moveDir = transform.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
-        controller.Move(moveDir * Time.deltaTime - Vector3.up * 0.1f);
+            controller.Move(moveDir * Time.deltaTime - Vector3.up * 0.1f);
+        }
+        
     }
 }

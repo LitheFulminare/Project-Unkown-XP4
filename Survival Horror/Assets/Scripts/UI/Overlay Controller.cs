@@ -69,6 +69,8 @@ public class OverlayController : MonoBehaviour
         canvas.SetActive(true);
         this.collectedItem = collectedItem;
 
+        PlayerVars.BlockMovement(true);
+
         topText.text = "You found ";
         bottomText.text = "Take it?";
 
@@ -90,6 +92,9 @@ public class OverlayController : MonoBehaviour
         canvas.SetActive(true);
         this.interactedItem = interactedItem; 
         this.itemNeeded = itemNeeded;
+
+        PlayerVars.BlockMovement(true);
+        //playerMovementController.BlockMovement(true);
 
         if (itemNeeded == Items.keyDoor1)
         {
@@ -124,6 +129,8 @@ public class OverlayController : MonoBehaviour
                 InventoryController.callInventory();
             }
         }
+
+        PlayerVars.BlockMovement(false);
         
     }
 

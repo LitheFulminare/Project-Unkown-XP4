@@ -8,19 +8,29 @@ public class PlayerVars : MonoBehaviour
     public static Items[] itemList;
     public static int[] itemCount;
 
+    public static bool isMovementBlocked { get; private set; } = false;
+
     [SerializeField] InventoryController inventoryController;
 
     private void Start()
     {
+        // loads the inventory data if there is any
+        // this is mainly used when switch scenes
         if (itemList == null && itemCount == null)
         {
-            Debug.Log("The inventory is empty");
+            //Debug.Log("The inventory is empty");
         }
         else
         {
-            Debug.Log($"First item on the inventory: {itemList[0]}");
+            //Debug.Log($"First item on the inventory: {itemList[0]}");
 
             inventoryController.LoadInventory(itemList, itemCount);
         }
+    }
+
+    // used by inventory controller and other UI things to block player movement
+    public static void BlockMovement(bool par)
+    {
+        isMovementBlocked = par;
     }
 }
