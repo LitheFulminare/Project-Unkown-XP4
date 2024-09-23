@@ -8,6 +8,8 @@ public class PlayerVars : MonoBehaviour
     public static Items[] itemList;
     public static int[] itemCount;
 
+    // get by player to know if it's allowed to move or not
+    // can only be set by the public static funcion "BlocMovement"
     public static bool isMovementBlocked { get; private set; } = false;
 
     [SerializeField] InventoryController inventoryController;
