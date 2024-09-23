@@ -5,13 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    [SerializeField] InventoryController inventoryController;  
+    [SerializeField] InventoryController inventoryController;
+    
+    [SerializeField] List<GameObject> spawns = new List<GameObject>();
 
-    public void LoadScene(string sceneName)
+    public static int spawnIndex = 0; // used to match where the player spawns with which door the player entered
+
+    private void Start()
+    {
+        // gets the player object and updates its position to match with the door
+        // throws an error if fails to find it
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            player.SendMessage("UpdatePosition", spawns[spawnIndex].transform.position);
+        }
+        else
+        {
+            Debug.LogError("Player could not be found by using the tag 'Player'");
+        }
+        Debug.Log($"Sending player to door of index {spawnIndex}");
+        Debug.Log($"Its global position is {spawns[spawnIndex].transform.position}");
+    }
+
+    public void LoadScene(string sceneName, int doorCode)
     {
         // saves the inventory data to PlayerVars
         if (inventoryController != null) { inventoryController.SaveInventory(); }       
 
+        spawnIndex = doorCode; // used to match where the player spawns with which door the player entered
         SceneManager.LoadScene(sceneName);
 
         // PlayerVars then loads inventory data on start

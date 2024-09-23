@@ -14,13 +14,12 @@ public class Door : MonoBehaviour
 
     // type the name of the scene the player should go to
     [SerializeField] string destination;
-    
+    [SerializeField] int code;
 
     // called by "Interactable" and if the door is unlocked
     public void Use()
     {
-        sceneChanger.LoadScene(destination);
-        //Debug.Log("Player interacted with door and went to another room");
+        sceneChanger.LoadScene(destination, code);
     }
 
     // probably wont be used

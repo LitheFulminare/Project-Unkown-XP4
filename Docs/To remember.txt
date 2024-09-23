@@ -1,0 +1,1 @@
+on the GameManager prefab, there is a list on the SceneChanger. Add the spawns and rename them to match their index on the list
