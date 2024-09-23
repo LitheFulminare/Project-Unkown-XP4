@@ -3667,14 +3667,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Syringe
       objectReference: {fileID: 0}
-    - target: {fileID: 3728380553490648023, guid: 77a0cc07548cb3345af9b9c24defcbbf, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 9051472989178498013, guid: 77a0cc07548cb3345af9b9c24defcbbf, type: 3}
-      propertyPath: item
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 9051472989178498013, guid: 77a0cc07548cb3345af9b9c24defcbbf, type: 3}
       propertyPath: player_interaction
       value: 
