@@ -13,19 +13,7 @@ public class SceneChanger : MonoBehaviour
 
     private void Start()
     {
-        // gets the player object and updates its position to match with the door
-        // throws an error if fails to find it
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            player.SendMessage("UpdatePosition", spawns[spawnIndex].transform.position);
-        }
-        else
-        {
-            Debug.LogError("Player could not be found by using the tag 'Player'");
-        }
-        Debug.Log($"Sending player to door of index {spawnIndex}");
-        Debug.Log($"Its global position is {spawns[spawnIndex].transform.position}");
+        StartCoroutine(SpawnPlayer());
     }
 
     public void LoadScene(string sceneName, int doorCode)
@@ -37,5 +25,25 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(sceneName);
 
         // PlayerVars then loads inventory data on start
+    }
+
+    IEnumerator SpawnPlayer()
+    {
+        // gets the player object and updates its position to match with the door
+        // throws an error if fails to find it
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            player.SendMessage("UpdatePosition", spawns[spawnIndex].transform.position);
+        }
+        else
+        {
+            Debug.LogError("Player could not be found by using the tag 'Player'");
+        }
+
+        Debug.Log($"Sending player to door of index {spawnIndex}");
+        Debug.Log($"Its global position is {spawns[spawnIndex].transform.position}");
+
+        yield return null;
     }
 }
