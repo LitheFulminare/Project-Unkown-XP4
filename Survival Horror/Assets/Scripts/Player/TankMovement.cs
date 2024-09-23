@@ -16,6 +16,12 @@ public class TankMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
+    public void ForceUpdatePosition(Vector3 spawnPosition)
+    {
+        transform.position = spawnPosition;
+        PlayerVars.BlockMovement(false);
+    }
+
     void Update()
     {
         // handles the movement

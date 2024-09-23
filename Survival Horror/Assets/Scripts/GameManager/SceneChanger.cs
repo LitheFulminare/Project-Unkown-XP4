@@ -34,7 +34,8 @@ public class SceneChanger : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
-            player.SendMessage("UpdatePosition", spawns[spawnIndex].transform.position);
+            PlayerVars.BlockMovement(true);
+            player.SendMessage("ForceUpdatePosition", spawns[spawnIndex].transform.position);
         }
         else
         {
