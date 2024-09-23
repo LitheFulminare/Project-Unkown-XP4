@@ -328,15 +328,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283486855}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.04, y: 1.999, z: -8.13}
+  m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.7071066}
+  m_LocalPosition: {x: 5.3339996, y: 1.67, z: 6.7760005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 433682494}
   - {fileID: 1475578495}
   m_Father: {fileID: 1700243146}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!143 &283486858
 CharacterController:
   m_ObjectHideFlags: 0
@@ -687,7 +687,7 @@ Transform:
   m_GameObject: {fileID: 433682493}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1818,7 +1818,7 @@ GameObject:
   - component: {fileID: 996968352}
   - component: {fileID: 996968353}
   m_Layer: 0
-  m_Name: Door 1
+  m_Name: Door 1 (Scene 1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1832,7 +1832,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996968347}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 24.81}
+  m_LocalPosition: {x: 0, y: 0, z: 6.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1840,7 +1840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19.11, y: 2.75}
+  m_AnchoredPosition: {x: 4.48, y: 2.75}
   m_SizeDelta: {x: 2.36, y: 4.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &996968349
@@ -1878,7 +1878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neededItem: 3
   door: {fileID: 996968354}
-  puzzleComplete: 0
+  puzzleComplete: 1
   player_interaction: {fileID: 283486862}
 --- !u!222 &996968352
 CanvasRenderer:
@@ -1953,8 +1953,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneChanger: {fileID: 1143484446}
-  active: 0
-  destination: 
+  active: 1
+  destination: Scene1
 --- !u!1 &1016855705
 GameObject:
   m_ObjectHideFlags: 0
