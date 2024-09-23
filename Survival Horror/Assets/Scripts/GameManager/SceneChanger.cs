@@ -10,7 +10,7 @@ public class SceneChanger : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         // saves the inventory data to PlayerVars
-        inventoryController.SaveInventory();
+        if (inventoryController != null) { inventoryController.SaveInventory(); }       
 
         SceneManager.LoadScene(sceneName);
 
