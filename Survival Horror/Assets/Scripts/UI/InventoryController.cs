@@ -58,7 +58,7 @@ public class InventoryController : MonoBehaviour
         this.itemCount = itemCount;
     }
 
-    // toggles the visibility
+    // toggles the visibility and blocks player movement
     private void toggleInventory()
     {
         if (canvas.activeSelf == true)
@@ -120,7 +120,6 @@ public class InventoryController : MonoBehaviour
         {
             if (item == _itemNeeded)
             {
-                Debug.Log("Correct item"); // do something
                 Manager.currentInteractionObj.SendMessage("SetCompleted");
             }
             else
@@ -132,11 +131,9 @@ public class InventoryController : MonoBehaviour
             toggleInventory();
             
         }
-        
-        //this._itemNeeded = item;
-        //Debug.Log($"Item needed: {_itemNeeded}");
     }
 
+    // makes the InventoryController "aware" of what item the puzzle requires
     private void setItem(Items item)
     {
         this._itemNeeded = item;

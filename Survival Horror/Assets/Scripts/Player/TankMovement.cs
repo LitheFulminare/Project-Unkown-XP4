@@ -18,6 +18,8 @@ public class TankMovement : MonoBehaviour
 
     void Update()
     {
+        // handles the movement
+        // currently this can be stopped by UI elements
         if (!PlayerVars.isMovementBlocked)
         {
             Vector3 moveDir;
@@ -26,7 +28,6 @@ public class TankMovement : MonoBehaviour
             moveDir = transform.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
             controller.Move(moveDir * Time.deltaTime - Vector3.up * 0.1f);
-        }
-        
+        }     
     }
 }

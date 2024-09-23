@@ -13,8 +13,8 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 // https://gamedevbeginner.com/events-and-delegates-in-unity/
 public class OverlayController : MonoBehaviour
 {
-    // used to precache font
-    private static readonly string kPrecacheFontGlyphsString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\\:;\"'<>,.?/ ";
+    // used to precache font //// probably wont be used, disabling 'Include Font Data' seems to have helped
+    //private static readonly string kPrecacheFontGlyphsString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\\:;\"'<>,.?/ ";
 
     public delegate void PickupOverlay(GameObject collectedItem, Items itemName);
     public static PickupOverlay showUI; // this is used to show the overlay when an item is picked
@@ -48,23 +48,19 @@ public class OverlayController : MonoBehaviour
     {
         canvas.SetActive(false);
 
-        //using UnityEngine.EventSystems
-        //EventSystemManager.currentSystem.SetSelectedGameObject(defaultButton, null);
-
         showUI = setActive;
         interactOverlay = setActiveInteract;
     }
 
-    void PreCacheFontData()
-    {
-        redText.text = kPrecacheFontGlyphsString;
-    }
+    // used to precache font, prob wont be used
+    //void PreCacheFontData()
+    //{
+    //    redText.text = kPrecacheFontGlyphsString;
+    //}
 
     // called by 'collectable', shows the pickup overlay
     public void setActive(GameObject collectedItem, Items itemName)
     {
-        //collectedItemName = collectedItem.name;
-        //Debug.Log(itemName);
 
         canvas.SetActive(true);
         this.collectedItem = collectedItem;
@@ -94,7 +90,6 @@ public class OverlayController : MonoBehaviour
         this.itemNeeded = itemNeeded;
 
         PlayerVars.BlockMovement(true);
-        //playerMovementController.BlockMovement(true);
 
         if (itemNeeded == Items.keyDoor1)
         {
@@ -108,6 +103,7 @@ public class OverlayController : MonoBehaviour
 
     // called by the 'confirm' and 'deny' buttons the pickup screen overlay
     // 'confirm' returns true and 'deny' returns false
+    // also either of the buttons blocks player movements
     public void ButtonAction(bool playerAction)
     {
         if (_isCollectable)
@@ -119,7 +115,6 @@ public class OverlayController : MonoBehaviour
                 itemToDestroy.SendMessage("collected");
             }
         }
-
         else if (!_isCollectable)
         {
             if (playerAction)
@@ -129,10 +124,6 @@ public class OverlayController : MonoBehaviour
                 InventoryController.callInventory();
             }
         }
-
-        PlayerVars.BlockMovement(false);
-        
+        PlayerVars.BlockMovement(false);      
     }
-
-
 }

@@ -30,7 +30,7 @@ public class PlayerVars : MonoBehaviour
         }
     }
 
-    // used by inventory controller and other UI things to block player movement
+    // used UI elements to block player movement
     public static void BlockMovement(bool par)
     {
         isMovementBlocked = par;
