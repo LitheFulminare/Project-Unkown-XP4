@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CollectableController : MonoBehaviour
 {
-    List<GameObject> collectables = new List<GameObject>();
+    public List<GameObject> collectables = new List<GameObject>();
     private bool itemsAdded = false;
 
     private void Start()
@@ -18,8 +18,9 @@ public class CollectableController : MonoBehaviour
         {
             collectables.AddRange(GameObject.FindGameObjectsWithTag("Collectable"));
             itemsAdded = true;
+            Debug.Log("Collectables added for the first time");
         }
         
-        Debug.Log($"Elements in 'collectables: {collectables.Count}");
+        Debug.Log($"Elements in 'collectables': {collectables.Count}");
     }
 }

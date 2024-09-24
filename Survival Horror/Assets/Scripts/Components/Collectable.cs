@@ -11,7 +11,7 @@ public class Collectable : MonoBehaviour, IInteractable
     public delegate void ConfirmAction(bool playerConfirmed, GameObject itemChecker);
     public static ConfirmAction confirm;
 
-    
+    public bool isDestroyed = true;
 
     // video about enums
     // https://learn.unity.com/tutorial/enumerations#
@@ -55,6 +55,7 @@ public class Collectable : MonoBehaviour, IInteractable
     {
         // find an empty space and adds item to the stack, then it self destructs
         InventoryController.itemReceiver(item);
+        isDestroyed = true;
         selfDestruct();
     }
 }
