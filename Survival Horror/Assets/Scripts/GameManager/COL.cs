@@ -25,6 +25,8 @@ public class COL : MonoBehaviour
             GameObject item = GameObject.Find(name);
             item.SendMessage("selfDestruct"); // I violeted a naming convention here, but whatever
         }
+
+        Debug.Log($"Items destroyed: {destroyedItems.Count}");
     }
 
     // called by 'Collectable' in 'Collected()', receives the gameObject name
