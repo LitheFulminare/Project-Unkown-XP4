@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class COL : MonoBehaviour
 {
+
     [SerializeField] List<Collectable> collectables = new List<Collectable>();
 
     public static bool[] collectedItems;
@@ -17,10 +18,12 @@ public class COL : MonoBehaviour
     {
         collectedItems = new bool[collectables.Count];
 
-        for (int i = 0; i > collectables.Count; i++)
+        Debug.Log($"Items in the collectable list: {collectables.Count}");
+        for (int i = 0; i < collectables.Count; i++)
         {
             // gets whether the item got destroyed before and stores the data
             collectedItems[i] = collectables[i].isDestroyed;
+            Debug.Log($"Item {i} collect status: {collectables[i].isDestroyed}");
         }
     }
 }

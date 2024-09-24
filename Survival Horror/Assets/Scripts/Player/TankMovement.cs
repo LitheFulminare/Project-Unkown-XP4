@@ -18,8 +18,8 @@ public class TankMovement : MonoBehaviour
         if (PlayerVars.spawnPosition != Vector3.zero )
         {
             transform.position = PlayerVars.spawnPosition;
-            Debug.Log($"Spawn position: {PlayerVars.spawnPosition}");
-            Debug.Log($"Player position: {transform.position}");
+            //Debug.Log($"Spawn position: {PlayerVars.spawnPosition}");
+            //Debug.Log($"Player position: {transform.position}");
         }        
     }
 

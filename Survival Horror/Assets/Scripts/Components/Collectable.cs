@@ -11,7 +11,7 @@ public class Collectable : MonoBehaviour, IInteractable
     public delegate void ConfirmAction(bool playerConfirmed, GameObject itemChecker);
     public static ConfirmAction confirm;
 
-    public bool isDestroyed = true;
+    public bool isDestroyed = false;
 
     // video about enums
     // https://learn.unity.com/tutorial/enumerations#
