@@ -37,4 +37,9 @@ public class PlayerVars : MonoBehaviour
     {
         isMovementBlocked = par;
     }
+
+    public static void UpdateSpawnPosition(Vector3 newPos)
+    {
+        spawnPosition = newPos;
+    }
 }

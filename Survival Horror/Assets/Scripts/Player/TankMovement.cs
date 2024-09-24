@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TankMovement : MonoBehaviour
 {
@@ -14,8 +15,15 @@ public class TankMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        if (PlayerVars.spawnPosition != Vector3.zero )
+        {
+            transform.position = PlayerVars.spawnPosition;
+            Debug.Log($"Spawn position: {PlayerVars.spawnPosition}");
+            Debug.Log($"Player position: {transform.position}");
+        }        
     }
 
+    // called by a coroutine on sceneChanger
     public void ForceUpdatePosition(Vector3 spawnPosition)
     {
         transform.position = spawnPosition;

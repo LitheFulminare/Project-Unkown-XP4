@@ -13,8 +13,10 @@ public class SceneChanger : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnPlayer());
+        //StartCoroutine(SpawnPlayer());
         //PlayerVars.spawnPosition = spawns[spawnIndex].transform.position;
+        Debug.Log($"Going to {spawns[spawnIndex].name}, coordinates {spawns[spawnIndex].transform.position}");
+        PlayerVars.UpdateSpawnPosition(spawns[spawnIndex].transform.position);
     }
 
     public void LoadScene(string sceneName, int doorCode)
