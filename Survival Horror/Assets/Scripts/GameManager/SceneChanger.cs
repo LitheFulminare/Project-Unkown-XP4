@@ -32,6 +32,8 @@ public class SceneChanger : MonoBehaviour
         // PlayerVars then loads inventory data on start
     }
 
+
+    // not in use
     IEnumerator SpawnPlayer()
     {
         // gets the player object and updates its position to match with the door

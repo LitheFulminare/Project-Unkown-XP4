@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerVars : MonoBehaviour
 {
-    // these only get updated when SceneChanger calls InventoryController
+    // these only get updated when 'SceneChanger' calls InventoryController
     public static Items[] itemList;
     public static int[] itemCount;
 
@@ -12,6 +12,7 @@ public class PlayerVars : MonoBehaviour
     // can only be set by the public static funcion "BlocMovement"
     public static bool isMovementBlocked { get; private set; } = false;
 
+    // set by 'SceneChanger'
     public static Vector3 spawnPosition;
 
     [SerializeField] InventoryController inventoryController;
@@ -38,6 +39,7 @@ public class PlayerVars : MonoBehaviour
         isMovementBlocked = par;
     }
 
+    // Called by 'SceneChanger' after loading the new scene
     public static void UpdateSpawnPosition(Vector3 newPos)
     {
         spawnPosition = newPos;

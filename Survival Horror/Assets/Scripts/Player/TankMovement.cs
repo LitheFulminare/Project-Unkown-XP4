@@ -17,7 +17,8 @@ public class TankMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();          
     }
 
-    // called by a coroutine on sceneChanger
+    // called by a coroutine on sceneChanger 
+    // not in use rn
     public void ForceUpdatePosition(Vector3 spawnPosition)
     {
         transform.position = spawnPosition;

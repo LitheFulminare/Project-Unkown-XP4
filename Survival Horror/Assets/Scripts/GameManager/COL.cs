@@ -5,19 +5,14 @@ using UnityEngine;
 
 public class COL : MonoBehaviour
 {
-
+    // this doesnt have any used right now, but who knows?
     [SerializeField] List<Collectable> collectables = new List<Collectable>();
 
+    // keeps track of destroyed items
     public static List<string> destroyedItems = new List<string>();
-
-    public static List<bool> collectedItems = new List<bool>();
-
-    private bool listGenerated = false;
 
     private void Start()
     {
-        CheckRemainingItems();
-
         CheckDestroyedItems();
     }
 
@@ -31,28 +26,8 @@ public class COL : MonoBehaviour
             item.SendMessage("selfDestruct"); // I violeted a naming convention here, but whatever
         }
     }
-        
 
-    private void CheckRemainingItems()
-    {
-
-        Debug.Log($"Items in the collectable list: {collectables.Count}");
-
-        for (int i = 0; i < collectables.Count; i++)
-        {
-            // gets whether the item got destroyed before and stores the data
-            if (!listGenerated)
-            {
-                //Debug.Log("list generated for the first time");
-                collectedItems.Add(collectables[i].isDestroyed);
-            }
-            
-            Debug.Log($"Item {i} collect status: {collectedItems[i]}");
-        }
-
-        listGenerated = true;
-    }
-
+    // called by 'Collectable' in 'Collected()', receives the gameObject name
     public static void AddDestroyedItem(string name)
     {
         destroyedItems.Add(name);

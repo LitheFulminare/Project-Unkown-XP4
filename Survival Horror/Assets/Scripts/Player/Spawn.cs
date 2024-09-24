@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    //public void UpdatePosition(Vector3 spawnPosition)
-    //{
-    //    gameObject.transform.position = spawnPosition;
-    //}
 
     private void Start()
     {
@@ -21,6 +17,8 @@ public class Spawn : MonoBehaviour
             //    transform.position = PlayerVars.spawnPosition;
             //}
 
+            // sets the position to the spawn position
+
             transform.position = PlayerVars.spawnPosition;
 
             Debug.Log($"Spawn position: {PlayerVars.spawnPosition}");
@@ -29,6 +27,7 @@ public class Spawn : MonoBehaviour
 
             transform.position = PlayerVars.spawnPosition;
 
+            // this line right here is causing a bug
             //PlayerVars.BlockMovement(false);
         }   
     }  
