@@ -14,9 +14,7 @@ public class TankMovement : MonoBehaviour
 
     void Start()
     {
-        controller = GetComponent<CharacterController>();
-
-             
+        controller = GetComponent<CharacterController>();          
     }
 
     // called by a coroutine on sceneChanger

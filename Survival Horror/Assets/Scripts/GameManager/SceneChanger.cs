@@ -15,12 +15,14 @@ public class SceneChanger : MonoBehaviour
     {
         //StartCoroutine(SpawnPlayer());
         //PlayerVars.spawnPosition = spawns[spawnIndex].transform.position;
-        //Debug.Log($"Going to {spawns[spawnIndex].name}, coordinates {spawns[spawnIndex].transform.position}");
+        Debug.Log($"Going to {spawns[spawnIndex].name}, coordinates {spawns[spawnIndex].transform.position}");
         PlayerVars.UpdateSpawnPosition(spawns[spawnIndex].transform.position);
     }
 
     public void LoadScene(string sceneName, int doorCode)
     {
+        PlayerVars.BlockMovement(true);
+
         // saves the inventory data to PlayerVars
         if (inventoryController != null) { inventoryController.SaveInventory(); }       
 
