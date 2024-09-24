@@ -12,6 +12,8 @@ public class PlayerVars : MonoBehaviour
     // can only be set by the public static funcion "BlocMovement"
     public static bool isMovementBlocked { get; private set; } = false;
 
+    public static Vector3 spawnPosition;
+
     [SerializeField] InventoryController inventoryController;
 
     private void Start()

@@ -20,6 +20,10 @@ public class TankMovement : MonoBehaviour
     {
         transform.position = spawnPosition;
         PlayerVars.BlockMovement(false);
+        Debug.Log("ForceUpdatePosition was successfully called");
+        Debug.Log($"spawnPosition value: {spawnPosition}");
+        Debug.Log($"new global position: {transform.position}");
+        Debug.Log($"new local position: {transform.localPosition}");
     }
 
     void Update()

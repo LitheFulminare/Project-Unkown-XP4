@@ -14,6 +14,7 @@ public class SceneChanger : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnPlayer());
+        //PlayerVars.spawnPosition = spawns[spawnIndex].transform.position;
     }
 
     public void LoadScene(string sceneName, int doorCode)
@@ -35,16 +36,15 @@ public class SceneChanger : MonoBehaviour
         if (player != null)
         {
             PlayerVars.BlockMovement(true);
+            Debug.Log($"Sending player to door of index {spawnIndex}");
+            Debug.Log($"Going to: {spawns[spawnIndex].name}");
+            Debug.Log($"Its global position is {spawns[spawnIndex].transform.position}");
             player.SendMessage("ForceUpdatePosition", spawns[spawnIndex].transform.position);
         }
         else
         {
             Debug.LogError("Player could not be found by using the tag 'Player'");
         }
-
-        Debug.Log($"Sending player to door of index {spawnIndex}");
-        Debug.Log($"Its global position is {spawns[spawnIndex].transform.position}");
-
         yield return null;
     }
 }
