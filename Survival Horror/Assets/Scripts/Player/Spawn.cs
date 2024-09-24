@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public void UpdatePosition(Vector3 spawnPosition)
+    //public void UpdatePosition(Vector3 spawnPosition)
+    //{
+    //    gameObject.transform.position = spawnPosition;
+    //}
+
+    private void Start()
     {
-        gameObject.transform.position = spawnPosition;
-    }
+        if (PlayerVars.spawnPosition != Vector3.zero )
+        {
+            transform.position = PlayerVars.spawnPosition;
+            Debug.Log($"Spawn position: {PlayerVars.spawnPosition}");
+            Debug.Log($"Player position: {transform.position}");
+        }   
+    }  
 }

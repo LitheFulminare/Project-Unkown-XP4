@@ -15,12 +15,8 @@ public class TankMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        if (PlayerVars.spawnPosition != Vector3.zero )
-        {
-            transform.position = PlayerVars.spawnPosition;
-            //Debug.Log($"Spawn position: {PlayerVars.spawnPosition}");
-            //Debug.Log($"Player position: {transform.position}");
-        }        
+
+             
     }
 
     // called by a coroutine on sceneChanger
