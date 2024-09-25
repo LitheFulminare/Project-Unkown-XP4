@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     [SerializeField] InventoryController inventoryController;
+    [SerializeField] COL col;
     
     [SerializeField] List<GameObject> spawns = new List<GameObject>();
 
@@ -15,6 +16,7 @@ public class SceneChanger : MonoBehaviour
     {
         //StartCoroutine(SpawnPlayer());
         //PlayerVars.spawnPosition = spawns[spawnIndex].transform.position;
+
         Debug.Log($"Going to {spawns[spawnIndex].name}, coordinates {spawns[spawnIndex].transform.position}");
         PlayerVars.UpdateSpawnPosition(spawns[spawnIndex].transform.position);
     }
@@ -24,7 +26,12 @@ public class SceneChanger : MonoBehaviour
         PlayerVars.BlockMovement(true);
 
         // saves the inventory data to PlayerVars
-        if (inventoryController != null) { inventoryController.SaveInventory(); }       
+        if (inventoryController != null) { inventoryController.SaveInventory(); }
+        else { Debug.LogError("SceneChanger could not find 'inventoryController'"); }
+
+        // saves destroyed items on PlayerVars
+        if (col != null) { col.SaveList(); }
+        else { Debug.LogError("SceneChanger could not find 'col'"); }
 
         spawnIndex = doorCode; // used to match where the player spawns with which door the player entered
         SceneManager.LoadScene(sceneName);

@@ -21,12 +21,18 @@ public class PlayerVars : MonoBehaviour
     // create a index for each scene and use it to create this and access this
     public static List<List<GameObject>> destroyedItemsPerRoom = new List<List<GameObject>>();
 
+    public static List<string> destroyedItemsRoom1 = new List<string>();
+    public static List<string> destroyedItemsRoom2 = new List<string>();
+
     private void Start()
     {
         //GetSceneDestroyedItems();
 
         // loads the inventory data if there is any
         // this is mainly used when switch scenes
+
+        Debug.Log($"destroyedItemsRoom1.Count: {destroyedItemsRoom1.Count}");
+
         if (itemList == null && itemCount == null)
         {
             //Debug.Log("The inventory is empty");
@@ -51,8 +57,21 @@ public class PlayerVars : MonoBehaviour
         spawnPosition = newPos;
     }
 
+    public static void SaveDestroyedItems(List<string> destroyedItems, int sceneIndex)
+    {
+        switch (sceneIndex) // destroyedItemsRoom
+        {
+            case 0: destroyedItemsRoom1.AddRange(destroyedItems); break;
+            case 1: destroyedItemsRoom2.AddRange(destroyedItems); break;
+        }
+    }
+
     private void GetSceneDestroyedItems(List<GameObject> destroyedItems, int sceneIndex)
     {
-        destroyedItemsPerRoom.Add(destroyedItems);
-    }
+        //switch(sceneIndex) // destroyedItemsRoom
+        //{
+        //    case 0: destroyedItemsRoom1.AddRange(destroyedItems); break;
+        //    case 1: destroyedItemsRoom2.AddRange(destroyedItems); break;
+        //}
+    } 
 }

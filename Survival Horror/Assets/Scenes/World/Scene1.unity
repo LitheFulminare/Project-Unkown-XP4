@@ -3208,6 +3208,7 @@ MonoBehaviour:
   - {fileID: 1714374386}
   - {fileID: 2002877766}
   - {fileID: 1096847818}
+  sceneIndex: 0
 --- !u!1 &1558524953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3843,6 +3844,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3066471780158199710, guid: e43070ca09a97ec4a8968dc86ce6105e, type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 1507681656}
     - target: {fileID: 3066471780158199710, guid: e43070ca09a97ec4a8968dc86ce6105e, type: 3}
       propertyPath: spawns.Array.size
       value: 2

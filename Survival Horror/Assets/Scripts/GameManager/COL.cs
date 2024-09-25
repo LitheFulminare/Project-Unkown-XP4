@@ -38,4 +38,9 @@ public class COL : MonoBehaviour // this will mainly keep track of destroyed ite
     {
         destroyedItems.Add(name);
     }
+
+    public void SaveList()
+    {
+        PlayerVars.SaveDestroyedItems(destroyedItems, sceneIndex);
+    }
 }
