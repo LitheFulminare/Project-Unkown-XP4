@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     [SerializeField] InventoryController inventoryController;
-    [SerializeField] COL col;
+    [SerializeField] CollectableManager collectableManager;
     
     [SerializeField] List<GameObject> spawns = new List<GameObject>();
 
@@ -29,7 +29,7 @@ public class SceneChanger : MonoBehaviour
         else { Debug.LogError("SceneChanger could not find 'inventoryController'"); }
 
         // saves destroyed items on PlayerVars
-        if (col != null) { col.SaveList(); }
+        if (collectableManager != null) { collectableManager.SaveList(); }
         else { Debug.LogError("SceneChanger could not find 'col'"); }
 
         spawnIndex = doorCode; // used to match where the player spawns with which door the player entered

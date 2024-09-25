@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryController: {fileID: 6429811021614493775}
+  collectableManager: {fileID: 7814416965159869292}
   spawns: []
 --- !u!1001 &1869714740758184173
 PrefabInstance:
@@ -686,3 +687,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3961103227134780399, guid: e92759dd94b52564dbca1794becd1095, type: 3}
   m_PrefabInstance: {fileID: 8081130930944372017}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7814416965159869292 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2042262686745474653, guid: e92759dd94b52564dbca1794becd1095, type: 3}
+  m_PrefabInstance: {fileID: 8081130930944372017}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5badd032b3461054b9fbe1e17083b2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

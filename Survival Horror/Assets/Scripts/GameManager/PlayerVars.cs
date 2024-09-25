@@ -22,11 +22,14 @@ public class PlayerVars : MonoBehaviour
     // create a index for each scene and use it to create this and access this
     public static List<List<GameObject>> destroyedItemsPerRoom = new List<List<GameObject>>();
 
-    // later we'll check if there is any collectable left on the room
-    // having individual lists will prob be the best alternative
+    // stores what items were destroyed
+    // there is a list for each room
     public static List<string> destroyedItemsRoom1 = new List<string>();
     public static List<string> destroyedItemsRoom2 = new List<string>();
     public static List<string> destroyedItemsRoom3 = new List<string>();
+
+    // create Enums for room status: unexplored, partially explored and completely explored
+    // this will be used to display stuff on the map
 
     private void Start()
     {
@@ -47,12 +50,12 @@ public class PlayerVars : MonoBehaviour
         }
 
         // loads the destroyed items on the collectable manager
-        COL.destroyedItems.Clear();
+        CollectableManager.destroyedItems.Clear();
         switch (SceneManager.GetActiveScene().name)
         {       
-            case "Scene1": COL.destroyedItems.AddRange(destroyedItemsRoom1); break;
-            case "Scene2": COL.destroyedItems.AddRange(destroyedItemsRoom2); break;
-            case "Scene3": COL.destroyedItems.AddRange(destroyedItemsRoom3); break;
+            case "Scene1": CollectableManager.destroyedItems.AddRange(destroyedItemsRoom1); break;
+            case "Scene2": CollectableManager.destroyedItems.AddRange(destroyedItemsRoom2); break;
+            case "Scene3": CollectableManager.destroyedItems.AddRange(destroyedItemsRoom3); break;
         }      
     }
 

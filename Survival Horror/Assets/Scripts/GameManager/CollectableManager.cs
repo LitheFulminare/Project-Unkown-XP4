@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class COL : MonoBehaviour // this will mainly keep track of destroyed items and destroy those on start
+public class CollectableManager : MonoBehaviour // this will mainly keep track of destroyed items and destroy those on start
 {
     // keeps track of destroyed items
     // gets updated by 'PlayerVars' on start
