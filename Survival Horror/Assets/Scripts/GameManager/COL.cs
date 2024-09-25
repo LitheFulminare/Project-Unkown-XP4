@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class COL : MonoBehaviour // this will mainly keep track of destroyed items and destroy those on start
 {
@@ -41,6 +42,6 @@ public class COL : MonoBehaviour // this will mainly keep track of destroyed ite
 
     public void SaveList()
     {
-        PlayerVars.SaveDestroyedItems(destroyedItems, sceneIndex);
+        PlayerVars.SaveDestroyedItems(destroyedItems, SceneManager.GetActiveScene().name);
     }
 }
