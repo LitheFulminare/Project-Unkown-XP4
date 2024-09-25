@@ -11,9 +11,9 @@ public class Spawn : MonoBehaviour
         {
             transform.position = PlayerVars.spawnPosition;
 
-            Debug.Log($"Spawn position: {PlayerVars.spawnPosition}");
+            //Debug.Log($"Spawn position: {PlayerVars.spawnPosition}");
 
-            Debug.Log($"Player position: {transform.position}");
+            //Debug.Log($"Player position: {transform.position}");
 
             transform.position = PlayerVars.spawnPosition;
 

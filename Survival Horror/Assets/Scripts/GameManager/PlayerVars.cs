@@ -56,7 +56,8 @@ public class PlayerVars : MonoBehaviour
             case "Scene1": CollectableManager.destroyedItems.AddRange(destroyedItemsRoom1); break;
             case "Scene2": CollectableManager.destroyedItems.AddRange(destroyedItemsRoom2); break;
             case "Scene3": CollectableManager.destroyedItems.AddRange(destroyedItemsRoom3); break;
-        }      
+        }
+        Debug.Log($"Loading {SceneManager.GetActiveScene().name} info");
     }
 
     // used by UI elements and some other things to block player movement
@@ -73,11 +74,11 @@ public class PlayerVars : MonoBehaviour
 
     public static void SaveDestroyedItems(List<string> destroyedItems, string sceneName)
     {
-        switch (sceneName) // destroyedItemsRoom
+        switch (sceneName)
         {
-            case "Scene1": destroyedItemsRoom1.AddRange(destroyedItems); break;
-            case "Scene2": destroyedItemsRoom2.AddRange(destroyedItems); break;
-            case "Scene3": destroyedItemsRoom3.AddRange(destroyedItems); break;
+            case "Scene1": destroyedItemsRoom1.Clear(); destroyedItemsRoom1.AddRange(destroyedItems); break;
+            case "Scene2": destroyedItemsRoom2.Clear();  destroyedItemsRoom2.AddRange(destroyedItems); break;
+            case "Scene3": destroyedItemsRoom3.Clear();  destroyedItemsRoom3.AddRange(destroyedItems); break;
         }
     }
 }

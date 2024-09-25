@@ -23,7 +23,7 @@ public class CollectableManager : MonoBehaviour // this will mainly keep track o
         foreach (var name in destroyedItems)
         {
             GameObject item = GameObject.Find(name);
-            item.SendMessage("selfDestruct"); // I violeted a naming convention here, but whatever
+            if (item != null) { item.SendMessage("selfDestruct"); } // I violeted a naming convention here, but whatever
         }
     }
 

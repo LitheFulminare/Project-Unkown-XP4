@@ -16,7 +16,7 @@ public class SceneChanger : MonoBehaviour
     {
         //StartCoroutine(SpawnPlayer());
 
-        Debug.Log($"Going to {spawns[spawnIndex].name}, coordinates {spawns[spawnIndex].transform.position}");
+        //Debug.Log($"Going to {spawns[spawnIndex].name}, coordinates {spawns[spawnIndex].transform.position}");
         PlayerVars.UpdateSpawnPosition(spawns[spawnIndex].transform.position);
     }
 
