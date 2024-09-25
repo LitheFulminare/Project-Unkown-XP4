@@ -17,18 +17,6 @@ public class TankMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();          
     }
 
-    // called by a coroutine on sceneChanger 
-    // not in use rn
-    public void ForceUpdatePosition(Vector3 spawnPosition)
-    {
-        transform.position = spawnPosition;
-        PlayerVars.BlockMovement(false);
-        Debug.Log("ForceUpdatePosition was successfully called");
-        Debug.Log($"spawnPosition value: {spawnPosition}");
-        Debug.Log($"new global position: {transform.position}");
-        Debug.Log($"new local position: {transform.localPosition}");
-    }
-
     void Update()
     {
         // handles the movement

@@ -4,14 +4,18 @@ If the player has no empty space on the inventory, does not show the pickup over
 if (hasSpace) { code_here }
 hasSpace is for loop checking if there is empty
 
-Make caracter uncontrollabe when any menu/ui stuff is on screen
+Block interaction while inventory is being shown
+
+Rn the scene data is on PlayerVars, but it'd made more sense if it had its own class
 
 Inventory -> use, discard, inspect (not needed now)
 
-Save game manager, PickupOverlay and InventoryController as one prefab
+"CollectableController" should be replaced by COL on the GameManager prefab and fix some naming mistakes
 
-Fix massive lag spike when loading the text font for the first time
+Implement the DestroyedItems logic on the puzzles so they dont reset when the scene reloads
 
+On "Spawn" unlocking the player movement is causing issues, the bug is probably on "TankMovement"
+ 
 >> DONE
 
 Fix cant collect second ammo
@@ -24,3 +28,9 @@ New screen similar to PickupOverlay to show dialoge, like (This can't be used he
 Use playerVars to determine how much of each item the player has on the inventory. (used a list instead)
 
 Scene change -> save and load inventory state
+
+Fix massive lag spike when loading the text font for the first time
+
+Save game manager, PickupOverlay and InventoryController as one prefab
+
+Make caracter uncontrollabe when any menu/ui stuff is on screen

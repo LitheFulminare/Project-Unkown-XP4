@@ -43,14 +43,11 @@ public class PlayerVars : MonoBehaviour
         }
         else
         {
-            //Debug.Log($"First item on the inventory: {itemList[0]}");
-
             inventoryController.LoadInventory(itemList, itemCount);
         }
 
-        // loads the destroyed items
+        // loads the destroyed items on the collectable manager
         COL.destroyedItems.Clear();
-        Debug.Log($"Current active scene: {SceneManager.GetActiveScene().name}");
         switch (SceneManager.GetActiveScene().name)
         {       
             case "Scene1": COL.destroyedItems.AddRange(destroyedItemsRoom1); break;
@@ -59,7 +56,7 @@ public class PlayerVars : MonoBehaviour
         }      
     }
 
-    // used UI elements to block player movement
+    // used by UI elements and some other things to block player movement
     public static void BlockMovement(bool par)
     {
         isMovementBlocked = par;
@@ -80,21 +77,4 @@ public class PlayerVars : MonoBehaviour
             case "Scene3": destroyedItemsRoom3.AddRange(destroyedItems); break;
         }
     }
-
-    private void SceneNameToIndex(string name)
-    {
-        switch(SceneManager.GetActiveScene().name)
-        {
-            case "Scene1": break;
-        }
-    }
-
-    private void GetSceneDestroyedItems(List<GameObject> destroyedItems, int sceneIndex)
-    {
-        //switch(sceneIndex) // destroyedItemsRoom
-        //{
-        //    case 0: destroyedItemsRoom1.AddRange(destroyedItems); break;
-        //    case 1: destroyedItemsRoom2.AddRange(destroyedItems); break;
-        //}
-    } 
 }
