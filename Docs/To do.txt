@@ -10,8 +10,6 @@ Rn the scene data is on PlayerVars, but it'd made more sense if it had its own c
 
 Inventory -> use, discard, inspect (not needed now)
 
-"CollectableController" should be replaced by COL on the GameManager prefab and fix some naming mistakes
-
 Implement the DestroyedItems logic on the puzzles so they dont reset when the scene reloads
 
 On "Spawn" unlocking the player movement is causing issues, the bug is probably on "TankMovement"
@@ -19,6 +17,8 @@ On "Spawn" unlocking the player movement is causing issues, the bug is probably 
 Cleanup, there are some stuff on scripts and in the assets folder that arent being used
  
 >> DONE
+
+"CollectableController" should be replaced by COL on the GameManager prefab and fix some naming mistakes
 
 Fix cant collect second ammo
 pass the gameobject as an argument and call only the function belonging to that gameobject
