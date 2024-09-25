@@ -7,17 +7,13 @@ using UnityEngine.SceneManagement;
 public class CollectableManager : MonoBehaviour // this will mainly keep track of destroyed items and destroy those on start
 {
     // keeps track of destroyed items
-    // gets updated by 'PlayerVars' on start
+    // gets updated by 'WorldVars' on start
     public static List<string> destroyedItems = new List<string>();
 
-    private void Start()
-    {
-        CheckDestroyedItems();
-    }
-
+    // Called by 'WorldVars' after loading the destroyed items list
     // prevents items from respawning
     // destroys the items in the list
-    private void CheckDestroyedItems()
+    public static void CheckDestroyedItems()
     {
         // gets every item that was collected previously and destroys them when the scene reloads
         foreach (var name in destroyedItems)
@@ -37,6 +33,6 @@ public class CollectableManager : MonoBehaviour // this will mainly keep track o
     // sends what items were destroyed to PlayerVars to make the data persistent
     public void SaveList()
     {
-        PlayerVars.SaveDestroyedItems(destroyedItems, SceneManager.GetActiveScene().name);
+        WorldVars.SaveDestroyedItems(destroyedItems, SceneManager.GetActiveScene().name);
     }
 }
