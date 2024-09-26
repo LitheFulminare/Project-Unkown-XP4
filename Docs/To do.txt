@@ -6,8 +6,6 @@ hasSpace is for loop checking if there is empty
 
 Block interaction while inventory is being shown
 
-Rn the scene data is on PlayerVars, but it'd made more sense if it had its own class
-
 Inventory -> use, discard, inspect (not needed now)
 
 Implement the DestroyedItems logic on the puzzles so they dont reset when the scene reloads
@@ -18,7 +16,11 @@ Cleanup, there are some stuff on scripts and in the assets folder that arent bei
  
 >> DONE
 
+Scene data now has its own class, WorldVars
+
 "CollectableController" should be replaced by COL on the GameManager prefab and fix some naming mistakes
+
+Scene change -> save and load inventory state
 
 Fix cant collect second ammo
 pass the gameobject as an argument and call only the function belonging to that gameobject
@@ -28,8 +30,6 @@ Use the Icon prefab i created on the UI folder, not the one on the scene.
 New screen similar to PickupOverlay to show dialoge, like (This can't be used here. The door was unlocked. Etc)
 
 Use playerVars to determine how much of each item the player has on the inventory. (used a list instead)
-
-Scene change -> save and load inventory state
 
 Fix massive lag spike when loading the text font for the first time
 
