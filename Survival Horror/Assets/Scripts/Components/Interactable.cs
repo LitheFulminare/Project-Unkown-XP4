@@ -43,7 +43,7 @@ public class Interactable : MonoBehaviour, IInteractable
         }
     }
 
-    // currently being called only by "InventoryController"
+    // currently being called only by "InventoryController" and "PuzzleManager"
     // sets the puzzle as "complete" and wont interact with this anymore
     // ex.: the player will interact with the door instead of interacting with the door puzzle
     public void SetCompleted()
