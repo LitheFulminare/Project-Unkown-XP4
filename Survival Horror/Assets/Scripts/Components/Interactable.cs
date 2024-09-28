@@ -49,6 +49,7 @@ public class Interactable : MonoBehaviour, IInteractable
     public void SetCompleted()
     {
         puzzleComplete = true;
+        PuzzleManager.AddCompletedPuzzle(gameObject.name); // marks this puzzle as complete, so it won't reset when the scene reloads
     }
 
     // this probably wont be used

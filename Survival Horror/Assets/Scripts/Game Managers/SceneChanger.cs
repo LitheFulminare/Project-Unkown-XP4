@@ -7,6 +7,7 @@ public class SceneChanger : MonoBehaviour
 {
     [SerializeField] InventoryController inventoryController;
     [SerializeField] CollectableManager collectableManager;
+    [SerializeField] PuzzleManager puzzleManager;
     
     [SerializeField] List<GameObject> spawns = new List<GameObject>();
 
@@ -24,13 +25,17 @@ public class SceneChanger : MonoBehaviour
     {
         PlayerVars.BlockMovement(true);
 
-        // saves the inventory data to PlayerVars
+        // saves the inventory data on PlayerVars
         if (inventoryController != null) { inventoryController.SaveInventory(); }
         else { Debug.LogError("SceneChanger could not find 'inventoryController'"); }
 
-        // saves destroyed items on PlayerVars
+        // saves destroyed items on WorldVars
         if (collectableManager != null) { collectableManager.SaveList(); }
-        else { Debug.LogError("SceneChanger could not find 'col'"); }
+        else { Debug.LogError("SceneChanger could not find 'collectableManager'"); }
+
+        // saves completed puzzles on WorldVars
+        if (puzzleManager != null) { puzzleManager.SaveList(); }
+        else { Debug.LogError("SceneChanger could not find 'puzzleManager"); }
 
         spawnIndex = doorCode; // used to match where the player spawns with which door the player entered
         SceneManager.LoadScene(sceneName);

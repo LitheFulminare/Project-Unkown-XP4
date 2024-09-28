@@ -16,21 +16,21 @@ public class CollectableManager : MonoBehaviour // this will mainly keep track o
     public static void CheckDestroyedItems()
     {
         // gets every item that was collected previously and destroys them when the scene reloads
-        foreach (var name in destroyedItems)
+        foreach (var itemName in destroyedItems)
         {
-            GameObject item = GameObject.Find(name);
+            GameObject item = GameObject.Find(itemName);
             if (item != null) { item.SendMessage("selfDestruct"); } // I violeted a naming convention here, but whatever
         }
     }
 
     // called by 'Collectable' in 'Collected()', receives the gameObject name
-    public static void AddDestroyedItem(string name)
+    public static void AddDestroyedItem(string itemName)
     {
-        destroyedItems.Add(name);
+        destroyedItems.Add(itemName);
     }
 
     // called by "SceneChanger" before loading the scene
-    // sends what items were destroyed to PlayerVars to make the data persistent
+    // sends what items were destroyed to WorldVars to make the data persistent
     public void SaveList()
     {
         WorldVars.SaveDestroyedItems(destroyedItems, SceneManager.GetActiveScene().name);

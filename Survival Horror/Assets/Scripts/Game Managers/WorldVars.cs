@@ -19,9 +19,10 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
     void Start()
     {
         LoadDestroyedItems();
+        LoadCompletedPuzzles();
     }
     
-    // Called by 'CollectableManager' after SceneChanger calls it to save the items
+    // called by 'CollectableManager' after SceneChanger calls it to save the items
     public static void SaveDestroyedItems(List<string> destroyedItems, string sceneName)
     {
         switch (sceneName)
@@ -32,7 +33,8 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
         }
     }
 
-    public static void SaveCompletedItems(List<string> completedPuzzles, string sceneName)
+    // same thing as above, but called by 'PuzzleManager'
+    public static void SaveCompletedPuzzles(List<string> completedPuzzles, string sceneName)
     {
         switch (sceneName)
         {
@@ -53,7 +55,22 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
             case "Scene3": CollectableManager.destroyedItems.AddRange(destroyedItemsRoom3); break;
         }
 
-        // calls the CollectableManager to destroy collected items
+        // calls the 'CollectableManager' to destroy collected items
         CollectableManager.CheckDestroyedItems();
+    }
+
+    private void LoadCompletedPuzzles()
+    {
+        // loads the completed puzzles on 'PuzzleManager'
+        PuzzleManager.completedPuzzles.Clear();
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Scene1": PuzzleManager.completedPuzzles.AddRange(completedPuzzlesRoom1); break;
+            case "Scene2": PuzzleManager.completedPuzzles.AddRange(completedPuzzlesRoom2); break;
+            case "Scene3": PuzzleManager.completedPuzzles.AddRange(completedPuzzlesRoom3); break;
+        }
+
+        // calls 'PuzzleManager' to set the puzzles as complete
+        PuzzleManager.CheckCompletePuzzles();
     }
 }
