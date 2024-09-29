@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectable
   - Puzzle
+  - IngameLight
   layers:
   - Default
   - TransparentFX
