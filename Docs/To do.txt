@@ -8,13 +8,15 @@ Block interaction while inventory is being shown
 
 Inventory -> use, discard, inspect (not needed now)
 
-Implement the DestroyedItems logic on the puzzles so they dont reset when the scene reloads
+Cleanup, there are some stuff on scripts and in the assets folder that arent being used
+
+Maybe use Enums to store room data: Unexplored -> Partially explored -> Explored
+ 
+>> DONE
 
 On "Spawn" unlocking the player movement is causing issues, the bug is probably on "TankMovement"
 
-Cleanup, there are some stuff on scripts and in the assets folder that arent being used
- 
->> DONE
+Implement the DestroyedItems logic on the puzzles so they dont reset when the scene reloads
 
 Scene data now has its own class, WorldVars
 
