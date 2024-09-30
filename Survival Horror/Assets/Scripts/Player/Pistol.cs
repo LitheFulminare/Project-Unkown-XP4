@@ -36,38 +36,45 @@ public class Pistol : MonoBehaviour
     // called when the player presses the Fire action
     private void Fire(InputAction.CallbackContext obj)
     {
-        if (_bulletsLoaded > 0)
+        if (!PlayerVars.isMovementBlocked)
         {
-            _bulletsLoaded--;
-            Debug.Log($"Player Fired, {_bulletsLoaded} left in the magazine");
-        }
-        else
-        {
-            Debug.Log("No bullets left");
-        }
+            if (_bulletsLoaded > 0)
+            {
+                _bulletsLoaded--;
+                Debug.Log($"Player Fired, {_bulletsLoaded} left in the magazine");
+            }
+            else
+            {
+                Debug.Log("No bullets left");
+            }
+        }       
     }
 
     // called when the player presses the Reload action
     private void Reload(InputAction.CallbackContext obj)
     {
-        // checks if the player has ammo
-        if (inventoryController.CheckIfPlayerHasItem(Items.pistolAmmo))
+        if (!PlayerVars.isMovementBlocked)
         {
-            int _ammoNeeded = _maxAmmo - _bulletsLoaded;
-
-            if (_ammoNeeded != 0)
+            // checks if the player has ammo
+            if (inventoryController.CheckIfPlayerHasItem(Items.pistolAmmo))
             {
-                Debug.Log($"Ammo needed to fully reload: {_ammoNeeded}");
-                inventoryController.RetrieveItem(Items.pistolAmmo, _ammoNeeded);
+                int _ammoNeeded = _maxAmmo - _bulletsLoaded;
+
+                if (_ammoNeeded != 0)
+                {
+                    Debug.Log($"Ammo needed to fully reload: {_ammoNeeded}");
+                    _bulletsLoaded += inventoryController.RetrieveItem(Items.pistolAmmo, _ammoNeeded);
+                    Debug.Log($"Bullets loaded after reloading {_bulletsLoaded}");
+                }
+                else
+                {
+                    Debug.Log($"Magazine is already full");
+                }
             }
             else
             {
-                Debug.Log($"Magazine is already full");
+                Debug.Log("Player does not have pistol ammo in the inventory");
             }
-        }
-        else
-        {
-            Debug.Log("Player does not have pistol ammo in the inventory");
-        }       
+        }            
     }
 }

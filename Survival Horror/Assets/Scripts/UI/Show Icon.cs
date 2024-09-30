@@ -45,7 +45,14 @@ public class ShowIcon : MonoBehaviour
     // called by ItemSpawner
     public void ChangeText(int qtd)
     {
-        text.text = qtd.ToString();
+        if (qtd != 0)
+        {
+            text.text = qtd.ToString();
+        }
+        else // won't show anything if 'itemCount[i]' is '0'
+        {
+            text.text = "";
+        }      
     }
 
     // called when the icon is pressed by 'Button' component
