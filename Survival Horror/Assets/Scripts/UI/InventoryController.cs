@@ -116,13 +116,40 @@ public class InventoryController : MonoBehaviour
     }
 
     // currently being used by pistol, is only called if the player has pistol ammo
-    private void RemoveItem()
+    public void RetrieveItem(Items itemRequested, int quantityRequested)
     {
+        // goes through each slot to see which one has the item needed
+        for (int i = 0; i < itemList.Length; i++)
+        {
+            // when the item is found
+            if (itemList[i] == itemRequested)
+            {
+                int quantityAvailable = itemCount[i];
 
+                // if the player has enough items
+                if (quantityAvailable >= quantityRequested)
+                {
+                    // subtracts from the inventory what the player needs
+                    itemCount[i] -= quantityRequested;
+
+                    // removes the item from the list if there's none of it left
+                    if (itemCount[i] == 0)
+                    {
+                        itemList[i] = Items.empty;
+                    }
+                }
+
+                // if the player doesn't have enough items
+                else
+                {
+                    
+                }
+            }
+        }
     }
 
     // goes through each inventory slot searching for the item, returns true if found
-    private bool CheckIfPlayerHasItem(Items item)
+    public bool CheckIfPlayerHasItem(Items item)
     {     
         for (int i = 0; i < itemList.Length; i++)
         {
@@ -150,7 +177,6 @@ public class InventoryController : MonoBehaviour
          
             _itemNeeded = Items.empty;
             toggleInventory();
-            
         }
     }
 

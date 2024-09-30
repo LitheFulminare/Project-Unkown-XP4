@@ -10,6 +10,8 @@ public class Pistol : MonoBehaviour
     private static int _maxAmmo = 6; // this probably won't change throughout the game
     private static int _bulletsLoaded = 6;
 
+    public InventoryController inventoryController;
+
     [SerializeField] InputActionReference fire;
     [SerializeField] InputActionReference reload;
 
@@ -25,6 +27,13 @@ public class Pistol : MonoBehaviour
         reload.action.started -= Reload;
     }
 
+    private void Start()
+    {
+        inventoryController = GameObject.FindAnyObjectByType<InventoryController>();
+        if (inventoryController == null ) { Debug.LogError("'Pistol.cs' could not find 'Inventory Controller'"); }
+    }
+
+    // called when the player presses the Fire action
     private void Fire(InputAction.CallbackContext obj)
     {
         if (_bulletsLoaded > 0)
@@ -38,18 +47,27 @@ public class Pistol : MonoBehaviour
         }
     }
 
+    // called when the player presses the Reload action
     private void Reload(InputAction.CallbackContext obj)
     {
-        int _ammoNeeded = _maxAmmo - _bulletsLoaded;
-
-        if (_ammoNeeded != 0)
+        // checks if the player has ammo
+        if (inventoryController.CheckIfPlayerHasItem(Items.pistolAmmo))
         {
-            Debug.Log($"Ammo needed to fully reload: {_ammoNeeded}");
-            _bulletsLoaded = _maxAmmo;
+            int _ammoNeeded = _maxAmmo - _bulletsLoaded;
+
+            if (_ammoNeeded != 0)
+            {
+                Debug.Log($"Ammo needed to fully reload: {_ammoNeeded}");
+                inventoryController.RetrieveItem(Items.pistolAmmo, _ammoNeeded);
+            }
+            else
+            {
+                Debug.Log($"Magazine is already full");
+            }
         }
         else
         {
-            Debug.Log($"Magazine is already full");
-        }
+            Debug.Log("Player does not have pistol ammo in the inventory");
+        }       
     }
 }
