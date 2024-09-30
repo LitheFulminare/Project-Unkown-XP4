@@ -142,6 +142,7 @@ public class InventoryController : MonoBehaviour
                         itemList[i] = Items.empty;
                     }
 
+                    // breaks to avoid going through the for loop unnecessarily
                     break;
                 }
 
@@ -153,6 +154,7 @@ public class InventoryController : MonoBehaviour
                     itemList[i] = Items.empty;
                     itemCount[i] = 0;
 
+                    // breaks to avoid going through the for loop unnecessarily
                     break;
                 }
             }

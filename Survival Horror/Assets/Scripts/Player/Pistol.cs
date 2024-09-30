@@ -30,10 +30,12 @@ public class Pistol : MonoBehaviour
     private void Start()
     {
         inventoryController = GameObject.FindAnyObjectByType<InventoryController>();
-        if (inventoryController == null ) { Debug.LogError("'Pistol.cs' could not find 'Inventory Controller'"); }
+        if (inventoryController == null) { Debug.LogError("'Pistol.cs' could not find 'Inventory Controller'"); }
     }
 
     // called when the player presses the Fire action
+    // now the player only fires if they can move
+    // should also add a "isAiming"
     private void Fire(InputAction.CallbackContext obj)
     {
         if (!PlayerVars.isMovementBlocked)
@@ -41,10 +43,13 @@ public class Pistol : MonoBehaviour
             if (_bulletsLoaded > 0)
             {
                 _bulletsLoaded--;
+                // do fire stuff here
                 Debug.Log($"Player Fired, {_bulletsLoaded} left in the magazine");
             }
+
             else
             {
+                // play empty chamebr sound
                 Debug.Log("No bullets left");
             }
         }       
@@ -73,6 +78,7 @@ public class Pistol : MonoBehaviour
             }
             else
             {
+                // either do nothing or the protagonist tried to reach something in the pocket and finds nothing
                 Debug.Log("Player does not have pistol ammo in the inventory");
             }
         }            
