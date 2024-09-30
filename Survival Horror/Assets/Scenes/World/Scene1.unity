@@ -415,7 +415,6 @@ GameObject:
   - component: {fileID: 283486861}
   - component: {fileID: 283486862}
   - component: {fileID: 283486863}
-  - component: {fileID: 283486864}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -549,18 +548,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractorSource: {fileID: 283486856}
   InteractRange: 4
---- !u!114 &283486864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283486855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 861629b8af74b2645a4e1b1216dd55dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &300322183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8774986003986528742, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
