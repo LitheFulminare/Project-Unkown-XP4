@@ -15,6 +15,10 @@ public class InventoryController : MonoBehaviour
     public delegate void ToggleInventory();
     public static ToggleInventory callInventory;
 
+    // has to receive item to check, return quantity and a bool
+    // or, can be called multiple times and depending on how many times it's true the qnt can be calculated
+    //public delegate bool InventoryItems()
+
     public Items[] itemList = new Items[6]; // list of the items
     public int[] itemCount = new int[6]; // list of how many items the player has
 
@@ -74,8 +78,6 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    
-
     // called by collectable, receives the item type
     private void addToInventory(Items item)
     {
@@ -111,6 +113,25 @@ public class InventoryController : MonoBehaviour
                 break; 
             }
         }        
+    }
+
+    // currently being used by pistol, is only called if the player has pistol ammo
+    private void RemoveItem()
+    {
+
+    }
+
+    // goes through each inventory slot searching for the item, returns true if found
+    private bool CheckIfPlayerHasItem(Items item)
+    {     
+        for (int i = 0; i < itemList.Length; i++)
+        {
+            if (itemList[i] == item)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     // called by 'ShowIcon' when the button is pressed
