@@ -19,6 +19,10 @@ Health and recovery system
 Equip item
 
 Shooting and reloading
+
+Fix inconsistent player speed
+
+Fix number not updating (disappearing) when the item is set to empty (reload method)
  
 >> DONE
 
