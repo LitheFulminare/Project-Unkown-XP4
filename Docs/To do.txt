@@ -11,6 +11,14 @@ Inventory -> use, discard, inspect (not needed now)
 Cleanup, there are some stuff on scripts and in the assets folder that arent being used
 
 Maybe use Enums to store room data: Unexplored -> Partially explored -> Explored
+
+Enemy movement
+
+Health and recovery system
+
+Equip item
+
+Shooting and reloading
  
 >> DONE
 
