@@ -45,14 +45,24 @@ public class ShowIcon : MonoBehaviour
     // called by ItemSpawner
     public void ChangeText(int qtd)
     {
-        if (qtd != 0)
+        // first checks if the item is not a weapon
+        if (_item != Items.pistol)
         {
-            text.text = qtd.ToString();
+            if (qtd != 0)
+            {
+                text.text = qtd.ToString();
+            }
+            else // won't show anything if 'itemCount[i]' is '0'
+            {
+                text.text = "";
+            }
         }
-        else // won't show anything if 'itemCount[i]' is '0'
+        // if it is, it will instead show the ammo
+        else
         {
-            text.text = "";
-        }      
+            text.text = Pistol.GetLoadedBullets().ToString();
+        }
+            
     }
 
     // called when the icon is pressed by 'Button' component

@@ -83,4 +83,6 @@ public class Pistol : MonoBehaviour
             }
         }            
     }
+
+    public static int GetLoadedBullets() { return _bulletsLoaded; }
 }

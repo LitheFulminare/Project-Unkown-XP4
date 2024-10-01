@@ -24,9 +24,10 @@ The first one sounds simpler
 
 Fix inconsistent player speed
 
-Fix number not updating (disappearing) when the item is set to empty (reload method)
  
 >> DONE
+
+Fix number not updating (disappearing) when the item is set to empty (reload method)
 
 Shoot and reload script (no timers were implemented tho) 
 

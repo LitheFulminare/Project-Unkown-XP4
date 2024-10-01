@@ -9,6 +9,9 @@ public enum Items
     // consumable
     syringe,
 
+    // weapon
+    pistol,
+
    // keys
    keyDoor1
 }
