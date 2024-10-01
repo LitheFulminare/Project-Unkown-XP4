@@ -119,5 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDestroyed: 0
-  item: 3
+  item: 4
   player_interaction: {fileID: 0}

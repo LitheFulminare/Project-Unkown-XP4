@@ -1771,7 +1771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededItem: 3
+  neededItem: 4
   door: {fileID: 996968354}
   puzzleComplete: 0
   player_interaction: {fileID: 283486862}
