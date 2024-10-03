@@ -94,21 +94,15 @@ public class InventoryController : MonoBehaviour
                 itemList[i] = item; 
                 switch (item) 
                 {
-                    case Items.pistolAmmo:
-                        itemCount[i] += 6;
-                        break;
+                    case Items.pistolAmmo: itemCount[i] += 6; break;
 
-                    case Items.syringe:
-                        itemCount[i] += 1;
-                        break;
+                    case Items.syringe: itemCount[i] += 1; break;
 
-                    case Items.keyDoor1: // door key shouldnt be stackable as it has multiple uses
-                        //itemCount[i] += 1;
-                        break;
+                    case Items.pistol: break; // pistol's stack will show ammo instead, this is handled by 'ShowIcon' in 'ChangeText()' func
 
-                    default:
-                        Debug.Log("Invalid Item");
-                        break;
+                    case Items.keyDoor1: break;// door key shouldnt be stackable as it has multiple uses
+
+                    default: Debug.Log("Invalid Item"); break;
                 }
                 break; 
             }

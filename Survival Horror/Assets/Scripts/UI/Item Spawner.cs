@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemSpawner : MonoBehaviour
 {
     public Sprite pistolAmmoImg;
+    public Sprite pistolImg;
     public Sprite syringeImg;
 
     // called by InventoryController when Tab is pressed

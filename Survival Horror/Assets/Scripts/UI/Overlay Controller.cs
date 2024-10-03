@@ -13,9 +13,6 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 // https://gamedevbeginner.com/events-and-delegates-in-unity/
 public class OverlayController : MonoBehaviour
 {
-    // used to precache font //// probably wont be used, disabling 'Include Font Data' seems to have helped
-    //private static readonly string kPrecacheFontGlyphsString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\\:;\"'<>,.?/ ";
-
     public delegate void PickupOverlay(GameObject collectedItem, Items itemName);
     public static PickupOverlay showUI; // this is used to show the overlay when an item is picked
 
@@ -39,11 +36,6 @@ public class OverlayController : MonoBehaviour
 
     private bool _isCollectable = false;
 
-    private void Awake()
-    {
-        //PreCacheFontData();
-    }
-
     private void Start()
     {
         canvas.SetActive(false);
@@ -51,12 +43,6 @@ public class OverlayController : MonoBehaviour
         showUI = setActive;
         interactOverlay = setActiveInteract;
     }
-
-    // used to precache font, prob wont be used
-    //void PreCacheFontData()
-    //{
-    //    redText.text = kPrecacheFontGlyphsString;
-    //}
 
     // called by 'collectable', shows the pickup overlay
     public void setActive(GameObject collectedItem, Items itemName)
@@ -72,12 +58,13 @@ public class OverlayController : MonoBehaviour
 
         switch (itemName)
         {
-            case Items.pistolAmmo:
-                redText.text = "pistol ammo"; break;
-            case Items.syringe:
-                redText.text = "syringe"; break;
-            case Items.keyDoor1:
-                redText.text = "door key"; break;
+            case Items.pistolAmmo: redText.text = "pistol ammo"; break;
+
+            case Items.pistol: redText.text = "pistol"; break;
+
+            case Items.syringe: redText.text = "syringe"; break;
+
+            case Items.keyDoor1: redText.text = "door key"; break;
         }
 
         _isCollectable = true;

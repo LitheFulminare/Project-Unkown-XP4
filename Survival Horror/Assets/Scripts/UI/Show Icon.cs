@@ -15,6 +15,7 @@ public class ShowIcon : MonoBehaviour
 
     // images must be selected in editor
     public Sprite pistolAmmoImg;
+    public Sprite pistolImg;
     public Sprite syringeImg;
     public Sprite key1Img;
     public Sprite emptyImg;
@@ -28,6 +29,8 @@ public class ShowIcon : MonoBehaviour
         {
             case Items.pistolAmmo:
                 iconImg.sprite = pistolAmmoImg; break;
+            case Items.pistol:
+                iconImg.sprite = pistolImg; break;
             case Items.syringe:
                 iconImg.sprite = syringeImg; break;
             case Items.keyDoor1:
