@@ -18,14 +18,14 @@ Health and recovery system
 
 Equip item
 
-For better UI readability the pistol on the inventory must show how many bullets are loaded
-The pistol could use itemCount[i] as ammo, or the inventory could use the pistol ammo as itemCount[i]
-The first one sounds simpler
-
 Fix inconsistent player speed
 
  
 >> DONE
+
+For better UI readability the pistol on the inventory must show how many bullets are loaded
+The pistol could use itemCount[i] as ammo, or the inventory could use the pistol ammo as itemCount[i]
+The first one sounds simpler
 
 Fix number not updating (disappearing) when the item is set to empty (reload method)
 
