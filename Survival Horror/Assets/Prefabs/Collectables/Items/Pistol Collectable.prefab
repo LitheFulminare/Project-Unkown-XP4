@@ -53,8 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.8001392, y: 7.3044343, z: 2.9158282}
-  m_Center: {x: 0.002496558, y: 3.152217, z: -0.057185482}
+  m_Size: {x: 3.8001392, y: 7, z: 2.9158282}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!114 &5342951582847895181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,12 +134,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5818550224617269675, guid: d8808d32da5b1cd4e98c98d7319d44cf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5818550224617269675, guid: d8808d32da5b1cd4e98c98d7319d44cf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.38
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d8808d32da5b1cd4e98c98d7319d44cf, type: 3}
       propertyPath: m_Name
       value: Revolver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: d8808d32da5b1cd4e98c98d7319d44cf, type: 3}
+    - {fileID: -8700617353114198275, guid: d8808d32da5b1cd4e98c98d7319d44cf, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8808d32da5b1cd4e98c98d7319d44cf, type: 3}
