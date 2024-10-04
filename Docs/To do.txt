@@ -20,7 +20,7 @@ Make the Equip method a delegate to be more flexible
 
 Fix inconsistent player speed
 
-Inspect item (low priority rn)
+Inspect item - breif description, manipulate the 3D model, find hidden parts, etc (low priority rn)
  
 >> DONE
 
