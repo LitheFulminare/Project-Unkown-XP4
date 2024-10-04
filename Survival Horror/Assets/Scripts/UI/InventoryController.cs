@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using static InventoryController;
 //using static UnityEditor.Progress;
@@ -49,12 +50,21 @@ public class InventoryController : MonoBehaviour
         {
             toggleInventory();
         }
+
         // temporary way to equip the weapon
+        // probably will be an Event later on, I have to do some UI stuff first
         if(Input.GetKeyDown(KeyCode.E))
         {
             if (CheckIfPlayerHasItem(Items.pistol))
             {
-               equipItemManager.Equip(Items.pistol);
+                if (equipItemManager!=null)
+                {
+                    equipItemManager.Equip(Items.pistol);
+                }
+                else
+                {
+                    Debug.LogError("Could not locate the 'EquipItem' class");
+                }              
             }
             else
             {
