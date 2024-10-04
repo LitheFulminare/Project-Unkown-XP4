@@ -4,8 +4,6 @@ If the player has no empty space on the inventory, does not show the pickup over
 if (hasSpace) { code_here }
 hasSpace is for loop checking if there is empty
 
-Block interaction while inventory is being shown (apply isPlayerRestrained on the interact method)
-
 Inventory -> use/equip, discard, inspect
 
 Cleanup, there are some stuff on scripts and in the assets folder that arent being used
@@ -26,7 +24,10 @@ Inspect item - breif description, manipulate the 3D model, find hidden parts, et
  
 >> DONE
 
-Equip item
+Block interaction while inventory is being shown (apply playerBlocked on the interact method)
+Also blocked inventory if text is being shown too
+
+Equip item (need to improve the script later on)
 
 For better UI readability the pistol on the inventory must show how many bullets are loaded
 
