@@ -108,6 +108,7 @@ public class OverlayController : MonoBehaviour
             {
                 // tells the Inventory Controller what the player needs and opens the screen
                 InventoryController.setItemNeeded(itemNeeded);
+                PlayerVars.BlockPlayer(false); // this need to be here cuz if the player is blocked, the inventory wont open
                 InventoryController.callInventory();
             }
         }
