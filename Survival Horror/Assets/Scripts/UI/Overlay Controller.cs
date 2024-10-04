@@ -101,6 +101,7 @@ public class OverlayController : MonoBehaviour
                 GameObject itemToDestroy = GameObject.Find(collectedItem.name);
                 itemToDestroy.SendMessage("collected");
             }
+            PlayerVars.BlockPlayer(false);
         }
         else if (!_isCollectable)
         {
@@ -111,7 +112,6 @@ public class OverlayController : MonoBehaviour
                 PlayerVars.BlockPlayer(false); // this need to be here cuz if the player is blocked, the inventory wont open
                 InventoryController.callInventory();
             }
-        }
-        PlayerVars.BlockPlayer(false);      
+        }      
     }
 }
