@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7307475976136653889}
   - component: {fileID: 3308163440544356494}
   - component: {fileID: 263222624573715156}
+  - component: {fileID: 5514752051635056347}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -148,6 +149,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractorSource: {fileID: 5007205233959951905}
   InteractRange: 4
+--- !u!114 &5514752051635056347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517835690702345726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d9c39115d69cd42baa5edf6c43fd9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  revolver: {fileID: 1152268243289224838, guid: e71b82d8c4dc7e14d82c52f0cefe6acd, type: 3}
 --- !u!1 &6591974553204039610
 GameObject:
   m_ObjectHideFlags: 0

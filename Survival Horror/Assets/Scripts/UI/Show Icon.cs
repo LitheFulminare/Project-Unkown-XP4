@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class ShowIcon : MonoBehaviour
 {   
     // text compoenent to display item quantity
-    [SerializeField] public Text text;
+    [SerializeField] Text text;
 
     // the Image component that displays the sprites
-    [SerializeField] public Image iconImg;
+    [SerializeField] Image iconImg;
 
     private Items _item;
 

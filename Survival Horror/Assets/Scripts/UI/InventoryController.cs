@@ -7,6 +7,9 @@ using static InventoryController;
 
 public class InventoryController : MonoBehaviour
 {
+    // DEBUG
+    [SerializeField] EquipItem equipItemManager;
+
     public delegate void ItemReceiver(Items item);
     public static ItemReceiver itemReceiver; // used to add item to inventory
     public static ItemReceiver useItem; // used to complete a puzzle/interaction
@@ -45,6 +48,18 @@ public class InventoryController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             toggleInventory();
+        }
+        // temporary way to equip the weapon
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if (CheckIfPlayerHasItem(Items.pistol))
+            {
+               equipItemManager.Equip(Items.pistol);
+            }
+            else
+            {
+                Debug.Log("Player doesnt have pistol");
+            }
         }
     }
 
