@@ -8,9 +8,6 @@ using static InventoryController;
 
 public class InventoryController : MonoBehaviour
 {
-    // DEBUG
-    [SerializeField] EquipItem equipItemManager;
-
     public delegate void ItemReceiver(Items item);
     public static ItemReceiver itemReceiver; // used to add item to inventory
     public static ItemReceiver useItem; // used to complete a puzzle/interaction
@@ -52,19 +49,12 @@ public class InventoryController : MonoBehaviour
         }
 
         // temporary way to equip the weapon
-        // probably will be an Event later on, I have to do some UI stuff first
+        // will be handled by another UI script in the future
         if(Input.GetKeyDown(KeyCode.E))
         {
             if (CheckIfPlayerHasItem(Items.pistol))
             {
-                if (equipItemManager!=null)
-                {
-                    equipItemManager.Equip(Items.pistol);
-                }
-                else
-                {
-                    Debug.LogError("Could not locate the 'EquipItem' class");
-                }              
+                EquipItem.equipItem(Items.pistol);            
             }
             else
             {
