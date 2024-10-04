@@ -4,28 +4,29 @@ If the player has no empty space on the inventory, does not show the pickup over
 if (hasSpace) { code_here }
 hasSpace is for loop checking if there is empty
 
-Block interaction while inventory is being shown
+Block interaction while inventory is being shown (apply isPlayerRestrained on the interact method)
 
-Inventory -> use, discard, inspect (not needed now)
+Inventory -> use/equip, discard, inspect
 
 Cleanup, there are some stuff on scripts and in the assets folder that arent being used
 
-Maybe use Enums to store room data: Unexplored -> Partially explored -> Explored
+(Maybe) use Enums to store room data: Unexplored -> Partially explored -> Explored
 
 Enemy movement
 
 Health and recovery system
 
-Equip item
+Make the Equip method a delegate to be more flexible
 
 Fix inconsistent player speed
 
+Inspect item (low priority rn)
  
 >> DONE
 
+Equip item
+
 For better UI readability the pistol on the inventory must show how many bullets are loaded
-The pistol could use itemCount[i] as ammo, or the inventory could use the pistol ammo as itemCount[i]
-The first one sounds simpler
 
 Fix number not updating (disappearing) when the item is set to empty (reload method)
 
