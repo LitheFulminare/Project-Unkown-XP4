@@ -38,14 +38,14 @@ public class PlayerVars : MonoBehaviour
     }
 
     // used by UI elements and some other things to block player movement
-    public static void BlockPlayer(bool par)
+    public static void BlockPlayer(bool value)
     {
-        playerBlocked = par;
+        playerBlocked = value;
     }
 
     // Called by 'SceneChanger' after loading the new scene
-    public static void UpdateSpawnPosition(Vector3 newPos)
+    public static void UpdateSpawnPosition(Vector3 newPosition)
     {
-        spawnPosition = newPos;
+        spawnPosition = newPosition;
     }
 }

@@ -92,14 +92,14 @@ public class InventoryController : MonoBehaviour
     {
         if (canvas.activeSelf == true)
         {
-            canvas.SetActive(false);
             PlayerVars.BlockPlayer(false);
+            canvas.SetActive(false);
         }
         else if (!PlayerVars.playerBlocked)
         {
-            canvas.SetActive(true);
-            itemSpawner.showItems(itemList, itemCount); // what calls each icon to show items in inventory
             PlayerVars.BlockPlayer(true);
+            canvas.SetActive(true);
+            itemSpawner.showItems(itemList, itemCount); // what calls each icon to show items in inventory           
         }
     }
 

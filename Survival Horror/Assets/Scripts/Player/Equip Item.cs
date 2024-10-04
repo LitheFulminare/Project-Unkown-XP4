@@ -9,6 +9,14 @@ public class EquipItem : MonoBehaviour
 
     private static Items equippedItem = Items.empty;
 
+    private void Start()
+    {
+        if (equippedItem != Items.empty)
+        {
+            Equip(equippedItem);
+        }
+    }
+
     public void Equip(Items item)
     {
         // instantiates the item and sets it as the 'equippedItem'
