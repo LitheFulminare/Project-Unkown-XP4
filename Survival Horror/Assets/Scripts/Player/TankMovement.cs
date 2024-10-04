@@ -24,7 +24,7 @@ public class TankMovement : MonoBehaviour
     {
         // handles the movement
         // currently this can be stopped by UI elements
-        if (!PlayerVars.isMovementBlocked)
+        if (!PlayerVars.playerBlocked)
         {
             Vector3 moveDir;
 
@@ -48,7 +48,7 @@ public class TankMovement : MonoBehaviour
             transform.position = PlayerVars.spawnPosition;
 
             // this line right here is causing a bug
-            PlayerVars.BlockMovement(false);
+            PlayerVars.BlockPlayer(false);
         }
     }
 }

@@ -38,7 +38,7 @@ public class Pistol : MonoBehaviour
     // should also add a "isAiming"
     private void Fire(InputAction.CallbackContext obj)
     {
-        if (!PlayerVars.isMovementBlocked)
+        if (!PlayerVars.playerBlocked)
         {
             if (_bulletsLoaded > 0)
             {
@@ -58,7 +58,7 @@ public class Pistol : MonoBehaviour
     // called when the player presses the Reload action
     private void Reload(InputAction.CallbackContext obj)
     {
-        if (!PlayerVars.isMovementBlocked)
+        if (!PlayerVars.playerBlocked)
         {
             // checks if the player has ammo
             if (inventoryController.CheckIfPlayerHasItem(Items.pistolAmmo))

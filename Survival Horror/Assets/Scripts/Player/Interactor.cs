@@ -20,7 +20,10 @@ public class Interactor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            //Debug.Log("F was pressed");
+            if (PlayerVars.playerBlocked)
+            {
+
+            }
             Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
             if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
             {

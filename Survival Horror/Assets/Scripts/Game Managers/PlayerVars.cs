@@ -10,8 +10,8 @@ public class PlayerVars : MonoBehaviour
     public static int[] itemCount;
 
     // get by player to know if it's allowed to move or not
-    // can only be set by the public static funcion "BlocMovement"
-    public static bool isMovementBlocked { get; private set; } = false;
+    // can only be set by the public static funcion "BlockPlayer"
+    public static bool playerBlocked { get; private set; } = false;
 
     // set by 'SceneChanger'
     public static Vector3 spawnPosition;
@@ -38,9 +38,9 @@ public class PlayerVars : MonoBehaviour
     }
 
     // used by UI elements and some other things to block player movement
-    public static void BlockMovement(bool par)
+    public static void BlockPlayer(bool par)
     {
-        isMovementBlocked = par;
+        playerBlocked = par;
     }
 
     // Called by 'SceneChanger' after loading the new scene

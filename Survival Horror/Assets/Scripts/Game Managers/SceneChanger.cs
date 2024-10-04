@@ -23,7 +23,7 @@ public class SceneChanger : MonoBehaviour
 
     public void LoadScene(string sceneName, int doorCode)
     {
-        PlayerVars.BlockMovement(true);
+        PlayerVars.BlockPlayer(true);
 
         // saves the inventory data on PlayerVars
         if (inventoryController != null) { inventoryController.SaveInventory(); }
@@ -52,7 +52,7 @@ public class SceneChanger : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
-            PlayerVars.BlockMovement(true);
+            PlayerVars.BlockPlayer(true);
             Debug.Log($"Sending player to door of index {spawnIndex}");
             Debug.Log($"Going to: {spawns[spawnIndex].name}");
             Debug.Log($"Its global position is {spawns[spawnIndex].transform.position}");
