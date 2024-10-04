@@ -14,6 +14,8 @@ Cleanup, there are some stuff on scripts and in the assets folder that arent bei
 
 Enemy movement
 
+Finish pistol script (shoot raycast searching for the "Enemy" tag, then deal damage)
+
 Health and recovery system
 
 Make the Equip method a delegate to be more flexible
