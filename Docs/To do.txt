@@ -18,8 +18,6 @@ Finish pistol script (shoot raycast searching for the "Enemy" tag, then deal dam
 
 Health and recovery system
 
-Make the Equip method a delegate to be more flexible
-
 Fix inconsistent player speed
 
 Inspect item - breif description, manipulate the 3D model, find hidden parts, etc (low priority rn)
@@ -29,6 +27,8 @@ Create a tech doc explaining what you need to do to create new items, scenes, et
 For some reason I randomly spawned in the wrong place, apparently the bug is not solved
  
 >> DONE
+
+Make the Equip method a delegate to be more flexible (doesnt need to reference the 'EquipItem' class first)
 
 Change 'Items' from enum to scriptable object (didnt do that, the solution was way simpler)
 
