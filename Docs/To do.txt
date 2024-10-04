@@ -6,6 +6,8 @@ hasSpace is for loop checking if there is empty
 
 Inventory -> use/equip, discard, inspect
 
+Map
+
 Cleanup, there are some stuff on scripts and in the assets folder that arent being used
 
 (Maybe) use Enums to store room data: Unexplored -> Partially explored -> Explored
