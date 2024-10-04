@@ -20,18 +20,17 @@ public class Interactor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (PlayerVars.playerBlocked)
+            if (!PlayerVars.playerBlocked)
             {
-
-            }
-            Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
-            if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
-            {
-                if(hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+                Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
+                if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
                 {
-                    interactObj.Interact();
+                    if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+                    {
+                        interactObj.Interact();
+                    }
                 }
-            }
+            }            
         }
     }
 }

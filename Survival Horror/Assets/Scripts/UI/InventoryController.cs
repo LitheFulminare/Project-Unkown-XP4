@@ -95,7 +95,7 @@ public class InventoryController : MonoBehaviour
             canvas.SetActive(false);
             PlayerVars.BlockPlayer(false);
         }
-        else
+        else if (!PlayerVars.playerBlocked)
         {
             canvas.SetActive(true);
             itemSpawner.showItems(itemList, itemCount); // what calls each icon to show items in inventory
