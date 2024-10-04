@@ -28,7 +28,7 @@ Be sure the hierarchy is well organize and follow the convention. A room can be 
 	-> Ajust the 'Box Collider' size and make sure 'Is Trigger' is checked
 	-> Add the player in the 'Player' field on the 'Camera Switch' component, 'Trigger zone' object
 	
--> Adding collectables (if you want to create new collectables, refer to "Creating new collectables" file)
+-> Adding collectables (if you want to create new collectables, refer to "Creating new items" file)
 	-> They are located in Prefabs/Collectables
 	-> Just add them where you want, no further actions are needed here
 

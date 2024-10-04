@@ -1,8 +1,10 @@
 # Project Unkown
 
-./Survival Horror contains the Unity / game stuff.
+./Survival Horror contains the Unity / game stuff, open this on the Unity Hub to add the project
 
 ./Docs contains (at least for now) some txt files to document important things.
+
+./Docs/TechnicalDocuments has some guides on how to add new content and also gives a brief description on how the code is structured (this is not finished yet)
 
 Right now the main scene is located at Assets/Scenes/World.
 
