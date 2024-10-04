@@ -21,6 +21,10 @@ Make the Equip method a delegate to be more flexible
 Fix inconsistent player speed
 
 Inspect item - breif description, manipulate the 3D model, find hidden parts, etc (low priority rn)
+
+Change 'Items' from enum to scriptable object
+
+Create a tech doc explaining what you need to do to create new items, scenes, etc
  
 >> DONE
 
