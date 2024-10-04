@@ -522,7 +522,7 @@ PrefabInstance:
     - target: {fileID: 1349459232994059926, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: player_interaction
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 727726140}
     - target: {fileID: 6395183667930787482, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_Name
       value: Pistol Ammo (1)
@@ -931,6 +931,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6d9c39115d69cd42baa5edf6c43fd9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &727726140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3308163440544356494, guid: 9b22bbd4068bce243b273d50fbe36fd3, type: 3}
+  m_PrefabInstance: {fileID: 727726137}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b37123b7a403b43b12de9dfdb6137b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &739224127
@@ -2024,7 +2035,7 @@ PrefabInstance:
     - target: {fileID: 1349459232994059926, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: player_interaction
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 727726140}
     - target: {fileID: 6395183667930787482, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_Name
       value: Pistol Ammo (2)
@@ -3489,7 +3500,7 @@ PrefabInstance:
     - target: {fileID: 9051472989178498013, guid: 77a0cc07548cb3345af9b9c24defcbbf, type: 3}
       propertyPath: player_interaction
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 727726140}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3506,7 +3517,7 @@ PrefabInstance:
     - target: {fileID: 1349459232994059926, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: player_interaction
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 727726140}
     - target: {fileID: 6395183667930787482, guid: 4389fb96b44de664b8df200aeee4add1, type: 3}
       propertyPath: m_Name
       value: Pistol Ammo

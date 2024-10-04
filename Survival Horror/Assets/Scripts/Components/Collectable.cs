@@ -19,7 +19,7 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public Items item;
 
-    public Interaction player_interaction;
+    //public Interaction player_interaction;
 
 
     private void Start()

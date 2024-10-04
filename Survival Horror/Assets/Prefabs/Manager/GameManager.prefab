@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ebcb69f69ea7549bbaa3980fcf1474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  printDeactivatedObjects: 0
 --- !u!114 &8144554351627381052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2236522450863739399, guid: b986d8a038adec544b93888973ca2c04, type: 3}
       propertyPath: m_Name
-      value: PuzzleManager
+      value: Puzzle Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -723,7 +724,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3685897518456504688, guid: e92759dd94b52564dbca1794becd1095, type: 3}
       propertyPath: m_Name
-      value: Collectable Controller
+      value: Collectable Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3961103227134780399, guid: e92759dd94b52564dbca1794becd1095, type: 3}
       propertyPath: m_LocalPosition.x
