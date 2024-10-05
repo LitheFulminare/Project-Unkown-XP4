@@ -47,7 +47,9 @@ public class OverlayController : MonoBehaviour
     // called by 'collectable', shows the pickup overlay
     public void setActive(GameObject collectedItem, Items itemName)
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
+        // plays sound when the overlay appears
+        // i dont think it will be used
+        //AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
 
         canvas.SetActive(true);
         this.collectedItem = collectedItem;
@@ -73,7 +75,8 @@ public class OverlayController : MonoBehaviour
 
     public void setActiveInteract(GameObject interactedItem, Items itemNeeded)
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
+        // prob wont be used
+        //AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
 
         canvas.SetActive(true);
         this.interactedItem = interactedItem; 
@@ -104,7 +107,6 @@ public class OverlayController : MonoBehaviour
                 GameObject itemToDestroy = GameObject.Find(collectedItem.name);
                 itemToDestroy.SendMessage("collected");
             }
-            PlayerVars.BlockPlayer(false);
         }
         else if (!_isCollectable)
         {
@@ -117,6 +119,7 @@ public class OverlayController : MonoBehaviour
             }
         }
 
+        PlayerVars.BlockPlayer(false);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonSelected, this.transform.position);
     }
 
