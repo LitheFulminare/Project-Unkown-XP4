@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null)
         {
             Debug.LogError("Found more than one AudioManager instance in this scene.");
         }
