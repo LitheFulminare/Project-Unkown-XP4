@@ -7,7 +7,7 @@ public class FMODEvents : MonoBehaviour
 {
     [field: Header("Select SFX")]
     [field: SerializeField] public EventReference buttonSelected { get; private set; }
-    [field: SerializeField] public EventReference buttonHover { get; private set; }
+    [field: SerializeField] public EventReference open { get; private set; }
 
     public static FMODEvents instance {  get; private set; }
 

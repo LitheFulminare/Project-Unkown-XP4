@@ -47,6 +47,7 @@ public class OverlayController : MonoBehaviour
     // called by 'collectable', shows the pickup overlay
     public void setActive(GameObject collectedItem, Items itemName)
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
 
         canvas.SetActive(true);
         this.collectedItem = collectedItem;
@@ -72,6 +73,8 @@ public class OverlayController : MonoBehaviour
 
     public void setActiveInteract(GameObject interactedItem, Items itemNeeded)
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
+
         canvas.SetActive(true);
         this.interactedItem = interactedItem; 
         this.itemNeeded = itemNeeded;
@@ -121,6 +124,6 @@ public class OverlayController : MonoBehaviour
     // used to play a sound
     public void ButtonHover()
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonHover, this.transform.position);
+       // There used to be a hover sound, but it was too goofy
     }
 }

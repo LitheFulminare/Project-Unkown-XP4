@@ -15,38 +15,11 @@ MonoBehaviour:
   Path: ../../../../Audio/FMOD Projects/Ataraxia/ataraxia/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638636786322140923
+  lastModified: 638636804981032685
   FileSizes:
   - Name: Desktop
-    Value: 850
+    Value: 848
   Exists: 1
---- !u!114 &-6264660482889583513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Hover
-  m_EditorClassIdentifier: 
-  Path: event:/Hover
-  Guid:
-    Data1: 725818513
-    Data2: 1214169197
-    Data3: -1006662263
-    Data4: -928423505
-  Banks:
-  - {fileID: 3607718907805079395}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-1536030331570250874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,13 +65,13 @@ MonoBehaviour:
   - {fileID: 3607718907805079395}
   EditorEvents:
   - {fileID: -1536030331570250874}
-  - {fileID: -6264660482889583513}
+  - {fileID: 3750328630085743090}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3403655986705333779}
   StringsBanks:
   - {fileID: -7013225075121026841}
-  cacheTime: 638636786322577239
+  cacheTime: 638636804981602586
   cacheVersion: 131620
 --- !u!114 &3403655986705333779
 MonoBehaviour:
@@ -115,7 +88,7 @@ MonoBehaviour:
   Path: ../../../../Audio/FMOD Projects/Ataraxia/ataraxia/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638636786322130927
+  lastModified: 638636804981012681
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -135,8 +108,35 @@ MonoBehaviour:
   Path: ../../../../Audio/FMOD Projects/Ataraxia/ataraxia/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638636786322577239
+  lastModified: 638636804981602586
   FileSizes:
   - Name: Desktop
-    Value: 14656
+    Value: 18464
   Exists: 1
+--- !u!114 &3750328630085743090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Open
+  m_EditorClassIdentifier: 
+  Path: event:/Open
+  Guid:
+    Data1: 1080531331
+    Data2: 1074264435
+    Data3: -1389495110
+    Data4: -1358353772
+  Banks:
+  - {fileID: 3607718907805079395}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
