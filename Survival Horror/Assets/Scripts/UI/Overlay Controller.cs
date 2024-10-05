@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
+using FMODUnity;
 
 // interfaces
 // https://learn.unity.com/tutorial/interfaces#
@@ -13,6 +14,8 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 // https://gamedevbeginner.com/events-and-delegates-in-unity/
 public class OverlayController : MonoBehaviour
 {
+    [SerializeField] private EventReference buttonSelectSound;
+
     public delegate void PickupOverlay(GameObject collectedItem, Items itemName);
     public static PickupOverlay showUI; // this is used to show the overlay when an item is picked
 
@@ -112,6 +115,8 @@ public class OverlayController : MonoBehaviour
                 PlayerVars.BlockPlayer(false); // this need to be here cuz if the player is blocked, the inventory wont open
                 InventoryController.callInventory();
             }
-        }      
+        }
+
+        AudioManager.instance.PlayOneShot(buttonSelectSound, this.transform.position);
     }
 }

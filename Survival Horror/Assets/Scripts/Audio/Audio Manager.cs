@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
-    public void PlayerOneShot(EventReference sound, Vector3 worldPos)
+    public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
     }

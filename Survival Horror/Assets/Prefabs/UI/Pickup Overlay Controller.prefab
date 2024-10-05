@@ -670,6 +670,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c19cb984ab9bc246af329570f162e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSelectSound:
+    Guid:
+      Data1: 1173073895
+      Data2: 1152532199
+      Data3: 465026475
+      Data4: -1817750071
+    Path: event:/Select
   canvas: {fileID: 3207986791921244692}
   collectedItem: {fileID: 0}
   interactedItem: {fileID: 0}
