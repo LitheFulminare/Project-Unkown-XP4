@@ -257,6 +257,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDestroyed: 0
   item: 2
+--- !u!1 &4190116873468605588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7536540278516857705}
+  - component: {fileID: 2177304983069564872}
+  m_Layer: 0
+  m_Name: Inspector Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7536540278516857705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190116873468605588}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -119.76484, y: 142.49643, z: -307.0243}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5234621630006598773}
+  m_Father: {fileID: 8135887972754659282}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2177304983069564872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190116873468605588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbe26ec83dec584395d318ab410c1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {fileID: 5929226123094481230}
+  pistol: {fileID: 3644533515942279150, guid: ae86d748e0f59db409e8638df0dfe366, type: 3}
 --- !u!1 &4625025142578759701
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +333,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5234621630006598773}
+  - {fileID: 7536540278516857705}
   m_Father: {fileID: 5842857270836169687}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5315988315812681814
@@ -419,12 +466,12 @@ Transform:
   m_GameObject: {fileID: 5929226123094481230}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -135.25342, y: 138.27676, z: -283.3332}
+  m_LocalPosition: {x: -15.488579, y: -4.2196655, z: 23.691101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3385278360445070110}
-  m_Father: {fileID: 8135887972754659282}
+  m_Father: {fileID: 7536540278516857705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8020566601559816300
 GameObject:
@@ -1720,6 +1767,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d8808d32da5b1cd4e98c98d7319d44cf, type: 3}
       propertyPath: m_Name
       value: Revolver
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8808d32da5b1cd4e98c98d7319d44cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

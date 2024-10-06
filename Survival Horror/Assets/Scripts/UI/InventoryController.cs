@@ -65,6 +65,12 @@ public class InventoryController : MonoBehaviour
                 Debug.Log("Player doesnt have pistol");
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Debug.Log("Inspect pistol");
+            ItemInspector.inspectItem(Items.pistol);
+        }
     }
 
     // called by SceneChanger right before loading the new scene
