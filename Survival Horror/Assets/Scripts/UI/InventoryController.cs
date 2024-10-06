@@ -83,7 +83,8 @@ public class InventoryController : MonoBehaviour, IDragHandler
                 {
                     if (bgImage != null)
                     {
-                        bgImage.color = Color.grey;
+                        bgImage.color = new Color32(60, 60, 60, 255);
+                        //bgImage.color = Color.grey;
                     }
                 }
                 else
