@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using static InventoryController;
 //using static UnityEditor.Progress;
 
@@ -71,6 +72,25 @@ public class InventoryController : MonoBehaviour
             if (canvas.activeSelf)
             {
                 ItemInspector.inspectItem(Items.pistol);
+
+                GameObject bg = GameObject.Find("Background");
+                Image bgImage = bg.GetComponent<Image>();
+
+                if (ItemInspector.isInspecting)
+                {
+                    if (bgImage != null)
+                    {
+                        bgImage.color = Color.grey;
+                    }
+                }
+                else
+                {                   
+                    if (bgImage != null)
+                    {
+                        bgImage.color = Color.white;
+                    }
+                }
+                
             }          
         }
     }

@@ -17,7 +17,7 @@ public class ItemInspector : MonoBehaviour
     // used to know if should spawn or destroy the item
     // probably is temporary, destroying will have a dedicated button
     // then it would be easier to apply a 'fade' or 'darken' effect on the inventory screen
-    private bool isInspecting = false; 
+    public static bool isInspecting = false; 
 
     private void OnEnable()
     {
