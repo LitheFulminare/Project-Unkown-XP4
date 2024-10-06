@@ -14,7 +14,10 @@ public class ItemInspector : MonoBehaviour
 
     private GameObject currentItem;
     GameObject currentItemInstance;
-    private bool isInspecting = false; // used to know if should spawn or destroy the item, probably is temporary, destroying will have a dedicated button
+    // used to know if should spawn or destroy the item
+    // probably is temporary, destroying will have a dedicated button
+    // then it would be easier to apply a 'fade' or 'darken' effect on the inventory screen
+    private bool isInspecting = false; 
 
     private void OnEnable()
     {
@@ -32,7 +35,8 @@ public class ItemInspector : MonoBehaviour
         if (!isInspecting)
         {
             isInspecting = true;
-            Debug.Log("SpawnItem was called");
+
+            // sees what item should spawn
             switch (item)
             {
                 case (Items.pistol): currentItem = pistol; break;
@@ -42,6 +46,7 @@ public class ItemInspector : MonoBehaviour
 
             if (currentItem != null)
             {
+                // spawns the item
                 currentItemInstance = Instantiate(currentItem);
                 currentItemInstance.transform.position = spawnPosition.transform.position;
             }

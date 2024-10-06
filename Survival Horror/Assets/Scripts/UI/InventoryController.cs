@@ -68,8 +68,10 @@ public class InventoryController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Debug.Log("Inspect pistol");
-            ItemInspector.inspectItem(Items.pistol);
+            if (canvas.activeSelf)
+            {
+                ItemInspector.inspectItem(Items.pistol);
+            }          
         }
     }
 
