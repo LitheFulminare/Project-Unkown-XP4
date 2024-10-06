@@ -33,6 +33,10 @@ public class InventoryController : MonoBehaviour
 
     private void Start()
     {
+        // it wont work, it inventory would appear behind everything
+        //Canvas cv = canvas.GetComponent<Canvas>();
+        //cv.worldCamera = Camera.main;
+
         itemReceiver = addToInventory; // called by the collectable
         useItem = UseItem; // called by 'ShowIcon' when the 'Button' component on the icon is pressed
         callInventory = toggleInventory; // // called by 'OverlayController' after being called by 'Interactable'
