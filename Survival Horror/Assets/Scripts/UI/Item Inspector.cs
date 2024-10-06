@@ -13,14 +13,18 @@ public class ItemInspector : MonoBehaviour
 
     [SerializeField] GameObject pistol;
 
-    private Transform itemTransform;
-
     private GameObject currentItem;
-    GameObject currentItemInstance;
+    private Transform currentItemInstance;
+
     // used to know if should spawn or destroy the item
     // probably is temporary, destroying will have a dedicated button
     // then it would be easier to apply a 'fade' or 'darken' effect on the inventory screen
-    public static bool isInspecting = false; 
+    public static bool isInspecting = false;
+
+    // used the clamp the X rotation when inpecting
+    // this avoids weird gimbal lock flicks and locks the rotation smoothly
+    float minRotationX = -90f;
+    float maxRotationX = 90f;
 
     private void OnEnable()
     {
@@ -49,13 +53,8 @@ public class ItemInspector : MonoBehaviour
 
             if (currentItem != null)
             {
-                // spawns the item
-                //currentItemInstance = Instantiate(currentItem);
-                //currentItemInstance.transform.position = spawnPosition.transform.position;
-
                 GameObject itemGameObject = Instantiate(currentItem, spawnPosition.transform.position, Quaternion.identity);
-                itemTransform = itemGameObject.transform;
-                //itemTransform.position = spawnPosition.transform.position;
+                currentItemInstance = itemGameObject.transform;
             }
         }
         else
@@ -80,31 +79,13 @@ public class ItemInspector : MonoBehaviour
         isInspecting = false;
     }
 
+    // called by 'InventoryController' using Unity's "mouse drag" interface
     public void RotateItem(Vector3 mouseRotation)
     {
-        if (itemTransform != null)
+        if (currentItemInstance != null)
         {
-            //currentItemInstance.transform.eulerAngles += mouseRotation;
-
-            //if (itemTransform.localRotation.x < 90 && itemTransform.eulerAngles.x + mouseRotation.x < 90)
-            //{
-            //    itemTransform.eulerAngles += mouseRotation;
-            //}
-            //else if (itemTransform.localRotation.x > 270 && itemTransform.eulerAngles.x + mouseRotation.x > 270)
-            //{
-            //    itemTransform.eulerAngles += mouseRotation;
-            //}
-            //else
-            //{
-            //    Debug.Log($"x angle: {itemTransform.eulerAngles.x}");
-            //}
-
-            // Define your X-axis rotation limits
-            float minRotationX = -90f;
-            float maxRotationX = 90f;
-
             // Calculate the new X rotation based on mouse input
-            Vector3 currentEulerAngles = itemTransform.localEulerAngles;
+            Vector3 currentEulerAngles = currentItemInstance.localEulerAngles;
             float newRotationX = currentEulerAngles.x + mouseRotation.x;
 
             // Ensure that the X rotation wraps correctly in the range [0, 360] degrees
@@ -115,10 +96,9 @@ public class ItemInspector : MonoBehaviour
             newRotationX = Mathf.Clamp(newRotationX, minRotationX, maxRotationX);
 
             // Apply the X rotation only to the X axis, and keep Y and Z as they are
-            itemTransform.localEulerAngles = new Vector3(newRotationX, currentEulerAngles.y + mouseRotation.y);
-
-            //Quaternion quatRotation = Quaternion.Euler(mouseRotation);
-            //itemTransform.localRotation *= quatRotation;           
+            currentItemInstance.localEulerAngles = new Vector3(newRotationX, currentEulerAngles.y + mouseRotation.y);      
+            
+            // gpt made this method btw, I couldn't solve he gimbal lock flicks by myself
         }
     }
 }
