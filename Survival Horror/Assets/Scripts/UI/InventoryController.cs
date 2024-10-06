@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static InventoryController;
 //using static UnityEditor.Progress;
 
-public class InventoryController : MonoBehaviour
+public class InventoryController : MonoBehaviour, IDragHandler
 {
     public delegate void ItemReceiver(Items item);
     public static ItemReceiver itemReceiver; // used to add item to inventory
@@ -31,6 +32,8 @@ public class InventoryController : MonoBehaviour
     private Items _itemNeeded; // set when the inventory is show because of a puzzle/interaction
 
     [SerializeField] private GameObject textPopup;
+
+    [SerializeField] ItemInspector itemInspector;
 
     private void Start()
     {
@@ -240,5 +243,10 @@ public class InventoryController : MonoBehaviour
     private void setItem(Items item)
     {
         this._itemNeeded = item;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        itemInspector.RotateItem(new Vector3(eventData.delta.y, -eventData.delta.x));
     }
 }

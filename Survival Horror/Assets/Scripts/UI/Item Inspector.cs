@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ItemInspector : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ItemInspector : MonoBehaviour
     [SerializeField] GameObject spawnPosition;
 
     [SerializeField] GameObject pistol;
+
+    private Transform itemTransform;
 
     private GameObject currentItem;
     GameObject currentItemInstance;
@@ -47,8 +50,12 @@ public class ItemInspector : MonoBehaviour
             if (currentItem != null)
             {
                 // spawns the item
-                currentItemInstance = Instantiate(currentItem);
-                currentItemInstance.transform.position = spawnPosition.transform.position;
+                //currentItemInstance = Instantiate(currentItem);
+                //currentItemInstance.transform.position = spawnPosition.transform.position;
+
+                GameObject itemGameObject = Instantiate(currentItem, spawnPosition.transform.position, Quaternion.identity);
+                itemTransform = itemGameObject.transform;
+                //itemTransform.position = spawnPosition.transform.position;
             }
         }
         else
@@ -71,5 +78,18 @@ public class ItemInspector : MonoBehaviour
         }
 
         isInspecting = false;
+    }
+
+    public void RotateItem(Vector3 mouseRotation)
+    {
+        if (itemTransform != null)
+        {
+            //currentItemInstance.transform.eulerAngles += mouseRotation;
+
+            //itemTransform.eulerAngles += mouseRotation;
+
+            Quaternion quatRotation = Quaternion.Euler(mouseRotation);
+            itemTransform.localRotation *= quatRotation;           
+        }
     }
 }

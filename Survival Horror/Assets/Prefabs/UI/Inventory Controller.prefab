@@ -243,6 +243,7 @@ MonoBehaviour:
   canvas: {fileID: 5315988315812681814}
   itemSpawner: {fileID: 7325770683451117455}
   textPopup: {fileID: 8985486431042496112, guid: aeae0e81d42b9284bb4bd487ac809289, type: 3}
+  itemInspector: {fileID: 2177304983069564872}
 --- !u!114 &4030077655561844011
 MonoBehaviour:
   m_ObjectHideFlags: 0
