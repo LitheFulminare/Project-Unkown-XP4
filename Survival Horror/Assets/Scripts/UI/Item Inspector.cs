@@ -16,6 +16,8 @@ public class ItemInspector : MonoBehaviour
     private GameObject currentItem;
     private Transform currentItemInstance;
 
+    private GameObject itemGameObject;
+
     // used to know if should spawn or destroy the item
     // probably is temporary, destroying will have a dedicated button
     // then it would be easier to apply a 'fade' or 'darken' effect on the inventory screen
@@ -53,7 +55,7 @@ public class ItemInspector : MonoBehaviour
 
             if (currentItem != null)
             {
-                GameObject itemGameObject = Instantiate(currentItem, spawnPosition.transform.position, Quaternion.identity);
+                itemGameObject = Instantiate(currentItem, spawnPosition.transform.position, Quaternion.identity);
                 currentItemInstance = itemGameObject.transform;
             }
         }
@@ -68,8 +70,8 @@ public class ItemInspector : MonoBehaviour
     {
         if (currentItem != null)
         {
-            Destroy(currentItemInstance); 
-            currentItem = null;
+            Destroy(itemGameObject);
+            currentItemInstance = null;
         }
         else 
         { 
