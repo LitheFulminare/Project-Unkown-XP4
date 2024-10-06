@@ -86,17 +86,31 @@ public class ItemInspector : MonoBehaviour
         {
             //currentItemInstance.transform.eulerAngles += mouseRotation;
 
-            if (itemTransform.localRotation.x < 90 && itemTransform.eulerAngles.x + mouseRotation.x < 90)
+            //if (itemTransform.localRotation.x < 90 && itemTransform.eulerAngles.x + mouseRotation.x < 90)
+            //{
+            //    itemTransform.eulerAngles += mouseRotation;
+            //}
+            //else if (itemTransform.localRotation.x > 270 && itemTransform.eulerAngles.x + mouseRotation.x > 270)
+            //{
+            //    itemTransform.eulerAngles += mouseRotation;
+            //}
+            //else
+            //{
+            //    Debug.Log($"x angle: {itemTransform.eulerAngles.x}");
+            //}
+
+            // Define your rotation limits
+            float minRotationX = 0f;  // Minimum angle in degrees
+            float maxRotationX = 90f; // Maximum angle in degrees
+
+            // Calculate the new rotation based on mouse input
+            Vector3 newEulerAngles = itemTransform.localEulerAngles + mouseRotation;
+
+            // Check if the new rotation is within the limits
+            if (newEulerAngles.x >= minRotationX && newEulerAngles.x <= maxRotationX)
             {
-                itemTransform.eulerAngles += mouseRotation;
-            }
-            else if (itemTransform.localRotation.x > 270 && itemTransform.eulerAngles.x + mouseRotation.x > 270)
-            {
-                itemTransform.eulerAngles += mouseRotation;
-            }
-            else
-            {
-                Debug.Log($"x angle: {itemTransform.eulerAngles.x}");
+                // Apply the new rotation only if it's within bounds
+                itemTransform.localEulerAngles = newEulerAngles;
             }
 
             //Quaternion quatRotation = Quaternion.Euler(mouseRotation);
