@@ -99,27 +99,23 @@ public class ItemInspector : MonoBehaviour
             //    Debug.Log($"x angle: {itemTransform.eulerAngles.x}");
             //}
 
-            // Define your rotation limits
-            float minRotationX = -90f; // Minimum angle in degrees
-            float maxRotationX = 90f;  // Maximum angle in degrees
+            // Define your X-axis rotation limits
+            float minRotationX = -90f;
+            float maxRotationX = 90f;
 
-            // Calculate the new rotation based on mouse input
-            Vector3 newEulerAngles = itemTransform.localEulerAngles + mouseRotation;
+            // Calculate the new X rotation based on mouse input
+            Vector3 currentEulerAngles = itemTransform.localEulerAngles;
+            float newRotationX = currentEulerAngles.x + mouseRotation.x;
 
-            // Ensure that the x rotation wraps correctly in the range of [0, 360] degrees
-            newEulerAngles.x = (newEulerAngles.x + 360) % 360; // Wrap x to [0, 360]
+            // Ensure that the X rotation wraps correctly in the range [0, 360] degrees
+            newRotationX = (newRotationX + 360) % 360;
 
-            // Check if the new rotation is within the limits
-            if (newEulerAngles.x >= minRotationX + 360 && newEulerAngles.x <= maxRotationX + 360)
-            {
-                // Apply the new rotation only if it's within bounds
-                itemTransform.localEulerAngles = newEulerAngles;
-            }
-            else if (newEulerAngles.x >= minRotationX && newEulerAngles.x <= maxRotationX)
-            {
-                // Handle case where x is in the normal range (negative values)
-                itemTransform.localEulerAngles = newEulerAngles;
-            }
+            // Clamp the X rotation within the limits (-90 to 90 degrees)
+            if (newRotationX > 180f) newRotationX -= 360f;  // Convert to [-180, 180] range
+            newRotationX = Mathf.Clamp(newRotationX, minRotationX, maxRotationX);
+
+            // Apply the X rotation only to the X axis, and keep Y and Z as they are
+            itemTransform.localEulerAngles = new Vector3(newRotationX, currentEulerAngles.y + mouseRotation.y);
 
             //Quaternion quatRotation = Quaternion.Euler(mouseRotation);
             //itemTransform.localRotation *= quatRotation;           
