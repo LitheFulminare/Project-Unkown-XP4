@@ -86,10 +86,21 @@ public class ItemInspector : MonoBehaviour
         {
             //currentItemInstance.transform.eulerAngles += mouseRotation;
 
-            //itemTransform.eulerAngles += mouseRotation;
+            if (itemTransform.localRotation.x < 90 && itemTransform.eulerAngles.x + mouseRotation.x < 90)
+            {
+                itemTransform.eulerAngles += mouseRotation;
+            }
+            else if (itemTransform.localRotation.x > 270 && itemTransform.eulerAngles.x + mouseRotation.x > 270)
+            {
+                itemTransform.eulerAngles += mouseRotation;
+            }
+            else
+            {
+                Debug.Log($"x angle: {itemTransform.eulerAngles.x}");
+            }
 
-            Quaternion quatRotation = Quaternion.Euler(mouseRotation);
-            itemTransform.localRotation *= quatRotation;           
+            //Quaternion quatRotation = Quaternion.Euler(mouseRotation);
+            //itemTransform.localRotation *= quatRotation;           
         }
     }
 }
