@@ -100,16 +100,24 @@ public class ItemInspector : MonoBehaviour
             //}
 
             // Define your rotation limits
-            float minRotationX = 0f;  // Minimum angle in degrees
-            float maxRotationX = 90f; // Maximum angle in degrees
+            float minRotationX = -90f; // Minimum angle in degrees
+            float maxRotationX = 90f;  // Maximum angle in degrees
 
             // Calculate the new rotation based on mouse input
             Vector3 newEulerAngles = itemTransform.localEulerAngles + mouseRotation;
 
+            // Ensure that the x rotation wraps correctly in the range of [0, 360] degrees
+            newEulerAngles.x = (newEulerAngles.x + 360) % 360; // Wrap x to [0, 360]
+
             // Check if the new rotation is within the limits
-            if (newEulerAngles.x >= minRotationX && newEulerAngles.x <= maxRotationX)
+            if (newEulerAngles.x >= minRotationX + 360 && newEulerAngles.x <= maxRotationX + 360)
             {
                 // Apply the new rotation only if it's within bounds
+                itemTransform.localEulerAngles = newEulerAngles;
+            }
+            else if (newEulerAngles.x >= minRotationX && newEulerAngles.x <= maxRotationX)
+            {
+                // Handle case where x is in the normal range (negative values)
                 itemTransform.localEulerAngles = newEulerAngles;
             }
 
