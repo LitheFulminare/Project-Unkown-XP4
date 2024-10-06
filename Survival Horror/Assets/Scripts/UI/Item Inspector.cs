@@ -13,6 +13,8 @@ public class ItemInspector : MonoBehaviour
     [SerializeField] GameObject pistol;
 
     private GameObject currentItem;
+    GameObject currentItemInstance;
+    private bool isInspecting = false; // used to know if should spawn or destroy the item, probably is temporary, destroying will have a dedicated button
 
     private void OnEnable()
     {
@@ -24,26 +26,45 @@ public class ItemInspector : MonoBehaviour
         inspectItem -= SpawnItem;
     }
 
+    // spawns/destroys the item to be inspected
     private void SpawnItem(Items item)
     {
-        Debug.Log("SpawnItem was called");
-        switch(item)
+        if (!isInspecting)
         {
-            case (Items.pistol): currentItem = pistol; break;
+            isInspecting = true;
+            Debug.Log("SpawnItem was called");
+            switch (item)
+            {
+                case (Items.pistol): currentItem = pistol; break;
 
-            default: Debug.Log("ItemInspector tried to spawn an unassigned item"); break;
+                default: Debug.Log("ItemInspector tried to spawn an unassigned item"); break;
+            }
+
+            if (currentItem != null)
+            {
+                currentItemInstance = Instantiate(currentItem);
+                currentItemInstance.transform.position = spawnPosition.transform.position;
+            }
         }
-
-        if (currentItem != null)
+        else
         {
-            GameObject currentItemInstance = Instantiate(currentItem);
-            currentItemInstance.transform.position = spawnPosition.transform.position;
+            StopInspecting();
         }
     }
 
-    private void StopInspection()
+    // destroys the item instance
+    private void StopInspecting()
     {
-        if (currentItem != null) { Destroy(currentItem); }
-        else { Debug.LogError("ItemInspector tried to destroy a null object"); }
+        if (currentItem != null)
+        {
+            Destroy(currentItemInstance); 
+            currentItem = null;
+        }
+        else 
+        { 
+            Debug.LogError("ItemInspector tried to destroy a null object"); 
+        }
+
+        isInspecting = false;
     }
 }
