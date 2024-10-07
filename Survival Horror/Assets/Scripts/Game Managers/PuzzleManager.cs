@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour // this will mainly keep track of completed puzzles and set them as complete
 {
+    private static RoomManager roomManager;
+
     // keeps track of completed puzzles
     // gets updated by 'WorldVars' on start
     public static List<string> completedPuzzles = new List<string>();
+
+    private void Start()
+    {
+        roomManager = GameObject.FindObjectOfType<RoomManager>();
+    }
 
     // Called by 'WorldVars'
     public static void CheckCompletePuzzles()
@@ -23,6 +30,8 @@ public class PuzzleManager : MonoBehaviour // this will mainly keep track of com
     // called by 'Interactable' in 'SetCompleted()', receives the gameObject name
     public static void AddCompletedPuzzle(string puzzleName)
     {
+        roomManager.PlayerAction();
+
         // because of how 'SetCompleted()' is structured, I have to check if the puzzle is not already on the list
         if (!completedPuzzles.Contains(puzzleName))
         {

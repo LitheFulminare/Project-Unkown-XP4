@@ -72,6 +72,6 @@ public class ShowIcon : MonoBehaviour
     public void Use()
     {
         InventoryController.useItem(_item);
-        Debug.Log($"Item type: {_item}");
+        //Debug.Log($"Item type: {_item}");
     }
 }

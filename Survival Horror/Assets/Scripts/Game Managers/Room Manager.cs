@@ -18,6 +18,9 @@ public class RoomManager : MonoBehaviour
     private Collectable[] collectables;
     private Interactable[] interactables;
 
+    private bool allItemsCollected = true;
+    private bool allPuzzlesCompleted = true;
+
     private void Start()
     {
         collectables = GameObject.FindObjectsOfType<Collectable>();
@@ -28,15 +31,15 @@ public class RoomManager : MonoBehaviour
     // checks if there's anything left in the room to change the 'roomState'
     public void PlayerAction()
     {
-        bool allItemsCollected = true;
-        bool allPuzzlesCompleted = true;
+        //Debug.Log("Player interacted with world");
 
         // searches for every collectable
         foreach (Collectable collectable in collectables)
         {
             // if any of them is still uncollected, 'allItemsCollected' is false
-            if (collectable.isActiveAndEnabled)
+            if (collectable.gameObject.activeSelf)
             {
+                Debug.Log("Found Uncollected item");
                 allItemsCollected = false;
                 break;
             }
@@ -48,6 +51,7 @@ public class RoomManager : MonoBehaviour
             // if any of them is still uncompleted, 'allPuzzlesCompleted' is false
             if (!interactable.puzzleComplete)
             {
+                Debug.Log("Found unsolved puzzle");
                 allPuzzlesCompleted = false;
             }
         }
@@ -56,8 +60,7 @@ public class RoomManager : MonoBehaviour
         if (allItemsCollected && allPuzzlesCompleted)
         {
             roomState = RoomState.explored;
-        }
-
-        Debug.Log("All all items collected and all puzzles solved");
+            Debug.Log("All all items collected and all puzzles solved");
+        }      
     }
 }

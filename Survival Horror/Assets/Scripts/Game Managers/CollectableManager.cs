@@ -1,17 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CollectableManager : MonoBehaviour // this will mainly keep track of destroyed items and destroy those on start
 {
-    [SerializeField] RoomManager roomManager;
+    private static RoomManager roomManager;
 
     // keeps track of destroyed items
     // gets updated by 'WorldVars' on start
     public static List<string> destroyedItems = new List<string>();
 
+    private void Start()
+    {
+        roomManager = GameObject.FindObjectOfType<RoomManager>();
+    }
     // Called by 'WorldVars' after loading the destroyed items list
     // prevents items from respawning
     // destroys the items in the list
@@ -28,6 +33,7 @@ public class CollectableManager : MonoBehaviour // this will mainly keep track o
     // called by 'Collectable' in 'Collected()', receives the gameObject name
     public static void AddDestroyedItem(string itemName)
     {
+        roomManager.PlayerAction();
         destroyedItems.Add(itemName);
     }
 
