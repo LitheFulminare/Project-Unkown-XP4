@@ -468,7 +468,6 @@ GameObject:
   m_Component:
   - component: {fileID: 539948456275387381}
   - component: {fileID: 302214984656875743}
-  - component: {fileID: 1372639168233725586}
   m_Layer: 0
   m_Name: Camera (Render Texture)
   m_TagString: Untagged
@@ -542,14 +541,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1372639168233725586
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8020566601559816300}
-  m_Enabled: 1
 --- !u!1 &8315227473120354084
 GameObject:
   m_ObjectHideFlags: 0
