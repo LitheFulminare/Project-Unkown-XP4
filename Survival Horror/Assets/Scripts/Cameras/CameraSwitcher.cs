@@ -7,12 +7,14 @@ public class CameraSwitcher : MonoBehaviour
 {
     public Transform Player;
     public CinemachineVirtualCamera activeCam;
+    public Canvas canvas;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
             activeCam.Priority = 1;
+            canvas.enabled = true;
         }
     }
 
@@ -21,6 +23,7 @@ public class CameraSwitcher : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             activeCam.Priority = 0;
+            canvas.enabled = false;
         }
     }
 }
