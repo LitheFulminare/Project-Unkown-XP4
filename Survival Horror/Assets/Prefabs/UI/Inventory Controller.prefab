@@ -198,7 +198,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5842857270836169687}
   - component: {fileID: 830770681670769959}
-  - component: {fileID: 4030077655561844011}
   m_Layer: 0
   m_Name: Inventory Controller
   m_TagString: Untagged
@@ -244,20 +243,6 @@ MonoBehaviour:
   itemSpawner: {fileID: 7325770683451117455}
   textPopup: {fileID: 8985486431042496112, guid: aeae0e81d42b9284bb4bd487ac809289, type: 3}
   itemInspector: {fileID: 2177304983069564872}
---- !u!114 &4030077655561844011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2931804259676809629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c646ea8c14f55446b6fe3e69be9bf4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDestroyed: 0
-  item: 2
 --- !u!1 &4190116873468605588
 GameObject:
   m_ObjectHideFlags: 0

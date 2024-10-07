@@ -53,9 +53,10 @@ public class Collectable : MonoBehaviour, IInteractable
     // called by ButtonAction in the Overlay Controller if the player accepts to pick up the item
     private void collected()
     {
+        isDestroyed = true;
+
         // find an empty space and adds item to the stack, then it self destructs
         InventoryController.itemReceiver(item);
-        isDestroyed = true;
         CollectableManager.AddDestroyedItem(gameObject.name); // marks this item as collected, so it won't respawn when the scene reloads
         selfDestruct();
     }

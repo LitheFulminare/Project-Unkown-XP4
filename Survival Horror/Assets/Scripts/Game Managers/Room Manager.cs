@@ -18,8 +18,7 @@ public class RoomManager : MonoBehaviour
     private Collectable[] collectables;
     private Interactable[] interactables;
 
-    private bool allItemsCollected = true;
-    private bool allPuzzlesCompleted = true;
+    
 
     private void Start()
     {
@@ -31,17 +30,19 @@ public class RoomManager : MonoBehaviour
     // checks if there's anything left in the room to change the 'roomState'
     public void PlayerAction()
     {
+        bool allItemsCollected = true;
+        bool allPuzzlesCompleted = true;
+
         //Debug.Log("Player interacted with world");
 
         // searches for every collectable
         foreach (Collectable collectable in collectables)
         {
-            // if any of them is still uncollected, 'allItemsCollected' is false
-            if (collectable.gameObject.activeSelf)
+            // if any of them is still uncollected (not destroyed), 'allItemsCollected' is false
+            if (!collectable.isDestroyed)
             {
-                Debug.Log("Found Uncollected item");
+                Debug.Log($"Found uncollected item: {collectable.gameObject.name}");
                 allItemsCollected = false;
-                break;
             }
         }
 
@@ -51,7 +52,7 @@ public class RoomManager : MonoBehaviour
             // if any of them is still uncompleted, 'allPuzzlesCompleted' is false
             if (!interactable.puzzleComplete)
             {
-                Debug.Log("Found unsolved puzzle");
+                Debug.Log($"Found unsolved puzzle: {interactable.gameObject.name}");
                 allPuzzlesCompleted = false;
             }
         }
