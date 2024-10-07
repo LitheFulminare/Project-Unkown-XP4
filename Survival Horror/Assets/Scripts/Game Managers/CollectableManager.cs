@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class CollectableManager : MonoBehaviour // this will mainly keep track of destroyed items and destroy those on start
 {
+    [SerializeField] RoomManager roomManager;
+
     // keeps track of destroyed items
     // gets updated by 'WorldVars' on start
     public static List<string> destroyedItems = new List<string>();
