@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{7214fc54-9662-4127-bfe4-eb25ba1c065c}">
+		<property name="assetPath">
+			<value>SFX/Tile Walk/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b1db5670-de05-4df1-b692-20df6caa30e6}</destination>
+		</relationship>
+	</object>
+</objects>
