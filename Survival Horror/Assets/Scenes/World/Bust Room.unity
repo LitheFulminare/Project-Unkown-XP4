@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 457004895}
   - component: {fileID: 457004894}
   m_Layer: 0
-  m_Name: Door (Clock Room)
+  m_Name: Door (Umbrella Room)
   m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
