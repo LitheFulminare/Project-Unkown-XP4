@@ -1914,7 +1914,7 @@ GameObject:
   - component: {fileID: 945821311}
   m_Layer: 0
   m_Name: '>> WALLS (st)'
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -3336,7 +3336,7 @@ GameObject:
   - component: {fileID: 1458917631}
   m_Layer: 0
   m_Name: '>> ENVIRONMENT (st)'
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
