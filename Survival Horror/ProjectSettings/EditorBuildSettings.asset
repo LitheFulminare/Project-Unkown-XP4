@@ -5,13 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/World/Scene1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/World/Scene2.unity
-    guid: 47502311952faed4698c4d9b99af52c2
   - enabled: 1
-    path: Assets/TEST/Map Test.unity
-    guid: a129ef5439933734ab4f7abbb7b1837e
+    path: Assets/Scenes/World/Bust Room.unity
+    guid: 11b3a7f0b4ca78f418e1bf351237601c
   m_configObjects: {}
