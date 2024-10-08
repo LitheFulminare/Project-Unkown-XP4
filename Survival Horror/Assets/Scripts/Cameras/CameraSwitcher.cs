@@ -9,12 +9,31 @@ public class CameraSwitcher : MonoBehaviour
     public CinemachineVirtualCamera activeCam;
     public Canvas canvas;
 
+    [SerializeField] bool printDebugErrors = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
-            activeCam.Priority = 1;
-            canvas.enabled = true;
+            // change camera
+            if (activeCam != null)
+            {
+                activeCam.Priority = 1;
+            }
+            else if (printDebugErrors)
+            {
+                Debug.LogError("CameraSwicher could not find the Cinemachine VC.");             
+            }
+
+            // change background image
+            if (canvas! != null)
+            {
+                canvas.enabled = true;
+            }
+            else if (printDebugErrors)
+            {
+                Debug.LogError("CameraSwitcher could not find the canvas");
+            }          
         }
     }
 
@@ -22,8 +41,25 @@ public class CameraSwitcher : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            activeCam.Priority = 0;
-            canvas.enabled = false;
+            // change camera
+            if (activeCam != null)
+            {
+                activeCam.Priority = 0;
+            }
+            else if (printDebugErrors)
+            {
+                Debug.LogError("CameraSwicher could not find the Cinemachine VC.");
+            }
+
+            // change background image
+            if (canvas! != null)
+            {
+                canvas.enabled = false;
+            }
+            else if (printDebugErrors)
+            {
+                Debug.LogError("CameraSwitcher could not find the canvas");
+            }
         }
     }
 }
