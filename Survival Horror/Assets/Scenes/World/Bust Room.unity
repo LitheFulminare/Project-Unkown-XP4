@@ -477,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneChanger: {fileID: 1965391100}
   active: 0
-  destination: 
+  destination: Umbrella Room
   code: 1
 --- !u!114 &457004895
 MonoBehaviour:

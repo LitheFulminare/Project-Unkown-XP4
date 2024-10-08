@@ -4,7 +4,7 @@
 // https://discussions.unity.com/t/re-order-or-delete-enum-entries-will-it-causes-problems/910062
 
 // PLEASE UPDATE THE NUMBER BELOW
-// last item: 4
+// last item: 11
 
 public enum Items
 { 
@@ -21,5 +21,14 @@ public enum Items
     pistol = 3,
 
    // keys
-   keyDoor1 = 4
+   keyDoor1 = 4,
+   breakRoomKey = 5,
+   hallKey = 6,
+
+   // puzzle specific items
+   bust1 = 7,
+   bust2 = 8,
+   bust3 = 9,
+   bust4 = 10,
+   bust5 = 11,
 }

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World/Bust Room.unity
     guid: 11b3a7f0b4ca78f418e1bf351237601c
+  - enabled: 1
+    path: Assets/Scenes/World/Umbrella Room.unity
+    guid: e5b1d04ea67ac2b41b3c7d05caa6b47e
   m_configObjects: {}
