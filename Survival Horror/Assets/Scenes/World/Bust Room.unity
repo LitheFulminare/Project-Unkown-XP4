@@ -2886,10 +2886,6 @@ PrefabInstance:
       propertyPath: spawns.Array.data[1]
       value: 
       objectReference: {fileID: 418892440}
-    - target: {fileID: 3431296562170132832, guid: e43070ca09a97ec4a8968dc86ce6105e, type: 3}
-      propertyPath: printDeactivatedObjects
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5547129740062693038, guid: e43070ca09a97ec4a8968dc86ce6105e, type: 3}
       propertyPath: m_Name
       value: GameManager

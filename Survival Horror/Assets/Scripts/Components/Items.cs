@@ -6,8 +6,10 @@
 // PLEASE UPDATE THE NUMBER BELOW
 // last item: 11
 
+using UnityEngine;
+
 public enum Items
-{ 
+{
     // empty space on the inventory
     empty = 0,
 

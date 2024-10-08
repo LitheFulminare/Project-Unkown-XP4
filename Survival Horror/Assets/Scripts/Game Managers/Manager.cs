@@ -15,15 +15,15 @@ public class Manager : MonoBehaviour
         List<GameObject> editorObjects = new List<GameObject>();
         editorObjects.AddRange(GameObject.FindGameObjectsWithTag("EditorOnly"));
 
-        // debug -> prints what objects were deactivated if the player marks a checkbox in editor
-        if (printDeactivatedObjects)
-        {
-            foreach (GameObject obj in editorObjects)
+        foreach (GameObject obj in editorObjects)
+        {            
+            obj.SetActive(false);
+
+            // debug -> prints what objects were deactivated if the player marks a checkbox in editor
+            if (printDeactivatedObjects)
             {
                 Debug.Log($"Deactivating the object: {obj.name}");
-                obj.SetActive(false);
             }
-        }
-        
+        }        
     }
 }
