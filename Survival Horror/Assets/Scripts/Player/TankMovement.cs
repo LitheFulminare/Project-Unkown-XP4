@@ -11,8 +11,6 @@ public class TankMovement : MonoBehaviour
 
     private CharacterController controller;
 
-    private bool spawned = false;
-
     public float speed = 250;
     public float turnSpeed = 180f;
 
@@ -29,6 +27,7 @@ public class TankMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        //controller.enabled = false;
 
         //Spawn();
     }
@@ -45,10 +44,6 @@ public class TankMovement : MonoBehaviour
             moveDir = transform.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
             controller.Move(moveDir * Time.deltaTime - Vector3.up * 0.1f);
-        }
-        else
-        {
-            SetSpawned();
         }
     }
 
@@ -97,15 +92,10 @@ public class TankMovement : MonoBehaviour
 
         transform.position = newPosition;
 
-        Debug.Log($"Player position after change: {transform.position}");
-    }
 
-    public void SetSpawned()
-    {
-        if (!spawned)
-        {
-            spawned = true;
-            PlayerVars.BlockPlayer(false);
-        }       
+        PlayerVars.BlockPlayer(false);
+        //controller.enabled = true;
+
+        Debug.Log($"Player position after change: {transform.position}");
     }
 }

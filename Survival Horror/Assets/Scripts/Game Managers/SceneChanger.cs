@@ -19,13 +19,50 @@ public class SceneChanger : MonoBehaviour
 
         //Debug.Log($"Going to {spawns[spawnIndex].name}, coordinates {spawns[spawnIndex].transform.position}");
         PlayerVars.UpdateSpawnPosition(spawns[spawnIndex].transform.position);
-        
+
         // gets the player reference and sends them to the right spawn position
-        TankMovement player = GameObject.FindGameObjectWithTag("Player").GetComponent<TankMovement>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
-            player.SpawnPlayer(spawns[spawnIndex].transform.position);
-            //player.SetSpawned();
+            TankMovement playerMovementController = player.GetComponent<TankMovement>();
+            CharacterController characterController = player.GetComponent<CharacterController>();
+            if (playerMovementController != null)
+            {
+                if (spawns != null)
+                {
+                    //Debug.Log($"Spawns registered in the Spawn List: {spawns.Count}");
+
+                    if (spawns[spawnIndex] != null)
+                    {
+                        //player.SendMessage("SpawnPlayer", spawns[spawnIndex].transform.position);
+                        //playerMovementController.SpawnPlayer(spawns[spawnIndex].transform.position);
+                       
+                        if (characterController != null)
+                        {
+                            characterController.enabled = false;
+                            player.transform.position = spawns[spawnIndex].transform.position;
+                            characterController.enabled = true;
+                            PlayerVars.BlockPlayer(false);
+                        }
+                        else
+                        {
+                            Debug.LogError("SceneChanger could not find a valid 'CharacterController' reference");
+                        }                       
+                    }
+                    else
+                    {
+                        Debug.LogError($"Spawn at index {spawnIndex} was not initialized in time and major bugs will occurr");
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Spawn List was not initialized in time and major bugs will occurr");
+                }
+            }
+            else
+            {
+                Debug.LogError("SceneChanger could not find a valid 'TankControls' reference");
+            }
         }
         else
         {
