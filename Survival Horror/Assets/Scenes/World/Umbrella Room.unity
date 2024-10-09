@@ -1167,8 +1167,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 45.883865, y: 19.88404, z: 0.8794632}
-  m_Center: {x: -2.2908707, y: -9.44202, z: 10.221493}
+  m_Size: {x: 45.883865, y: 19.88404, z: 1.6928253}
+  m_Center: {x: -2.2908707, y: -9.44202, z: 10.628174}
 --- !u!1 &880503680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,7 +2049,7 @@ Camera:
   m_GameObject: {fileID: 1475730867}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
