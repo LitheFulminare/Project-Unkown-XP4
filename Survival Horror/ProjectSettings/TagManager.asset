@@ -7,6 +7,8 @@ TagManager:
   - Collectable
   - Puzzle
   - IngameLight
+  - VirtualCamera
+  - BackgroundCanvas
   layers:
   - Default
   - TransparentFX

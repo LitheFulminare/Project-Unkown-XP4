@@ -19,6 +19,18 @@ public class SceneChanger : MonoBehaviour
 
         //Debug.Log($"Going to {spawns[spawnIndex].name}, coordinates {spawns[spawnIndex].transform.position}");
         PlayerVars.UpdateSpawnPosition(spawns[spawnIndex].transform.position);
+        
+        // gets the player reference and sends them to the right spawn position
+        TankMovement player = GameObject.FindGameObjectWithTag("Player").GetComponent<TankMovement>();
+        if (player != null)
+        {
+            player.SpawnPlayer(spawns[spawnIndex].transform.position);
+            //player.SetSpawned();
+        }
+        else
+        {
+            Debug.LogError("SceneChanger could not find a valid 'player' reference");
+        }
     }
 
     public void LoadScene(string sceneName, int doorCode)
@@ -45,23 +57,23 @@ public class SceneChanger : MonoBehaviour
 
 
     // not in use
-    IEnumerator SpawnPlayer()
-    {
-        // gets the player object and updates its position to match with the door
-        // throws an error if fails to find it
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            PlayerVars.BlockPlayer(true);
-            Debug.Log($"Sending player to door of index {spawnIndex}");
-            Debug.Log($"Going to: {spawns[spawnIndex].name}");
-            Debug.Log($"Its global position is {spawns[spawnIndex].transform.position}");
-            player.SendMessage("ForceUpdatePosition", spawns[spawnIndex].transform.position);
-        }
-        else
-        {
-            Debug.LogError("Player could not be found by using the tag 'Player'");
-        }
-        yield return null;
-    }
+    //IEnumerator SpawnPlayer()
+    //{
+    //    // gets the player object and updates its position to match with the door
+    //    // throws an error if fails to find it
+    //    GameObject player = GameObject.FindGameObjectWithTag("Player");
+    //    if (player != null)
+    //    {
+    //        PlayerVars.BlockPlayer(true);
+    //        Debug.Log($"Sending player to door of index {spawnIndex}");
+    //        Debug.Log($"Going to: {spawns[spawnIndex].name}");
+    //        Debug.Log($"Its global position is {spawns[spawnIndex].transform.position}");
+    //        player.SendMessage("ForceUpdatePosition", spawns[spawnIndex].transform.position);
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("Player could not be found by using the tag 'Player'");
+    //    }
+    //    yield return null;
+    //}
 }
