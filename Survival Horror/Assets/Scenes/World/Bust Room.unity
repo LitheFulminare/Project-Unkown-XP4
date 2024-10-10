@@ -1085,6 +1085,94 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 55.660194, y: 17.636467, z: 22.797806}
   m_Center: {x: -10.713757, y: -1.3242378, z: 15.278557}
+--- !u!1 &722852539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722852540}
+  - component: {fileID: 722852543}
+  - component: {fileID: 722852542}
+  - component: {fileID: 722852541}
+  m_Layer: 0
+  m_Name: Door (Clock Room)
+  m_TagString: Puzzle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &722852540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722852539}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 53.25, y: 32.461304, z: 103.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1822762577}
+  m_Father: {fileID: 1810285702}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &722852541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722852539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663d7c5c434accb4394b65d2d5085b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneChanger: {fileID: 1965391100}
+  active: 0
+  destination: Clock Room
+  code: 2
+--- !u!114 &722852542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722852539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededItem: 0
+  door: {fileID: 722852541}
+  puzzleComplete: 1
+  player_interaction: {fileID: 283486862}
+--- !u!65 &722852543
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722852539}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.84, y: 11.45, z: 7.7610598}
+  m_Center: {x: 1.9750824, y: 0, z: -0.38052988}
 --- !u!1 &750697228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,7 +2322,39 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 457004892}
+  - {fileID: 722852540}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1822762576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1822762577}
+  m_Layer: 0
+  m_Name: Spawn 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1822762577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822762576}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.6749204, z: -0, w: 0.7378906}
+  m_LocalPosition: {x: -1.1283493, y: -2.3818226, z: -0.08167267}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 722852540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935419002
 GameObject:
@@ -2876,7 +2996,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3066471780158199710, guid: e43070ca09a97ec4a8968dc86ce6105e, type: 3}
       propertyPath: spawns.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3066471780158199710, guid: e43070ca09a97ec4a8968dc86ce6105e, type: 3}
       propertyPath: spawns.Array.data[0]
@@ -2886,6 +3006,10 @@ PrefabInstance:
       propertyPath: spawns.Array.data[1]
       value: 
       objectReference: {fileID: 418892440}
+    - target: {fileID: 3066471780158199710, guid: e43070ca09a97ec4a8968dc86ce6105e, type: 3}
+      propertyPath: spawns.Array.data[2]
+      value: 
+      objectReference: {fileID: 1822762576}
     - target: {fileID: 5547129740062693038, guid: e43070ca09a97ec4a8968dc86ce6105e, type: 3}
       propertyPath: m_Name
       value: GameManager
