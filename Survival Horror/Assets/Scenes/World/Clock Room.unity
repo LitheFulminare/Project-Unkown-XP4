@@ -177,7 +177,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 30.07
+    FieldOfView: 30.17
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -814,7 +814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330620831}
   m_Layer: 0
-  m_Name: Spawn (1) - S1
+  m_Name: Spawn 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -828,9 +828,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330620830}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.38, y: -3.11026, z: -4.55}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.039791502, z: -0, w: 0.99920803}
+  m_LocalPosition: {x: -1.5311661, y: -3.9843097, z: 2.1684732}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1352459284}
@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 1352459286}
   - component: {fileID: 1352459285}
   m_Layer: 0
-  m_Name: Door (Generic)
+  m_Name: Door (Umbrella Room)
   m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,8 +862,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352459283}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 84.48, y: 24.53, z: 87.1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 37.135853, y: 3.915041, z: -6.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -884,8 +884,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneChanger: {fileID: 1540032013}
   active: 0
-  destination: Bust Room
-  code: 1
+  destination: Umbrella Room
+  code: 2
 --- !u!114 &1352459286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,12 +917,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.950165, y: 11.45, z: 5.88}
-  m_Center: {x: 1.9750824, y: 0, z: 0.82}
+  m_Size: {x: 4.8258934, y: 6.8607903, z: 6.117771}
+  m_Center: {x: -0.30241585, y: -2.9303951, z: -2.2113662}
 --- !u!1 &1380376271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1258,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 30.07
+  field of view: 30.17
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
