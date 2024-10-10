@@ -41,6 +41,7 @@ public class SceneChanger : MonoBehaviour
                         {
                             characterController.enabled = false;
                             player.transform.position = spawns[spawnIndex].transform.position;
+                            player.transform.rotation = spawns[spawnIndex].transform.rotation;
                             characterController.enabled = true;
                             PlayerVars.BlockPlayer(false);
                         }
