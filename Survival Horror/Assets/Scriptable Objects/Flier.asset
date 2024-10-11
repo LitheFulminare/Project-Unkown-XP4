@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Flier
   m_EditorClassIdentifier: 
   itemName: Bust Flier
-  descriptionArray:
-  - This text is shown in the first page
-  - This in the second page
+  description:
+  - This is the first page
+  - This is the second one
   backgroundImage: {fileID: 0}
-  type: 0
+  type: 2
