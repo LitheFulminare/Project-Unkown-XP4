@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ShowIcon : MonoBehaviour
 {   
+    public delegate void ToggleButton();
+    public static ToggleButton toggleButton;
+
     // text compoenent to display item quantity
     [SerializeField] Text text;
 
@@ -13,12 +16,29 @@ public class ShowIcon : MonoBehaviour
 
     private Items _item;
 
+    private Button button;
+
     // images must be selected in editor
     public Sprite pistolAmmoImg;
     public Sprite pistolImg;
     public Sprite syringeImg;
     public Sprite key1Img;
     public Sprite emptyImg;
+
+    private void OnEnable()
+    {
+        toggleButton += ShowOrHide;
+    }
+
+    private void OnDisable()
+    {
+        toggleButton -= ShowOrHide;
+    }
+
+    private void Start()
+    {
+        button = GetComponent<Button>();
+    }
 
     // called by ItemSpawner
     public void ChangeIcon(Items item)
@@ -73,5 +93,31 @@ public class ShowIcon : MonoBehaviour
     {
         InventoryController.useItem(_item);
         //Debug.Log($"Item type: {_item}");
+    }
+
+    private void ShowOrHide()
+    {
+        if (!button.interactable)
+        {
+            button.interactable = true;
+            text.color = new Color32(255, 0, 0, 255);
+        }
+        else
+        {
+            button.interactable = false;
+            text.color = new Color32(60, 0, 0, 255);
+        }
+
+        /* 
+
+        I know I could have done something like:
+         
+        button.interactable = !button.interactable;
+
+        but then I would be able to change the color of the text like I did
+
+        */
+
+
     }
 }

@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static InventoryController;
-//using static UnityEditor.Progress;
 
 public class InventoryController : MonoBehaviour, IDragHandler
 {
@@ -84,6 +81,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
                     if (bgImage != null)
                     {
                         bgImage.color = new Color32(60, 60, 60, 255);
+                        ShowIcon.toggleButton();
                         //bgImage.color = Color.grey;
                     }
                 }
@@ -92,6 +90,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
                     if (bgImage != null)
                     {
                         bgImage.color = Color.white;
+                        ShowIcon.toggleButton();
                     }
                 }
                 
