@@ -9,6 +9,7 @@ TagManager:
   - IngameLight
   - VirtualCamera
   - BackgroundCanvas
+  - Icon
   layers:
   - Default
   - TransparentFX

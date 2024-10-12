@@ -7,23 +7,27 @@ public class Manager : MonoBehaviour
     // keeps track of what the player is currently interacting with
     public static GameObject currentInteractionObj;
 
-    // for debug purposes
-    [SerializeField] private bool printDeactivatedObjects = false;
+    [Header("Debug")]
+    [SerializeField] private bool destroyEditorObjects = true;
+    [SerializeField] private bool printDestroyedObjects = false;
 
     private void Start()
     {
-        List<GameObject> editorObjects = new List<GameObject>();
-        editorObjects.AddRange(GameObject.FindGameObjectsWithTag("EditorOnly"));
+        if (destroyEditorObjects)
+        {
+            List<GameObject> editorObjects = new List<GameObject>();
+            editorObjects.AddRange(GameObject.FindGameObjectsWithTag("EditorOnly"));
 
-        foreach (GameObject obj in editorObjects)
-        {            
-            obj.SetActive(false);
-
-            // debug -> prints what objects were deactivated if the player marks a checkbox in editor
-            if (printDeactivatedObjects)
+            foreach (GameObject obj in editorObjects)
             {
-                Debug.Log($"Deactivating the object: {obj.name}");
+                Destroy(obj);
+
+                // debug -> prints what objects were deactivated if the player marks a checkbox in editor
+                if (printDestroyedObjects)
+                {
+                    Debug.Log($"Destroying the object: {obj.name}");
+                }
             }
-        }        
+        }          
     }
 }
