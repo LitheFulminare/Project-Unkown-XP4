@@ -28,6 +28,6 @@ public class Manager : MonoBehaviour
                     Debug.Log($"Destroying the object: {obj.name}");
                 }
             }
-        }          
+        }
     }
 }
