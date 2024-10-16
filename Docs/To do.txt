@@ -20,13 +20,13 @@ Health and recovery system
 
 Fix inconsistent player speed
 
-Inspect item - breif description, manipulate the 3D model, find hidden parts, etc (low priority rn)
+Inspect item - breif description, manipulate the 3D model (done), find hidden parts, etc (low priority rn)
 
 Create a tech doc explaining what you need to do to create new items, scenes, etc
-
-For some reason I randomly spawned in the wrong place, apparently the bug is not solved
  
 >> DONE
+
+For some reason I randomly spawned in the wrong place, apparently the bug is not solved (solved now lol)
 
 Make the Equip method a delegate to be more flexible (doesnt need to reference the 'EquipItem' class first)
 
