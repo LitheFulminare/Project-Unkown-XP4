@@ -425,10 +425,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 676407024}
+  - component: {fileID: 676407030}
   - component: {fileID: 676407028}
-  - component: {fileID: 676407027}
-  - component: {fileID: 676407026}
   - component: {fileID: 676407025}
+  - component: {fileID: 676407029}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -445,7 +445,7 @@ Transform:
   m_GameObject: {fileID: 676407023}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 26.6, z: -22.55}
+  m_LocalPosition: {x: 0, y: 26.6, z: -16.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -470,50 +470,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8251114, y: 19.88404, z: 11.269272}
-  m_Center: {x: -24.835197, y: -9.44202, z: 15.904747}
---- !u!65 &676407026
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676407023}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.110733, y: 19.88404, z: 12.206345}
-  m_Center: {x: 19.112839, y: -9.44202, z: 15.743774}
---- !u!65 &676407027
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676407023}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 45.916664, y: 19.88404, z: 2.7037888}
-  m_Center: {x: -2.289585, y: -9.44202, z: 21.43095}
+  m_Size: {x: 0.8251114, y: 22.893051, z: 16.798443}
+  m_Center: {x: -26, y: -14.870035, z: 16.335451}
 --- !u!65 &676407028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -533,8 +491,50 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 45.883865, y: 19.88404, z: 1.6928253}
-  m_Center: {x: -2.2908707, y: -9.44202, z: 10.628174}
+  m_Size: {x: 99.21751, y: 24.823874, z: 1.6928253}
+  m_Center: {x: 24.375942, y: -14.250306, z: 6.38}
+--- !u!65 &676407029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676407023}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8251114, y: 22.893051, z: 16.798443}
+  m_Center: {x: 74.3, y: -14.870035, z: 16.335451}
+--- !u!65 &676407030
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676407023}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 99.21751, y: 24.823874, z: 1.6928253}
+  m_Center: {x: 24.375942, y: -14.250306, z: 24.8}
 --- !u!1 &878614441
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2402785286758130592, guid: 9b22bbd4068bce243b273d50fbe36fd3, type: 3}
       propertyPath: speed
-      value: 350
+      value: 440
       objectReference: {fileID: 0}
     - target: {fileID: 2402785286758130592, guid: 9b22bbd4068bce243b273d50fbe36fd3, type: 3}
       propertyPath: turnSpeed

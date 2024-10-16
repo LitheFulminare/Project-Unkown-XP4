@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World (Build)/Main Hall.unity
     guid: 3b44fdd31ef4a92498049c1247e2ab9a
+  - enabled: 1
+    path: Assets/Scenes/World (Build)/Vase Room.unity
+    guid: 150f88e8dfe59aa43a4dec478ae7dc60
   m_configObjects: {}
