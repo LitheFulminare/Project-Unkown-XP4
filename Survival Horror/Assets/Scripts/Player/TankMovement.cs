@@ -14,22 +14,9 @@ public class TankMovement : MonoBehaviour
     public float speed = 250;
     public float turnSpeed = 180f;
 
-    private void OnEnable()
-    {
-        //SceneManager.sceneLoaded += SpawnOnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        //SceneManager.sceneLoaded -= SpawnOnSceneLoaded;
-    }
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        //controller.enabled = false;
-
-        //Spawn();
     }
 
     void Update()
@@ -45,57 +32,5 @@ public class TankMovement : MonoBehaviour
 
             controller.Move(moveDir * Time.deltaTime - Vector3.up * 0.1f);
         }
-    }
-
-    //private void Spawn()
-    //{
-    //    if (PlayerVars.spawnPosition != Vector3.zero)
-    //    {
-    //        transform.position = PlayerVars.spawnPosition;
-
-    //        Debug.Log($"Spawn position: {PlayerVars.spawnPosition}");
-
-    //        Debug.Log($"Player position: {transform.position}");
-
-    //        transform.position = PlayerVars.spawnPosition;
-
-    //        // this line right here is causing a bug
-    //        PlayerVars.BlockPlayer(false);
-    //    }
-    //}
-
-    private void SpawnOnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        Debug.Log("SpawnOnSceneLoaded was called");
-
-        if (PlayerVars.spawnPosition != Vector3.zero)
-        {
-            transform.position = PlayerVars.spawnPosition;
-
-            Debug.Log($"Spawn position: {PlayerVars.spawnPosition}");
-
-            Debug.Log($"Player position: {transform.position}");
-
-            transform.position = PlayerVars.spawnPosition;
-
-            // this line right here is causing a bug
-            PlayerVars.BlockPlayer(false);
-        }
-    }
-
-    public void SpawnPlayer(Vector3 newPosition)
-    {
-        Debug.Log("PLAYER SPAWNED");
-
-        Debug.Log($"New position: {newPosition}");
-        Debug.Log($"Player position before change: {transform.position}");
-
-        transform.position = newPosition;
-
-
-        PlayerVars.BlockPlayer(false);
-        //controller.enabled = true;
-
-        Debug.Log($"Player position after change: {transform.position}");
     }
 }
