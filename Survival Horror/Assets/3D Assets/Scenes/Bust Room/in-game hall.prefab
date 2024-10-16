@@ -2947,7 +2947,7 @@ GameObject:
   - component: {fileID: 5427462948294088276}
   - component: {fileID: 6878484497517748126}
   m_Layer: 0
-  m_Name: PortaMadeira.003
+  m_Name: Door (Corridor)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3674,7 +3674,7 @@ GameObject:
   - component: {fileID: 1100142182005328807}
   - component: {fileID: 3805348385550213101}
   m_Layer: 0
-  m_Name: PortaMadeira.004
+  m_Name: Door (Exit R)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4119,7 +4119,7 @@ GameObject:
   - component: {fileID: 73638746527569414}
   - component: {fileID: 4291119232648943555}
   m_Layer: 0
-  m_Name: PortaMadeira.001
+  m_Name: Door (Bust / Statue Room)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5067,7 +5067,7 @@ GameObject:
   - component: {fileID: 7296742620788873574}
   - component: {fileID: 5228308410055498098}
   m_Layer: 0
-  m_Name: PortaMadeira.002
+  m_Name: Door (Vase Room)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5266,7 +5266,7 @@ GameObject:
   - component: {fileID: 3318239911650486024}
   - component: {fileID: 7251991346140295704}
   m_Layer: 0
-  m_Name: PortaMadeira.005
+  m_Name: Door (Exit L)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9263,7 +9263,7 @@ GameObject:
   - component: {fileID: 7977609074132420923}
   - component: {fileID: 4436928057227274989}
   m_Layer: 0
-  m_Name: PortaMadeira
+  m_Name: Door (Umbrella Room)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
