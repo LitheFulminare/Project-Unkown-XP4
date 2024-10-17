@@ -19,6 +19,9 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public Items item;
 
+    // determines if the item should be sent to the regular inventory or to the document section
+    [SerializeField] public bool isDocument = false;
+
     //public Interaction player_interaction;
 
 
