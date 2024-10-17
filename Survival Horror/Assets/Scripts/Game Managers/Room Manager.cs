@@ -12,7 +12,7 @@ public enum RoomState
 
 public class RoomManager : MonoBehaviour
 {
-    // this should be saved to world vars
+    // this should be saved to world vars   
     public RoomState roomState;
 
     private Collectable[] collectables;
@@ -26,10 +26,10 @@ public class RoomManager : MonoBehaviour
 
         PlayerAction();
 
-        //if (roomState != RoomState.explored)
-        //{
-        //    roomState = RoomState.partiallyExplored;
-        //}
+        if (roomState != RoomState.explored)
+        {
+            roomState = RoomState.partiallyExplored;
+        }
     }
 
     // called when the player collects an item or completes a puzzle
