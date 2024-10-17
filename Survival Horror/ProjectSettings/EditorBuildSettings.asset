@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/World (Build)/Bust Room.unity
-    guid: 11b3a7f0b4ca78f418e1bf351237601c
-  - enabled: 1
     path: Assets/Scenes/World (Build)/Umbrella Room.unity
     guid: e5b1d04ea67ac2b41b3c7d05caa6b47e
+  - enabled: 1
+    path: Assets/Scenes/World (Build)/Bust Room.unity
+    guid: 11b3a7f0b4ca78f418e1bf351237601c
   - enabled: 1
     path: Assets/Scenes/World (Build)/Clock Room.unity
     guid: 69dea2ea1c9d4f546893d409239689cf

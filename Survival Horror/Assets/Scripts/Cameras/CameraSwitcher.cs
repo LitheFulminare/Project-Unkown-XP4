@@ -5,11 +5,18 @@ using Cinemachine;
 
 public class CameraSwitcher : MonoBehaviour
 {
+    private static int order = 0;
+
     public Transform Player;
     public CinemachineVirtualCamera activeCam;
     public Canvas canvas;
 
     [SerializeField] bool printDebugErrors = false;
+
+    private void Start()
+    {
+        order = 0;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +36,8 @@ public class CameraSwitcher : MonoBehaviour
             if (canvas! != null)
             {
                 canvas.enabled = true;
+                order++;
+                canvas.sortingOrder = order;
             }
             else if (printDebugErrors)
             {
