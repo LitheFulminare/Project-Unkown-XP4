@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: newspaper
   m_EditorClassIdentifier: 
   itemName: Newspaper Clipping
-  description:
-  - This is the first page
-  - This is the second one
+  paragraphs:
+  - On July 15, 1952, the Grand Museum opened its doors for the first time,  bringing
+    the old Allison mansion back to life with a new coat of paint. According to Kevin
+    Allison, local businessman and the mind behind this grand reopening, this new
+    business venture was sure to attract tourists and help bring new life to our
+    small town.
+  - Sadly, only a week later, Kevin Allison passed away in a strange accident, and
+    the future of the museum is currently unknown.
   backgroundImage: {fileID: 0}
   type: 2

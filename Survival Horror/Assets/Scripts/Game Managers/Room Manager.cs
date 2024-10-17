@@ -12,18 +12,24 @@ public enum RoomState
 
 public class RoomManager : MonoBehaviour
 {
-    // save this in WorldVars
+    // this should be saved to world vars
     public RoomState roomState;
 
     private Collectable[] collectables;
     private Interactable[] interactables;
 
-    
-
     private void Start()
     {
+        // I heard that 'FindObjectsByTag' is faster, should test it later
         collectables = GameObject.FindObjectsOfType<Collectable>();
         interactables = GameObject.FindObjectsOfType<Interactable>();
+
+        PlayerAction();
+
+        //if (roomState != RoomState.explored)
+        //{
+        //    roomState = RoomState.partiallyExplored;
+        //}
     }
 
     // called when the player collects an item or completes a puzzle
