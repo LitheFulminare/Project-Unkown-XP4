@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World (Build)/Vase Room.unity
     guid: 150f88e8dfe59aa43a4dec478ae7dc60
+  - enabled: 1
+    path: Assets/Scenes/World (Build)/Corridor.unity
+    guid: b739cbe6c91e85e4eb3dbc853a65dbd8
   m_configObjects: {}
