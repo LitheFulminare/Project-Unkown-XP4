@@ -47,7 +47,7 @@ public class RoomManager : MonoBehaviour
             // if any of them is still uncollected (not destroyed), 'allItemsCollected' is false
             if (!collectable.isDestroyed)
             {
-                Debug.Log($"Found uncollected item: {collectable.gameObject.name}");
+                //Debug.Log($"Found uncollected item: {collectable.gameObject.name}");
                 allItemsCollected = false;
             }
         }
@@ -58,7 +58,7 @@ public class RoomManager : MonoBehaviour
             // if any of them is still uncompleted, 'allPuzzlesCompleted' is false
             if (!interactable.puzzleComplete)
             {
-                Debug.Log($"Found unsolved puzzle: {interactable.gameObject.name}");
+                //Debug.Log($"Found unsolved puzzle: {interactable.gameObject.name}");
                 allPuzzlesCompleted = false;
             }
         }
@@ -67,7 +67,7 @@ public class RoomManager : MonoBehaviour
         if (allItemsCollected && allPuzzlesCompleted)
         {
             roomState = RoomState.explored;
-            Debug.Log("All all items collected and all puzzles solved");
+            //Debug.Log("All all items collected and all puzzles solved");
         }      
     }
 }
