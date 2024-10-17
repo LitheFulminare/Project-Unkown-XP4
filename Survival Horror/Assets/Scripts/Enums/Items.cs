@@ -28,9 +28,9 @@ public enum Items
    hallKey = 6,
 
    // puzzle specific items
-   bust1 = 7,
-   bust2 = 8,
-   bust3 = 9,
-   bust4 = 10,
-   bust5 = 11,
+   bustAGoat= 7,
+   bustBBear = 8,
+   bustCMonkey = 9,
+   bustDBull = 10,
+   bustEHorse = 11,
 }

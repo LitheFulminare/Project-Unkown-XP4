@@ -45,7 +45,7 @@ public class Collectable : MonoBehaviour, IInteractable
              
         }
 
-        Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
+        //Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
     }
 
     private void selfDestruct()
