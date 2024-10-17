@@ -692,6 +692,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 283486856}
   activeCam: {fileID: 1173210073}
+  canvas: {fileID: 0}
+  printDebugErrors: 0
 --- !u!1 &553284039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,6 +1360,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 283486856}
   activeCam: {fileID: 1267620840}
+  canvas: {fileID: 0}
+  printDebugErrors: 0
 --- !u!65 &954296961
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2239,6 +2243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 283486856}
   activeCam: {fileID: 322381290}
+  canvas: {fileID: 0}
+  printDebugErrors: 0
 --- !u!1 &1173210071
 GameObject:
   m_ObjectHideFlags: 0
