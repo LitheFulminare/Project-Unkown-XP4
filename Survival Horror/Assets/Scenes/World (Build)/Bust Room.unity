@@ -505,7 +505,7 @@ MonoBehaviour:
   sceneChanger: {fileID: 1965391100}
   active: 0
   destination: Main Hall
-  code: 0
+  code: 2
 --- !u!114 &406076657
 MonoBehaviour:
   m_ObjectHideFlags: 0

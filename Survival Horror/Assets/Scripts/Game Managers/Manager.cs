@@ -11,6 +11,8 @@ public class Manager : MonoBehaviour
     [SerializeField] private bool destroyEditorObjects = true;
     [SerializeField] private bool printDestroyedObjects = false;
 
+    [SerializeField] private bool destroyLight = true;
+
     private void Start()
     {
         if (destroyEditorObjects)
@@ -27,6 +29,17 @@ public class Manager : MonoBehaviour
                 {
                     Debug.Log($"Destroying the object: {obj.name}");
                 }
+            }
+        }
+
+        if (destroyLight)
+        {
+            List<GameObject> lights = new List<GameObject>();
+            lights.AddRange(GameObject.FindGameObjectsWithTag("IngameLight"));
+
+            foreach(GameObject light in lights)
+            {
+                Destroy(light);
             }
         }
     }
