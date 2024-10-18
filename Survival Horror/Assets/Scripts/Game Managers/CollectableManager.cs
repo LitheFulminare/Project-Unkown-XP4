@@ -24,8 +24,10 @@ public class CollectableManager : MonoBehaviour // this will mainly keep track o
         // gets every item that was collected previously and destroys them when the scene reloads
         foreach (var itemName in destroyedItems)
         {
-            GameObject item = GameObject.Find(itemName);
-            if (item != null) { item.SendMessage("selfDestruct"); } // I violeted a naming convention here, but whatever
+            GameObject itemObj = GameObject.Find(itemName);
+
+            Collectable item = itemObj.GetComponent<Collectable>();
+            if (item != null) item.SelfDestruct();
         }
     }
 

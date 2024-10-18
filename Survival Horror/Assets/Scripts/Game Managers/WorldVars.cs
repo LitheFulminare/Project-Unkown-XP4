@@ -1,76 +1,93 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars, it stores data like items collected and puzzles done
 {
-    // stores what items were destroyed
-    // there is a list for each room
+    // Dictionaries to hold lists of destroyed items and completed puzzles for each scene
+    private static Dictionary<string, List<string>> destroyedItemsPerRoom = new Dictionary<string, List<string>>();
+    private static Dictionary<string, List<string>> completedPuzzlesPerRoom = new Dictionary<string, List<string>>();
 
+    // Static bool to ensure the lists are only generated once
+    private static bool isInitialized = false;
 
-    private static List<string> destroyedItemsRoom1 = new List<string>();
-    private static List<string> destroyedItemsRoom2 = new List<string>();
-    private static List<string> destroyedItemsRoom3 = new List<string>();
+    [SerializeField] RoomManager roomManager;
 
-    // same thing but to store what puzzles were done
-    private static List<string> completedPuzzlesRoom1 = new List<string>();
-    private static List<string> completedPuzzlesRoom2 = new List<string>();
-    private static List<string> completedPuzzlesRoom3 = new List<string>();
+    void Awake()
+    {
+        // Only initialize the room data once
+        if (!isInitialized)
+        {
+            InitializeRoomData();
+        }
+    }
 
     void Start()
     {
-        LoadDestroyedItems();
-        LoadCompletedPuzzles();
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        LoadDestroyedItems(sceneName);
+        LoadCompletedPuzzles(sceneName);
+
+        roomManager.InitializeRoomState();
     }
-    
+
+    private void InitializeRoomData()
+    {
+        // Loop through all the scenes added in the Build Settings
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+        {
+            string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+            string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
+
+            // Create empty lists for destroyed items and completed puzzles for this scene
+            if (!destroyedItemsPerRoom.ContainsKey(sceneName))
+            {
+                destroyedItemsPerRoom.Add(sceneName, new List<string>());
+                completedPuzzlesPerRoom.Add(sceneName, new List<string>());
+            }
+        }
+
+        isInitialized = true;
+    }
+
     // called by 'CollectableManager' after SceneChanger calls it to save the items
     public static void SaveDestroyedItems(List<string> destroyedItems, string sceneName)
     {
-        switch (sceneName)
+        if (destroyedItemsPerRoom.ContainsKey(sceneName))
         {
-            case "Scene1": destroyedItemsRoom1.Clear(); destroyedItemsRoom1.AddRange(destroyedItems); break;
-            case "Scene2": destroyedItemsRoom2.Clear(); destroyedItemsRoom2.AddRange(destroyedItems); break;
-            case "Scene3": destroyedItemsRoom3.Clear(); destroyedItemsRoom3.AddRange(destroyedItems); break;
+            destroyedItemsPerRoom[sceneName].Clear();
+            destroyedItemsPerRoom[sceneName].AddRange(destroyedItems);
         }
     }
 
     // same thing as above, but called by 'PuzzleManager'
     public static void SaveCompletedPuzzles(List<string> completedPuzzles, string sceneName)
     {
-        switch (sceneName)
+        if (completedPuzzlesPerRoom.ContainsKey(sceneName))
         {
-            case "Scene1": completedPuzzlesRoom1.Clear(); completedPuzzlesRoom1.AddRange(completedPuzzles); break;
-            case "Scene2": completedPuzzlesRoom2.Clear(); completedPuzzlesRoom2.AddRange(completedPuzzles); break;
-            case "Scene3": completedPuzzlesRoom3.Clear(); completedPuzzlesRoom3.AddRange(completedPuzzles); break;
+            completedPuzzlesPerRoom[sceneName].Clear();
+            completedPuzzlesPerRoom[sceneName].AddRange(completedPuzzles);
         }
     }
 
-    private void LoadDestroyedItems()
+    private void LoadDestroyedItems(string sceneName)
     {
         // loads the destroyed items on the 'CollectableManager'
         CollectableManager.destroyedItems.Clear();
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "Scene1": CollectableManager.destroyedItems.AddRange(destroyedItemsRoom1); break;
-            case "Scene2": CollectableManager.destroyedItems.AddRange(destroyedItemsRoom2); break;
-            case "Scene3": CollectableManager.destroyedItems.AddRange(destroyedItemsRoom3); break;
-        }
+        CollectableManager.destroyedItems.AddRange(destroyedItemsPerRoom[sceneName]);
 
         // calls the 'CollectableManager' to destroy collected items
         CollectableManager.CheckDestroyedItems();
     }
 
-    private void LoadCompletedPuzzles()
+    private void LoadCompletedPuzzles(string sceneName)
     {
         // loads the completed puzzles on 'PuzzleManager'
         PuzzleManager.completedPuzzles.Clear();
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "Scene1": PuzzleManager.completedPuzzles.AddRange(completedPuzzlesRoom1); break;
-            case "Scene2": PuzzleManager.completedPuzzles.AddRange(completedPuzzlesRoom2); break;
-            case "Scene3": PuzzleManager.completedPuzzles.AddRange(completedPuzzlesRoom3); break;
-        }
+        PuzzleManager.completedPuzzles.AddRange(completedPuzzlesPerRoom[sceneName]);
 
         // calls 'PuzzleManager' to set the puzzles as complete
         PuzzleManager.CheckCompletePuzzles();

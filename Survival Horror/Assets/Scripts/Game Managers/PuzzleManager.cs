@@ -22,8 +22,11 @@ public class PuzzleManager : MonoBehaviour // this will mainly keep track of com
         // gets every puzzle that was completed previously and sets it as complete when the scene loads
         foreach (var puzzleName in completedPuzzles)
         {
-            GameObject puzzle = GameObject.Find(puzzleName);
-            if (puzzle != null) { puzzle.SendMessage("SetCompleted"); }
+            GameObject puzzleObj = GameObject.Find(puzzleName);
+            Interactable puzzle = puzzleObj.GetComponent<Interactable>();
+            if (puzzle != null) puzzle.SetCompleted();
+
+            //if (puzzle != null) { puzzle.SendMessage("SetCompleted"); }
         }
     }
 

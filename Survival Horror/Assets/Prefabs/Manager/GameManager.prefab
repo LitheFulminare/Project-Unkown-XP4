@@ -83,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyEditorObjects: 1
   printDestroyedObjects: 0
+  destroyLight: 1
 --- !u!114 &8144554351627381052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3e03619158bc849a635f49f0ba8478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomManager: {fileID: 7519126619159532472}
 --- !u!1 &5921977476062566537
 GameObject:
   m_ObjectHideFlags: 0

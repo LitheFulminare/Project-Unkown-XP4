@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum RoomState
 {
@@ -24,11 +25,22 @@ public class RoomManager : MonoBehaviour
         collectables = GameObject.FindObjectsOfType<Collectable>();
         interactables = GameObject.FindObjectsOfType<Interactable>();
 
+        //PlayerAction();
+
+        //if (roomState != RoomState.explored)
+        //{
+        //    roomState = RoomState.partiallyExplored;
+        //}
+    }
+
+    public void InitializeRoomState()
+    {
         PlayerAction();
 
         if (roomState != RoomState.explored)
         {
             roomState = RoomState.partiallyExplored;
+            Debug.Log($"{SceneManager.GetActiveScene().name} state: {roomState}");
         }
     }
 
@@ -47,7 +59,7 @@ public class RoomManager : MonoBehaviour
             // if any of them is still uncollected (not destroyed), 'allItemsCollected' is false
             if (!collectable.isDestroyed)
             {
-                //Debug.Log($"Found uncollected item: {collectable.gameObject.name}");
+                Debug.Log($"Found uncollected item: {collectable.gameObject.name}");
                 allItemsCollected = false;
             }
         }
@@ -58,7 +70,7 @@ public class RoomManager : MonoBehaviour
             // if any of them is still uncompleted, 'allPuzzlesCompleted' is false
             if (!interactable.puzzleComplete)
             {
-                //Debug.Log($"Found unsolved puzzle: {interactable.gameObject.name}");
+                Debug.Log($"Found unsolved puzzle: {interactable.gameObject.name}");
                 allPuzzlesCompleted = false;
             }
         }
@@ -68,6 +80,7 @@ public class RoomManager : MonoBehaviour
         {
             roomState = RoomState.explored;
             //Debug.Log("All all items collected and all puzzles solved");
-        }      
+        }
+        Debug.Log($"{SceneManager.GetActiveScene().name} state: {roomState}");
     }
 }
