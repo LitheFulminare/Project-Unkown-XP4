@@ -19,6 +19,7 @@ public class ShowIcon : MonoBehaviour
     private Button button;
 
     // images must be selected in editor
+    // prob will be discarded later
     public Sprite pistolAmmoImg;
     public Sprite pistolImg;
     public Sprite syringeImg;
@@ -88,7 +89,8 @@ public class ShowIcon : MonoBehaviour
 
     public void ClearIcon()
     {
-        iconImg.sprite = null;
+        // no need to make the sprite null if it's will need to be transparent anyway
+        //iconImg.sprite = null;
         iconImg.color = Color.clear;
     }
 
@@ -102,25 +104,28 @@ public class ShowIcon : MonoBehaviour
     {
         Debug.Log($"ChangeText was called with parameter {value}");
 
-        // prob will have to rewrite the code
+        // prob will have to rewrite the code, i dont like using strings like this
 
         // checks if the item is not a weapon
-        //if (_item.inventoryName != "pistol")
-        //{
-        //    if (value != 0)
-        //    {
-        //        text.text = value.ToString();
-        //    }
-        //    else // won't show anything if 'itemCount[i]' is '0'
-        //    {
-        //        text.text = "";
-        //    }
-        //}
-        //// if it is, it will instead show the ammo
-        //else
-        //{
-        //    text.text = Pistol.GetLoadedBullets().ToString();
-        //}            
+        if (_item != null)
+        {
+            if (_item.inventoryName != "pistol")
+            {
+                if (value != 0)
+                {
+                    text.text = value.ToString();
+                }
+                else // won't show anything if 'itemCount[i]' is '0'
+                {
+                    text.text = "";
+                }
+            }
+            // if it is, it will instead show the ammo
+            else
+            {
+                text.text = Pistol.GetLoadedBullets().ToString();
+            }
+        }      
     }
 
     // called when the icon is pressed by 'Button' component
