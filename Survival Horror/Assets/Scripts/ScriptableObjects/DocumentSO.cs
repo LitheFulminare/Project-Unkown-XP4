@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "Generic Document", menuName = "DocumentSO/Document")]
+[CreateAssetMenu(fileName = "Generic Document", menuName = "ScriptableObject/Document")]
 public class DocumentSO : ScriptableObject
 {
     public string itemName; // the name of the item shown in-game
