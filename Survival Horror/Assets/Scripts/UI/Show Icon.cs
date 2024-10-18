@@ -52,6 +52,7 @@ public class ShowIcon : MonoBehaviour
 
         this._item = item;
 
+        iconImg.color = Color.white;
         iconImg.sprite = item.iconImg;
 
         // gets what item should be displayed and sets the Image's sprite to its icon
@@ -83,6 +84,12 @@ public class ShowIcon : MonoBehaviour
         //    case Items.empty:
         //        iconImg.sprite = emptyImg; break;
         //}
+    }
+
+    public void ClearIcon()
+    {
+        iconImg.sprite = null;
+        iconImg.color = Color.clear;
     }
 
     public void Show(bool shouldShow)

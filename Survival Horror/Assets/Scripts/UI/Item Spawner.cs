@@ -18,7 +18,7 @@ public class ItemSpawner : MonoBehaviour
             // sets the icon and the amount matching the list on the 'ShowIcon' sript
             // if itemCount[i] is '0' no text is shown
             if (itemList[i] != null) GameObject.Find($"Icon ({i})").SendMessage("ChangeIcon", itemList[i]);
-            // else { ClearIcon(); }
+            else GameObject.Find($"Icon ({i})").SendMessage("ClearIcon");
 
             GameObject.Find($"Icon ({i})").SendMessage("ChangeText", itemCount[i]);
         }

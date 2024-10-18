@@ -51,7 +51,7 @@ public class Pistol : MonoBehaviour
 
             else
             {
-                // play empty chamebr sound
+                // play empty chamber sound
                 Debug.Log("No bullets left");
             }
         }       
@@ -60,30 +60,31 @@ public class Pistol : MonoBehaviour
     // called when the player presses the Reload action
     private void Reload(InputAction.CallbackContext obj)
     {
-        //if (!PlayerVars.playerBlocked)
-        if (false)
+        if (!PlayerVars.playerBlocked)
         {
             // checks if the player has ammo
-            if (inventoryController.CheckIfPlayerHasItem(compatibleAmmo))
-            {
-                int _ammoNeeded = _maxAmmo - _bulletsLoaded;
 
-                if (_ammoNeeded != 0)
-                {
-                    Debug.Log($"Ammo needed to fully reload: {_ammoNeeded}");
-                    _bulletsLoaded += inventoryController.RetrieveItem(compatibleAmmo, _ammoNeeded);
-                    Debug.Log($"Bullets loaded after reloading {_bulletsLoaded}");
-                }
-                else
-                {
-                    Debug.Log($"Magazine is already full");
-                }
-            }
-            else
-            {
-                // either do nothing or the protagonist tried to reach something in the pocket and finds nothing
-                Debug.Log("Player does not have pistol ammo in the inventory");
-            }
+            // changed from Enums to SOs, need to rethink how this works
+            //if (inventoryController.CheckIfPlayerHasItem(compatibleAmmo))
+            //{
+            //    int _ammoNeeded = _maxAmmo - _bulletsLoaded;
+
+            //    if (_ammoNeeded != 0)
+            //    {
+            //        Debug.Log($"Ammo needed to fully reload: {_ammoNeeded}");
+            //        _bulletsLoaded += inventoryController.RetrieveItem(compatibleAmmo, _ammoNeeded);
+            //        Debug.Log($"Bullets loaded after reloading {_bulletsLoaded}");
+            //    }
+            //    else
+            //    {
+            //        Debug.Log($"Magazine is already full");
+            //    }
+            //}
+            //else
+            //{
+            //    // either do nothing or the protagonist tried to reach something in the pocket and finds nothing
+            //    Debug.Log("Player does not have pistol ammo in the inventory");
+            //}
         }
     }
 
