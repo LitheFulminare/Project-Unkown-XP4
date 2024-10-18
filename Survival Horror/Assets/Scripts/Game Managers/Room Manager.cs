@@ -13,7 +13,7 @@ public enum RoomState
 
 public class RoomManager : MonoBehaviour
 {
-    // this should be saved to world vars   
+    // this should be saved to world vars so it can be accessed everywhere
     public RoomState roomState;
 
     private Collectable[] collectables;
@@ -24,15 +24,9 @@ public class RoomManager : MonoBehaviour
         // I heard that 'FindObjectsByTag' is faster, should test it later
         collectables = GameObject.FindObjectsOfType<Collectable>();
         interactables = GameObject.FindObjectsOfType<Interactable>();
-
-        //PlayerAction();
-
-        //if (roomState != RoomState.explored)
-        //{
-        //    roomState = RoomState.partiallyExplored;
-        //}
     }
 
+    // called by the 'WorldVars' class on start, after loading the scene data
     public void InitializeRoomState()
     {
         PlayerAction();
@@ -40,7 +34,7 @@ public class RoomManager : MonoBehaviour
         if (roomState != RoomState.explored)
         {
             roomState = RoomState.partiallyExplored;
-            Debug.Log($"{SceneManager.GetActiveScene().name} state: {roomState}");
+            //Debug.Log($"{SceneManager.GetActiveScene().name} state: {roomState}");
         }
     }
 
@@ -59,7 +53,7 @@ public class RoomManager : MonoBehaviour
             // if any of them is still uncollected (not destroyed), 'allItemsCollected' is false
             if (!collectable.isDestroyed)
             {
-                Debug.Log($"Found uncollected item: {collectable.gameObject.name}");
+                //Debug.Log($"Found uncollected item: {collectable.gameObject.name}");
                 allItemsCollected = false;
             }
         }
@@ -70,7 +64,7 @@ public class RoomManager : MonoBehaviour
             // if any of them is still uncompleted, 'allPuzzlesCompleted' is false
             if (!interactable.puzzleComplete)
             {
-                Debug.Log($"Found unsolved puzzle: {interactable.gameObject.name}");
+                //Debug.Log($"Found unsolved puzzle: {interactable.gameObject.name}");
                 allPuzzlesCompleted = false;
             }
         }
@@ -81,6 +75,6 @@ public class RoomManager : MonoBehaviour
             roomState = RoomState.explored;
             //Debug.Log("All all items collected and all puzzles solved");
         }
-        Debug.Log($"{SceneManager.GetActiveScene().name} state: {roomState}");
+        //Debug.Log($"{SceneManager.GetActiveScene().name} state: {roomState}");
     }
 }

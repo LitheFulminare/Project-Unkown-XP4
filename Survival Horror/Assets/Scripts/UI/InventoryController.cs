@@ -137,8 +137,6 @@ public class InventoryController : MonoBehaviour, IDragHandler
             // checks if there is and empty space or the same item
             if (itemList[i] == collectedItem || itemList[i] == null) 
             {
-
-                // replaces the space with the item received and adds to the stack
                 itemList[i] = collectedItem; 
                 
                 // need to test if this check is really necessary
@@ -146,14 +144,6 @@ public class InventoryController : MonoBehaviour, IDragHandler
                 {
                     itemCount[i] += collectedItem.stack;
                 }
-                //switch (item) 
-                //{
-                //    case Items.pistolAmmo: itemCount[i] += 6; break;
-
-                //    case Items.syringe: itemCount[i] += 1; break;
-
-                //    default: break;
-                //}
                 break; 
             }
         }        

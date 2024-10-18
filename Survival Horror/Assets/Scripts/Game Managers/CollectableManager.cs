@@ -13,9 +13,11 @@ public class CollectableManager : MonoBehaviour // this will mainly keep track o
     public static List<string> destroyedItems = new List<string>();
 
     private void Start()
-    {
+    { 
+        // cannot be serialized since its store in a static field
         roomManager = GameObject.FindObjectOfType<RoomManager>();
     }
+
     // Called by 'WorldVars' after loading the destroyed items list
     // prevents items from respawning
     // destroys the items in the list
@@ -31,14 +33,14 @@ public class CollectableManager : MonoBehaviour // this will mainly keep track o
         }
     }
 
-    // called by 'Collectable' in 'Collected()', receives the gameObject name
+    // called by 'Collected' method in 'Collectable' class
     public static void AddDestroyedItem(string itemName)
     {
         roomManager.PlayerAction();
         destroyedItems.Add(itemName);
     }
 
-    // called by "SceneChanger" before loading the scene
+    // called by 'SceneChanger' before loading the scene
     // sends what items were destroyed to WorldVars to make the data persistent
     public void SaveList()
     {

@@ -17,7 +17,7 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
 
     void Awake()
     {
-        // Only initialize the room data once
+        // Only initialize the room data at the start of the game
         if (!isInitialized)
         {
             InitializeRoomData();
@@ -34,6 +34,7 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
         roomManager.InitializeRoomState();
     }
 
+    // called on awake, creates a list for each Scene addded to the build and adds to the dictionary
     private void InitializeRoomData()
     {
         // Loop through all the scenes added in the Build Settings

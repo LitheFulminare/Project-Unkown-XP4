@@ -37,19 +37,8 @@ public class Collectable : MonoBehaviour, IInteractable
         OverlayController.showUI(gameObject, collectableSO);
     }
 
-    // this probably wont be used
-    public void checkIfPlayerConfirmed(bool confirm, GameObject itemChecker)
-    {
-        //Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
-        if (confirm)// && itemChecker == gameObject)
-        {
-            //player_interaction.interact(item);
-             
-        }
-
-        //Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
-    }
-
+    // called when collected
+    // also called by 'CheckDestroyedItems' method on the 'CollectableManager' class to prevent item from respawning
     public void SelfDestruct()
     {
         isDestroyed = true;
@@ -65,5 +54,18 @@ public class Collectable : MonoBehaviour, IInteractable
         InventoryController.itemReceiver(collectableSO);
         CollectableManager.AddDestroyedItem(gameObject.name); // marks this item as collected, so it won't respawn when the scene reloads
         SelfDestruct();
+    }
+
+    // this probably wont be used
+    public void checkIfPlayerConfirmed(bool confirm, GameObject itemChecker)
+    {
+        //Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
+        if (confirm)// && itemChecker == gameObject)
+        {
+            //player_interaction.interact(item);
+
+        }
+
+        //Debug.Log("checkIfPlayerConfirmed parameter: " + confirm);
     }
 }
