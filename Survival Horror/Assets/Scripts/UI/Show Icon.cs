@@ -49,8 +49,11 @@ public class ShowIcon : MonoBehaviour
     public void ChangeIcon(CollectableSO item)
     {
         Debug.Log("Change Icon was called");
+
         this._item = item;
+
         iconImg.sprite = item.iconImg;
+
         // gets what item should be displayed and sets the Image's sprite to its icon
         //switch (item)
         //{

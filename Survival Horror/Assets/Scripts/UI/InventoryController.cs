@@ -131,12 +131,12 @@ public class InventoryController : MonoBehaviour, IDragHandler
     // called by 'Collected' method  on 'Collectable'
     private void addToInventory(CollectableSO collectedItem)
     {
-        Debug.Log(collectedItem);
         // searches for each of the inventory slots
         for (int i = 0; i < itemList.Length; i++)
         {
-            Debug.Log("for loop iteration");
-            Debug.Log($"itemList[i]: {itemList[i]}");
+            if (itemList[i] != null) Debug.Log($"itemList[i]: {itemList[i]}");
+            else Debug.Log($"itemList[i]: null");
+
             // checks if there is and empty space or the same item
             if (itemList[i] == collectedItem || itemList[i] == null) 
             {
