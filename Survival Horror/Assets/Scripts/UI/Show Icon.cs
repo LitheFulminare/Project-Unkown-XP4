@@ -20,16 +20,16 @@ public class ShowIcon : MonoBehaviour
 
     // images must be selected in editor
     // prob will be discarded later
-    public Sprite pistolAmmoImg;
-    public Sprite pistolImg;
-    public Sprite syringeImg;
-    public Sprite key1Img;
-    public Sprite emptyImg;
-    public Sprite bearBustImg;
-    public Sprite bullBustImg;
-    public Sprite goatBustImg;
-    public Sprite horseBustImg;
-    public Sprite monkeyBustImg;
+    //public Sprite pistolAmmoImg;
+    //public Sprite pistolImg;
+    //public Sprite syringeImg;
+    //public Sprite key1Img;
+    //public Sprite emptyImg;
+    //public Sprite bearBustImg;
+    //public Sprite bullBustImg;
+    //public Sprite goatBustImg;
+    //public Sprite horseBustImg;
+    //public Sprite monkeyBustImg;
 
     private void OnEnable()
     {
@@ -54,6 +54,8 @@ public class ShowIcon : MonoBehaviour
         this._item = item;
 
         iconImg.color = Color.white;
+
+
         iconImg.sprite = item.iconImg;
 
         // gets what item should be displayed and sets the Image's sprite to its icon
