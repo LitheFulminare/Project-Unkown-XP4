@@ -97,6 +97,11 @@ MonoBehaviour:
   syringeImg: {fileID: 21300000, guid: ad387e68259dad048a41c272022994ff, type: 3}
   key1Img: {fileID: 21300000, guid: 9f2bd704fa7d7c34a8ebb8df22e0193f, type: 3}
   emptyImg: {fileID: 21300000, guid: 6ec3da0579b47ca40a2d0b17062f1ce1, type: 3}
+  bearBustImg: {fileID: 21300000, guid: 2f343343fe3f1da4181b301f2a232db1, type: 3}
+  bullBustImg: {fileID: 21300000, guid: 92eb5f2ea538b92489d100ec47c1198a, type: 3}
+  goatBustImg: {fileID: 21300000, guid: 2f24d26d148d3f948b67798b6b50341a, type: 3}
+  horseBustImg: {fileID: 21300000, guid: 5c94851ee0c1e52439381f53dc995254, type: 3}
+  monkeyBustImg: {fileID: 21300000, guid: 840a064839933304597e7d4bc48d098a, type: 3}
 --- !u!114 &5328380830919464383
 MonoBehaviour:
   m_ObjectHideFlags: 0

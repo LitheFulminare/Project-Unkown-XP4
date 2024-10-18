@@ -24,6 +24,11 @@ public class ShowIcon : MonoBehaviour
     public Sprite syringeImg;
     public Sprite key1Img;
     public Sprite emptyImg;
+    public Sprite bearBustImg;
+    public Sprite bullBustImg;
+    public Sprite goatBustImg;
+    public Sprite horseBustImg;
+    public Sprite monkeyBustImg;
 
     private void OnEnable()
     {
@@ -47,6 +52,7 @@ public class ShowIcon : MonoBehaviour
         // gets what item should be displayed and sets the Image's sprite to its icon
         switch (item)
         {
+            // regular items
             case Items.pistolAmmo:
                 iconImg.sprite = pistolAmmoImg; break;
             case Items.pistol:
@@ -55,6 +61,20 @@ public class ShowIcon : MonoBehaviour
                 iconImg.sprite = syringeImg; break;
             case Items.keyDoor1:
                 iconImg.sprite = key1Img; break;
+
+            // busts
+            case Items.bustAGoat:
+                iconImg.sprite= goatBustImg; break;
+            case Items.bustBBear:
+                iconImg.sprite = bearBustImg; break;
+            case Items.bustCMonkey:
+                iconImg.sprite = monkeyBustImg; break;
+            case Items.bustDBull:
+                iconImg.sprite = bullBustImg; break;
+            case Items.bustEHorse:
+                iconImg.sprite = horseBustImg; break;
+
+            // empty
             case Items.empty:
                 iconImg.sprite = emptyImg; break;
         }
