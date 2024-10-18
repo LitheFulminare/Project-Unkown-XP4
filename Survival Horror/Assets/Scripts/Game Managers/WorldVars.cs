@@ -7,6 +7,8 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
 {
     // stores what items were destroyed
     // there is a list for each room
+
+
     private static List<string> destroyedItemsRoom1 = new List<string>();
     private static List<string> destroyedItemsRoom2 = new List<string>();
     private static List<string> destroyedItemsRoom3 = new List<string>();

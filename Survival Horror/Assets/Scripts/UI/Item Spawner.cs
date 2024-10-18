@@ -11,8 +11,6 @@ public class ItemSpawner : MonoBehaviour
     // called by InventoryController when Tab is pressed
     public void showItems(CollectableSO[] itemList, int[] itemCount)
     {
-        Debug.Log("showItem was called");
-
         for (int i = 0; i < itemList.Length; i++)
         {
             // sets the icon and the amount matching the list on the 'ShowIcon' sript

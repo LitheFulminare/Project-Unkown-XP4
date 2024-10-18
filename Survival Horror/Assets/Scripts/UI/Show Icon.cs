@@ -49,8 +49,6 @@ public class ShowIcon : MonoBehaviour
     // called by ItemSpawner
     public void ChangeIcon(CollectableSO item)
     {
-        Debug.Log("Change Icon was called");
-
         this._item = item;
 
         iconImg.color = Color.white;
@@ -104,8 +102,6 @@ public class ShowIcon : MonoBehaviour
     // called by ItemSpawner
     public void ChangeText(int value)
     {
-        Debug.Log($"ChangeText was called with parameter {value}");
-
         // prob will have to rewrite the code, i dont like using strings like this
 
         // checks if the item is not a weapon
