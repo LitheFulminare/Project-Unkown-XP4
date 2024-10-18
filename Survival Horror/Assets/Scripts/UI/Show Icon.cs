@@ -14,7 +14,7 @@ public class ShowIcon : MonoBehaviour
     // the Image component that displays the sprites
     [SerializeField] Image iconImg;
 
-    private Items _item;
+    private CollectableSO _item;
 
     private Button button;
 
@@ -46,38 +46,40 @@ public class ShowIcon : MonoBehaviour
     }
 
     // called by ItemSpawner
-    public void ChangeIcon(Items item)
+    public void ChangeIcon(CollectableSO item)
     {
+        Debug.Log("Change Icon was called");
         this._item = item;
+        iconImg.sprite = item.iconImg;
         // gets what item should be displayed and sets the Image's sprite to its icon
-        switch (item)
-        {
-            // regular items
-            case Items.pistolAmmo:
-                iconImg.sprite = pistolAmmoImg; break;
-            case Items.pistol:
-                iconImg.sprite = pistolImg; break;
-            case Items.syringe:
-                iconImg.sprite = syringeImg; break;
-            case Items.keyDoor1:
-                iconImg.sprite = key1Img; break;
+        //switch (item)
+        //{
+        //    // regular items
+        //    case Items.pistolAmmo:
+        //        iconImg.sprite = pistolAmmoImg; break;
+        //    case Items.pistol:
+        //        iconImg.sprite = pistolImg; break;
+        //    case Items.syringe:
+        //        iconImg.sprite = syringeImg; break;
+        //    case Items.keyDoor1:
+        //        iconImg.sprite = key1Img; break;
 
-            // busts
-            case Items.bustAGoat:
-                iconImg.sprite= goatBustImg; break;
-            case Items.bustBBear:
-                iconImg.sprite = bearBustImg; break;
-            case Items.bustCMonkey:
-                iconImg.sprite = monkeyBustImg; break;
-            case Items.bustDBull:
-                iconImg.sprite = bullBustImg; break;
-            case Items.bustEHorse:
-                iconImg.sprite = horseBustImg; break;
+        //    // busts
+        //    case Items.bustAGoat:
+        //        iconImg.sprite= goatBustImg; break;
+        //    case Items.bustBBear:
+        //        iconImg.sprite = bearBustImg; break;
+        //    case Items.bustCMonkey:
+        //        iconImg.sprite = monkeyBustImg; break;
+        //    case Items.bustDBull:
+        //        iconImg.sprite = bullBustImg; break;
+        //    case Items.bustEHorse:
+        //        iconImg.sprite = horseBustImg; break;
 
-            // empty
-            case Items.empty:
-                iconImg.sprite = emptyImg; break;
-        }
+        //    // empty
+        //    case Items.empty:
+        //        iconImg.sprite = emptyImg; break;
+        //}
     }
 
     public void Show(bool shouldShow)
@@ -86,26 +88,29 @@ public class ShowIcon : MonoBehaviour
     }
 
     // called by ItemSpawner
-    public void ChangeText(int qtd)
+    public void ChangeText(int value)
     {
-        // first checks if the item is not a weapon
-        if (_item != Items.pistol)
-        {
-            if (qtd != 0)
-            {
-                text.text = qtd.ToString();
-            }
-            else // won't show anything if 'itemCount[i]' is '0'
-            {
-                text.text = "";
-            }
-        }
-        // if it is, it will instead show the ammo
-        else
-        {
-            text.text = Pistol.GetLoadedBullets().ToString();
-        }
-            
+        Debug.Log($"ChangeText was called with parameter {value}");
+
+        // prob will have to rewrite the code
+
+        // checks if the item is not a weapon
+        //if (_item.inventoryName != "pistol")
+        //{
+        //    if (value != 0)
+        //    {
+        //        text.text = value.ToString();
+        //    }
+        //    else // won't show anything if 'itemCount[i]' is '0'
+        //    {
+        //        text.text = "";
+        //    }
+        //}
+        //// if it is, it will instead show the ammo
+        //else
+        //{
+        //    text.text = Pistol.GetLoadedBullets().ToString();
+        //}            
     }
 
     // called when the icon is pressed by 'Button' component

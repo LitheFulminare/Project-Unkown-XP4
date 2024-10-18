@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededItem: 0
+  neededItem: {fileID: 0}
   door: {fileID: 406076656}
   puzzleComplete: 1
   player_interaction: {fileID: 283486862}
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededItem: 0
+  neededItem: {fileID: 0}
   door: {fileID: 457004894}
   puzzleComplete: 1
   player_interaction: {fileID: 283486862}
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededItem: 0
+  neededItem: {fileID: 0}
   door: {fileID: 722852541}
   puzzleComplete: 1
   player_interaction: {fileID: 283486862}

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class InventoryController : MonoBehaviour, IDragHandler
 {
-    public delegate void ItemReceiver(Items item);
+    public delegate void ItemReceiver(CollectableSO item);
     public static ItemReceiver itemReceiver; // used to add item to inventory
     public static ItemReceiver useItem; // used to complete a puzzle/interaction
     public static ItemReceiver setItemNeeded; // self explanatory
@@ -19,14 +19,14 @@ public class InventoryController : MonoBehaviour, IDragHandler
     // or, can be called multiple times and depending on how many times it's true the qnt can be calculated
     //public delegate bool InventoryItems()
 
-    public Items[] itemList = new Items[6]; // list of the items
+    public CollectableSO[] itemList = new CollectableSO[6]; // list of the items
     public int[] itemCount = new int[6]; // list of how many items the player has
 
     public GameObject canvas;
 
     public ItemSpawner itemSpawner; // what calls each icon to show items in inventory
 
-    private Items _itemNeeded; // set when the inventory is show because of a puzzle/interaction
+    private CollectableSO _itemNeeded; // set when the inventory is show because of a puzzle/interaction
 
     [SerializeField] private GameObject textPopup;
 
@@ -55,17 +55,17 @@ public class InventoryController : MonoBehaviour, IDragHandler
 
         // temporary way to equip the weapon
         // will be handled by another UI script in the future
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            if (CheckIfPlayerHasItem(Items.pistol))
-            {
-                EquipItem.equipItem(Items.pistol);            
-            }
-            else
-            {
-                Debug.Log("Player doesnt have pistol");
-            }
-        }
+        //if(Input.GetKeyDown(KeyCode.E))
+        //{
+        //    if (CheckIfPlayerHasItem(""))
+        //    {
+        //        EquipItem.equipItem(Items.pistol);            
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("Player doesnt have pistol");
+        //    }
+        //}
 
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -106,7 +106,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
         PlayerVars.itemCount = itemCount;
     }
 
-    public void LoadInventory(Items[] itemList, int[] itemCount)
+    public void LoadInventory(CollectableSO[] itemList, int[] itemCount)
     {
         this.itemList = itemList;
         this.itemCount = itemCount;
@@ -128,35 +128,42 @@ public class InventoryController : MonoBehaviour, IDragHandler
         }
     }
 
-    // called by collectable, receives the item type
-    private void addToInventory(Items item)
+    // called by 'Collected' method  on 'Collectable'
+    private void addToInventory(CollectableSO collectedItem)
     {
-
+        Debug.Log(collectedItem);
         // searches for each of the inventory slots
         for (int i = 0; i < itemList.Length; i++)
         {
-
+            Debug.Log("for loop iteration");
+            Debug.Log($"itemList[i]: {itemList[i]}");
             // checks if there is and empty space or the same item
-            if (itemList[i] == Items.empty || itemList[i] == item) 
+            if (itemList[i] == collectedItem || itemList[i] == null) 
             {
 
                 // replaces the space with the item received and adds to the stack
-                itemList[i] = item; 
-                switch (item) 
+                itemList[i] = collectedItem; 
+                
+                // need to test if this check is really necessary
+                if (collectedItem.stack != 0)
                 {
-                    case Items.pistolAmmo: itemCount[i] += 6; break;
-
-                    case Items.syringe: itemCount[i] += 1; break;
-
-                    default: break;
+                    itemCount[i] += collectedItem.stack;
                 }
+                //switch (item) 
+                //{
+                //    case Items.pistolAmmo: itemCount[i] += 6; break;
+
+                //    case Items.syringe: itemCount[i] += 1; break;
+
+                //    default: break;
+                //}
                 break; 
             }
         }        
     }
 
     // currently being used by pistol, is only called if the player has pistol ammo
-    public int RetrieveItem(Items itemRequested, int quantityRequested)
+    public int RetrieveItem(CollectableSO itemRequested, int quantityRequested)
     {
         // what will be sent to the player
         int quantityRetrieved = 0;
@@ -179,7 +186,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
                     // removes the item from the list if there's none of it left
                     if (itemCount[i] == 0)
                     {
-                        itemList[i] = Items.empty;
+                        itemList[i] = null;
                     }
 
                     // breaks to avoid going through the for loop unnecessarily
@@ -191,7 +198,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
                 {
                     // sends everything to the player and removes the item from the list
                     quantityRetrieved = itemCount[i];
-                    itemList[i] = Items.empty;
+                    itemList[i] = null;
                     itemCount[i] = 0;
 
                     // breaks to avoid going through the for loop unnecessarily
@@ -204,11 +211,11 @@ public class InventoryController : MonoBehaviour, IDragHandler
     }
 
     // goes through each inventory slot searching for the item, returns true if found
-    public bool CheckIfPlayerHasItem(Items item)
+    public bool CheckIfPlayerHasItem(CollectableSO requestedItem)
     {     
         for (int i = 0; i < itemList.Length; i++)
         {
-            if (itemList[i] == item)
+            if (itemList[i] == requestedItem)
             {
                 return true;
             }
@@ -217,11 +224,11 @@ public class InventoryController : MonoBehaviour, IDragHandler
     }
 
     // called by 'ShowIcon' when the button is pressed
-    private void UseItem(Items item)
+    private void UseItem(CollectableSO selectedItem)
     {
-        if (_itemNeeded != Items.empty)
+        if (_itemNeeded != null)
         {
-            if (item == _itemNeeded)
+            if (selectedItem == _itemNeeded)
             {
                 Manager.currentInteractionObj.SendMessage("SetCompleted");
             }
@@ -230,13 +237,13 @@ public class InventoryController : MonoBehaviour, IDragHandler
                 Instantiate(textPopup);
             }
          
-            _itemNeeded = Items.empty;
+            _itemNeeded = null;
             toggleInventory();
         }
     }
 
     // makes the InventoryController "aware" of what item the puzzle requires
-    private void setItem(Items item)
+    private void setItem(CollectableSO item)
     {
         this._itemNeeded = item;
     }

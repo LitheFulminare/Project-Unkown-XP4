@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c646ea8c14f55446b6fe3e69be9bf4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectableSO: {fileID: 11400000, guid: 1522e24aa6810ff4f90b2f94410ba8a2, type: 2}
   isDestroyed: 0
   item: 8
   isDocument: 0

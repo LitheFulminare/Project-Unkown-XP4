@@ -13,10 +13,10 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 // https://gamedevbeginner.com/events-and-delegates-in-unity/
 public class OverlayController : MonoBehaviour
 {
-    public delegate void PickupOverlay(GameObject collectedItem, Items itemName);
+    public delegate void PickupOverlay(GameObject collectedItem, CollectableSO itemName);
     public static PickupOverlay showUI; // this is used to show the overlay when an item is picked
 
-    public delegate void InteractOverlay(GameObject interactedItem, Items neededItem);
+    public delegate void InteractOverlay(GameObject interactedItem, CollectableSO neededItem);
     public static InteractOverlay interactOverlay; // // this is used to show the overlay when the player interacts and a custom text is needed
 
     public GameObject canvas;
@@ -25,7 +25,7 @@ public class OverlayController : MonoBehaviour
     public GameObject collectedItem;
 
     public GameObject interactedItem;
-    public Items itemNeeded;
+    public CollectableSO itemNeeded;
 
     [SerializeField] Text topText;
     [SerializeField] Text redText;
@@ -44,11 +44,10 @@ public class OverlayController : MonoBehaviour
         interactOverlay = setActiveInteract;
     }
 
-    // called by 'collectable', shows the pickup overlay
-    public void setActive(GameObject collectedItem, Items itemName)
+    // called by 'Interact' method on 'Collectable', shows the pickup overlay
+    public void setActive(GameObject collectedItem, CollectableSO collectableSO)
     {
-        // plays sound when the overlay appears
-        // i dont think it will be used
+        // i dont think it will be used, i didnt really like it
         //AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
 
         canvas.SetActive(true);
@@ -59,26 +58,28 @@ public class OverlayController : MonoBehaviour
         topText.text = "You found ";
         bottomText.text = "Take it?";
 
-        switch (itemName)
-        {
-            // regular collectable items
-            case Items.pistolAmmo: redText.text = "pistol ammo"; break;
-            case Items.pistol: redText.text = "pistol"; break;
-            case Items.syringe: redText.text = "syringe"; break;
-            case Items.keyDoor1: redText.text = "door key"; break;
+        redText.text = collectableSO.ingameName;
 
-            // puzzle items
-            case Items.bustAGoat: redText.text = "goat bust statue"; break;
-            case Items.bustBBear: redText.text = "bear bust statue"; break;
-            case Items.bustCMonkey: redText.text = "monkey bust statue"; break;
-            case Items.bustDBull: redText.text = "bull bust statue"; break;
-            case Items.bustEHorse: redText.text = "horse bust statue"; break;
-        }
+        //switch (itemName)
+        //{
+        //    // regular collectable items
+        //    case Items.pistolAmmo: redText.text = "pistol ammo"; break;
+        //    case Items.pistol: redText.text = "pistol"; break;
+        //    case Items.syringe: redText.text = "syringe"; break;
+        //    case Items.keyDoor1: redText.text = "door key"; break;
+
+        //    // puzzle items
+        //    case Items.bustAGoat: redText.text = "goat bust statue"; break;
+        //    case Items.bustBBear: redText.text = "bear bust statue"; break;
+        //    case Items.bustCMonkey: redText.text = "monkey bust statue"; break;
+        //    case Items.bustDBull: redText.text = "bull bust statue"; break;
+        //    case Items.bustEHorse: redText.text = "horse bust statue"; break;
+        //}
 
         _isCollectable = true;
     }
 
-    public void setActiveInteract(GameObject interactedItem, Items itemNeeded)
+    public void setActiveInteract(GameObject interactedItem, CollectableSO itemNeeded)
     {
         // prob wont be used
         //AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
@@ -89,12 +90,12 @@ public class OverlayController : MonoBehaviour
 
         PlayerVars.BlockPlayer(true);
 
-        if (itemNeeded == Items.keyDoor1)
-        {
-            topText.text = "There is a "; redText.text = "door";
+        //if (itemNeeded == Items.keyDoor1)
+        //{
+        //    topText.text = "There is a "; redText.text = "door";
 
-            bottomText.text = "Use item?";
-        }     
+        //    bottomText.text = "Use item?";
+        //}     
 
         _isCollectable = false;
     }

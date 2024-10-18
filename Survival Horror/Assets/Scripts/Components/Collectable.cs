@@ -11,6 +11,8 @@ public class Collectable : MonoBehaviour, IInteractable
     public delegate void ConfirmAction(bool playerConfirmed, GameObject itemChecker);
     public static ConfirmAction confirm;
 
+    [SerializeField] public CollectableSO collectableSO;
+
     public bool isDestroyed = false;
 
     // video about enums
@@ -32,7 +34,7 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        OverlayController.showUI(gameObject, item);
+        OverlayController.showUI(gameObject, collectableSO);
     }
 
     // this probably wont be used
@@ -59,7 +61,7 @@ public class Collectable : MonoBehaviour, IInteractable
         isDestroyed = true;
 
         // find an empty space and adds item to the stack, then it self destructs
-        InventoryController.itemReceiver(item);
+        InventoryController.itemReceiver(collectableSO);
         CollectableManager.AddDestroyedItem(gameObject.name); // marks this item as collected, so it won't respawn when the scene reloads
         selfDestruct();
     }

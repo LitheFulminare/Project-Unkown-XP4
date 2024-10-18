@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerVars : MonoBehaviour
 {
     // these only get updated when 'SceneChanger' calls InventoryController
-    public static Items[] itemList;
+    public static CollectableSO[] itemList;
     public static int[] itemCount;
 
     // get by player to know if it's allowed to move or not

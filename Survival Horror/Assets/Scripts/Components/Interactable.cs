@@ -13,7 +13,7 @@ public class Interactable : MonoBehaviour, IInteractable
 
     //public Items item;
 
-    [SerializeField] Items neededItem;
+    [SerializeField] CollectableSO neededItem;
     [SerializeField] Door door; // change this according to need
     
     public bool puzzleComplete = false;
