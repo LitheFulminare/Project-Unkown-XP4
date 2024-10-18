@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingameName: goat bust sculpture
   inventoryName: Goat Bust
-  isDocument: 0
+  itemType: 1
   stack: 0
   iconImg: {fileID: 21300000, guid: 2f24d26d148d3f948b67798b6b50341a, type: 3}
   inspectModel: {fileID: 0}
