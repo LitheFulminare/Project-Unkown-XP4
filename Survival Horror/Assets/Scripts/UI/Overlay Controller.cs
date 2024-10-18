@@ -61,13 +61,18 @@ public class OverlayController : MonoBehaviour
 
         switch (itemName)
         {
+            // regular collectable items
             case Items.pistolAmmo: redText.text = "pistol ammo"; break;
-
             case Items.pistol: redText.text = "pistol"; break;
-
             case Items.syringe: redText.text = "syringe"; break;
-
             case Items.keyDoor1: redText.text = "door key"; break;
+
+            // puzzle items
+            case Items.bustAGoat: redText.text = "goat bust statue"; break;
+            case Items.bustBBear: redText.text = "bear bust statue"; break;
+            case Items.bustCMonkey: redText.text = "monkey bust statue"; break;
+            case Items.bustDBull: redText.text = "bull bust statue"; break;
+            case Items.bustEHorse: redText.text = "horse bust statue"; break;
         }
 
         _isCollectable = true;
