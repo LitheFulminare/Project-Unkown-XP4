@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BustPuzzleManager : MonoBehaviour
 {
+    public delegate void PlaceBust();
+    public static PlaceBust placeBust;
+
     // the goal is to compare the Interactable's 'requiredItem' field to the current bust whenever the player places a bust
 
     [Header("Stand 1")]
@@ -25,4 +28,19 @@ public class BustPuzzleManager : MonoBehaviour
     [Header("Stand 5")]
     [SerializeField] private Interactable stand5;
     private CollectableSO currentBust5;
+
+    private void OnEnable()
+    {
+        placeBust += PlaceBustOnPedestal;
+    }
+
+    private void OnDisable()
+    {
+        placeBust -= PlaceBustOnPedestal;
+    }
+
+    private void PlaceBustOnPedestal()
+    {
+        Debug.Log("Placed {bust} on stand {stand}");
+    }
 }

@@ -22,6 +22,7 @@ public class Interactable : MonoBehaviour, IInteractable
 
     private void Start()
     {
+        //player_interaction = GameObject.FindGameObjectWithTag("Player").GetComponent<Interaction>();
         confirm = checkIfPlayerConfirmed;
     }
 
