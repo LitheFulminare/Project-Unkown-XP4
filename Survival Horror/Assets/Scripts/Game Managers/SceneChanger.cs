@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     [SerializeField] InventoryController inventoryController;
-    [SerializeField] CollectableManager collectableManager;
-    [SerializeField] PuzzleManager puzzleManager;
+    //[SerializeField] CollectableManager collectableManager;
+    //[SerializeField] PuzzleManager puzzleManager;
     
     [SerializeField] List<GameObject> spawns = new List<GameObject>();
 

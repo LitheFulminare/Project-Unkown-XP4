@@ -101,7 +101,8 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
 
     private void LoadCompletedPuzzles(string sceneName)
     {
-        // loads the completed puzzles on 'PuzzleManager'
+        // loads the completed puzzles on '
+        // '
         DataPersistency.completedPuzzles.Clear();
         DataPersistency.completedPuzzles.AddRange(completedPuzzlesPerRoom[sceneName]);
 
