@@ -30,7 +30,9 @@ public class BustInteractable : MonoBehaviour, IInteractable
         {
             Debug.Log($"interaction happened with {gameObject}");
 
-            // should pass the current bust as argument
+            // store the 'currentBust' as a 'CollectableSO'
+            // pass 'currentBust.ingameName' or something as a parameter
+            // maybe change the function to overload 'description' and 'prompt', and decide here whether the regular or alt texts should be used
             OverlayController.interactOverlay(gameObject, neededItem, interactionText, hasItemPlaced);
         }
         else
