@@ -18,6 +18,8 @@ public class BustInteractable : MonoBehaviour, IInteractable
     [SerializeField] CollectableSO neededItem;
     [SerializeField] InteractableSO interactionTextSO;
 
+    [SerializeField] private GameObject spawnPosObj;
+
     public bool puzzleComplete = false;
 
     public bool hasItemPlaced = false;
@@ -26,9 +28,12 @@ public class BustInteractable : MonoBehaviour, IInteractable
 
     private CollectableSO currentItem;
 
-    private void Start()
+    private Transform spawnPos;
+
+private void Start()
     {
         player_interaction = GameObject.FindGameObjectWithTag("Player").GetComponent<Interaction>();
+
     }
 
     // called when the player presses 'F' near the item
@@ -75,6 +80,13 @@ public class BustInteractable : MonoBehaviour, IInteractable
 
     public void UsedItem(CollectableSO item)
     {
-        //Instantiate(item.inspectModel, );
+        GameObject bust = Instantiate(item.inspectModel);
+
+        if ( bust != null && spawnPosObj != null)
+        {
+            bust.transform.position = spawnPosObj.transform.position;
+            bust.transform.localScale = spawnPosObj.transform.localScale;
+            bust.transform.rotation = spawnPosObj.transform.rotation;
+        }      
     }
 }
