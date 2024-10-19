@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class BustPuzzleManager : MonoBehaviour
 {
+    // the goal is to compare the Interactable's 'requiredItem' field to the current bust whenever the player places a bust
+
     [Header("Stand 1")]
     [SerializeField] private Interactable stand1;
-    [SerializeField] private CollectableSO requiredItem1;
+    private CollectableSO currentBust1;
 
     [Header("Stand 2")]
     [SerializeField] private Interactable stand2;
-    [SerializeField] private CollectableSO requiredItem2;
+    private CollectableSO currentBust2;
 
     [Header("Stand 3")]
     [SerializeField] private Interactable stand3;
-    [SerializeField] private CollectableSO requiredItem3;
+    private CollectableSO currentBust3;
 
     [Header("Stand 4")]
     [SerializeField] private Interactable stand4;
-    [SerializeField] private CollectableSO requiredItem4;
+    private CollectableSO currentBust4;
 
     [Header("Stand 5")]
     [SerializeField] private Interactable stand5;
-    [SerializeField] private CollectableSO requiredItem5;
+    private CollectableSO currentBust5;
 }

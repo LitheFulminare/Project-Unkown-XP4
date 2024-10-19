@@ -4618,9 +4618,85 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810285702}
     m_Modifications:
+    - target: {fileID: -8751728861674206552, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: stand2
+      value: 
+      objectReference: {fileID: 5959690004639957479}
+    - target: {fileID: -8751728861674206552, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: stand3
+      value: 
+      objectReference: {fileID: 5959690004639957482}
+    - target: {fileID: -8751728861674206552, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: stand4
+      value: 
+      objectReference: {fileID: 5959690004639957481}
+    - target: {fileID: -8751728861674206552, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: stand5
+      value: 
+      objectReference: {fileID: 5959690004639957480}
+    - target: {fileID: 87959407910507074, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: m_Name
+      value: Bust 2 (Bull)
+      objectReference: {fileID: 0}
+    - target: {fileID: 716125824098167855, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: m_Name
+      value: Bust 1 (Bear)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1374773352536974771, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: neededItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 1522e24aa6810ff4f90b2f94410ba8a2, type: 2}
+    - target: {fileID: 1374773352536974771, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: player_interaction
+      value: 
+      objectReference: {fileID: 283486862}
+    - target: {fileID: 2007588581179235294, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: neededItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 08ee0180d8d74da48935a763d4c4e7e4, type: 2}
+    - target: {fileID: 2007588581179235294, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: player_interaction
+      value: 
+      objectReference: {fileID: 283486862}
     - target: {fileID: 2085449335680945718, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
       propertyPath: m_Name
       value: Bust Puzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523554071731655890, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: neededItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 27dfdef7d91d7924da103e5c97183204, type: 2}
+    - target: {fileID: 2523554071731655890, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: player_interaction
+      value: 
+      objectReference: {fileID: 283486862}
+    - target: {fileID: 2925270618721756916, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: neededItem
+      value: 
+      objectReference: {fileID: 11400000, guid: f6e7a5d368b9d63489629038fce5a2c9, type: 2}
+    - target: {fileID: 2925270618721756916, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: player_interaction
+      value: 
+      objectReference: {fileID: 283486862}
+    - target: {fileID: 3306616307543386593, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: neededItem
+      value: 
+      objectReference: {fileID: 11400000, guid: e4a99386da537a94ea29b33f1bacfb51, type: 2}
+    - target: {fileID: 3306616307543386593, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: player_interaction
+      value: 
+      objectReference: {fileID: 283486862}
+    - target: {fileID: 3637988830582501224, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: m_Name
+      value: Bust 3 (Goat)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3965256414285947005, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: m_Name
+      value: Bust 4 (Monkey)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170732097729142094, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+      propertyPath: m_Name
+      value: Bust 5 (Horse)
       objectReference: {fileID: 0}
     - target: {fileID: 8067659101038451286, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4672,6 +4748,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8067659101038451286, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
   m_PrefabInstance: {fileID: 5959690004639957477}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5959690004639957479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2007588581179235294, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+  m_PrefabInstance: {fileID: 5959690004639957477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5959690004639957480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2523554071731655890, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+  m_PrefabInstance: {fileID: 5959690004639957477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5959690004639957481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3306616307543386593, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+  m_PrefabInstance: {fileID: 5959690004639957477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5959690004639957482 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2925270618721756916, guid: bd73982ddc6b680488137fefc03314f6, type: 3}
+  m_PrefabInstance: {fileID: 5959690004639957477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &5993650129498858727
 MeshFilter:
   m_ObjectHideFlags: 0
