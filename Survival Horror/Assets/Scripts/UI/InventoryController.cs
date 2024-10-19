@@ -228,6 +228,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
                 //Manager.currentInteractionObj.SendMessage("SetCompleted");
                 //Manager.currentInteractionObj.SendMessage("SuitableItem");
                 Manager.currentInteractionObj.SendMessage("UsedItem", selectedItem);
+                RetrieveItem(selectedItem, 0);
             }
             else
             {

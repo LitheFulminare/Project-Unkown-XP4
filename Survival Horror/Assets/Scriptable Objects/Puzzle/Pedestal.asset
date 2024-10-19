@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: There a small pedestal
   prompt: Use item?
-  altDescription: There is a {currentBust} on the pedestal
+  altDescription: There is a {currentItem} on the pedestal
   altPrompt: Take it back?

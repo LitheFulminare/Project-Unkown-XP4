@@ -17,4 +17,4 @@ MonoBehaviour:
   itemType: 1
   stack: 0
   iconImg: {fileID: 21300000, guid: 92eb5f2ea538b92489d100ec47c1198a, type: 3}
-  inspectModel: {fileID: 6395183667930787482, guid: 3939ef444cfd0904b9e1eeea0360cb68, type: 3}
+  inspectModel: {fileID: 2685933487889840762, guid: f5416fea70c8645428a87f90884b8d4e, type: 3}

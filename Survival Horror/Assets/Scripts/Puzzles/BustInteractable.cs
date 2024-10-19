@@ -28,7 +28,7 @@ public class BustInteractable : MonoBehaviour, IInteractable
 
     private CollectableSO currentItem;
 
-    private Transform spawnPos;
+    GameObject bust;
 
 private void Start()
     {
@@ -44,7 +44,7 @@ private void Start()
 
         if (!puzzleComplete)
         {
-            Debug.Log($"interaction happened with {gameObject}");
+            //Debug.Log($"interaction happened with {gameObject}");
 
             string description;
             string prompt;
@@ -56,11 +56,11 @@ private void Start()
             }
             else
             {
-                description = interactionTextSO.altDescription + $"{currentItem.ingameName}";
+                description = $"{currentItem.inventoryName} " + interactionTextSO.altDescription;
                 prompt = interactionTextSO.altPrompt;
             }
 
-            OverlayController.interactOverlay(gameObject, neededItem, description, prompt);
+            OverlayController.interactOverlay(gameObject, neededItem, description, prompt, hasItemPlaced, currentItem);
         }
         else
         {
@@ -80,7 +80,11 @@ private void Start()
 
     public void UsedItem(CollectableSO item)
     {
-        GameObject bust = Instantiate(item.inspectModel);
+        currentItem = item;
+
+        hasItemPlaced = true;
+
+        bust = Instantiate(item.inspectModel);
 
         if ( bust != null && spawnPosObj != null)
         {
@@ -88,5 +92,14 @@ private void Start()
             bust.transform.localScale = spawnPosObj.transform.localScale;
             bust.transform.rotation = spawnPosObj.transform.rotation;
         }      
+    }
+
+    private void ItemRetrieved()
+    {
+        if (bust != null)
+        {
+            Destroy(bust);
+            hasItemPlaced = false;
+        }
     }
 }

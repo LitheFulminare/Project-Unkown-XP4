@@ -16,7 +16,7 @@ public class OverlayController : MonoBehaviour
     public delegate void PickupOverlay(GameObject collectedItem, CollectableSO itemName);
     public static PickupOverlay showUI; // this is used to show the overlay when an item is picked
 
-    public delegate void InteractOverlay(GameObject interactedItem, CollectableSO neededItem, string description, string prompt);
+    public delegate void InteractOverlay(GameObject interactedItem, CollectableSO neededItem, string description, string prompt, bool r, CollectableSO cSO);
     public static InteractOverlay interactOverlay; // // this is used to show the overlay when the player interacts and a custom text is needed
 
     public GameObject canvas;
@@ -32,7 +32,10 @@ public class OverlayController : MonoBehaviour
     [SerializeField] Text bottomText;
 
     private string collectedItemName;
-    
+
+    // used when the player places an item and retrieves it
+    private bool isRetrieving;
+    private CollectableSO currentItem;
 
     private bool _isCollectable = false;
 
@@ -77,9 +80,12 @@ public class OverlayController : MonoBehaviour
         //}
 
         _isCollectable = true;
+        currentItem = null;
+        isRetrieving = false;
     }
 
-    public void setActiveInteract(GameObject interactedItem, CollectableSO itemNeeded, string description, string prompt)
+    // this is too messy, I think I should break this down
+    public void setActiveInteract(GameObject interactedItem, CollectableSO itemNeeded, string description, string prompt, bool isRetrieving, CollectableSO currentItem)
     {
         // prob wont be used
         //AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
@@ -96,6 +102,9 @@ public class OverlayController : MonoBehaviour
         bottomText.text = prompt;
 
         _isCollectable = false;
+
+        if (currentItem != null) this.currentItem = currentItem;
+        this.isRetrieving = isRetrieving;
     }
 
     // called by the 'confirm' and 'deny' buttons the pickup screen overlay
@@ -116,10 +125,18 @@ public class OverlayController : MonoBehaviour
         {
             if (playerAction)
             {
-                // tells the Inventory Controller what the player needs and opens the screen
-                InventoryController.setItemNeeded(itemNeeded);
-                PlayerVars.BlockPlayer(false); // this need to be here cuz if the player is blocked, the inventory wont open
-                InventoryController.callInventory();
+                if (!isRetrieving)
+                {
+                    // tells the Inventory Controller what the player needs and opens the screen
+                    InventoryController.setItemNeeded(itemNeeded);
+                    PlayerVars.BlockPlayer(false); // this need to be here cuz if the player is blocked, the inventory wont open
+                    InventoryController.callInventory();
+                }
+                else
+                {
+                    InventoryController.itemReceiver(currentItem);
+                    interactedItem.SendMessage("ItemRetrieved");
+                }              
             }
         }
 
