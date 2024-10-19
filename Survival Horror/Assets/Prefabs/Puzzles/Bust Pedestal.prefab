@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7048951046353919895}
   - component: {fileID: -5442254426734047867}
-  - component: {fileID: 569184859071136237}
+  - component: {fileID: 5431831698630983378}
   m_Layer: 0
   m_Name: Bust Pedestal
   m_TagString: Untagged
@@ -48,13 +48,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.0740027, y: 7.304434, z: 0.9094987}
   m_Center: {x: 1.684941, y: 3.152217, z: -0.19909358}
---- !u!114 &569184859071136237
+--- !u!114 &5431831698630983378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +63,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2090298241966803057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
+  m_Script: {fileID: 11500000, guid: e77d1564fbb4bac4cb9a4ed425583599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   neededItem: {fileID: 0}
-  door: {fileID: 0}
+  interactionText: {fileID: 11400000, guid: 517b23d1c0b82bb49a1caa37264b5cfd, type: 2}
   puzzleComplete: 0
-  player_interaction: {fileID: 0}

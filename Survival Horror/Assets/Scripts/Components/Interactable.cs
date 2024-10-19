@@ -35,7 +35,8 @@ public class Interactable : MonoBehaviour, IInteractable
         if (!puzzleComplete)
         {
             //Debug.Log($"interaction happened with {gameObject}");
-            OverlayController.interactOverlay(gameObject, neededItem);
+            Debug.LogError("Using old interactable system");
+            //OverlayController.interactOverlay(gameObject, neededItem);
         }
         else
         {

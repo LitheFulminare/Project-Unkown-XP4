@@ -7,8 +7,11 @@ public class BustInteractable : MonoBehaviour, IInteractable
     //public Items item;
 
     [SerializeField] CollectableSO neededItem;
+    [SerializeField] InteractableSO interactionText;
 
     public bool puzzleComplete = false;
+
+    public bool hasItemPlaced = false;
 
     private Interaction player_interaction;
 
@@ -26,7 +29,9 @@ public class BustInteractable : MonoBehaviour, IInteractable
         if (!puzzleComplete)
         {
             Debug.Log($"interaction happened with {gameObject}");
-            OverlayController.interactOverlay(gameObject, neededItem);
+
+            // should pass the current bust as argument
+            OverlayController.interactOverlay(gameObject, neededItem, interactionText, hasItemPlaced);
         }
         else
         {
