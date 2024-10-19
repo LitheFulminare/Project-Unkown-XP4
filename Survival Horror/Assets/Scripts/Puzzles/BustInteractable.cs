@@ -25,7 +25,7 @@ public class BustInteractable : MonoBehaviour, IInteractable
 
         if (!puzzleComplete)
         {
-            //Debug.Log($"interaction happened with {gameObject}");
+            Debug.Log($"interaction happened with {gameObject}");
             OverlayController.interactOverlay(gameObject, neededItem);
         }
         else
