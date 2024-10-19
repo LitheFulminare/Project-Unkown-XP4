@@ -30,9 +30,6 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
 
         LoadPersistentObjects(sceneName);
 
-        //LoadDestroyedItems(sceneName);
-        //LoadCompletedPuzzles(sceneName);
-
         roomManager.InitializeRoomState();
     }
 
@@ -78,6 +75,8 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
 
     private void LoadPersistentObjects(string sceneName)
     {
+        // I could create a function on DataPersistency to clear and add the list, so the code is cleaner here
+
         DataPersistency.destroyedItems.Clear();
         DataPersistency.destroyedItems.AddRange(destroyedItemsPerRoom[sceneName]);
 
@@ -87,26 +86,21 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
         DataPersistency.loadPersistentObjects();
     }
 
+
+    // these two prob wont be used. 'LoadPersistentObjects' basically does the same thing
     private void LoadDestroyedItems(string sceneName)
     {
-        // loads the destroyed items on the 'CollectableManager'
         DataPersistency.destroyedItems.Clear();
         DataPersistency.destroyedItems.AddRange(destroyedItemsPerRoom[sceneName]);
-        //CollectableManager.destroyedItems.Clear();
-        //CollectableManager.destroyedItems.AddRange(destroyedItemsPerRoom[sceneName]);
 
-        // calls the 'CollectableManager' to destroy collected items
+        // destroy collected items and update solved puzzles
         DataPersistency.loadPersistentObjects();
-    }
-
-    private void LoadCompletedPuzzles(string sceneName)
+    }   private void LoadCompletedPuzzles(string sceneName)
     {
-        // loads the completed puzzles on '
-        // '
         DataPersistency.completedPuzzles.Clear();
         DataPersistency.completedPuzzles.AddRange(completedPuzzlesPerRoom[sceneName]);
 
-        // calls 'PuzzleManager' to set the puzzles as complete
+        // destroy collected items and update solved puzzles
         DataPersistency.loadPersistentObjects();
     }
 }

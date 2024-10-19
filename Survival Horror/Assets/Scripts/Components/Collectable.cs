@@ -15,17 +15,11 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public bool isDestroyed = false;
 
-    // video about enums
-    // https://learn.unity.com/tutorial/enumerations#
-    // https://www.youtube.com/watch?v=G4Qmy2sabpo
-
     public Items item;
 
     // determines if the item should be sent to the regular inventory or to the document section
+    // probaly will be stored by the CollectableSO instead
     [SerializeField] public bool isDocument = false;
-
-    //public Interaction player_interaction;
-
 
     private void Start()
     {
@@ -38,7 +32,7 @@ public class Collectable : MonoBehaviour, IInteractable
     }
 
     // called when collected
-    // also called by 'CheckDestroyedItems' method on the 'CollectableManager' class to prevent item from respawning
+    // also called by 'CheckDestroyedItems' method on the 'DataPersistency' class to prevent item from respawning
     public void SelfDestruct()
     {
         isDestroyed = true;

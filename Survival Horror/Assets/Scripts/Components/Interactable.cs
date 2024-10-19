@@ -11,8 +11,6 @@ public class Interactable : MonoBehaviour, IInteractable
     public delegate void ConfirmAction(bool playerConfirmed, GameObject itemChecker);
     public static ConfirmAction confirm;
 
-    //public Items item;
-
     [SerializeField] CollectableSO neededItem;
     [SerializeField] Door door; // change this according to need
     
@@ -34,8 +32,8 @@ public class Interactable : MonoBehaviour, IInteractable
 
         if (!puzzleComplete)
         {
-            //Debug.Log($"interaction happened with {gameObject}");
-            Debug.LogError("Using old interactable system");
+            Debug.Log("Using old interactable system"); // i'm trying to rewrite the interaction system
+
             //OverlayController.interactOverlay(gameObject, neededItem);
         }
         else

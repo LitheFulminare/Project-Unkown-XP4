@@ -34,23 +34,25 @@ public class RoomManager : MonoBehaviour
         if (roomState != RoomState.explored)
         {
             roomState = RoomState.partiallyExplored;
-            //Debug.Log($"{SceneManager.GetActiveScene().name} state: {roomState}");
+
+            // the only way a room is Unexplored is if it's never entered
+            // no need to worry about it then
         }
     }
 
     // called when the player collects an item or completes a puzzle
+    // also called when the scene is Initialized
     // checks if there's anything left in the room to change the 'roomState'
     public void PlayerAction()
     {
+        // to sum up -> if any item or unsolved puzzle is found, these bools below will be false, room state will be partially explored
+        // if not, it's completely explored
+
         bool allItemsCollected = true;
         bool allPuzzlesCompleted = true;
 
-        //Debug.Log("Player interacted with world");
-
-        // searches for every collectable
         foreach (Collectable collectable in collectables)
         {
-            // if any of them is still uncollected (not destroyed), 'allItemsCollected' is false
             if (!collectable.isDestroyed)
             {
                 //Debug.Log($"Found uncollected item: {collectable.gameObject.name}");
@@ -58,10 +60,8 @@ public class RoomManager : MonoBehaviour
             }
         }
 
-        // searches for every interactable 
         foreach (Interactable interactable in interactables)
         {
-            // if any of them is still uncompleted, 'allPuzzlesCompleted' is false
             if (!interactable.puzzleComplete)
             {
                 //Debug.Log($"Found unsolved puzzle: {interactable.gameObject.name}");
@@ -75,6 +75,7 @@ public class RoomManager : MonoBehaviour
             roomState = RoomState.explored;
             //Debug.Log("All all items collected and all puzzles solved");
         }
+
         //Debug.Log($"{SceneManager.GetActiveScene().name} state: {roomState}");
     }
 }
