@@ -75,7 +75,7 @@ private void Start()
     public void SetCompleted()
     {
         puzzleComplete = true;
-        PuzzleManager.AddCompletedPuzzle(gameObject.name); // marks this puzzle as complete, so it won't reset when the scene reloads
+        DataPersistency.addPuzzle(gameObject.name); // marks this puzzle as complete, so it won't reset when the scene reloads
     }
 
     public void UsedItem(CollectableSO item)

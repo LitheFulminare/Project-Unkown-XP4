@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -79,13 +80,7 @@ public class SceneChanger : MonoBehaviour
         if (inventoryController != null) { inventoryController.SaveInventory(); }
         else { Debug.LogError("SceneChanger could not find 'inventoryController'"); }
 
-        // saves destroyed items on WorldVars
-        if (collectableManager != null) { collectableManager.SaveList(); }
-        else { Debug.LogError("SceneChanger could not find 'collectableManager'"); }
-
-        // saves completed puzzles on WorldVars
-        if (puzzleManager != null) { puzzleManager.SaveList(); }
-        else { Debug.LogError("SceneChanger could not find 'puzzleManager"); }
+        DataPersistency.savePersistencyList();
 
         spawnIndex = doorCode; // used to match where the player spawns with which door the player entered
         SceneManager.LoadScene(sceneName);

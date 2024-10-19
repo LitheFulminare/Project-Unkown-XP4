@@ -52,8 +52,8 @@ public class Collectable : MonoBehaviour, IInteractable
 
         // find an empty space and adds item to the stack, then it self destructs
         InventoryController.itemReceiver(collectableSO);
-        CollectableManager.AddDestroyedItem(gameObject.name); // marks this item as collected, so it won't respawn when the scene reloads
         SelfDestruct();
+        DataPersistency.addItem(gameObject.name); // marks this item as collected, so it won't respawn when the scene reloads      
     }
 
     // this probably wont be used

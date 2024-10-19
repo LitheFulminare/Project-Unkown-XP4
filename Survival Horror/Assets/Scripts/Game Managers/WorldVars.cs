@@ -28,8 +28,10 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
     {
         string sceneName = SceneManager.GetActiveScene().name;
 
-        LoadDestroyedItems(sceneName);
-        LoadCompletedPuzzles(sceneName);
+        LoadPersistentObjects(sceneName);
+
+        //LoadDestroyedItems(sceneName);
+        //LoadCompletedPuzzles(sceneName);
 
         roomManager.InitializeRoomState();
     }
@@ -54,7 +56,7 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
         isInitialized = true;
     }
 
-    // called by 'CollectableManager' after SceneChanger calls it to save the items
+    // called by 'DataPersistency' after SceneChanger calls it to save the items
     public static void SaveDestroyedItems(List<string> destroyedItems, string sceneName)
     {
         if (destroyedItemsPerRoom.ContainsKey(sceneName))
@@ -64,7 +66,7 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
         }
     }
 
-    // same thing as above, but called by 'PuzzleManager'
+    // same thing as above but for puzzles
     public static void SaveCompletedPuzzles(List<string> completedPuzzles, string sceneName)
     {
         if (completedPuzzlesPerRoom.ContainsKey(sceneName))
@@ -74,23 +76,36 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
         }
     }
 
+    private void LoadPersistentObjects(string sceneName)
+    {
+        DataPersistency.destroyedItems.Clear();
+        DataPersistency.destroyedItems.AddRange(destroyedItemsPerRoom[sceneName]);
+
+        DataPersistency.completedPuzzles.Clear();
+        DataPersistency.completedPuzzles.AddRange(completedPuzzlesPerRoom[sceneName]);
+
+        DataPersistency.loadPersistentObjects();
+    }
+
     private void LoadDestroyedItems(string sceneName)
     {
         // loads the destroyed items on the 'CollectableManager'
-        CollectableManager.destroyedItems.Clear();
-        CollectableManager.destroyedItems.AddRange(destroyedItemsPerRoom[sceneName]);
+        DataPersistency.destroyedItems.Clear();
+        DataPersistency.destroyedItems.AddRange(destroyedItemsPerRoom[sceneName]);
+        //CollectableManager.destroyedItems.Clear();
+        //CollectableManager.destroyedItems.AddRange(destroyedItemsPerRoom[sceneName]);
 
         // calls the 'CollectableManager' to destroy collected items
-        CollectableManager.CheckDestroyedItems();
+        DataPersistency.loadPersistentObjects();
     }
 
     private void LoadCompletedPuzzles(string sceneName)
     {
         // loads the completed puzzles on 'PuzzleManager'
-        PuzzleManager.completedPuzzles.Clear();
-        PuzzleManager.completedPuzzles.AddRange(completedPuzzlesPerRoom[sceneName]);
+        DataPersistency.completedPuzzles.Clear();
+        DataPersistency.completedPuzzles.AddRange(completedPuzzlesPerRoom[sceneName]);
 
         // calls 'PuzzleManager' to set the puzzles as complete
-        PuzzleManager.CheckCompletePuzzles();
+        DataPersistency.loadPersistentObjects();
     }
 }
