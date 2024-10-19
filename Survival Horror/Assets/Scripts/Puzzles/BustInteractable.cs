@@ -75,6 +75,6 @@ public class BustInteractable : MonoBehaviour, IInteractable
 
     public void UsedItem(CollectableSO item)
     {
-        Instantiate(item.inspectModel);
+        //Instantiate(item.inspectModel, );
     }
 }
