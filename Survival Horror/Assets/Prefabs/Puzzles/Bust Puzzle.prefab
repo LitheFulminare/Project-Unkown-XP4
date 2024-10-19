@@ -66,6 +66,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bust 1 (Bear)
       objectReference: {fileID: 0}
+    - target: {fileID: 5431831698630983378, guid: a50fba9e693fe3b4198c0f3fd2a31376, type: 3}
+      propertyPath: neededItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 1522e24aa6810ff4f90b2f94410ba8a2, type: 2}
     - target: {fileID: 7048951046353919895, guid: a50fba9e693fe3b4198c0f3fd2a31376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -139,6 +143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bust 2 (Bull)
       objectReference: {fileID: 0}
+    - target: {fileID: 5431831698630983378, guid: a50fba9e693fe3b4198c0f3fd2a31376, type: 3}
+      propertyPath: neededItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 08ee0180d8d74da48935a763d4c4e7e4, type: 2}
     - target: {fileID: 7048951046353919895, guid: a50fba9e693fe3b4198c0f3fd2a31376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -212,6 +220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bust 5 (Horse)
       objectReference: {fileID: 0}
+    - target: {fileID: 5431831698630983378, guid: a50fba9e693fe3b4198c0f3fd2a31376, type: 3}
+      propertyPath: neededItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 27dfdef7d91d7924da103e5c97183204, type: 2}
     - target: {fileID: 7048951046353919895, guid: a50fba9e693fe3b4198c0f3fd2a31376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -285,6 +297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bust 4 (Monkey)
       objectReference: {fileID: 0}
+    - target: {fileID: 5431831698630983378, guid: a50fba9e693fe3b4198c0f3fd2a31376, type: 3}
+      propertyPath: neededItem
+      value: 
+      objectReference: {fileID: 11400000, guid: e4a99386da537a94ea29b33f1bacfb51, type: 2}
     - target: {fileID: 7048951046353919895, guid: a50fba9e693fe3b4198c0f3fd2a31376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -358,6 +374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bust 3 (Goat)
       objectReference: {fileID: 0}
+    - target: {fileID: 5431831698630983378, guid: a50fba9e693fe3b4198c0f3fd2a31376, type: 3}
+      propertyPath: neededItem
+      value: 
+      objectReference: {fileID: 11400000, guid: f6e7a5d368b9d63489629038fce5a2c9, type: 2}
     - target: {fileID: 7048951046353919895, guid: a50fba9e693fe3b4198c0f3fd2a31376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

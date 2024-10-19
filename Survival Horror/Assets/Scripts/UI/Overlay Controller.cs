@@ -16,7 +16,7 @@ public class OverlayController : MonoBehaviour
     public delegate void PickupOverlay(GameObject collectedItem, CollectableSO itemName);
     public static PickupOverlay showUI; // this is used to show the overlay when an item is picked
 
-    public delegate void InteractOverlay(GameObject interactedItem, CollectableSO neededItem, InteractableSO interactableSO, bool isAlt);
+    public delegate void InteractOverlay(GameObject interactedItem, CollectableSO neededItem, string description, string prompt);
     public static InteractOverlay interactOverlay; // // this is used to show the overlay when the player interacts and a custom text is needed
 
     public GameObject canvas;
@@ -79,7 +79,7 @@ public class OverlayController : MonoBehaviour
         _isCollectable = true;
     }
 
-    public void setActiveInteract(GameObject interactedItem, CollectableSO itemNeeded, InteractableSO interactableSO, bool isAlt)
+    public void setActiveInteract(GameObject interactedItem, CollectableSO itemNeeded, string description, string prompt)
     {
         // prob wont be used
         //AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
@@ -92,23 +92,8 @@ public class OverlayController : MonoBehaviour
 
         redText.text = "";
 
-        if (!isAlt)
-        {
-            topText.text = interactableSO.description;
-            bottomText.text = interactableSO.prompt;
-        }
-        else
-        {
-            topText.text = string.Format(interactableSO.altDescription);
-            bottomText.text = interactableSO.altPrompt;
-        }
-
-        //if (itemNeeded == Items.keyDoor1)
-        //{
-        //    topText.text = "There is a "; redText.text = "door";
-
-        //    bottomText.text = "Use item?";
-        //}     
+        topText.text = description;
+        bottomText.text = prompt;
 
         _isCollectable = false;
     }

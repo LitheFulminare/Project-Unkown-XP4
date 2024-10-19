@@ -2,18 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Bust
+{
+    bear = 0,
+    bull = 1,
+    goat = 2,
+    horse = 3,
+    monkey = 4
+}
+
 public class BustInteractable : MonoBehaviour, IInteractable
 {
     //public Items item;
 
     [SerializeField] CollectableSO neededItem;
-    [SerializeField] InteractableSO interactionText;
+    [SerializeField] InteractableSO interactionTextSO;
 
     public bool puzzleComplete = false;
 
     public bool hasItemPlaced = false;
 
     private Interaction player_interaction;
+
+    private CollectableSO currentItem;
 
     private void Start()
     {
@@ -30,10 +41,21 @@ public class BustInteractable : MonoBehaviour, IInteractable
         {
             Debug.Log($"interaction happened with {gameObject}");
 
-            // store the 'currentBust' as a 'CollectableSO'
-            // pass 'currentBust.ingameName' or something as a parameter
-            // maybe change the function to overload 'description' and 'prompt', and decide here whether the regular or alt texts should be used
-            OverlayController.interactOverlay(gameObject, neededItem, interactionText, hasItemPlaced);
+            string description;
+            string prompt;
+
+            if (!hasItemPlaced )
+            {
+                description = interactionTextSO.description;
+                prompt = interactionTextSO.prompt;
+            }
+            else
+            {
+                description = interactionTextSO.altDescription + $"{currentItem.ingameName}";
+                prompt = interactionTextSO.altPrompt;
+            }
+
+            OverlayController.interactOverlay(gameObject, neededItem, description, prompt);
         }
         else
         {
@@ -49,5 +71,10 @@ public class BustInteractable : MonoBehaviour, IInteractable
     {
         puzzleComplete = true;
         PuzzleManager.AddCompletedPuzzle(gameObject.name); // marks this puzzle as complete, so it won't reset when the scene reloads
+    }
+
+    public void UsedItem(CollectableSO item)
+    {
+        Instantiate(item.inspectModel);
     }
 }

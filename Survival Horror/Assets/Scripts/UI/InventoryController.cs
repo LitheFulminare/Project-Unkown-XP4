@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -213,11 +214,20 @@ public class InventoryController : MonoBehaviour, IDragHandler
     // called by 'ShowIcon' when the button is pressed
     private void UseItem(CollectableSO selectedItem)
     {
+        // try to get BustInteractable
+
         if (_itemNeeded != null)
         {
-            if (selectedItem == _itemNeeded)
+            //bool isBust = selectedItem.ingameName.Contains("bust");
+
+            Debug.Log($"selectedItem: {selectedItem} - neededItem: {_itemNeeded}");
+
+            // I could call the method UsedItem and return a bool. If false, instantiate textPopup
+            if (selectedItem.ingameName.Contains("bust") == _itemNeeded.ingameName.Contains("bust"))
             {
-                Manager.currentInteractionObj.SendMessage("SetCompleted");
+                //Manager.currentInteractionObj.SendMessage("SetCompleted");
+                //Manager.currentInteractionObj.SendMessage("SuitableItem");
+                Manager.currentInteractionObj.SendMessage("UsedItem", selectedItem);
             }
             else
             {

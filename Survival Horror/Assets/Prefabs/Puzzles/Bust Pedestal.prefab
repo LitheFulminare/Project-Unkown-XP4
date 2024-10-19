@@ -67,5 +67,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neededItem: {fileID: 0}
-  interactionText: {fileID: 11400000, guid: 517b23d1c0b82bb49a1caa37264b5cfd, type: 2}
+  interactionTextSO: {fileID: 11400000, guid: 517b23d1c0b82bb49a1caa37264b5cfd, type: 2}
   puzzleComplete: 0
+  hasItemPlaced: 0
