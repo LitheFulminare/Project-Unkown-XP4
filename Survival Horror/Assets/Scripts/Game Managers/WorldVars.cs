@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,7 +12,7 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
     private static Dictionary<string, List<string>> completedPuzzlesPerRoom = new Dictionary<string, List<string>>();
 
     // I should create a better alternative later
-    private static List<string> bustRoomState = new List<string>();
+    public static List<string> bustRoomState = new List<string>();
 
     // Static bool to ensure the lists are only generated once
     private static bool isInitialized = false;

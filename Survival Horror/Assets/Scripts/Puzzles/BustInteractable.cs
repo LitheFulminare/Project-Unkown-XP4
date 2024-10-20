@@ -15,8 +15,8 @@ public class BustInteractable : MonoBehaviour, IInteractable
 {
     //public Items item;
 
-    [SerializeField] CollectableSO neededItem;
-    [SerializeField] InteractableSO interactionTextSO;
+    [SerializeField] private CollectableSO neededItem;
+    [SerializeField] private InteractableSO interactionTextSO;
 
     [SerializeField] private GameObject spawnPosObj;
 
@@ -33,6 +33,16 @@ public class BustInteractable : MonoBehaviour, IInteractable
 private void Start()
     {
         player_interaction = GameObject.FindGameObjectWithTag("Player").GetComponent<Interaction>();
+    }
+
+    public bool CheckIfItemsMatch()
+    {
+        if (neededItem == currentItem)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     // called when the player presses 'F' near the item

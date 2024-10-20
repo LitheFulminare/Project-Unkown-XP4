@@ -69,7 +69,6 @@ public class RoomManager : MonoBehaviour
             }
         }
 
-        // if all items were collected and all puzzles were solved, the room is completely explored
         if (allItemsCollected && allPuzzlesCompleted)
         {
             roomState = RoomState.explored;
