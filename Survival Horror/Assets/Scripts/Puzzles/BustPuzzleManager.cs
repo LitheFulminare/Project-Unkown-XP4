@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class BustPuzzleManager : MonoBehaviour
 {
-    public delegate void PlaceBust();
+    public delegate void PlaceBust(BustInteractable stand, CollectableSO bustPlaced);
     public static PlaceBust placeBust;
 
     // the goal is to compare the Interactable's 'requiredItem' field to the current bust whenever the player places a bust
+
+    // when one bust changes -> send data to DataPersistency
+    // on start -> take this data back
 
     [Header("Stand 1")]
     [SerializeField] private BustInteractable stand1;
@@ -39,8 +42,8 @@ public class BustPuzzleManager : MonoBehaviour
         placeBust -= PlaceBustOnPedestal;
     }
 
-    private void PlaceBustOnPedestal()
+    private void PlaceBustOnPedestal(BustInteractable stand, CollectableSO bustPlaced)
     {
-        Debug.Log("Placed {bust} on stand {stand}");
+        Debug.Log($"Placed {bustPlaced} on stand {stand}");
     }
 }

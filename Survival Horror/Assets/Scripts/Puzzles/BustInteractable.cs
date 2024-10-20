@@ -33,7 +33,6 @@ public class BustInteractable : MonoBehaviour, IInteractable
 private void Start()
     {
         player_interaction = GameObject.FindGameObjectWithTag("Player").GetComponent<Interaction>();
-
     }
 
     // called when the player presses 'F' near the item
@@ -78,20 +77,26 @@ private void Start()
         DataPersistency.addPuzzle(gameObject.name); // marks this puzzle as complete, so it won't reset when the scene reloads
     }
 
+    // called when the player selects an item on the inventory
     public void UsedItem(CollectableSO item)
     {
-        currentItem = item;
-
-        hasItemPlaced = true;
-
-        bust = Instantiate(item.inspectModel);
-
         if ( bust != null && spawnPosObj != null)
         {
+            currentItem = item;
+
+            hasItemPlaced = true;
+
+            bust = Instantiate(item.inspectModel);
+
             bust.transform.position = spawnPosObj.transform.position;
             bust.transform.localScale = spawnPosObj.transform.localScale;
             bust.transform.rotation = spawnPosObj.transform.rotation;
-        }      
+
+            // calls the manager to check whether the puzzle is complete or not
+            BustPuzzleManager.placeBust(this, currentItem);
+        }
+
+        else Debug.LogError("Could not find a valid reference to 'bust' and/or 'spawnPosObj'");
     }
 
     private void ItemRetrieved()
