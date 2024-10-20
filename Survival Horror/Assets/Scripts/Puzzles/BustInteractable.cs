@@ -28,6 +28,9 @@ public class BustInteractable : MonoBehaviour, IInteractable
 
     public CollectableSO currentItem;
 
+    // this is saved between sessions, not really the best for me here
+    //public BustPuzzleData bustPuzzleData;
+
     GameObject bust;
 
 private void Start()
@@ -102,10 +105,17 @@ private void Start()
             bust.transform.localScale = spawnPosObj.transform.localScale;
             bust.transform.rotation = spawnPosObj.transform.rotation;
 
+            //bustPuzzleData.item = item;
+
             // calls the manager to check whether the puzzle is complete or not
             BustPuzzleManager.placeBust(this, currentItem);
         }
-        else Debug.Log("'UsedItem' was called but the 'item' reference was null");
+
+        else
+        {
+            ItemRetrieved();
+            Debug.Log("'UsedItem' was called but the 'item' reference was null");
+        }
     }
 
     private void ItemRetrieved()
@@ -114,6 +124,7 @@ private void Start()
         {
             Destroy(bust);
             hasItemPlaced = false;
+            BustPuzzleManager.removeBust(this, currentItem);
         }
     }
 }

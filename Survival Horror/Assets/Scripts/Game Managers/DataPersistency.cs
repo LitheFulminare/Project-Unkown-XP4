@@ -23,11 +23,12 @@ public class DataPersistency : MonoBehaviour
     public static List<string> completedPuzzles = new List<string>();   
 
     private void OnEnable()
-    {
+    {      
         addItem += AddDestroyedItem;
         addPuzzle += AddCompletedPuzzle;
 
         savePersistencyList += SaveList;
+        savePersistencyList += BustRoomState;
 
         loadPersistentObjects += CheckDestroyedItems;
         loadPersistentObjects += CheckCompletePuzzles;
@@ -39,6 +40,7 @@ public class DataPersistency : MonoBehaviour
         addPuzzle -= AddCompletedPuzzle;
 
         savePersistencyList -= SaveList;
+        savePersistencyList -= BustRoomState;
 
         loadPersistentObjects -= CheckDestroyedItems;
         loadPersistentObjects -= CheckCompletePuzzles;
@@ -92,6 +94,26 @@ public class DataPersistency : MonoBehaviour
             if (puzzle != null) puzzle.SetCompleted();
 
             //if (puzzle != null) { puzzle.SendMessage("SetCompleted"); }
+        }
+    }
+
+    // temporary, this is not the best place
+    private static void BustRoomState()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName != "Bust Room")
+        {
+            Debug.Log("Player not in Bust Room");
+        }
+        else
+        {
+            BustPuzzleManager manager = GameObject.FindAnyObjectByType<BustPuzzleManager>();
+
+            if (manager != null)
+            {
+                manager.SaveAndLoadItems();
+            }          
         }
     }
 

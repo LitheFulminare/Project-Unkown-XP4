@@ -72,6 +72,8 @@ MonoBehaviour:
   spawnPosObj: {fileID: 7359978698914467409}
   puzzleComplete: 0
   hasItemPlaced: 0
+  currentItem: {fileID: 0}
+  bustPuzzleData: {fileID: 11400000, guid: 1972ef7b65be364489541d259c726098, type: 2}
 --- !u!1 &7359978698914467409
 GameObject:
   m_ObjectHideFlags: 0
