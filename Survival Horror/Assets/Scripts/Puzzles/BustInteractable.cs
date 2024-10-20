@@ -2,19 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Bust
-{
-    bear = 0,
-    bull = 1,
-    goat = 2,
-    horse = 3,
-    monkey = 4
-}
-
 public class BustInteractable : MonoBehaviour, IInteractable
 {
-    //public Items item;
-
     [SerializeField] private CollectableSO neededItem;
     [SerializeField] private InteractableSO interactionTextSO;
 
@@ -27,9 +16,6 @@ public class BustInteractable : MonoBehaviour, IInteractable
     private Interaction player_interaction;
 
     public CollectableSO currentItem;
-
-    // this is saved between sessions, not really the best for me here
-    //public BustPuzzleData bustPuzzleData;
 
     GameObject bust;
 
@@ -56,8 +42,6 @@ private void Start()
 
         if (!puzzleComplete)
         {
-            //Debug.Log($"interaction happened with {gameObject}");
-
             string description;
             string prompt;
 
@@ -91,6 +75,7 @@ private void Start()
     }
 
     // called when the player selects an item on the inventory
+    // also called on start by BustPuzzleManager to sync data from previous session
     public void UsedItem(CollectableSO item)
     {
         if (item != null)
@@ -105,16 +90,14 @@ private void Start()
             bust.transform.localScale = spawnPosObj.transform.localScale;
             bust.transform.rotation = spawnPosObj.transform.rotation;
 
-            //bustPuzzleData.item = item;
-
             // calls the manager to check whether the puzzle is complete or not
             BustPuzzleManager.placeBust(this, currentItem);
         }
 
         else
         {
+            // destroy the item on start if it was previouly removed
             ItemRetrieved();
-            Debug.Log("'UsedItem' was called but the 'item' reference was null");
         }
     }
 
@@ -124,6 +107,8 @@ private void Start()
         {
             Destroy(bust);
             hasItemPlaced = false;
+
+            // sets the current item as null so it wont respawn afer reloading the scene
             BustPuzzleManager.removeBust(this, currentItem);
         }
     }
