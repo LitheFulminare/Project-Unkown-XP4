@@ -11,6 +11,8 @@ public class BustPuzzleManager : MonoBehaviour
 
     private BustInteractable[] pedestalList;
 
+    private static bool listInitialized = false;
+
     //private Dictionary<BustInteractable, CollectableSO> pedestalDictionary = new Dictionary<BustInteractable, CollectableSO>();
 
     // the goal is to compare the Interactable's 'requiredItem' field to the current bust whenever the player places a bust
@@ -55,24 +57,30 @@ public class BustPuzzleManager : MonoBehaviour
         Debug.Log($"entries in BustRoomData dictionary: {WorldVars.BustRoomData.Count}");
 
         // I should initalize the data before the foreach
-        // foreach (BustInteractable pedestal in pedestalList)
-        // add to the dictionary 
+        if (!listInitialized)
+        {
+            foreach (BustInteractable pedestal in pedestalList)
+            {
+                WorldVars.BustRoomData.Add(pedestal, pedestal.currentItem);
+            }
 
+            listInitialized = true;
+        }
 
-
-
-        //for (int i = 0; i < WorldVars.BustRoomData.Count; i++)
-        //{
-        //    Debug.Log($"{WorldVars.BustRoomData.Values}");
-        //}
-
-        // handles persistent data
-        // calls the pedestals to load what busts were previously on them befere exiting the scene
         foreach (BustInteractable pedestal in pedestalList)
         {
-            if (WorldVars.BustRoomData[pedestal] != null)
+            if (WorldVars.BustRoomData.ContainsKey(pedestal))
             {
                 pedestal.UsedItem(WorldVars.BustRoomData[pedestal]);
+                Debug.Log($"Calling {pedestal} to add {WorldVars.BustRoomData[pedestal]}");
+                //if (WorldVars.BustRoomData[pedestal] != null)
+                //{
+                    
+                //}
+                //else
+                //{
+                //    Debug.Log($"Did not call {pedestal}, the CollectableSO was null");
+                //}   
             }
             
 
@@ -90,7 +98,21 @@ public class BustPuzzleManager : MonoBehaviour
 
     private void PlaceBustOnPedestal(BustInteractable stand, CollectableSO bustPlaced)
     {
-        //Debug.Log($"Placed {bustPlaced} on stand {stand}");
+        Debug.Log($"Placed {bustPlaced} on stand {stand}");
+        //Debug.Log($"Stand 1: {stand1}");
+        if (stand1 == stand)
+        {
+            //Debug.Log("They are equal");
+        }
+        switch (stand)
+        {
+            case var _ when stand == stand1: stand1 = stand; break;
+            case var _ when stand == stand2: stand1 = stand; break;
+            case var _ when stand == stand3: stand1 = stand; break;
+            case var _ when stand == stand4: stand1 = stand; break;
+            case var _ when stand == stand5: stand1 = stand; break;
+        }
+
 
         //if (pedestalDictionary.ContainsKey(stand))
         //{

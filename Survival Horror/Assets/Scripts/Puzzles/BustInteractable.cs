@@ -26,7 +26,7 @@ public class BustInteractable : MonoBehaviour, IInteractable
 
     private Interaction player_interaction;
 
-    private CollectableSO currentItem;
+    public CollectableSO currentItem;
 
     GameObject bust;
 
@@ -90,18 +90,22 @@ private void Start()
     // called when the player selects an item on the inventory
     public void UsedItem(CollectableSO item)
     {
-        currentItem = item;
+        if (item != null)
+        {
+            currentItem = item;
 
-        hasItemPlaced = true;
+            hasItemPlaced = true;
 
-        bust = Instantiate(item.inspectModel);
+            bust = Instantiate(item.inspectModel);
 
-        bust.transform.position = spawnPosObj.transform.position;
-        bust.transform.localScale = spawnPosObj.transform.localScale;
-        bust.transform.rotation = spawnPosObj.transform.rotation;
+            bust.transform.position = spawnPosObj.transform.position;
+            bust.transform.localScale = spawnPosObj.transform.localScale;
+            bust.transform.rotation = spawnPosObj.transform.rotation;
 
-        // calls the manager to check whether the puzzle is complete or not
-        BustPuzzleManager.placeBust(this, currentItem);
+            // calls the manager to check whether the puzzle is complete or not
+            BustPuzzleManager.placeBust(this, currentItem);
+        }
+        else Debug.Log("'UsedItem' was called but the 'item' reference was null");
     }
 
     private void ItemRetrieved()
