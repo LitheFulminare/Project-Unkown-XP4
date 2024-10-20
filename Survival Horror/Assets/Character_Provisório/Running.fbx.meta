@@ -3,7 +3,37 @@ guid: ff399ae41485a6949979c2585e432151
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Buttons.002
+    second: {fileID: 2100000, guid: 6a06d18998a2328488b7b83abc1c8dc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat.002
+    second: {fileID: 2100000, guid: 279e21675a8476643a9e13a783283347, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 279e21675a8476643a9e13a783283347, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: default.002
+    second: {fileID: 2100000, guid: 89244cefa19f0f341a141ec5df2547b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: girl.001
+    second: {fileID: 2100000, guid: c6c1a764804bfbb45ab54fecf2296c37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: transp.001
+    second: {fileID: 2100000, guid: 74ea5fb276cbe904daa8a7863e5a90c4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
