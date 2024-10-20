@@ -104,7 +104,7 @@ public class DataPersistency : MonoBehaviour
 
         if (sceneName != "Bust Room")
         {
-            Debug.Log("Player not in Bust Room");
+            //Debug.Log("Player not in Bust Room");
         }
         else
         {
