@@ -80,23 +80,18 @@ private void Start()
     // called when the player selects an item on the inventory
     public void UsedItem(CollectableSO item)
     {
-        if ( bust != null && spawnPosObj != null)
-        {
-            currentItem = item;
+        currentItem = item;
 
-            hasItemPlaced = true;
+        hasItemPlaced = true;
 
-            bust = Instantiate(item.inspectModel);
+        bust = Instantiate(item.inspectModel);
 
-            bust.transform.position = spawnPosObj.transform.position;
-            bust.transform.localScale = spawnPosObj.transform.localScale;
-            bust.transform.rotation = spawnPosObj.transform.rotation;
+        bust.transform.position = spawnPosObj.transform.position;
+        bust.transform.localScale = spawnPosObj.transform.localScale;
+        bust.transform.rotation = spawnPosObj.transform.rotation;
 
-            // calls the manager to check whether the puzzle is complete or not
-            BustPuzzleManager.placeBust(this, currentItem);
-        }
-
-        else Debug.LogError("Could not find a valid reference to 'bust' and/or 'spawnPosObj'");
+        // calls the manager to check whether the puzzle is complete or not
+        BustPuzzleManager.placeBust(this, currentItem);
     }
 
     private void ItemRetrieved()
