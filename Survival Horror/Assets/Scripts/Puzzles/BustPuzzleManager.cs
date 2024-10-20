@@ -9,9 +9,9 @@ public class BustPuzzleManager : MonoBehaviour
     public delegate void PlaceBust(BustInteractable stand, CollectableSO bustPlaced);
     public static PlaceBust placeBust;
 
-    private BustInteractable[] pedestals;
+    private BustInteractable[] pedestalList;
 
-    private Dictionary<BustInteractable, CollectableSO> pedestalData = new Dictionary<BustInteractable, CollectableSO>();
+    private Dictionary<BustInteractable, CollectableSO> pedestalDictionary = new Dictionary<BustInteractable, CollectableSO>();
 
     // the goal is to compare the Interactable's 'requiredItem' field to the current bust whenever the player places a bust
 
@@ -50,21 +50,21 @@ public class BustPuzzleManager : MonoBehaviour
 
     private void Start()
     {
-        pedestals = GetComponentsInChildren<BustInteractable>();
-        Debug.Log($"pedestals in the list: {pedestals.Length}");
+        pedestalList = GetComponentsInChildren<BustInteractable>();
+        Debug.Log($"pedestals in the list: {pedestalList.Length}");
     }
 
     private void PlaceBustOnPedestal(BustInteractable stand, CollectableSO bustPlaced)
     {
         Debug.Log($"Placed {bustPlaced} on stand {stand}");
 
-        if (pedestalData.ContainsKey(stand))
+        if (pedestalDictionary.ContainsKey(stand))
         {
-            pedestalData[stand] = bustPlaced;
+            pedestalDictionary[stand] = bustPlaced;
         }
         else
         {
-            pedestalData.Add(stand, bustPlaced);
+            pedestalDictionary.Add(stand, bustPlaced);
         }
 
         CheckPuzzle();
@@ -79,7 +79,7 @@ public class BustPuzzleManager : MonoBehaviour
             
         //}
 
-        foreach (BustInteractable pedestal in pedestals)
+        foreach (BustInteractable pedestal in pedestalList)
         {
             if (!pedestal.CheckIfItemsMatch())
             {
