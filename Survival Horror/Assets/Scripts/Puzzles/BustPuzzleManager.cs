@@ -11,7 +11,7 @@ public class BustPuzzleManager : MonoBehaviour
 
     private BustInteractable[] pedestalList;
 
-    private Dictionary<BustInteractable, CollectableSO> pedestalDictionary = new Dictionary<BustInteractable, CollectableSO>();
+    //private Dictionary<BustInteractable, CollectableSO> pedestalDictionary = new Dictionary<BustInteractable, CollectableSO>();
 
     // the goal is to compare the Interactable's 'requiredItem' field to the current bust whenever the player places a bust
 
@@ -51,22 +51,67 @@ public class BustPuzzleManager : MonoBehaviour
     private void Start()
     {
         pedestalList = GetComponentsInChildren<BustInteractable>();
-        Debug.Log($"pedestals in the list: {pedestalList.Length}");
+
+        Debug.Log($"entries in BustRoomData dictionary: {WorldVars.BustRoomData.Count}");
+
+        // I should initalize the data before the foreach
+        // foreach (BustInteractable pedestal in pedestalList)
+        // add to the dictionary 
+
+
+
+
+        //for (int i = 0; i < WorldVars.BustRoomData.Count; i++)
+        //{
+        //    Debug.Log($"{WorldVars.BustRoomData.Values}");
+        //}
+
+        // handles persistent data
+        // calls the pedestals to load what busts were previously on them befere exiting the scene
+        foreach (BustInteractable pedestal in pedestalList)
+        {
+            if (WorldVars.BustRoomData[pedestal] != null)
+            {
+                pedestal.UsedItem(WorldVars.BustRoomData[pedestal]);
+            }
+            
+
+            //if (WorldVars.BustRoomData.ContainsKey(pedestal))
+            //{
+            //    Debug.Log("found a key in BustRoomData");
+            //    pedestal.UsedItem(WorldVars.BustRoomData[pedestal]);
+            //}
+            //else
+            //{
+            //    Debug.Log($"");
+            //}
+        }
     }
 
     private void PlaceBustOnPedestal(BustInteractable stand, CollectableSO bustPlaced)
     {
-        Debug.Log($"Placed {bustPlaced} on stand {stand}");
+        //Debug.Log($"Placed {bustPlaced} on stand {stand}");
 
-        if (pedestalDictionary.ContainsKey(stand))
+        //if (pedestalDictionary.ContainsKey(stand))
+        //{
+        //    pedestalDictionary[stand] = bustPlaced;
+        //}
+        //else
+        //{
+        //    pedestalDictionary.Add(stand, bustPlaced);
+        //}
+
+        if (WorldVars.BustRoomData.ContainsKey(stand))
         {
-            pedestalDictionary[stand] = bustPlaced;
+            WorldVars.BustRoomData[stand] = bustPlaced;
         }
         else
         {
-            pedestalDictionary.Add(stand, bustPlaced);
+            WorldVars.BustRoomData.Add(stand, bustPlaced);
         }
 
+        Debug.Log($"entries in BustRoomData dictionary: {WorldVars.BustRoomData.Count}");
+        //WorldVars.BustRoomData.Add(stand, bustPlaced);
         CheckPuzzle();
     }
 
@@ -83,7 +128,7 @@ public class BustPuzzleManager : MonoBehaviour
         {
             if (!pedestal.CheckIfItemsMatch())
             {
-                //pedestalData[pedestal]
+                //WorldVars.BustRoomData[pedestal]
 
                 puzzleComplete = false;
                 break;

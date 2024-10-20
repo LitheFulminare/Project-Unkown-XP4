@@ -65,7 +65,7 @@ private void Start()
             }
             else
             {
-                description = $"{currentItem.inventoryName} " + interactionTextSO.altDescription;
+                description = "The " + $"{currentItem.inventoryName} " + interactionTextSO.altDescription;
                 prompt = interactionTextSO.altPrompt;
             }
 

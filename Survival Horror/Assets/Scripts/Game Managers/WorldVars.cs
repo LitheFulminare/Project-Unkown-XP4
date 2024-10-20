@@ -12,7 +12,7 @@ public class WorldVars : MonoBehaviour // serves a similar purpose to PlayerVars
     private static Dictionary<string, List<string>> completedPuzzlesPerRoom = new Dictionary<string, List<string>>();
 
     // I should create a better alternative later
-    public static List<string> bustRoomState = new List<string>();
+    public static Dictionary<BustInteractable, CollectableSO> BustRoomData = new Dictionary<BustInteractable, CollectableSO>();
 
     // Static bool to ensure the lists are only generated once
     private static bool isInitialized = false;
