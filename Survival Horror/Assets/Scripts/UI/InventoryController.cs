@@ -220,7 +220,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
         {
             //bool isBust = selectedItem.ingameName.Contains("bust");
 
-            Debug.Log($"selectedItem: {selectedItem} - neededItem: {_itemNeeded}");
+            //Debug.Log($"selectedItem: {selectedItem} - neededItem: {_itemNeeded}");
 
             // I could call the method UsedItem and return a bool. If false, instantiate textPopup
             if (selectedItem.ingameName.Contains("bust") == _itemNeeded.ingameName.Contains("bust"))
