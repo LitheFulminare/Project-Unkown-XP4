@@ -23,25 +23,27 @@ public class AnimationManager : MonoBehaviour
         bool pressingForward = Input.GetKey("w");
         bool pressingBackward = Input.GetKey("s");
 
-        if (!isWalkingForward && isWalkingBackwards && pressingForward)
+        if (!isWalkingForward && pressingForward)
         {
             animator.SetBool(isWalkingForwardHash, true);
             animator.SetFloat("Multiplier", 1);
-            //animator.speed = 1;
         }
-
-        if (!isWalkingForward && !isWalkingBackwards && pressingBackward)
-        {
-            animator.SetBool(isWalkingBackwardsHash, true);
-            //animator.SetFloat("Multiplier", -1);
-            //animator.speed = -1;
-        }
-        
-        if (isWalkingForward || isWalkingBackwards && !pressingForward)
+        if (isWalkingForward && !pressingForward)
         {
             animator.SetBool(isWalkingForwardHash, false);
             animator.SetFloat("Multiplier", 1);
-            //animator.speed= 1;
+        }
+
+        // Walking backward
+        if (!isWalkingBackwards && pressingBackward)
+        {
+            animator.SetBool(isWalkingBackwardsHash, true);
+            animator.SetFloat("Multiplier", -1);
+        }
+        if (isWalkingBackwards && !pressingBackward)
+        {
+            animator.SetBool(isWalkingBackwardsHash, false);
+            animator.SetFloat("Multiplier", -1);
         }
     }
 }
