@@ -73,7 +73,7 @@ public class AnimationManager : MonoBehaviour
         {
             animator.SetBool(isTurningRightHash, true);
         }
-        if (isTurningRight && !pressingRight)
+        if (isTurningRight && !pressingRight || isWalkingForward)
         {
             animator.SetBool(isTurningRightHash, false);
         }
@@ -83,7 +83,7 @@ public class AnimationManager : MonoBehaviour
         {
             animator.SetBool(isTurningLeftHash, true);
         }
-        if (isTurningLeft && !pressingLeft)
+        if (isTurningLeft && !pressingLeft || isWalkingForward)
         {
             animator.SetBool(isTurningLeftHash, false);
         }
