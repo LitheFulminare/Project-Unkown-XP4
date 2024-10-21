@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
 {
-
-
     Animator animator;
+
     int isWalkingForwardHash;
     int isWalkingBackwardsHash;
+    int isTurningRightHash;
+    int isTurningLeftHash;
 
     private void OnEnable()
     {
@@ -25,43 +26,69 @@ public class AnimationManager : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+
         isWalkingForwardHash = Animator.StringToHash("isWalkingForward");
         isWalkingBackwardsHash = Animator.StringToHash("isWalkingBackwards");
+
+        isTurningRightHash = Animator.StringToHash("isTurningRight");
+        isTurningLeftHash = Animator.StringToHash("isTurningLeft");
     }
 
     private void Update()
     {
+        // parameters for the animations
         bool isWalkingForward = animator.GetBool(isWalkingForwardHash);
         bool isWalkingBackwards = animator.GetBool(isWalkingBackwardsHash);
+        bool isTurningRight = animator.GetBool(isTurningRightHash);
+        bool isTurningLeft = animator.GetBool(isTurningLeftHash);
 
-        bool pressingForward = Input.GetKey("w");
-        bool pressingBackward = Input.GetKey("s");
+        // keyboard keys
+        bool pressingForward = Input.GetKey(KeyCode.W);
+        bool pressingBackward = Input.GetKey(KeyCode.S);
+        bool pressingLeft = Input.GetKey(KeyCode.A);
+        bool pressingRight = Input.GetKey(KeyCode.D);
 
-        if (!isWalkingForward && pressingForward && !PlayerVars.playerBlocked)
+        // walk forward
+        if (!isWalkingForward && pressingForward)
         {
             animator.SetBool(isWalkingForwardHash, true);
-            animator.SetFloat("Multiplier", 1);
         }
         if (isWalkingForward && !pressingForward)
         {
             animator.SetBool(isWalkingForwardHash, false);
-            animator.SetFloat("Multiplier", 1);
         }
 
-        // Walking backward
-        if (!isWalkingBackwards && pressingBackward && !PlayerVars.playerBlocked)
+        // walking backwards
+        if (!isWalkingBackwards && pressingBackward)
         {
             animator.SetBool(isWalkingBackwardsHash, true);
-            animator.SetFloat("Multiplier", -1);
         }
         if (isWalkingBackwards && !pressingBackward)
         {
             animator.SetBool(isWalkingBackwardsHash, false);
-            animator.SetFloat("Multiplier", -1);
+        }
+
+        // turn right
+        if (!isTurningRight && pressingRight)
+        {
+            animator.SetBool(isTurningRightHash, true);
+        }
+        if (isTurningRight && !pressingRight)
+        {
+            animator.SetBool(isTurningRightHash, false);
+        }
+
+        // turn left
+        if (!isTurningLeft && pressingLeft)
+        {
+            animator.SetBool(isTurningLeftHash, true);
+        }
+        if (isTurningLeft && !pressingLeft)
+        {
+            animator.SetBool(isTurningLeftHash, false);
         }
     }
 
-    // instead of returning to idle, I could freeze
     private void FreezeAnimation()
     {
         if (animator != null)
