@@ -10,6 +10,7 @@ public class AnimationManager : MonoBehaviour
     int isWalkingBackwardsHash;
     int isTurningRightHash;
     int isTurningLeftHash;
+    int isRunningHash;
 
     private void OnEnable()
     {
@@ -32,6 +33,8 @@ public class AnimationManager : MonoBehaviour
 
         isTurningRightHash = Animator.StringToHash("isTurningRight");
         isTurningLeftHash = Animator.StringToHash("isTurningLeft");
+
+        isRunningHash = Animator.StringToHash("isRunning");
     }
 
     private void Update()
@@ -41,12 +44,14 @@ public class AnimationManager : MonoBehaviour
         bool isWalkingBackwards = animator.GetBool(isWalkingBackwardsHash);
         bool isTurningRight = animator.GetBool(isTurningRightHash);
         bool isTurningLeft = animator.GetBool(isTurningLeftHash);
+        bool isRunning = animator.GetBool(isRunningHash);
 
         // keyboard keys
         bool pressingForward = Input.GetKey(KeyCode.W);
         bool pressingBackward = Input.GetKey(KeyCode.S);
         bool pressingLeft = Input.GetKey(KeyCode.A);
         bool pressingRight = Input.GetKey(KeyCode.D);
+        bool pressingShift = Input.GetKey(KeyCode.LeftShift);
 
         // walk forward
         if (!isWalkingForward && pressingForward)
@@ -57,6 +62,17 @@ public class AnimationManager : MonoBehaviour
         {
             animator.SetBool(isWalkingForwardHash, false);
         }
+
+        // run
+        if (!isRunning && pressingShift && isWalkingForward)
+        {
+            animator.SetBool(isRunningHash, true);
+        }
+        if (isRunning && (!pressingShift || !isWalkingForward))
+        {
+            animator.SetBool(isRunningHash, false);
+        }
+
 
         // walking backwards
         if (!isWalkingBackwards && pressingBackward)

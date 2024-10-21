@@ -23,7 +23,6 @@ public class TankMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
 
         sprintingSpeed = speed * sprintMultiplier;
-        Debug.Log($"sprinting speed: {sprintingSpeed}");
     }
 
     void Update()
@@ -45,8 +44,6 @@ public class TankMovement : MonoBehaviour
             if (isSprinting) vel = sprintingSpeed;
 
             Vector3 moveDir;
-
-            Debug.Log($"Current vel: {vel}");
 
             transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
             //moveDir = transform.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime;   

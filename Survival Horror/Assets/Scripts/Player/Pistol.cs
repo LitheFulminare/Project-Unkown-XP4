@@ -7,7 +7,7 @@ using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class Pistol : MonoBehaviour
 {
-    private static int _maxAmmo = 6; // this probably won't change throughout the game
+    //private static int _maxAmmo = 6; // this probably won't change throughout the game
     private static int _bulletsLoaded = 6;
 
     public InventoryController inventoryController;
