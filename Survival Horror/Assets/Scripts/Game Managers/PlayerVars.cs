@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerVars : MonoBehaviour
 {
+    public delegate void OnPlayerRestrained();
+    public static OnPlayerRestrained onPlayerRestrained;
+
+    public delegate void OnPlayerFreed();
+    public static OnPlayerFreed onPlayerFreed;
+
     // these only get updated when 'SceneChanger' calls InventoryController
     public static CollectableSO[] itemList;
     public static int[] itemCount;
@@ -40,7 +46,19 @@ public class PlayerVars : MonoBehaviour
     // used by UI elements and some other things to block player movement
     public static void BlockPlayer(bool value)
     {
-        playerBlocked = value;
+        // blocks the player
+        if (value)
+        {
+            onPlayerRestrained.Invoke();
+        }
+
+        // unblocks the player
+        else
+        {
+            onPlayerFreed.Invoke();
+        }
+
+        playerBlocked = value;       
     }
 
     // Called by 'SceneChanger' after loading the new scene

@@ -58,7 +58,7 @@ public class BustPuzzleManager : MonoBehaviour
 
     public void SaveAndLoadItems()
     {
-        Debug.LogWarning("Useless function called, remove this and its references");
+        //Debug.LogWarning("Useless function called, remove this and its references");
     }
 
     private void PlaceBustOnPedestal(BustInteractable stand, CollectableSO bustPlaced)
