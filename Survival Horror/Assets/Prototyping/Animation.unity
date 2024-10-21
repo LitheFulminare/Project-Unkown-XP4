@@ -225,7 +225,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2702863221646508061, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Name
-      value: Idle
+      value: Character Model
       objectReference: {fileID: 0}
     - target: {fileID: 3371418670160222887, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_LocalPosition.x
