@@ -6,38 +6,42 @@ public class AnimationManager : MonoBehaviour
 {
     Animator animator;
     int isWalkingForwardHash;
-    //int isWalkingBackWardsHash;
+    int isWalkingBackwardsHash;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         isWalkingForwardHash = Animator.StringToHash("isWalkingForward");
+        isWalkingBackwardsHash = Animator.StringToHash("isWalkingBackwards");
     }
 
     private void Update()
     {
         bool isWalkingForward = animator.GetBool(isWalkingForwardHash);
-        //bool isWalkingBackwards = animator.GetBool(isWalkingBackWardsHash);
+        bool isWalkingBackwards = animator.GetBool(isWalkingBackwardsHash);
 
         bool pressingForward = Input.GetKey("w");
         bool pressingBackward = Input.GetKey("s");
 
-        if (!isWalkingForward && pressingForward)
+        if (!isWalkingForward && isWalkingBackwards && pressingForward)
         {
             animator.SetBool(isWalkingForwardHash, true);
-            animator.speed = 1;
+            animator.SetFloat("Multiplier", 1);
+            //animator.speed = 1;
         }
 
-        if (!isWalkingForward && pressingBackward)
+        if (!isWalkingForward && !isWalkingBackwards && pressingBackward)
         {
-            animator.SetBool(isWalkingForwardHash, true);
-            animator.speed = -1;
+            animator.SetBool(isWalkingBackwardsHash, true);
+            //animator.SetFloat("Multiplier", -1);
+            //animator.speed = -1;
         }
         
-        if (isWalkingForward && !pressingForward)
+        if (isWalkingForward || isWalkingBackwards && !pressingForward)
         {
             animator.SetBool(isWalkingForwardHash, false);
-            animator.speed = 1;
+            animator.SetFloat("Multiplier", 1);
+            //animator.speed= 1;
         }
     }
 }
