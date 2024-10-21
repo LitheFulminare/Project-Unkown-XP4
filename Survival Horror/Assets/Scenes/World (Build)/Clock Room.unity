@@ -546,6 +546,87 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0535355, y: 2.8719635, z: 8.404172}
   m_Center: {x: -4.5202255, y: -5.3576193, z: -8.181223}
+--- !u!1001 &849453546
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1349459232994059926, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: item
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395183667930787482, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_Name
+      value: Horse Bust
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395183667930787482, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca078b4719b83704287e68c31f25165c, type: 3}
 --- !u!1 &858134285
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededItem: 0
+  neededItem: {fileID: 0}
   door: {fileID: 858134287}
   puzzleComplete: 1
   player_interaction: {fileID: 979627251}
@@ -1001,7 +1082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5391d7cf8dc23c498dfb9281076f733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededItem: 0
+  neededItem: {fileID: 0}
   door: {fileID: 1352459285}
   puzzleComplete: 1
   player_interaction: {fileID: 979627251}
@@ -6034,6 +6115,7 @@ SceneRoots:
   - {fileID: 1992627524}
   - {fileID: 603813250}
   - {fileID: 1293882658}
+  - {fileID: 849453546}
   - {fileID: 1966970511}
   - {fileID: 1820126036}
   - {fileID: 1013152107}

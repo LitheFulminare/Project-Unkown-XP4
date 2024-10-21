@@ -331,9 +331,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 856607831}
     m_Modifications:
+    - target: {fileID: 1349459232994059926, guid: 3939ef444cfd0904b9e1eeea0360cb68, type: 3}
+      propertyPath: item
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6395183667930787482, guid: 3939ef444cfd0904b9e1eeea0360cb68, type: 3}
       propertyPath: m_Name
       value: Bull Bust
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395183667930787482, guid: 3939ef444cfd0904b9e1eeea0360cb68, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: 3939ef444cfd0904b9e1eeea0360cb68, type: 3}
       propertyPath: m_LocalScale.x
@@ -1245,7 +1253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: e15360239c7238146b83fe7d16f98238, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -91.22
+      value: -88.8
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: e15360239c7238146b83fe7d16f98238, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1324,9 +1332,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 856607831}
     m_Modifications:
+    - target: {fileID: 1349459232994059926, guid: 7e953a72dfb732448a06ee34c30fc844, type: 3}
+      propertyPath: item
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6395183667930787482, guid: 7e953a72dfb732448a06ee34c30fc844, type: 3}
       propertyPath: m_Name
       value: Goat Bust
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395183667930787482, guid: 7e953a72dfb732448a06ee34c30fc844, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: 7e953a72dfb732448a06ee34c30fc844, type: 3}
       propertyPath: m_LocalScale.x
@@ -2202,9 +2218,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 856607831}
     m_Modifications:
+    - target: {fileID: 1349459232994059926, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: item
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6395183667930787482, guid: ca078b4719b83704287e68c31f25165c, type: 3}
       propertyPath: m_Name
       value: Horse Bust
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395183667930787482, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
       propertyPath: m_LocalScale.x
@@ -2370,7 +2394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: d5a97f1cd56883c4abfe8fc4ac9292a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.832
+      value: 3.83
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: d5a97f1cd56883c4abfe8fc4ac9292a9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2378,7 +2402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: d5a97f1cd56883c4abfe8fc4ac9292a9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -81.937
+      value: -91.21
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: d5a97f1cd56883c4abfe8fc4ac9292a9, type: 3}
       propertyPath: m_LocalRotation.w
