@@ -5,27 +5,39 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour
 {
     Animator animator;
-    int isWalkingHash;
+    int isWalkingForwardHash;
+    //int isWalkingBackWardsHash;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        isWalkingHash = Animator.StringToHash("isWalking");
+        isWalkingForwardHash = Animator.StringToHash("isWalkingForward");
     }
 
     private void Update()
     {
-        bool isWalking = animator.GetBool(isWalkingHash);
-        bool pressingForward = Input.GetKey("w");
+        bool isWalkingForward = animator.GetBool(isWalkingForwardHash);
+        //bool isWalkingBackwards = animator.GetBool(isWalkingBackWardsHash);
 
-        if (!isWalking && pressingForward)
+        bool pressingForward = Input.GetKey("w");
+        bool pressingBackward = Input.GetKey("s");
+
+        if (!isWalkingForward && pressingForward)
         {
-            animator.SetBool(isWalkingHash, true);
+            animator.SetBool(isWalkingForwardHash, true);
+            animator.speed = 1;
+        }
+
+        if (!isWalkingForward && pressingBackward)
+        {
+            animator.SetBool(isWalkingForwardHash, true);
+            animator.speed = -1;
         }
         
-        if (isWalking && !pressingForward)
+        if (isWalkingForward && !pressingForward)
         {
-            animator.SetBool(isWalkingHash, false);
+            animator.SetBool(isWalkingForwardHash, false);
+            animator.speed = 1;
         }
     }
 }
