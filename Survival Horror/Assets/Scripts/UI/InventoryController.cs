@@ -22,6 +22,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
 
     public CollectableSO[] itemList = new CollectableSO[6]; // list of the items
     public int[] itemCount = new int[6]; // list of how many items the player has
+    // the document list will be stored directly into 'PlayerVars'
 
     public GameObject canvas;
 
@@ -156,42 +157,32 @@ public class InventoryController : MonoBehaviour, IDragHandler
         // what will be sent to the player
         int quantityRetrieved = 0;
 
-        // goes through each slot to see which one has the item needed
         for (int i = 0; i < itemList.Length; i++)
         {
-            // when the item is found
             if (itemList[i] == itemRequested)
             {
-                // if the player has enough items
+                // if the player has (more than) enough
                 if (itemCount[i] >= quantityRequested)
                 {
-                    // subtracts from the inventory what the player needs
                     itemCount[i] -= quantityRequested;
 
-                    // sends to the player what they requested
                     quantityRetrieved = quantityRequested;
 
-                    // removes the item from the list if there's none of it left
                     if (itemCount[i] == 0)
                     {
                         itemList[i] = null;
                     }
-
-                    // breaks to avoid going through the for loop unnecessarily
-                    break;
                 }
 
-                // if the player doesn't have enough items
+                // if the player doesnt have enough, just send everything and thats it
                 else
-                {
-                    // sends everything to the player and removes the item from the list
+                {                  
                     quantityRetrieved = itemCount[i];
                     itemList[i] = null;
                     itemCount[i] = 0;
-
-                    // breaks to avoid going through the for loop unnecessarily
-                    break;
                 }
+
+                break;
             }
         }
 
@@ -218,15 +209,10 @@ public class InventoryController : MonoBehaviour, IDragHandler
 
         if (_itemNeeded != null)
         {
-            //bool isBust = selectedItem.ingameName.Contains("bust");
-
-            //Debug.Log($"selectedItem: {selectedItem} - neededItem: {_itemNeeded}");
-
             // I could call the method UsedItem and return a bool. If false, instantiate textPopup
             if (selectedItem.ingameName.Contains("bust") == _itemNeeded.ingameName.Contains("bust"))
             {
-                //Manager.currentInteractionObj.SendMessage("SetCompleted");
-                //Manager.currentInteractionObj.SendMessage("SuitableItem");
+                //Manager.currentInteractionObj.SendMessage("SuitableItem"); // this right here would be ideal
                 Manager.currentInteractionObj.SendMessage("UsedItem", selectedItem);
                 RetrieveItem(selectedItem, 0);
             }
@@ -246,6 +232,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
         this._itemNeeded = item;
     }
 
+    // used to inspect an item
     public void OnDrag(PointerEventData eventData)
     {
         itemInspector.RotateItem(new Vector3(eventData.delta.y, -eventData.delta.x));

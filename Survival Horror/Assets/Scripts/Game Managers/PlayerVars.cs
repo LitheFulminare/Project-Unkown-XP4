@@ -14,6 +14,7 @@ public class PlayerVars : MonoBehaviour
     // these only get updated when 'SceneChanger' calls InventoryController
     public static CollectableSO[] itemList;
     public static int[] itemCount;
+    public static DocumentSO[] documentList;
 
     // get by player to know if it's allowed to move or not
     // can only be set by the public static funcion "BlockPlayer"
