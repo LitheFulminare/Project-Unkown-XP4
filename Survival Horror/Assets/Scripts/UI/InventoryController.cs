@@ -151,7 +151,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
         }        
     }
 
-    // currently being used by pistol, is only called if the player has pistol ammo
+    // used to remove item from inventory
     public int RetrieveItem(CollectableSO itemRequested, int quantityRequested)
     {
         // what will be sent to the player
