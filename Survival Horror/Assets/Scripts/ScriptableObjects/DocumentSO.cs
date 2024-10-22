@@ -10,7 +10,9 @@ public class DocumentSO : ScriptableObject
 
     public string[] paragraphs; // can store paragraphs of text
 
-    public Image backgroundImage; // image shown in the background while the player is reading the content
+    public Sprite backgroundImage; // image shown in the background while the player is reading the content
+
+    public Sprite backgroundImageAlt; // alternate version. Ex.: when the player uses the thermal goggles on the 'blank' paper they see another image
 
     public DocumentType type; // whether it's a map, a tour guide or a record of some sort (the enum might be updated so new types will be added)
 }
