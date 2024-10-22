@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148ded9de3b5e384389149a06d4ac2b1, type: 3}
   m_Name: bust
   m_EditorClassIdentifier: 
-  itemName: 
-  paragraphs: []
-  backgroundImage: {fileID: 0}
-  type: 0
+  itemName: Bust Document
+  paragraphs:
+  - The Goat and the Bull met, and remained close together in the middle
+  - The Bear stumbled into them, and made his stand far to the west
+  - The Monkey is smart, and stayed close to the Goat, keeping his distance from
+    Bull
+  - The Horse felt threatened and ran far into the East
+  backgroundImage: {fileID: 21300000, guid: 0aa50ea832d3b024db6cbebd0221de0e, type: 3}
+  backgroundImageAlt: {fileID: 0}
+  type: 1

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148ded9de3b5e384389149a06d4ac2b1, type: 3}
   m_Name: vase
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Blank Paper
   paragraphs: []
-  backgroundImage: {fileID: 0}
-  type: 0
+  backgroundImage: {fileID: 21300000, guid: 01019cef77c1b404abdc891b9d9de5ec, type: 3}
+  backgroundImageAlt: {fileID: 21300000, guid: d23f84593dc404943aa63f6ebcf03ca3, type: 3}
+  type: 1

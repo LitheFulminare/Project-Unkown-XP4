@@ -21,5 +21,6 @@ MonoBehaviour:
     small town.
   - Sadly, only a week later, Kevin Allison passed away in a strange accident, and
     the future of the museum is currently unknown.
-  backgroundImage: {fileID: 21300000, guid: d23f84593dc404943aa63f6ebcf03ca3, type: 3}
+  backgroundImage: {fileID: 21300000, guid: fbf25996687f95b4b88fdba938455523, type: 3}
+  backgroundImageAlt: {fileID: 0}
   type: 2
