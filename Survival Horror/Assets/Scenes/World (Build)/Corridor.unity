@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 149404443}
   - component: {fileID: 149404442}
   m_Layer: 0
-  m_Name: Trigger zone 1 (close)
+  m_Name: Trigger zone 1 (door)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,10 +381,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201749783}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13277397, y: 0.42030072, z: -0.062320452, w: 0.89545214}
-  m_LocalPosition: {x: -7.240608, y: -3.05052, z: -5.325325}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: -0, y: -0.9979852, z: 0.06344748, w: 0}
+  m_LocalPosition: {x: -75.260124, y: -12.913112, z: -86.259865}
+  m_LocalScale: {x: 26.989157, y: 26.989157, z: 26.989157}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1981054555}
   m_Father: {fileID: 1684144776}
@@ -821,10 +821,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807858015}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.031560298, y: 0.5510733, z: 0.031344246, w: 0.83327055}
-  m_LocalPosition: {x: -35.489506, y: -5.7422104, z: -6.3395386}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0.05473611, y: 0.000000029802326, z: -0, w: 0.9985009}
+  m_LocalPosition: {x: -75.33299, y: -12.6513195, z: -95.638596}
+  m_LocalScale: {x: 26.989164, y: 26.989168, z: 26.98916}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 95202186}
   m_Father: {fileID: 1099398627}
@@ -1374,10 +1374,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220841078}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12279925, y: -0.6963622, z: 0.12279925, w: 0.6963623}
-  m_LocalPosition: {x: -20.970612, y: -0.91052055, z: -2.5253296}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0.1207903, y: -0, z: -0, w: 0.99267805}
+  m_LocalPosition: {x: -75.33199, y: -11.145773, z: -88.564735}
+  m_LocalScale: {x: 26.989157, y: 26.989157, z: 26.989157}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1576732492}
   m_Father: {fileID: 149404441}
@@ -1922,7 +1922,7 @@ GameObject:
   - component: {fileID: 1684144778}
   - component: {fileID: 1684144777}
   m_Layer: 0
-  m_Name: Trigger zone 1 (doors)
+  m_Name: Trigger zone (door Main Hall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2271,8 +2271,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794107578}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12279925, y: -0.6963622, z: 0.12279925, w: 0.6963623}
-  m_LocalPosition: {x: 67.729385, y: 26.78948, z: 80.97467}
+  m_LocalRotation: {x: 0.1207903, y: 0, z: 0, w: 0.99267805}
+  m_LocalPosition: {x: 13.368005, y: 16.554228, z: -5.0647373}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
