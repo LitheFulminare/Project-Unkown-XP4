@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 291449453}
   - component: {fileID: 291449452}
   m_Layer: 5
-  m_Name: 'Doors '
+  m_Name: door main hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a0103746842cddc40a09c7237cc5d64b, type: 3}
+  m_Texture: {fileID: 2800000, guid: d13448874f7a46241a15c8735058c04c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0c68a33685c598844bd2cdc73c25a08f, type: 3}
+  m_Texture: {fileID: 2800000, guid: ceed2f67561e7b141ac4e29faecdc9cc, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2366,7 +2366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0b6774c4cc787c843b15bd5b61ea2937, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3da936a977cd4d449a68dbd8198368f1, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
