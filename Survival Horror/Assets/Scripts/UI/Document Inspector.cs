@@ -5,14 +5,29 @@ using UnityEngine.UI;
 
 public class DocumentInspector : MonoBehaviour
 {
+    public delegate void SetDocument(DocumentSO documentSO);
+    public static SetDocument setDocument;
+
     [SerializeField] Image documentImage;
 
     private DocumentSO _document;
 
-    public void function(DocumentSO document)
+    private void OnEnable()
+    {
+        setDocument += OnSpawn;
+    }
+
+    private void OnDisable()
+    {
+        setDocument -= OnSpawn;
+    }
+
+    public void OnSpawn(DocumentSO document)
     {
         _document = document;
-        //documentImage = _document.inspectImage;
-        Debug.Log("function was called");
+        documentImage.sprite = _document.backgroundImage;
+        Debug.Log($"function was called, document is: {_document.itemName}");
     }
+
+
 }

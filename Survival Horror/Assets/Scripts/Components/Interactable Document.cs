@@ -13,7 +13,7 @@ public class InteractableDocument : MonoBehaviour, IInteractable
     [SerializeField] DocumentSO documentSO;
 
     [SerializeField] GameObject documentInspectorObj;
-    private DocumentInspector documentInspector;
+    //private DocumentInspector documentInspector;
 
     //public bool puzzleComplete = false;
 
@@ -22,7 +22,7 @@ public class InteractableDocument : MonoBehaviour, IInteractable
     private void Start()
     {
         player_interaction = GameObject.FindGameObjectWithTag("Player").GetComponent<Interaction>();
-        documentInspector = documentInspectorObj.GetComponent<DocumentInspector>();
+        //documentInspector = documentInspectorObj.GetComponent<DocumentInspector>();
 
         confirm = checkIfPlayerConfirmed;
     }
@@ -34,7 +34,8 @@ public class InteractableDocument : MonoBehaviour, IInteractable
         Manager.currentInteractionObj = gameObject;
 
         if (documentInspectorObj != null) Instantiate(documentInspectorObj);
-        documentInspector.function(documentSO);
+        DocumentInspector.setDocument(documentSO);
+        //documentInspector.function(documentSO);
         Debug.Log($"Interacted with: {documentSO.itemName}");
         // 
 
