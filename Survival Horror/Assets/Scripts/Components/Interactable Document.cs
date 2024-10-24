@@ -34,7 +34,7 @@ public class InteractableDocument : MonoBehaviour, IInteractable
         Manager.currentInteractionObj = gameObject;
 
         if (documentInspectorObj != null) Instantiate(documentInspectorObj);
-        documentInspector.function();
+        documentInspector.function(documentSO);
         Debug.Log($"Interacted with: {documentSO.itemName}");
         // 
 

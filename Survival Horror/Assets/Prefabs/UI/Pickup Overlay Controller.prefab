@@ -673,7 +673,7 @@ MonoBehaviour:
   canvas: {fileID: 3207986791921244692}
   collectedItem: {fileID: 0}
   interactedItem: {fileID: 0}
-  itemNeeded: 0
+  itemNeeded: {fileID: 0}
   topText: {fileID: 6496129527176638313}
   redText: {fileID: 6173499426266651728}
   bottomText: {fileID: 3908614561098673612}
