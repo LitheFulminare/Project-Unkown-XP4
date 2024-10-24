@@ -12,6 +12,14 @@ public class DocumentInspector : MonoBehaviour
 
     private DocumentSO _document;
 
+    private float spawnTime;
+
+    private void Awake()
+    {
+        spawnTime = Time.time;
+        Debug.Log($"Spawn time: {spawnTime}");
+    }
+
     private void OnEnable()
     {
         setDocument += OnSpawn;
@@ -26,8 +34,18 @@ public class DocumentInspector : MonoBehaviour
     {
         _document = document;
         documentImage.sprite = _document.backgroundImage;
-        Debug.Log($"function was called, document is: {_document.itemName}");
     }
 
+    private void Update()
+    {
+        if (Input.anyKey && Time.time > spawnTime + 1.5f)
+        {
+            ChangeImage();
+        }
+    }
 
+    private void ChangeImage()
+    {
+        documentImage.color = Color.gray;
+    }
 }
