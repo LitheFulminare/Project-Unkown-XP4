@@ -21,7 +21,7 @@ public class DocumentInspector : MonoBehaviour
 
     private float spawnTime;
 
-    //private InspectorState inspectorState = InspectorState.Image;
+    private InspectorState inspectorState = InspectorState.Image;
 
     private void Awake()
     {
@@ -41,37 +41,35 @@ public class DocumentInspector : MonoBehaviour
 
     public void OnSpawn(DocumentSO document)
     {
+        PlayerVars.BlockPlayer(true);
         _document = document;
         documentImage.sprite = _document.backgroundImage;
         documentText.text = "";
     }
 
-    public void OnExit()
+    public void Exit()
     {
-        PlayerVars.BlockPlayer(true);
+        PlayerVars.BlockPlayer(false);
+        Destroy(gameObject);
     }
 
     private void Update()
     {
-        if (Input.anyKey && Time.time > spawnTime + 1f)
+        if (Input.anyKey && Time.time > spawnTime + 0.3f)
         {
             ChangeImage();
         }
     }
 
     private void ChangeImage()
-    {
-        documentImage.color = Color.gray;
-        ShowText();
+    {   
+        switch (inspectorState)
+        {
+            case InspectorState.Image: documentImage.color = Color.gray; ShowText(); break;
+            case InspectorState.Text: Exit(); break;
+        }
 
-        // this might be used later to know when to exit the inspection screen
-        //switch (inspectorState)
-        //{
-        //    case InspectorState.Image: documentImage.color = Color.gray; break;
-        //    case InspectorState.Text: ShowText(); break;
-        //}
-
-        //inspectorState = (inspectorState) + 1;
+        inspectorState = (inspectorState) + 1;
 
     }
 
@@ -85,9 +83,12 @@ public class DocumentInspector : MonoBehaviour
             {
                 formattedText += "\n\n" + _document.paragraphs[i];
             }
+
             else formattedText += _document.paragraphs[i];
         }
 
         documentText.text = formattedText;
+
+        spawnTime = Time.time;
     }
 }
