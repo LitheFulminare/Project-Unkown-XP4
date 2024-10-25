@@ -35,8 +35,8 @@ public class InteractableDocument : MonoBehaviour, IInteractable
 
         if (documentInspectorObj != null) Instantiate(documentInspectorObj);
         DocumentInspector.setDocument(documentSO);
+        PlayerVars.AddDocument(documentSO);
         //documentInspector.function(documentSO);
-        Debug.Log($"Interacted with: {documentSO.itemName}");
         // 
 
         //if (!puzzleComplete)

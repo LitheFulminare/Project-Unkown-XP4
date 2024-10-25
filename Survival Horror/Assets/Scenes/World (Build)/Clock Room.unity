@@ -552,7 +552,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1293882658}
     m_Modifications:
     - target: {fileID: 1349459232994059926, guid: ca078b4719b83704287e68c31f25165c, type: 3}
       propertyPath: item
@@ -580,15 +580,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.21
+      value: 2.0837579
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.99
+      value: 84.16782
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.45
+      value: -86.708626
       objectReference: {fileID: 0}
     - target: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -985,7 +985,8 @@ Transform:
   m_LocalPosition: {x: 2.1262422, y: -81.177826, z: 86.25863}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1343930950}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330620830
@@ -1019,6 +1020,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1352459284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1343930950 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8774986003986528742, guid: ca078b4719b83704287e68c31f25165c, type: 3}
+  m_PrefabInstance: {fileID: 849453546}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1352459283
 GameObject:
   m_ObjectHideFlags: 0
@@ -6115,7 +6121,6 @@ SceneRoots:
   - {fileID: 1992627524}
   - {fileID: 603813250}
   - {fileID: 1293882658}
-  - {fileID: 849453546}
   - {fileID: 1966970511}
   - {fileID: 1820126036}
   - {fileID: 1013152107}
