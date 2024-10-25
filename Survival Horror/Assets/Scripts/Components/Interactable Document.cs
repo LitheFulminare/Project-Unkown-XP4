@@ -22,12 +22,11 @@ public class InteractableDocument : MonoBehaviour, IInteractable
     private void Start()
     {
         player_interaction = GameObject.FindGameObjectWithTag("Player").GetComponent<Interaction>();
-        //documentInspector = documentInspectorObj.GetComponent<DocumentInspector>();
 
         confirm = checkIfPlayerConfirmed;
     }
 
-    // called when the player presses 'F' near the item
+    // called when the player presses 'F' near the document
     public void Interact()
     {
         // keeps track of what the player is currently interacting with
