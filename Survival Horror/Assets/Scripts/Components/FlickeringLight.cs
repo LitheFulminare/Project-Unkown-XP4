@@ -29,6 +29,8 @@ public class FlickeringLight : MonoBehaviour
 
     void Update()
     {
+        if (PlayerVars.playerBlocked) return;
+
         timer += Time.deltaTime;
 
         if (timer > interval)
