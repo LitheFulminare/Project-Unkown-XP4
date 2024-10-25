@@ -19,19 +19,17 @@ public class BustInteractable : MonoBehaviour, IInteractable
 
     GameObject bust;
 
-private void Start()
+    private void Start()
     {
         player_interaction = GameObject.FindGameObjectWithTag("Player").GetComponent<Interaction>();
     }
 
+     // maybe invert this to be fancier?
     public bool CheckIfItemsMatch()
     {
-        if (neededItem == currentItem)
-        {
-            return true;
-        }
+        if (neededItem != currentItem) return false;
 
-        return false;
+        return true;
     }
 
     // called when the player presses 'F' near the item
