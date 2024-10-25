@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum InspectorState
+public enum InspectorFocusState
 {
     Image = 0,
-    Text = 1,
+    Name = 1,
+    Description = 2,
 }
 
 public class DocumentInspector : MonoBehaviour
@@ -21,12 +22,11 @@ public class DocumentInspector : MonoBehaviour
 
     private float spawnTime;
 
-    private InspectorState inspectorState = InspectorState.Image;
+    private InspectorFocusState inspectorState = InspectorFocusState.Image;
 
     private void Awake()
     {
         spawnTime = Time.time;
-        Debug.Log($"Spawn time: {spawnTime}");
     }
 
     private void OnEnable()
@@ -62,18 +62,28 @@ public class DocumentInspector : MonoBehaviour
     }
 
     private void ChangeImage()
-    {   
+    {
+        documentImage.color = Color.gray;
+
         switch (inspectorState)
         {
-            case InspectorState.Image: documentImage.color = Color.gray; ShowText(); break;
-            case InspectorState.Text: Exit(); break;
+            case InspectorFocusState.Image: ShowName(); break;
+            case InspectorFocusState.Name: ShowDescription(); break;          
+            case InspectorFocusState.Description: Exit(); break;
         }
 
         inspectorState = (inspectorState) + 1;
 
+        spawnTime = Time.time;
     }
 
-    private void ShowText()
+    private void ShowName()
+    {
+        documentText.text = _document.itemName;
+        documentText.alignment = TextAnchor.MiddleCenter;
+    }
+
+    private void ShowDescription()
     {
         string formattedText = "";
 
@@ -88,7 +98,7 @@ public class DocumentInspector : MonoBehaviour
         }
 
         documentText.text = formattedText;
+        documentText.alignment = TextAnchor.UpperCenter;
 
-        spawnTime = Time.time;
     }
 }
