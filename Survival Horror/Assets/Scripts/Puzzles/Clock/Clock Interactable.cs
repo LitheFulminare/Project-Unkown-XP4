@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClockInteractable : MonoBehaviour
 {
-    [SerializeField] private InteractableSO interactionTextSO;
+    [SerializeField] private InteractableSO interactableSO;
 
     public bool puzzleComplete = false;
 
