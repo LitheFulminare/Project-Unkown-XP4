@@ -22,6 +22,8 @@ public class TabSystem : MonoBehaviour
 
     [SerializeField] GameObject slots;
 
+    [SerializeField] GameObject documentTexts;
+
     private void Start()
     {
         ButtonClick(Tabs.Inventory);
@@ -29,15 +31,14 @@ public class TabSystem : MonoBehaviour
 
     private void ButtonClick(Tabs tabName)
     {
-        Debug.Log($"Button Click was called with parameter {tabName.ToString()}");
+        documentTexts.SetActive(false);
+        slots.SetActive(false);
 
         if (tabName == Tabs.Inventory)
         {
             ShowInventory();
             return;
-        }
-
-        slots.SetActive(false);
+        }       
 
         if (tabName == Tabs.Documents)
         {
@@ -54,6 +55,7 @@ public class TabSystem : MonoBehaviour
 
     private void ShowDocuments()
     {
+        documentTexts.SetActive(true);
         canvas.sprite = documentsImage;
     }
 

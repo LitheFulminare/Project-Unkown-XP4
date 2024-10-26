@@ -705,6 +705,7 @@ MonoBehaviour:
   mapImage: {fileID: 0}
   canvas: {fileID: 7886702702671175853}
   slots: {fileID: 963379646602740759}
+  documentTexts: {fileID: 3175843961527322826}
 --- !u!1 &2967658162745806351
 GameObject:
   m_ObjectHideFlags: 0
