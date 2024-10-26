@@ -36,7 +36,10 @@ public class DocumentTextManager : MonoBehaviour
             if (i >= PlayerVars.documentList.Count) continue;
 
             Text text = texts[i].GetComponent<Text>();
+            DocumentTextButton docTextButton = texts[i].GetComponent<DocumentTextButton>();
+
             text.text = PlayerVars.documentList[i].itemName;
+            docTextButton.currentDocument = PlayerVars.documentList[i];
         }
     }
 
