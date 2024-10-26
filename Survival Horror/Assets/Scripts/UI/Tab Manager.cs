@@ -12,7 +12,7 @@ public enum Tabs
     Map
 }
 
-public class TabSystem : MonoBehaviour
+public class TabManager : MonoBehaviour
 {
     [SerializeField] Sprite inventoryImage;
     [SerializeField] Sprite documentsImage;
@@ -24,6 +24,8 @@ public class TabSystem : MonoBehaviour
 
     [SerializeField] GameObject documentTexts;
 
+    public static Tabs currentTab;
+
     private void Start()
     {
         ButtonClick(Tabs.Inventory);
@@ -31,6 +33,8 @@ public class TabSystem : MonoBehaviour
 
     private void ButtonClick(Tabs tabName)
     {
+        currentTab = tabName;
+
         documentTexts.SetActive(false);
         slots.SetActive(false);
 
@@ -43,6 +47,12 @@ public class TabSystem : MonoBehaviour
         if (tabName == Tabs.Documents)
         {
             ShowDocuments();
+            return;
+        }
+
+        if (tabName == Tabs.Map)
+        {
+            //ShowMap();
             return;
         }
     }
