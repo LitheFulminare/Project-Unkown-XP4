@@ -22,6 +22,11 @@ public class TabSystem : MonoBehaviour
 
     [SerializeField] GameObject slots;
 
+    private void Start()
+    {
+        ButtonClick(Tabs.Inventory);
+    }
+
     private void ButtonClick(Tabs tabName)
     {
         Debug.Log($"Button Click was called with parameter {tabName.ToString()}");
