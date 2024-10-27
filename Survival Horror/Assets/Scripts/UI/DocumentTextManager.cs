@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class DocumentTextManager : MonoBehaviour
 {
+    public delegate void TextInteraction(DocumentSO documentSO);
+    public static TextInteraction ButtonPressed;
+
     public delegate void UpdateText();
     public static UpdateText updateText;
 
@@ -15,11 +18,15 @@ public class DocumentTextManager : MonoBehaviour
 
     private void OnEnable()
     {
+        ButtonPressed += InspectDocument;
+
         updateText += ChangeText;
     }
 
     private void OnDisable()
     {
+        ButtonPressed -= InspectDocument;
+
         updateText -= ChangeText;
     }
 
@@ -49,6 +56,12 @@ public class DocumentTextManager : MonoBehaviour
             text.text = PlayerVars.documentList[i].itemName;
             docTextButton.currentDocument = PlayerVars.documentList[i];
         }
+    }
+
+    private void InspectDocument(DocumentSO documentSO)
+    {
+        // instatiate the inspector and maybe pass extra parameters to make the screen black instead of fading, idk
+        Debug.Log($"InspectDocument parameter {documentSO}");
     }
 
     private List<GameObject> GetChildren(GameObject gameObject)
