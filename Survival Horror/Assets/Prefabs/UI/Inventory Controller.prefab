@@ -621,9 +621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a948cc48ee3185744acf2b70d8e23734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryImage: {fileID: 21300000, guid: 6a0d078391d95834fab5f77c24dfe0a2, type: 3}
-  documentsImage: {fileID: 21300000, guid: 615bd9a703e1e9243a9eae4f716ef6d9, type: 3}
-  mapImage: {fileID: 0}
+  inventoryBackground: {fileID: 21300000, guid: 6a0d078391d95834fab5f77c24dfe0a2, type: 3}
+  documentBackgroud: {fileID: 21300000, guid: 615bd9a703e1e9243a9eae4f716ef6d9, type: 3}
+  mapBackground: {fileID: 0}
   canvas: {fileID: 7886702702671175853}
   slots: {fileID: 963379646602740759}
   documentTexts: {fileID: 3175843961527322826}

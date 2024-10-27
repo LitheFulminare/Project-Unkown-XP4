@@ -6,9 +6,10 @@ public class DocumentTextButton : MonoBehaviour
 {
     public DocumentSO currentDocument;
 
+    // rn the image changes when the player clicks the button, should be on hover
     public void ButtonClick()
     {
         //Debug.Log($"current Document: {currentDocument.itemName}");
-        DocumentImageManager.onHover(currentDocument);
+        DocumentImageManager.UpdateImage(currentDocument);
     }
 }

@@ -126,6 +126,7 @@ public class InventoryController : MonoBehaviour, IDragHandler
         {            
             canvas.SetActive(true);
             itemSpawner.showItems(itemList, itemCount); // what calls each icon to show items in inventory
+            TabManager.ShowInventoryTab();
             PlayerVars.BlockPlayer(true);
         }
     }

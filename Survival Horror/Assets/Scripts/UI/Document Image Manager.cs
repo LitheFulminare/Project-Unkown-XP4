@@ -6,23 +6,36 @@ using UnityEngine.UI;
 public class DocumentImageManager : MonoBehaviour
 {
     public delegate void OnHover(DocumentSO documentSo);
-    public static OnHover onHover;
+    public static OnHover UpdateImage;
+
+    public delegate void ImageState();
+    public static ImageState HideImage;
+    public static ImageState ShowImage;
 
     [SerializeField] Image documentImage;
 
     private void OnEnable()
     {
-        onHover += ChangeImage;
+        UpdateImage += ChangeImage;
+        HideImage += Hide;
     }
 
     private void OnDisable()
     {
-        onHover -= ChangeImage;
+        UpdateImage -= ChangeImage;
+        HideImage -= Hide;
     }
 
     public void ChangeImage(DocumentSO documentSO)
     {
-        Debug.Log($"Change image parameter: {documentSO.itemName}");
+        Debug.Log($"Parameter: {documentSO}");
+        documentImage.color = Color.white;
         documentImage.sprite = documentSO.backgroundImage;
+    }
+
+    private void Hide()
+    {
+        Debug.Log("Hide");
+        documentImage.color = Color.clear;
     }
 }

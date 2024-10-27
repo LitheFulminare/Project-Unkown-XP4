@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,9 +15,12 @@ public enum Tabs
 
 public class TabManager : MonoBehaviour
 {
-    [SerializeField] Sprite inventoryImage;
-    [SerializeField] Sprite documentsImage;
-    [SerializeField] Sprite mapImage;
+    public delegate void ResetTabs();
+    public static ResetTabs ShowInventoryTab;
+
+    [SerializeField] private Sprite inventoryBackground;
+    [SerializeField] private Sprite documentBackgroud;
+    [SerializeField] private Sprite mapBackground;
 
     [SerializeField] Image canvas;
 
@@ -26,6 +30,16 @@ public class TabManager : MonoBehaviour
 
     public static Tabs currentTab;
 
+    private void OnEnable()
+    {
+        ShowInventoryTab += InventoryButtonClick;
+    }
+
+    private void OnDisable()
+    {
+        ShowInventoryTab -= InventoryButtonClick;
+    }
+
     private void Start()
     {
         ButtonClick(Tabs.Inventory);
@@ -34,9 +48,9 @@ public class TabManager : MonoBehaviour
     private void ButtonClick(Tabs tabName)
     {
         currentTab = tabName;
-
         documentTexts.SetActive(false);
         slots.SetActive(false);
+        DocumentImageManager.HideImage();
 
         if (tabName == Tabs.Inventory)
         {
@@ -60,14 +74,15 @@ public class TabManager : MonoBehaviour
     private void ShowInventory()
     {
         slots.SetActive(true);
-        canvas.sprite = inventoryImage;
+        canvas.sprite = inventoryBackground;
     }
 
     private void ShowDocuments()
     {
         documentTexts.SetActive(true);
-        canvas.sprite = documentsImage;
+        canvas.sprite = documentBackgroud;
         DocumentTextManager.updateText();
+        if (PlayerVars.documentList.Count > 0) DocumentImageManager.UpdateImage(PlayerVars.documentList[0]);
     }
 
     public void InventoryButtonClick() => ButtonClick(Tabs.Inventory);
