@@ -67,6 +67,7 @@ public class TabManager : MonoBehaviour
     {
         documentTexts.SetActive(true);
         canvas.sprite = documentsImage;
+        DocumentTextManager.updateText();
     }
 
     public void InventoryButtonClick() => ButtonClick(Tabs.Inventory);

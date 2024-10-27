@@ -5,22 +5,30 @@ using UnityEngine.UI;
 
 public class DocumentTextManager : MonoBehaviour
 {
+    public delegate void UpdateText();
+    public static UpdateText updateText;
+
     [SerializeField] private GameObject documentText;
     [SerializeField] private GameObject panel;
 
     private List<GameObject> texts = new List<GameObject>();
+
+    private void OnEnable()
+    {
+        updateText += ChangeText;
+    }
+
+    private void OnDisable()
+    {
+        updateText -= ChangeText;
+    }
 
     public void Start()
     {
         texts.AddRange(GetChildren(panel));
     }
 
-    public void Update()
-    {
-        UpdateText();
-    }
-
-    public void UpdateText()
+    public void ChangeText()
     {
         if (PlayerVars.documentList == null) return;
 

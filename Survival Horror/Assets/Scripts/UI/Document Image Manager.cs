@@ -22,6 +22,7 @@ public class DocumentImageManager : MonoBehaviour
 
     public void ChangeImage(DocumentSO documentSO)
     {
-        documentImage.sprite = documentSO.inspectImage;
+        Debug.Log($"Change image parameter: {documentSO.itemName}");
+        documentImage.sprite = documentSO.backgroundImage;
     }
 }

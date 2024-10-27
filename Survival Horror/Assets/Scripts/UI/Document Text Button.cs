@@ -8,7 +8,7 @@ public class DocumentTextButton : MonoBehaviour
 
     public void ButtonClick()
     {
-        Debug.Log("Click");
+        //Debug.Log($"current Document: {currentDocument.itemName}");
         DocumentImageManager.onHover(currentDocument);
     }
 }
