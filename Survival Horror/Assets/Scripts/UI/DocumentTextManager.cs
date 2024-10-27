@@ -60,6 +60,7 @@ public class DocumentTextManager : MonoBehaviour
 
     private void InspectDocument(DocumentSO documentSO)
     {
+        // still need to call the event lol
         // instatiate the inspector and maybe pass extra parameters to make the screen black instead of fading, idk
         Debug.Log($"InspectDocument parameter {documentSO}");
     }
