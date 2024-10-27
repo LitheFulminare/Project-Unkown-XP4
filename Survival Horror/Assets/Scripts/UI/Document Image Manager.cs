@@ -35,7 +35,6 @@ public class DocumentImageManager : MonoBehaviour
 
     private void Hide()
     {
-        Debug.Log("Hide");
         documentImage.color = Color.clear;
     }
 }

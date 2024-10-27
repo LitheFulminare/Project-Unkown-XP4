@@ -13,6 +13,6 @@ public class DocumentTextButton : MonoBehaviour
 
     public void ButtonPressed()
     {
-
+        DocumentTextManager.ButtonPressed(currentDocument);
     }
 }
