@@ -89,16 +89,12 @@ public class DocumentInspector : MonoBehaviour
 
         for (int i = 0; i < _document.paragraphs.Length; i++)
         {
-            if (i != 0)
-            {
-                formattedText += "\n\n" + _document.paragraphs[i];
-            }
+            if (i != 0) formattedText += "\n\n";
 
-            else formattedText += _document.paragraphs[i];
+            formattedText += _document.paragraphs[i];
         }
 
         documentText.text = formattedText;
         documentText.alignment = TextAnchor.UpperCenter;
-
     }
 }
