@@ -34,7 +34,7 @@ public class InteractableDocument : MonoBehaviour, IInteractable
 
         if (documentInspectorObj != null) Instantiate(documentInspectorObj);
         DocumentInspector.setDocument(documentSO);
-        PlayerVars.AddDocument(documentSO);
+        if (documentSO.isCollectable) PlayerVars.AddDocument(documentSO);
         //documentInspector.function(documentSO);
         // 
 
