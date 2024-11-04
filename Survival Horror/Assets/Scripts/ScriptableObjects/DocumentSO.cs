@@ -6,13 +6,15 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "Generic Document", menuName = "ScriptableObject/Document")]
 public class DocumentSO : ScriptableObject
 {
-    public string itemName; // name shown in the inventory
+    public string itemName; // name shown when inspcting and on the inventory
 
     public bool isCollectable; // whether the document will go to the player's inventory or not
 
     public bool isFullscreen;
 
     public string[] paragraphs; // paragraphs of text
+
+    public bool skipLines; // skip lines after each paragraph
 
     public Sprite backgroundImage; // image shown in the background while the player is reading the content
 

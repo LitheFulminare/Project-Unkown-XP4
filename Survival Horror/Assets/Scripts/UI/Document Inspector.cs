@@ -89,7 +89,12 @@ public class DocumentInspector : MonoBehaviour
 
         for (int i = 0; i < _document.paragraphs.Length; i++)
         {
-            if (i != 0) formattedText += "\n\n";
+            if (i != 0)
+            {
+                formattedText += "\n";
+
+                if (_document.skipLines) formattedText += "\n";
+            }
 
             formattedText += _document.paragraphs[i];
         }
