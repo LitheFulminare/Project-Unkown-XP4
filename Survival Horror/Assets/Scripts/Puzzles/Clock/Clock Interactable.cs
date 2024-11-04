@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClockInteractable : MonoBehaviour
 {
-    [SerializeField] private InteractableSO interactableSO;
+    //[SerializeField] private InteractableSO interactableSO;
 
     public bool puzzleComplete = false;
 
@@ -22,11 +22,16 @@ public class ClockInteractable : MonoBehaviour
         return true;
     }
 
+    public void StartInteraction()
+    {
+
+    }
+
     // called when the player presses 'F' near the puzzle
     public void Interact()
     {
         // keeps track of what the player is currently interacting with
-        Manager.currentInteractionObj = gameObject;
+        //Manager.currentInteractionObj = gameObject;
 
         if (!puzzleComplete)
         {

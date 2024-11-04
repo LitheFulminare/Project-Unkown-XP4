@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class InteractableDocument : MonoBehaviour, IInteractable
 {
+    public delegate void UseObject();
+    public static UseObject UseBoundObject;
+
     public delegate void ConfirmAction(bool playerConfirmed, GameObject itemChecker);
     public static ConfirmAction confirm;
 
     //[SerializeField] CollectableSO neededItem;
-    //[SerializeField] Door door; // change this according to need
+    [SerializeField] ClockInteractable clockInteractable;
 
     [SerializeField] DocumentSO documentSO;
 
@@ -19,9 +22,20 @@ public class InteractableDocument : MonoBehaviour, IInteractable
 
     public Interaction player_interaction;
 
+    private void OnEnable()
+    {
+        UseBoundObject += Use;
+    }
+
+    private void OnDisable()
+    {
+        UseBoundObject -= Use;
+    }
+
     private void Start()
     {
         player_interaction = GameObject.FindGameObjectWithTag("Player").GetComponent<Interaction>();
+        clockInteractable = GetComponent<ClockInteractable>();
 
         confirm = checkIfPlayerConfirmed;
     }
@@ -49,6 +63,16 @@ public class InteractableDocument : MonoBehaviour, IInteractable
         //    // makes the player interact with door
         //    door.Use();
         //}
+    }
+
+    private void Use()
+    {
+        if (clockInteractable == null) return;
+        
+        clockInteractable.StartInteraction();
+
+        //Debug.Log("Player finished the interaction screen");
+        //puzzleManager.SendMessage("StartInteraction");
     }
 
     // currently being called only by "InventoryController" and "PuzzleManager"

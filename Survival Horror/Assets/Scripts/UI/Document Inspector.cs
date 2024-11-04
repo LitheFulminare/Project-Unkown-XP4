@@ -59,6 +59,7 @@ public class DocumentInspector : MonoBehaviour
 
     public void Exit()
     {
+        InteractableDocument.UseBoundObject();
         PlayerVars.BlockPlayer(false);
         Destroy(gameObject);
     }

@@ -11,13 +11,13 @@ public class ClockManager : MonoBehaviour
 
     private void Start()
     {
-        clockList.AddRange(FindObjectsOfType<ClockInteractable>());
-        puzzleImage.color = Color.clear;
+        //clockList.AddRange(FindObjectsOfType<ClockInteractable>());
+        //puzzleImage.color = Color.clear;
     }
 
     public void Interact(DocumentSO documentSO)
     {
-        puzzleImage.sprite = documentSO.inspectImage;
+        //puzzleImage.sprite = documentSO.inspectImage;
     }
 
     // prob will be called when the player exits the screen

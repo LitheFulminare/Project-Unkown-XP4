@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2336839456848205856}
   - component: {fileID: 7878968643451858404}
   - component: {fileID: 9115760040097182292}
+  - component: {fileID: 468246864551548343}
   m_Layer: 0
   m_Name: clock R
   m_TagString: Untagged
@@ -45,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0b907c6e729054799daf2e4d69b1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   documentSO: {fileID: 11400000, guid: e17c588aaf5d46b45ab3ffb2a5e5d7d1, type: 2}
   documentInspectorObj: {fileID: 6338600386643862897, guid: 6e5fec01fc1fd5d4f9a99ab418ddb2ff, type: 3}
   player_interaction: {fileID: 0}
@@ -69,3 +71,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3282614, y: 2.1377325, z: 1}
   m_Center: {x: 0.6641307, y: 0.56886625, z: 0}
+--- !u!114 &468246864551548343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5948908487983909866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f7e5ab93d509f459a058bcd418b4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleComplete: 0
