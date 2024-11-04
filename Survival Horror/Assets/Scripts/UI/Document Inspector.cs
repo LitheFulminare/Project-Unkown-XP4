@@ -43,7 +43,17 @@ public class DocumentInspector : MonoBehaviour
     {
         PlayerVars.BlockPlayer(true);
         _document = document;
+
         documentImage.sprite = _document.backgroundImage;
+        if (_document.isFullscreen)
+        {
+            documentImage.rectTransform.localScale = new Vector3(3.2f, 2.4f, 1);
+        }
+        else
+        {
+            documentImage.rectTransform.localScale = new Vector3(1, 1, 1);
+        }
+
         documentText.text = "";
     }
 
@@ -100,6 +110,6 @@ public class DocumentInspector : MonoBehaviour
         }
 
         documentText.text = formattedText;
-        documentText.alignment = TextAnchor.UpperCenter;
+        if (!_document.centralizeText) documentText.alignment = TextAnchor.UpperCenter;
     }
 }

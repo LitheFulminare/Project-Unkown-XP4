@@ -16,6 +16,8 @@ public class DocumentSO : ScriptableObject
 
     public bool skipLines; // skip lines after each paragraph
 
+    public bool centralizeText;
+
     public Sprite backgroundImage; // image shown in the background while the player is reading the content
 
     public Sprite backgroundImageAlt; // alternate version. Ex.: when the player uses the thermal goggles on the 'blank' paper they see another image
