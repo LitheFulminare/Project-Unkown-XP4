@@ -39,33 +39,51 @@ public class DocumentInspector : MonoBehaviour
         setDocument -= OnSpawn;
     }
 
+
     public void OnSpawn(DocumentSO document)
     {
         PlayerVars.BlockPlayer(true);
         _document = document;
 
-        documentImage.sprite = _document.backgroundImage;
-        if (_document.isFullscreen)
+        documentText.text = "";
+
+        if (_document.backgroundImage == null)
         {
-            documentImage.rectTransform.localScale = new Vector3(3.2f, 2.4f, 1);
-        }
-        else
-        {
-            documentImage.rectTransform.localScale = new Vector3(1, 1, 1);
+            ChangeImage();
+            inspectorState = InspectorFocusState.Description;
         }
 
-        documentText.text = "";
+        else
+        {
+            documentImage.sprite = _document.backgroundImage;
+            if (_document.isFullscreen)
+            {
+                documentImage.rectTransform.localScale = new Vector3(3.2f, 2.4f, 1);
+            }
+            else
+            {
+                documentImage.rectTransform.localScale = new Vector3(1, 1, 1);
+            }
+
+            inspectorState = InspectorFocusState.Image;
+        }
     }
 
     public void Exit()
     {
-        InteractableDocument.UseBoundObject();
+        if (InteractableDocument.UseBoundObject != null)
+        {
+            InteractableDocument.UseBoundObject();
+        }
+             
         PlayerVars.BlockPlayer(false);
         Destroy(gameObject);
     }
 
     private void Update()
     {
+        Debug.Log($"Current state: {inspectorState}");
+
         if (Input.anyKey && Time.time > spawnTime + 0.3f)
         {
             ChangeImage();
@@ -74,16 +92,30 @@ public class DocumentInspector : MonoBehaviour
 
     private void ChangeImage()
     {
-        documentImage.color = Color.gray;
+        if (_document.backgroundImage != null) documentImage.color = Color.gray;
+        else documentImage.color = Color.clear;
 
-        switch (inspectorState)
+        if (inspectorState == InspectorFocusState.Image && _document.itemName != "")
         {
-            case InspectorFocusState.Image: ShowName(); break;
-            case InspectorFocusState.Name: ShowDescription(); break;          
-            case InspectorFocusState.Description: Exit(); break;
+            ShowName();
+        }
+        else if ((inspectorState == InspectorFocusState.Name || _document.itemName == "") && inspectorState != InspectorFocusState.Description)
+        {
+            ShowDescription();
+        }
+        else if (inspectorState == InspectorFocusState.Description)
+        {
+            Exit();
         }
 
-        inspectorState = (inspectorState) + 1;
+        //switch (inspectorState)
+        //{
+        //    case InspectorFocusState.Image: ShowName(); break;
+        //    case InspectorFocusState.Name: ShowDescription(); break;          
+        //    case InspectorFocusState.Description: Exit(); break;
+        //}
+
+        //inspectorState = (inspectorState) + 1;
 
         spawnTime = Time.time;
     }
@@ -92,6 +124,7 @@ public class DocumentInspector : MonoBehaviour
     {
         documentText.text = _document.itemName;
         documentText.alignment = TextAnchor.MiddleCenter;
+        inspectorState = InspectorFocusState.Name;
     }
 
     private void ShowDescription()
@@ -112,5 +145,8 @@ public class DocumentInspector : MonoBehaviour
 
         documentText.text = formattedText;
         if (!_document.centralizeText) documentText.alignment = TextAnchor.UpperCenter;
+        else documentText.alignment = TextAnchor.MiddleCenter;
+
+        inspectorState = InspectorFocusState.Description;
     }
 }
