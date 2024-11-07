@@ -17,7 +17,8 @@ MonoBehaviour:
   isFullscreen: 0
   paragraphs:
   - It's just a regular painting
-  skipLines: 0
+  - It doesn't seem much interesting
+  skipLines: 1
   centralizeText: 1
   backgroundImage: {fileID: 0}
   backgroundImageAlt: {fileID: 0}
