@@ -51,6 +51,8 @@ public class RoomManager : MonoBehaviour
         bool allItemsCollected = true;
         bool allPuzzlesCompleted = true;
 
+        if (collectables == null || collectables.Length == 0) return;
+
         foreach (Collectable collectable in collectables)
         {
             if (!collectable.isDestroyed)
