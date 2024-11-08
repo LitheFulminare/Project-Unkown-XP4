@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Clock
+{
+    Left = 0,
+    Right = 1
+}
+
 public class ClockInteractable : MonoBehaviour
 {
     //[SerializeField] private InteractableSO interactableSO;
@@ -26,7 +32,11 @@ public class ClockInteractable : MonoBehaviour
 
     public void StartInteraction()
     {
-        clockManager.StartPuzzle(this);
+        Debug.Log($"This: {gameObject}");
+        if (Manager.currentInteractionObj == gameObject)
+        {
+            clockManager.StartPuzzle(this);
+        }
     }
 
     // called when the player presses 'F' near the puzzle

@@ -71,12 +71,9 @@ public class DocumentInspector : MonoBehaviour
 
     public void Exit()
     {
+        Debug.Log($"Current Interaction Obj: {Manager.currentInteractionObj}");
         InteractableDocument.UseBoundObject?.Invoke();
-        //if (InteractableDocument.UseBoundObject != null)
-        //{
-        //    InteractableDocument.UseBoundObject();
-        //}
-             
+        
         PlayerVars.BlockPlayer(false);
         Destroy(gameObject);
     }
