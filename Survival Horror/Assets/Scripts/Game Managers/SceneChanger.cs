@@ -21,53 +21,44 @@ public class SceneChanger : MonoBehaviour
 
         // gets the player reference and sends them to the right spawn position
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            TankMovement playerMovementController = player.GetComponent<TankMovement>();
-            CharacterController characterController = player.GetComponent<CharacterController>();
-            if (playerMovementController != null)
-            {
-                if (spawns != null)
-                {
-                    //Debug.Log($"Spawns registered in the Spawn List: {spawns.Count}");
-
-                    if (spawns[spawnIndex] != null)
-                    {
-                        //player.SendMessage("SpawnPlayer", spawns[spawnIndex].transform.position);
-                        //playerMovementController.SpawnPlayer(spawns[spawnIndex].transform.position);
-                       
-                        if (characterController != null)
-                        {
-                            characterController.enabled = false;
-                            player.transform.position = spawns[spawnIndex].transform.position;
-                            player.transform.rotation = spawns[spawnIndex].transform.rotation;
-                            characterController.enabled = true;
-                            PlayerVars.BlockPlayer(false);
-                        }
-                        else
-                        {
-                            Debug.LogError("SceneChanger could not find a valid 'CharacterController' reference");
-                        }                       
-                    }
-                    else
-                    {
-                        Debug.LogError($"Spawn at index {spawnIndex} was not initialized in time and major bugs will occurr");
-                    }
-                }
-                else
-                {
-                    Debug.LogError("Spawn List was not initialized in time and major bugs will occurr");
-                }
-            }
-            else
-            {
-                Debug.LogError("SceneChanger could not find a valid 'TankControls' reference");
-            }
-        }
-        else
+        if (player == null)
         {
             Debug.LogError("SceneChanger could not find a valid 'player' reference");
+            return;
         }
+        
+        TankMovement playerMovementController = player.GetComponent<TankMovement>();
+        CharacterController characterController = player.GetComponent<CharacterController>();
+
+        if (playerMovementController == null)
+        {
+            Debug.LogError("SceneChanger could not find a valid 'TankControls' reference");
+            return;
+        }
+
+        if (spawns == null)
+        {
+            Debug.LogError("Spawn List was not initialized in time and major bugs will occurr");
+            return;
+        }
+
+        if (spawns[spawnIndex] == null)
+        {
+            Debug.LogError($"Spawn at index {spawnIndex} was not initialized in time and major bugs will occurr");
+            return;
+        }
+
+        if (characterController == null)
+        {
+            Debug.LogError("SceneChanger could not find a valid 'CharacterController' reference");
+            return;
+        }
+
+        characterController.enabled = false;
+        player.transform.position = spawns[spawnIndex].transform.position;
+        player.transform.rotation = spawns[spawnIndex].transform.rotation;
+        characterController.enabled = true;
+        PlayerVars.BlockPlayer(false);
     }
 
     public void LoadScene(string sceneName, int doorCode)
