@@ -32,7 +32,7 @@ public class ClockInteractable : MonoBehaviour
 
     public void StartInteraction()
     {
-        Debug.Log($"This: {gameObject}");
+        // prevents both clocks from triggering the puzzle
         if (Manager.currentInteractionObj == gameObject)
         {
             clockManager.StartPuzzle(this);
