@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 148ded9de3b5e384389149a06d4ac2b1, type: 3}
-  m_Name: Painting
+  m_Name: Paintings
   m_EditorClassIdentifier: 
   itemName: 
   isCollectable: 0
   isFullscreen: 0
   paragraphs:
-  - It's just a regular painting
-  skipLines: 0
+  - There are some paintings on the wall
+  - They don't seem much interesting
+  skipLines: 1
   centralizeText: 1
   backgroundImage: {fileID: 0}
   backgroundImageAlt: {fileID: 0}
