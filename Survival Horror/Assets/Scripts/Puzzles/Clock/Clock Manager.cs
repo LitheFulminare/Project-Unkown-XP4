@@ -9,6 +9,8 @@ public class ClockManager : MonoBehaviour
 
     public List<ClockInteractable> clockList = new List<ClockInteractable>();
 
+    public ClockInteractable currentClock;
+
     private void Start()
     {
         //clockList.AddRange(FindObjectsOfType<ClockInteractable>());
@@ -18,6 +20,11 @@ public class ClockManager : MonoBehaviour
     public void Interact(DocumentSO documentSO)
     {
         //puzzleImage.sprite = documentSO.inspectImage;
+    }
+
+    public void StartPuzzle(ClockInteractable clock)
+    {
+        Debug.Log($"Player started puzzle. Parameter Passed: {clock}");
     }
 
     // prob will be called when the player exits the screen

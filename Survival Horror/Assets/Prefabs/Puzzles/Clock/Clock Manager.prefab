@@ -50,6 +50,7 @@ MonoBehaviour:
   clockList:
   - {fileID: 3491346963545612062}
   - {fileID: 552552666539612208}
+  currentClock: {fileID: 0}
 --- !u!1001 &131875097614011783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,6 +59,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5573919700654702120}
     m_Modifications:
+    - target: {fileID: 468246864551548343, guid: 22609f2d72cc9144cb255e992eaf7d56, type: 3}
+      propertyPath: clockManager
+      value: 
+      objectReference: {fileID: -866830812375302316}
     - target: {fileID: 2336839456848205856, guid: 22609f2d72cc9144cb255e992eaf7d56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.46
@@ -131,6 +136,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5573919700654702120}
     m_Modifications:
+    - target: {fileID: 1575792371576298192, guid: 74b135d60d36c044fa005caa55f06f21, type: 3}
+      propertyPath: clockManager
+      value: 
+      objectReference: {fileID: -866830812375302316}
     - target: {fileID: 2336839456848205856, guid: 74b135d60d36c044fa005caa55f06f21, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.46

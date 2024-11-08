@@ -6,6 +6,8 @@ public class ClockInteractable : MonoBehaviour
 {
     //[SerializeField] private InteractableSO interactableSO;
 
+    [SerializeField] private ClockManager clockManager;
+
     public bool puzzleComplete = false;
 
     private Interaction player_interaction;
@@ -24,7 +26,7 @@ public class ClockInteractable : MonoBehaviour
 
     public void StartInteraction()
     {
-
+        clockManager.StartPuzzle(this);
     }
 
     // called when the player presses 'F' near the puzzle

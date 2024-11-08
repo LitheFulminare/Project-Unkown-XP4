@@ -71,10 +71,11 @@ public class DocumentInspector : MonoBehaviour
 
     public void Exit()
     {
-        if (InteractableDocument.UseBoundObject != null)
-        {
-            InteractableDocument.UseBoundObject();
-        }
+        InteractableDocument.UseBoundObject?.Invoke();
+        //if (InteractableDocument.UseBoundObject != null)
+        //{
+        //    InteractableDocument.UseBoundObject();
+        //}
              
         PlayerVars.BlockPlayer(false);
         Destroy(gameObject);
@@ -82,7 +83,7 @@ public class DocumentInspector : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"Current state: {inspectorState}");
+        //Debug.Log($"Current state: {inspectorState}");
 
         if (Input.anyKey && Time.time > spawnTime + 0.3f)
         {
