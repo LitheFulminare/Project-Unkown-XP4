@@ -5,7 +5,10 @@ using FMODUnity;
 
 public class FMODEvents : MonoBehaviour
 {
-    [field: Header("Select SFX")]
+    [field: Header("Player SFX")]
+    [field: SerializeField] public EventReference playerFootsteps { get; private set; }
+
+    [field: Header("UI SFX")]
     [field: SerializeField] public EventReference buttonSelected { get; private set; }
     [field: SerializeField] public EventReference open { get; private set; }
 

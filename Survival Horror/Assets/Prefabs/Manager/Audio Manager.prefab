@@ -89,6 +89,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0953e3a7b93bec640a9728dd0ac63a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <playerFootsteps>k__BackingField:
+    Guid:
+      Data1: 1254204301
+      Data2: 1135305152
+      Data3: -427459430
+      Data4: 2068683383
+    Path: event:/SFX/WalkTile
   <buttonSelected>k__BackingField:
     Guid:
       Data1: 1173073895

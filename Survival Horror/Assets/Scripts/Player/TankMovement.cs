@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using FMOD.Studio;
+using FMODUnity;
 
 public class TankMovement : MonoBehaviour
 {
@@ -18,8 +18,12 @@ public class TankMovement : MonoBehaviour
 
     private float sprintingSpeed;
 
+    private EventInstance playerFootsteps;
+
     void Start()
     {
+        playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
+
         controller = GetComponent<CharacterController>();
 
         sprintingSpeed = speed * sprintMultiplier;
@@ -51,6 +55,37 @@ public class TankMovement : MonoBehaviour
             moveDir = Input.GetAxis("Vertical") * vel * Time.deltaTime * transform.forward; // apparently this has better performance
 
             controller.Move(moveDir * Time.deltaTime - Vector3.up * 0.1f);
-        }       
+        }
+
+        UpdateAudio();
+    }
+
+    private void UpdateAudio()
+    {
+        if (IsPressingWalkButton() && !PlayerVars.playerBlocked)
+        {
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+        }
+
+        else
+        {
+            StopFootstepSound();
+        }
+    }
+
+    public void StopFootstepSound()
+    {
+        playerFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    private bool IsPressingWalkButton()
+    {
+        return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
     }
 }
