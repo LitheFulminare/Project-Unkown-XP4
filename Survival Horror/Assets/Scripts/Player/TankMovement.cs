@@ -9,7 +9,7 @@ public class TankMovement : MonoBehaviour
 {
     // https://www.youtube.com/watch?v=OEMk8xVDk2I
 
-    private CharacterController controller;
+    private CharacterController characterController;
 
     public float speed = 250;
     public float turnSpeed = 180f;
@@ -25,16 +25,20 @@ public class TankMovement : MonoBehaviour
     {
         playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
 
-        controller = GetComponent<CharacterController>();
+        characterController = GetComponent<CharacterController>();
 
         sprintingSpeed = speed * sprintMultiplier;
     }
 
     void Update()
     {
-        // handles the movement
-        // currently this can be stopped by UI elements
+        UpdateMovement();
 
+        UpdateAudio();
+    }
+
+    private void UpdateMovement()
+    {
         isSprinting = false;
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -55,14 +59,13 @@ public class TankMovement : MonoBehaviour
 
             moveDir = Input.GetAxis("Vertical") * vel * Time.deltaTime * transform.forward; // apparently this has better performance
 
-            controller.Move(moveDir * Time.deltaTime - Vector3.up * 0.1f);
+            characterController.Move(moveDir * Time.deltaTime - Vector3.up * 0.1f);
         }
-
-        UpdateAudio();
     }
 
     private void UpdateAudio()
     {
+        // i find it better to check if the player is pressing a button then checking the character velocity
         if (IsPressingWalkButton() && !PlayerVars.playerBlocked)
         {
             if (isSprinting) playerFootsteps.setParameterByName("running", 1f);

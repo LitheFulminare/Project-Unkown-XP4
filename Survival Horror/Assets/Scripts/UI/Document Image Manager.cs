@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// mainly used to hide and change image on the inventory
 public class DocumentImageManager : MonoBehaviour
 {
     public delegate void OnHover(DocumentSO documentSo);

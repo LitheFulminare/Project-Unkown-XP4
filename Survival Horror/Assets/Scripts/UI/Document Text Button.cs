@@ -13,6 +13,7 @@ public class DocumentTextButton : MonoBehaviour
 
     public void ButtonPressed()
     {
+        // opens the document and starts inpecting
         DocumentTextManager.ButtonPressed(currentDocument);
     }
 }

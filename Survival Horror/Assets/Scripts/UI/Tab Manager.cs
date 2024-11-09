@@ -15,6 +15,7 @@ public enum Tabs
 
 public class TabManager : MonoBehaviour
 {
+    // used to always go to the inventory tab when the player open the menu
     public delegate void ResetTabs();
     public static ResetTabs ShowInventoryTab;
 
@@ -85,6 +86,8 @@ public class TabManager : MonoBehaviour
         if (PlayerVars.documentList.Count > 0) DocumentImageManager.UpdateImage(PlayerVars.documentList[0]);
     }
 
+    // these funcs are called by their respective buttons
+    // did this cuz you can't directly pass a enum as a parameter on a button function
     public void InventoryButtonClick() => ButtonClick(Tabs.Inventory);
     public void DocumentsButtonClick() => ButtonClick(Tabs.Documents);
     public void MapButtonClick() => ButtonClick(Tabs.Map);

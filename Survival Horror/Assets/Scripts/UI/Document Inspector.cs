@@ -39,7 +39,7 @@ public class DocumentInspector : MonoBehaviour
         setDocument -= OnSpawn;
     }
 
-
+    // when the document is opened
     public void OnSpawn(DocumentSO document)
     {
         PlayerVars.BlockPlayer(true);
@@ -47,6 +47,7 @@ public class DocumentInspector : MonoBehaviour
 
         documentText.text = "";
 
+        // some 'documents' (mainly random item interactions) don't have background images, so it shows the description
         if (_document.backgroundImage == null)
         {
             ChangeImage();
@@ -69,6 +70,7 @@ public class DocumentInspector : MonoBehaviour
         }
     }
 
+    // when the document inspection screen is closed
     public void Exit()
     {
         Debug.Log($"Current Interaction Obj: {Manager.currentInteractionObj}");
@@ -88,6 +90,8 @@ public class DocumentInspector : MonoBehaviour
         }
     }
 
+    // changes the whole screen
+    // the default loop the showing the image -> name with the image grayed out -> item description -> close the screen
     private void ChangeImage()
     {
         if (_document.backgroundImage != null) documentImage.color = Color.gray;
@@ -105,15 +109,6 @@ public class DocumentInspector : MonoBehaviour
         {
             Exit();
         }
-
-        //switch (inspectorState)
-        //{
-        //    case InspectorFocusState.Image: ShowName(); break;
-        //    case InspectorFocusState.Name: ShowDescription(); break;          
-        //    case InspectorFocusState.Description: Exit(); break;
-        //}
-
-        //inspectorState = (inspectorState) + 1;
 
         spawnTime = Time.time;
     }
