@@ -2,12 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Clock
-{
-    Left = 0,
-    Right = 1
-}
-
 public class ClockInteractable : MonoBehaviour
 {
     //[SerializeField] private InteractableSO interactableSO;

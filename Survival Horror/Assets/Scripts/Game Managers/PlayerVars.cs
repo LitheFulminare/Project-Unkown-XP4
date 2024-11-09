@@ -41,11 +41,11 @@ public class PlayerVars : MonoBehaviour
         // call functions subscribed to these events
         if (value)
         {
-            onPlayerRestrained.Invoke();
+            onPlayerRestrained?.Invoke();
         }
         else
         {
-            onPlayerFreed.Invoke();
+            onPlayerFreed?.Invoke();
         }
     }
 
