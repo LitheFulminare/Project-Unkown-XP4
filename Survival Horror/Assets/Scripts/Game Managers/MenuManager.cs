@@ -14,7 +14,13 @@ public class MenuManager : MonoBehaviour
 
     public void ExitButtonClick()
     {
-        Debug.Log($"Exit button pressed");
-        Application.Quit();
+        // closing the game while running the executable or in-engine is different
+
+        #if UNITY_STANDALONE
+                Application.Quit();
+        #endif
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
