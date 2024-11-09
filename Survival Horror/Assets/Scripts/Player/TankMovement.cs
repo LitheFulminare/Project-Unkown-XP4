@@ -17,6 +17,7 @@ public class TankMovement : MonoBehaviour
     private float sprintMultiplier = 1.7f;
 
     private float sprintingSpeed;
+    private bool isSprinting = false;
 
     private EventInstance playerFootsteps;
 
@@ -33,8 +34,8 @@ public class TankMovement : MonoBehaviour
     {
         // handles the movement
         // currently this can be stopped by UI elements
-        
-        bool isSprinting = false;
+
+        isSprinting = false;
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -64,6 +65,10 @@ public class TankMovement : MonoBehaviour
     {
         if (IsPressingWalkButton() && !PlayerVars.playerBlocked)
         {
+            if (isSprinting) playerFootsteps.setParameterByName("running", 1f);
+            else playerFootsteps.setParameterByName("running", 0f);
+
+
             PLAYBACK_STATE playbackState;
             playerFootsteps.getPlaybackState(out playbackState);
 
