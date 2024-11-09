@@ -945,7 +945,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1640159221}
   - component: {fileID: 1640159222}
-  - component: {fileID: 1640159223}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -981,21 +980,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstScene: Main Hall
-  sceneChanger: {fileID: 1640159223}
---- !u!114 &1640159223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640159220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a18d855aa5ac94480d257351b4abc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryController: {fileID: 0}
-  spawns: []
 --- !u!1 &1886751934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +1061,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1886751937}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1640159222}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: ExitButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1886751937
 MonoBehaviour:
   m_ObjectHideFlags: 0
