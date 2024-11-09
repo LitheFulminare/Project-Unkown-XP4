@@ -110,8 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryController: {fileID: 6429811021614493775}
-  collectableManager: {fileID: 0}
-  puzzleManager: {fileID: 0}
   spawns: []
 --- !u!114 &4011942204032289486
 MonoBehaviour:

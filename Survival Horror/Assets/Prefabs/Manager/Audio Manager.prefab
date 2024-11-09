@@ -95,11 +95,11 @@ MonoBehaviour:
       Data2: 1152532199
       Data3: 465026475
       Data4: -1817750071
-    Path: event:/Select
+    Path: event:/SFX/Select
   <open>k__BackingField:
     Guid:
       Data1: 1080531331
       Data2: 1074264435
       Data3: -1389495110
       Data4: -1358353772
-    Path: event:/Open
+    Path: event:/SFX/Open

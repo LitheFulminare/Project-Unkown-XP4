@@ -9,11 +9,15 @@ public class MenuManager : MonoBehaviour
 
     public void PlayButtonClick()
     {
+        PlayClickSound();
+
         SceneManager.LoadScene(firstScene);
     }
 
     public void ExitButtonClick()
     {
+        PlayClickSound();
+
         // closing the game while running the executable or in-engine is different
 
         #if UNITY_STANDALONE
@@ -22,5 +26,10 @@ public class MenuManager : MonoBehaviour
         #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
         #endif
+    }
+
+    private void PlayClickSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonSelected, this.transform.position);
     }
 }
