@@ -641,6 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   documentText: {fileID: 4637960595781979354, guid: 3c121016c5081a64490d97005df7f822, type: 3}
   panel: {fileID: 5756701468885580402}
+  interactionOverlayObj: {fileID: 6338600386643862897, guid: 6e5fec01fc1fd5d4f9a99ab418ddb2ff, type: 3}
 --- !u!114 &7099321783038394471
 MonoBehaviour:
   m_ObjectHideFlags: 0

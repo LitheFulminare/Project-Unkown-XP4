@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,14 +16,20 @@ public class DocumentInspector : MonoBehaviour
     public delegate void SetDocument(DocumentSO documentSO);
     public static SetDocument setDocument;
 
+    public delegate void MakeBackgroundBlack();
+    public static MakeBackgroundBlack makeBackgroundBlack;
+
     [SerializeField] Image documentImage;
     [SerializeField] Text documentText;
+    [SerializeField] Image backgroundImage;
 
     private DocumentSO _document;
 
     private float spawnTime;
 
     private InspectorFocusState inspectorState = InspectorFocusState.Image;
+
+    private bool isBackgroundBlack;
 
     private void Awake()
     {
@@ -32,11 +39,32 @@ public class DocumentInspector : MonoBehaviour
     private void OnEnable()
     {
         setDocument += OnSpawn;
+        makeBackgroundBlack += InventorySpawn;
     }
 
     private void OnDisable()
     {
         setDocument -= OnSpawn;
+        makeBackgroundBlack -= InventorySpawn;
+    }
+
+    private void InventorySpawn()
+    {
+        // ensures that it only be black if makeBackgroundBlack
+        // otherwise just calling setDocument will make the BG gray
+        isBackgroundBlack = true;
+
+        if (isBackgroundBlack)
+        {
+            backgroundImage.color = new Color(0, 0, 0, 1);
+        }
+
+        else
+        {
+            backgroundImage.color = new Color(0, 0, 0, 0.686f);
+            isBackgroundBlack = false;
+        }
+
     }
 
     // when the document is opened

@@ -14,6 +14,8 @@ public class DocumentTextManager : MonoBehaviour
     [SerializeField] private GameObject documentText;
     [SerializeField] private GameObject panel;
 
+    [SerializeField] GameObject interactionOverlayObj;
+
     private List<GameObject> texts = new List<GameObject>();
 
     private void OnEnable()
@@ -62,6 +64,13 @@ public class DocumentTextManager : MonoBehaviour
     {
         // still need to call the event lol
         // instatiate the inspector and maybe pass extra parameters to make the screen black instead of fading, idk
+        if (interactionOverlayObj == null) return;
+
+        Instantiate(interactionOverlayObj);
+
+        DocumentInspector.makeBackgroundBlack?.Invoke();
+        DocumentInspector.setDocument?.Invoke(documentSO);
+
         Debug.Log($"InspectDocument parameter {documentSO}");
     }
 

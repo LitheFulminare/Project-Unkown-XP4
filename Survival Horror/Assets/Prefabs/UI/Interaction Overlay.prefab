@@ -214,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   documentImage: {fileID: 5415566355430660897}
   documentText: {fileID: 4253922497187732955}
+  backgroundImage: {fileID: 7556784091639799976}
 --- !u!1 &8189691556718800806
 GameObject:
   m_ObjectHideFlags: 0
