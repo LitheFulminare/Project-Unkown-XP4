@@ -31,6 +31,7 @@ public class DocumentImageManager : MonoBehaviour
     {
         Debug.Log($"Parameter: {documentSO}");
         documentImage.color = Color.white;
+        documentImage.preserveAspect = true;
         documentImage.sprite = documentSO.backgroundImage;
     }
 
