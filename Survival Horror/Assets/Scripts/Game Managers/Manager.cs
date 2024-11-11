@@ -15,6 +15,13 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
+        //List<GameObject> postProcessingObjects = new List<GameObject>();
+        //postProcessingObjects.AddRange(GameObject.FindGameObjectsWithTag("Post Processing"));
+        //foreach (var postProcessingObject in postProcessingObjects)
+        //{
+
+        //}
+
         if (destroyEditorObjects)
         {
             List<GameObject> editorObjects = new List<GameObject>();
