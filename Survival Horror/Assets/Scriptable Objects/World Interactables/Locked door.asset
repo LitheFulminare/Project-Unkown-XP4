@@ -23,4 +23,4 @@ MonoBehaviour:
   backgroundImage: {fileID: 0}
   backgroundImageAlt: {fileID: 0}
   inspectImage: {fileID: 0}
-  type: 0
+  type: 1
