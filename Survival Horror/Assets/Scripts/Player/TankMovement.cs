@@ -75,7 +75,7 @@ public class TankMovement : MonoBehaviour
             PLAYBACK_STATE playbackState;
             playerFootsteps.getPlaybackState(out playbackState);
 
-            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED) || playbackState.Equals(PLAYBACK_STATE.STOPPING))
             {
                 playerFootsteps.start();
             }

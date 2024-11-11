@@ -61,6 +61,9 @@
 		<property name="isPersistent">
 			<value>true</value>
 		</property>
+		<property name="priority">
+			<value>3</value>
+		</property>
 	</object>
 	<object class="MarkerTrack" id="{166d5be0-5d97-44ac-b521-deb946c085c5}" />
 	<object class="MarkerTrack" id="{b41d53d7-770f-4adf-8e87-52b958029e06}" />
@@ -184,6 +187,7 @@
 	<object class="MixerBusEffectChain" id="{4052ec1a-6f30-4574-b672-40a6be4c86a6}">
 		<relationship name="effects">
 			<destination>{f60533f9-14e8-452d-837f-df735fb86d3c}</destination>
+			<destination>{2673db56-5672-4df0-a89a-e972ebf95d03}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6f909089-a2ce-4b97-8d8f-613b295a8998}" />
@@ -200,4 +204,24 @@
 	</object>
 	<object class="MixerBusFader" id="{3e8afe4e-431e-4af8-872c-bb238ee972ae}" />
 	<object class="MixerBusFader" id="{f60533f9-14e8-452d-837f-df735fb86d3c}" />
+	<object class="SFXReverbEffect" id="{2673db56-5672-4df0-a89a-e972ebf95d03}">
+		<property name="decayTime">
+			<value>4300</value>
+		</property>
+		<property name="lateDelay">
+			<value>30</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>59</value>
+		</property>
+		<property name="highCut">
+			<value>5850</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>64</value>
+		</property>
+		<property name="wetLevel">
+			<value>-11.6999998</value>
+		</property>
+	</object>
 </objects>
