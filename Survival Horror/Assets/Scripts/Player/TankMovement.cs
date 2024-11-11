@@ -68,7 +68,10 @@ public class TankMovement : MonoBehaviour
         // i find it better to check if the player is pressing a button then checking the character velocity
         if (IsPressingWalkButton() && !PlayerVars.playerBlocked)
         {
-            if (isSprinting) playerFootsteps.setParameterByName("running", 1f);
+            if (isSprinting && !Input.GetKey(KeyCode.S))
+            {
+                playerFootsteps.setParameterByName("running", 1f);
+            } 
             else playerFootsteps.setParameterByName("running", 0f);
 
 
@@ -94,6 +97,10 @@ public class TankMovement : MonoBehaviour
 
     private bool IsPressingWalkButton()
     {
-        return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
+        return 
+            Input.GetKey(KeyCode.W) || 
+            Input.GetKey(KeyCode.A) || 
+            Input.GetKey(KeyCode.S) || 
+            Input.GetKey(KeyCode.D);
     }
 }
