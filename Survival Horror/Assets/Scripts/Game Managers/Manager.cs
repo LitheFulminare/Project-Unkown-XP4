@@ -16,7 +16,6 @@ public class Manager : MonoBehaviour
 
     [SerializeField] private bool destroyLight = true;
 
-    //private Camera mainCamera;
     private Camera thermalCamera;
 
     private void OnEnable()
@@ -31,8 +30,13 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
-        //mainCamera = Camera.main;
-        thermalCamera = GameObject.FindGameObjectWithTag("Thermal Camera").GetComponent<Camera>();
+        
+        GameObject thermalCameraObj = GameObject.FindGameObjectWithTag("Thermal Camera");
+
+        if (!thermalCameraObj.TryGetComponent<Camera>(out thermalCamera))
+        {
+            Debug.LogWarning("Failed to find the Thermal Camera");
+        }
 
         //List<GameObject> postProcessingObjects = new List<GameObject>();
         //postProcessingObjects.AddRange(GameObject.FindGameObjectsWithTag("Post Processing"));
