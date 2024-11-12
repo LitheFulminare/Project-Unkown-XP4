@@ -4,47 +4,39 @@ using UnityEngine;
 
 public class FlickeringLight : MonoBehaviour
 {
-    private Light myLight;
-    public float maxInterval = 1f;
+    private Light _lightComponent;
 
-    float targetIntensity;
-    float lastIntensity;
-    float interval;
-    float timer;
+    [SerializeField] private float _maxInterval = 1f;
+    [SerializeField] private float _minIntensity = 0.5f;
+    [SerializeField] private float _maxIntensity = 2f;
 
-    public float maxDisplacement = 0.25f;
-    public float minIntensity = 0.5f;
-    public float maxIntensity = 2f;
-    Vector3 targetPosition;
-    Vector3 lastPosition;
-    Vector3 origin;
+    private float _targetIntensity;
+    private float _lastIntensity;
+    private float _interval;
+    private float _timer;
 
     private void Start()
     {
-        myLight = GetComponent<Light>();
-        if (myLight == null) Debug.LogWarning("Could not find Light component");
-        origin = transform.position;
-        lastPosition = origin;
+        if (!TryGetComponent<Light>(out _lightComponent))
+        {
+            Debug.LogWarning("failed to find the light component");
+        }
     }
 
     void Update()
     {
         if (PlayerVars.playerBlocked) return;
 
-        timer += Time.deltaTime;
+        _timer += Time.deltaTime;
 
-        if (timer > interval)
+        if (_timer > _interval)
         {
-            lastIntensity = myLight.intensity;
-            targetIntensity = Random.Range(minIntensity, maxIntensity);
-            timer = 0;
-            interval = Random.Range(0, maxInterval);
-
-            targetPosition = origin + Random.insideUnitSphere * maxDisplacement;
-            lastPosition = myLight.transform.position;
+            _lastIntensity = _lightComponent.intensity;
+            _targetIntensity = Random.Range(_minIntensity, _maxIntensity);
+            _timer = 0;
+            _interval = Random.Range(0, _maxInterval);
         }
 
-        myLight.intensity = Mathf.Lerp(lastIntensity, targetIntensity, timer / interval);
-        myLight.transform.position = Vector3.Lerp(lastPosition, targetPosition, timer / interval);
+        _lightComponent.intensity = Mathf.Lerp(_lastIntensity, _targetIntensity, _timer / _interval);
     }
 }
