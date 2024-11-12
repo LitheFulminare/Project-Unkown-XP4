@@ -26,6 +26,7 @@ public class CameraSwitcher : MonoBehaviour
             if (activeCam != null)
             {
                 activeCam.Priority = 1;
+                
             }
             else if (printDebugErrors)
             {
@@ -42,7 +43,10 @@ public class CameraSwitcher : MonoBehaviour
             else if (printDebugErrors)
             {
                 Debug.LogError("CameraSwitcher could not find the canvas");
-            }          
+            }
+
+            // synchronizes the main camera and thermal cameras' field of view
+            Manager.syncCameras?.Invoke(activeCam.m_Lens.FieldOfView); 
         }
     }
 

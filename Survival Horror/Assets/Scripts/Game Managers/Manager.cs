@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
+    public delegate void SyncCameras(float fieldOfView);
+    public static SyncCameras syncCameras;
+
     // keeps track of what the player is currently interacting with
     public static GameObject currentInteractionObj;
 
@@ -13,8 +16,24 @@ public class Manager : MonoBehaviour
 
     [SerializeField] private bool destroyLight = true;
 
+    //private Camera mainCamera;
+    private Camera thermalCamera;
+
+    private void OnEnable()
+    {
+        syncCameras += SynchronizeCameras;
+    }
+
+    private void OnDisable()
+    {
+        syncCameras -= SynchronizeCameras;
+    }
+
     private void Start()
     {
+        //mainCamera = Camera.main;
+        thermalCamera = GameObject.FindGameObjectWithTag("Thermal Camera").GetComponent<Camera>();
+
         //List<GameObject> postProcessingObjects = new List<GameObject>();
         //postProcessingObjects.AddRange(GameObject.FindGameObjectsWithTag("Post Processing"));
         //foreach (var postProcessingObject in postProcessingObjects)
@@ -49,5 +68,12 @@ public class Manager : MonoBehaviour
                 Destroy(light);
             }
         }
+    }
+
+    private void SynchronizeCameras(float fieldOfView)
+    {
+        if (thermalCamera == null) return;
+
+        thermalCamera.fieldOfView = fieldOfView;
     }
 }

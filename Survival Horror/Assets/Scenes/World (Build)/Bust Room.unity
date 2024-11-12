@@ -920,7 +920,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 283486856}
+    m_TransformParent: {fileID: 744369475}
     m_Modifications:
     - target: {fileID: 16147608127829909, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Layer
@@ -1048,15 +1048,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3371418670160222887, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3371418670160222887, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3371418670160222887, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3371418670160222887, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1064,7 +1064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3371418670160222887, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.942
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3371418670160222887, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1587,6 +1587,11 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: b4526841d1b63db429d92a14958b5835, type: 2}
+--- !u!4 &744369475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1344199343605675171, guid: 9b22bbd4068bce243b273d50fbe36fd3, type: 3}
+  m_PrefabInstance: {fileID: 5675215009551600580}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &749279046
 GameObject:
   m_ObjectHideFlags: 0
@@ -3566,7 +3571,7 @@ GameObject:
   - component: {fileID: 1983652548}
   m_Layer: 0
   m_Name: Thermal Camera
-  m_TagString: MainCamera
+  m_TagString: Thermal Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3699,7 +3704,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 67.8
+  field of view: 80.99
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5613,8 +5618,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5007205233959951905, guid: 9b22bbd4068bce243b273d50fbe36fd3, type: 3}
-      insertIndex: 1
+    - targetCorrespondingSourceObject: {fileID: 1344199343605675171, guid: 9b22bbd4068bce243b273d50fbe36fd3, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 511259213}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b22bbd4068bce243b273d50fbe36fd3, type: 3}

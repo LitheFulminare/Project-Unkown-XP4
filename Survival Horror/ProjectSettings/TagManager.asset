@@ -11,6 +11,7 @@ TagManager:
   - BackgroundCanvas
   - Icon
   - Post Processing
+  - Thermal Camera
   layers:
   - Default
   - TransparentFX
