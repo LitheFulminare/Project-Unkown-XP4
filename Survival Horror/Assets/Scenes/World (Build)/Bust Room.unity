@@ -2799,10 +2799,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94da306448a50d34383314296b746a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxInterval: 0.4
+  maxInterval: 0.3
   maxDisplacement: 0.25
   minIntensity: 0.5
-  maxIntensity: 1.5
+  maxIntensity: 3
 --- !u!114 &1422868457
 MonoBehaviour:
   m_ObjectHideFlags: 0
