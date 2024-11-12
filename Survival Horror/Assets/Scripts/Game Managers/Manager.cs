@@ -76,7 +76,11 @@ public class Manager : MonoBehaviour
 
     private void SynchronizeCameras(float fieldOfView)
     {
-        if (thermalCamera == null) return;
+        if (thermalCamera == null)
+        {
+            Debug.LogWarning("Failed to sync cameras' FOV: thermalCamera was null");
+            return;
+        }
 
         thermalCamera.fieldOfView = fieldOfView;
     }
