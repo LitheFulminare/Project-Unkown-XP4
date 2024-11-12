@@ -21,8 +21,18 @@ public class TankMovement : MonoBehaviour
 
     private EventInstance playerFootsteps;
 
+
+    private bool isThermalActive = false;
+    private List<GameObject> thermalObjects = new List<GameObject>();
+
     void Start()
     {
+        thermalObjects.AddRange(GameObject.FindGameObjectsWithTag("Thermal Effect"));
+        foreach (GameObject obj in thermalObjects)
+        {
+            obj.SetActive(false);
+        }
+
         playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
 
         characterController = GetComponent<CharacterController>();
@@ -32,6 +42,16 @@ public class TankMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            foreach (GameObject obj in thermalObjects)
+            {
+                obj.SetActive(!isThermalActive);
+            }
+
+            isThermalActive = !isThermalActive;
+        }
+
         UpdateMovement();
 
         UpdateAudio();

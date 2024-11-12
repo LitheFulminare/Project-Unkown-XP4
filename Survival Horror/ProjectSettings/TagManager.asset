@@ -12,6 +12,7 @@ TagManager:
   - Icon
   - Post Processing
   - Thermal Camera
+  - Thermal Effect
   layers:
   - Default
   - TransparentFX

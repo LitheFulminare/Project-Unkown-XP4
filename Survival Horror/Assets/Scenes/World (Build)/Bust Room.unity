@@ -1026,6 +1026,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2702863221646508061, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702863221646508061, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
+      propertyPath: m_TagString
+      value: Thermal Effect
+      objectReference: {fileID: 0}
     - target: {fileID: 2757916607108129606, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -1574,11 +1582,11 @@ GameObject:
   - component: {fileID: 738114538}
   m_Layer: 8
   m_Name: Thermal PP
-  m_TagString: Untagged
+  m_TagString: Thermal Effect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &738114537
 Transform:
   m_ObjectHideFlags: 0
@@ -3863,11 +3871,11 @@ GameObject:
   - component: {fileID: 2111768810}
   m_Layer: 0
   m_Name: Environment Post Processing
-  m_TagString: Untagged
+  m_TagString: Thermal Effect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2111768809
 Transform:
   m_ObjectHideFlags: 0
