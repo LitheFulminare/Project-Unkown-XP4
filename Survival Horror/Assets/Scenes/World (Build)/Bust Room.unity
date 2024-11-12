@@ -1020,7 +1020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2702863221646508061, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Name
-      value: Hot Gurl
+      value: Hot Girl
       objectReference: {fileID: 0}
     - target: {fileID: 2702863221646508061, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Layer
@@ -1169,7 +1169,7 @@ PrefabInstance:
     - target: {fileID: 5640835582548167432, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c10bca431fbc2b34ba2efcabd32b6d80, type: 2}
+      objectReference: {fileID: 2100000, guid: 0410943cd04bea540b493324cf9134c0, type: 2}
     - target: {fileID: 5640835582548167432, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -1181,7 +1181,7 @@ PrefabInstance:
     - target: {fileID: 5640835582548167432, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: c10bca431fbc2b34ba2efcabd32b6d80, type: 2}
+      objectReference: {fileID: 2100000, guid: 0410943cd04bea540b493324cf9134c0, type: 2}
     - target: {fileID: 5640835582548167432, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Materials.Array.data[4]
       value: 
@@ -1189,7 +1189,7 @@ PrefabInstance:
     - target: {fileID: 5640835582548167432, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Materials.Array.data[5]
       value: 
-      objectReference: {fileID: 2100000, guid: c10bca431fbc2b34ba2efcabd32b6d80, type: 2}
+      objectReference: {fileID: 2100000, guid: 5c54cc1b032c8de4488a1008d4a64098, type: 2}
     - target: {fileID: 5724993553593440492, guid: e6971c8b19d8f544f845ce0efecc16c2, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -1578,7 +1578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &738114537
 Transform:
   m_ObjectHideFlags: 0
@@ -1930,7 +1930,6 @@ GameObject:
   - component: {fileID: 963194229}
   - component: {fileID: 963194231}
   - component: {fileID: 963194232}
-  - component: {fileID: 963194233}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2098,19 +2097,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &963194233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2894c6d81a43b34bb6dd8a99ed601f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _thermalCamera: {fileID: 1983652550}
 --- !u!1 &976775199
 GameObject:
   m_ObjectHideFlags: 3
@@ -3881,7 +3867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2111768809
 Transform:
   m_ObjectHideFlags: 0
