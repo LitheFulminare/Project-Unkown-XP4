@@ -30,13 +30,7 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
-        
-        GameObject thermalCameraObj = GameObject.FindGameObjectWithTag("Thermal Camera");
-
-        if (!thermalCameraObj.TryGetComponent<Camera>(out thermalCamera))
-        {
-            Debug.LogWarning("Failed to find the Thermal Camera");
-        }
+        GetThermalCamera();
 
         //List<GameObject> postProcessingObjects = new List<GameObject>();
         //postProcessingObjects.AddRange(GameObject.FindGameObjectsWithTag("Post Processing"));
@@ -71,6 +65,22 @@ public class Manager : MonoBehaviour
             {
                 Destroy(light);
             }
+        }
+    }
+
+    private void GetThermalCamera()
+    {
+        GameObject thermalCameraObj = GameObject.FindGameObjectWithTag("Thermal Camera");
+
+        if (thermalCameraObj == null)
+        {
+            Debug.LogWarning("Could not find object with 'Thermal Camera' tag");
+            return;
+        }
+
+        if (!thermalCameraObj.TryGetComponent<Camera>(out thermalCamera))
+        {
+            Debug.LogWarning("Failed to find the Thermal Camera");
         }
     }
 
