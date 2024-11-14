@@ -73,28 +73,28 @@ public class InventoryController : MonoBehaviour, IDragHandler
         {
             if (canvas.activeSelf)
             {
-                ItemInspector.inspectItem(Items.pistol);
+                //ItemInspector.inspectItem(Items.pistol);
 
                 GameObject bg = GameObject.Find("Background");
                 Image bgImage = bg.GetComponent<Image>();
 
-                if (ItemInspector.isInspecting)
-                {
-                    if (bgImage != null)
-                    {
-                        bgImage.color = new Color32(60, 60, 60, 255);
-                        ShowIcon.toggleButton();
-                        //bgImage.color = Color.grey;
-                    }
-                }
-                else
-                {                   
-                    if (bgImage != null)
-                    {
-                        bgImage.color = Color.white;
-                        ShowIcon.toggleButton();
-                    }
-                }
+                //if (ItemInspector.isInspecting)
+                //{
+                //    if (bgImage != null)
+                //    {
+                //        bgImage.color = new Color32(60, 60, 60, 255);
+                //        ShowIcon.toggleButton();
+                //        //bgImage.color = Color.grey;
+                //    }
+                //}
+                //else
+                //{                   
+                //    if (bgImage != null)
+                //    {
+                //        bgImage.color = Color.white;
+                //        ShowIcon.toggleButton();
+                //    }
+                //}
                 
             }          
         }
@@ -236,6 +236,6 @@ public class InventoryController : MonoBehaviour, IDragHandler
     // used to inspect an item
     public void OnDrag(PointerEventData eventData)
     {
-        itemInspector.RotateItem(new Vector3(eventData.delta.y, -eventData.delta.x));
+        //itemInspector.RotateItem(new Vector3(eventData.delta.y, -eventData.delta.x));
     }
 }

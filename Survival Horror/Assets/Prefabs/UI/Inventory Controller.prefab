@@ -985,13 +985,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4190116873468605588}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fbe26ec83dec584395d318ab410c1f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 5929226123094481230}
-  pistol: {fileID: 3644533515942279150, guid: ae86d748e0f59db409e8638df0dfe366, type: 3}
 --- !u!1 &4625025142578759701
 GameObject:
   m_ObjectHideFlags: 0

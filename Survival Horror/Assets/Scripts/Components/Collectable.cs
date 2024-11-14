@@ -28,6 +28,12 @@ public class Collectable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (collectableSO == null)
+        {
+            Debug.Log("collectableSO parameter on 'Collectable' class is null");
+            return;
+        }
+
         OverlayController.showUI(gameObject, collectableSO);
     }
 

@@ -55,7 +55,7 @@ public class OverlayController : MonoBehaviour
 
         canvas.SetActive(true);
         this.collectedItem = collectedItem;
-
+        ItemInspector.inspectItem(collectableSO);
         PlayerVars.BlockPlayer(true);
 
         topText.text = "You found ";
