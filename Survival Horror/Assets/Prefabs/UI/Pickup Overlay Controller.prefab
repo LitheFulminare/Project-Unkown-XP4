@@ -1215,6 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 6176903598028145847}
+  rotationSpeed: 20
 --- !u!1001 &1042579491055920960
 PrefabInstance:
   m_ObjectHideFlags: 0

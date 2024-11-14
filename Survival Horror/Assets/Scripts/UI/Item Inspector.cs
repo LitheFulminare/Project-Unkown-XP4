@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class ItemInspector : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ItemInspector : MonoBehaviour
     public static InspectItem inspectItem;
 
     [SerializeField] GameObject spawnPosition;
+    [SerializeField] private float rotationSpeed = 15f;
 
     private Transform currentItemInstance;
 
@@ -33,6 +35,11 @@ public class ItemInspector : MonoBehaviour
     private void OnDisable()
     {
         inspectItem -= SpawnItem;
+    }
+
+    private void Update()
+    {
+        currentItemInstance?.transform.Rotate(new Vector3 (0, 0, -1) * (rotationSpeed * Time.deltaTime));
     }
 
     // spawns/destroys the item to be inspected
