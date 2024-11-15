@@ -43,6 +43,14 @@ public class FlickeringLight : MonoBehaviour
         }
 
         _lightComponent.intensity = Mathf.Lerp(_lastIntensity, _targetIntensity, _timer / _interval);
-        _lensFlare.intensity = _lightComponent.intensity;
+        _lensFlare.intensity = ConvertRange(_lightComponent.intensity, _minIntensity, _maxIntensity, 0.2f, 1f);
+        _lensFlare.scale = ConvertRange(_lensFlare.intensity, _minIntensity, _maxIntensity, 0.8f, 1.4f);
+    }
+
+    // converts a number between two ranges to another number in a different range
+    // for exemple, converts a number from 2 to 8 to a number from 0 to 1
+    float ConvertRange(float value, float minOriginal, float maxOriginal, float minTarget, float maxTarget)
+    {
+        return (value - minOriginal) / (maxOriginal - minOriginal) * (maxTarget - minTarget) + minTarget;
     }
 }
