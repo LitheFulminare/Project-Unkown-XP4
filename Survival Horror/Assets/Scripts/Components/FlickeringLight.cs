@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class FlickeringLight : MonoBehaviour
 {
@@ -15,12 +16,16 @@ public class FlickeringLight : MonoBehaviour
     private float _interval;
     private float _timer;
 
+    private LensFlareComponentSRP _lensFlare;  
+
     private void Start()
     {
         if (!TryGetComponent<Light>(out _lightComponent))
         {
             Debug.LogWarning("failed to find the light component");
         }
+
+        TryGetComponent<LensFlareComponentSRP>(out _lensFlare);
     }
 
     void Update()
@@ -38,5 +43,6 @@ public class FlickeringLight : MonoBehaviour
         }
 
         _lightComponent.intensity = Mathf.Lerp(_lastIntensity, _targetIntensity, _timer / _interval);
+        _lensFlare.intensity = _lightComponent.intensity;
     }
 }
