@@ -5,11 +5,18 @@ using UnityEngine.Rendering;
 
 public class FlickeringLight : MonoBehaviour
 {
-    private Light _lightComponent;
-
+    [Header("Light")]
     [SerializeField] private float _maxInterval = 1f;
     [SerializeField] private float _minIntensity = 0.5f;
     [SerializeField] private float _maxIntensity = 2f;
+
+    [Header("Lens Flare")]
+    [SerializeField] private float _minLensFlareIntensity = 0.2f;
+    [SerializeField] private float _maxLensFlareIntensity = 1f;
+    [SerializeField] private float _minLensFlareScale = 0.8f;
+    [SerializeField] private float _maxLensFlareScale = 1.4f;
+
+    private Light _lightComponent;
 
     private float _targetIntensity;
     private float _lastIntensity;
@@ -43,8 +50,15 @@ public class FlickeringLight : MonoBehaviour
         }
 
         _lightComponent.intensity = Mathf.Lerp(_lastIntensity, _targetIntensity, _timer / _interval);
-        _lensFlare.intensity = ConvertRange(_lightComponent.intensity, _minIntensity, _maxIntensity, 0.2f, 1f);
-        _lensFlare.scale = ConvertRange(_lensFlare.intensity, _minIntensity, _maxIntensity, 0.8f, 1.4f);
+
+        // normalize to use as parameter on Lerp
+        float normalizedLightIntensity = (_lightComponent.intensity - _minIntensity) / (_maxIntensity - _minIntensity);
+
+        _lensFlare.intensity = Mathf.Lerp(_minLensFlareIntensity, _maxLensFlareIntensity, normalizedLightIntensity);
+        _lensFlare.scale = Mathf.Lerp(_minLensFlareScale, _maxLensFlareScale, normalizedLightIntensity);
+
+        //_lensFlare.intensity = ConvertRange(_lightComponent.intensity, _minIntensity, _maxIntensity, 0.2f, 1f);
+        //_lensFlare.scale = ConvertRange(_lensFlare.intensity, _minIntensity, _maxIntensity, 0.8f, 1.4f);
     }
 
     // converts a number between two ranges to another number in a different range
