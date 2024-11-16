@@ -56,9 +56,6 @@ public class FlickeringLight : MonoBehaviour
 
         _lensFlare.intensity = Mathf.Lerp(_minLensFlareIntensity, _maxLensFlareIntensity, normalizedLightIntensity);
         _lensFlare.scale = Mathf.Lerp(_minLensFlareScale, _maxLensFlareScale, normalizedLightIntensity);
-
-        //_lensFlare.intensity = ConvertRange(_lightComponent.intensity, _minIntensity, _maxIntensity, 0.2f, 1f);
-        //_lensFlare.scale = ConvertRange(_lensFlare.intensity, _minIntensity, _maxIntensity, 0.8f, 1.4f);
     }
 
     // converts a number between two ranges to another number in a different range
