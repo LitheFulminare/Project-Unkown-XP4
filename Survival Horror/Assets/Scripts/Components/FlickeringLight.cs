@@ -33,12 +33,14 @@ public class FlickeringLight : MonoBehaviour
 
     private void OnEnable()
     {
+        // maybe change this to onPlayerFreed and restrained?
         OverlayController.overlayOpened += StopAudio;
         OverlayController.overlayClosed += PlayAudio;
     }
 
     private void OnDisable()
     {
+        // maybe change this to onPlayerFreed and restrained?
         OverlayController.overlayOpened -= StopAudio;
         OverlayController.overlayClosed -= PlayAudio;
     }
