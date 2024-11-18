@@ -15,19 +15,24 @@ public class AudioManager : MonoBehaviour
     
     private void Awake()
     {
-        if (instance != null)
-        {
-            Debug.LogError("Found more than one AudioManager instance in this scene.");
-        }
-        instance = this;
-
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
+
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);    
     }
 
     private void Start()
     {
-        InitializeMenuSong(FMODEvents.instance.menuMusic);
+
     }
 
     public EventInstance CreateInstance(EventReference eventReference)
@@ -47,7 +52,7 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(sound);
     }
 
-    private void InitializeMenuSong(EventReference menuEventReference)
+    public void InitializeMenuSong(EventReference menuEventReference)
     {
         menuEventInstance = CreateInstance(menuEventReference);
         menuEventInstance.start();

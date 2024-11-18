@@ -7,6 +7,11 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private string firstScene;
 
+    private void Start()
+    {
+        AudioManager.instance.InitializeMenuSong(FMODEvents.instance.menuMusic);
+    }
+
     public void PlayButtonClick()
     {
         PlayClickSound();

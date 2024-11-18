@@ -22,10 +22,10 @@ public class FMODEvents : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
-        {
-            Debug.LogError("Found more than one FMODEvents instance in this scene.");
-        }
+        //if (instance != null)
+        //{
+        //    Debug.LogError("Found more than one FMODEvents instance in this scene.");
+        //}
         instance = this;
     }
 }
