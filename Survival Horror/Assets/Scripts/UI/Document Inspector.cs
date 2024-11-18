@@ -71,6 +71,7 @@ public class DocumentInspector : MonoBehaviour
     public void OnSpawn(DocumentSO document)
     {
         PlayerVars.BlockPlayer(true);
+        documentImage.preserveAspect = true;
         _document = document;
 
         documentText.text = "";

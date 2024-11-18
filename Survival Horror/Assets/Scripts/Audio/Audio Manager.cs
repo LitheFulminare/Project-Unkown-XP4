@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);    
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public EventInstance CreateInstance(EventReference eventReference)
