@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using FMODUnity;
+using FMOD.Studio;
 
 [RequireComponent(typeof(StudioEventEmitter))]
 public class FlickeringLight : MonoBehaviour
@@ -28,6 +29,7 @@ public class FlickeringLight : MonoBehaviour
     private LensFlareComponentSRP _lensFlare;  
 
     private StudioEventEmitter _emitter;
+    private EventInstance _emitterEventInstance;
 
     private void OnEnable()
     {
@@ -52,6 +54,7 @@ public class FlickeringLight : MonoBehaviour
 
         _emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.flickeringLight, this.gameObject);
         _emitter.Play();
+        _emitterEventInstance = _emitter.EventInstance;
     }
 
     void Update()
@@ -86,11 +89,11 @@ public class FlickeringLight : MonoBehaviour
 
     private void PlayAudio()
     {
-        _emitter.Play();
+        _emitterEventInstance.setPaused(false);
     }
 
     private void StopAudio()
     {
-        _emitter.Stop();
+        _emitterEventInstance.setPaused(true);
     }   
 }
