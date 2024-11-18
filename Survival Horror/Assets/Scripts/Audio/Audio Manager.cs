@@ -25,6 +25,11 @@ public class AudioManager : MonoBehaviour
         eventEmitters = new List<StudioEventEmitter>();
     }
 
+    private void Start()
+    {
+        InitializeMenuSong(FMODEvents.instance.menuMusic);
+    }
+
     public EventInstance CreateInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
@@ -42,9 +47,11 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(sound);
     }
 
-    private void InitializeMenuSong(EventReference menuEventInstance)
+    private void InitializeMenuSong(EventReference menuEventReference)
     {
-        //menuEventInstance = CreateInstance
+        menuEventInstance = CreateInstance(menuEventReference);
+        menuEventInstance.start();
+        menuEventInstance.setParameterByName("sound_intensity", 1f);
     }
 
     public StudioEventEmitter InitializeEventEmitter(EventReference eventReference, GameObject emitterGameObject)

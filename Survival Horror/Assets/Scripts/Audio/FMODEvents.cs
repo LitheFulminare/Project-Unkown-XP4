@@ -12,8 +12,11 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference buttonSelected { get; private set; }
     [field: SerializeField] public EventReference open { get; private set; }
 
-    [field: Header("UI SFX")]
+    [field: Header("World Sounds")]
     [field: SerializeField] public EventReference flickeringLight { get; private set; }
+
+    [field: Header("Music")]
+    [field: SerializeField] public EventReference menuMusic { get; private set; }
 
     public static FMODEvents instance {  get; private set; }
 

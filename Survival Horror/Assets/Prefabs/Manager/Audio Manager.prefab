@@ -137,3 +137,10 @@ MonoBehaviour:
       Data3: 833461637
       Data4: -1568366206
     Path: event:/SFX/FlickeringLight
+  <menuMusic>k__BackingField:
+    Guid:
+      Data1: -394437687
+      Data2: 1306866417
+      Data3: -927187824
+      Data4: -927401871
+    Path: event:/Music/Ataraxia Theme
