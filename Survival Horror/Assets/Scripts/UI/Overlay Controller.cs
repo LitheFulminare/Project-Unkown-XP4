@@ -141,6 +141,7 @@ public class OverlayController : MonoBehaviour
         }
 
         PlayerVars.BlockPlayer(false);
+        ItemInspector.destroyItem?.Invoke();
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonSelected, this.transform.position);
     }
 

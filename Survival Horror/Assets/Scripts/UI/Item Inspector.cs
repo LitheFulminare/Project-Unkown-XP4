@@ -10,6 +10,9 @@ public class ItemInspector : MonoBehaviour
     public delegate void InspectItem(CollectableSO item);       
     public static InspectItem inspectItem;
 
+    public delegate void DestroyItem();
+    public static DestroyItem destroyItem;
+
     [SerializeField] GameObject spawnPosition;
     [SerializeField] private float rotationSpeed = 15f;
 
@@ -30,11 +33,13 @@ public class ItemInspector : MonoBehaviour
     private void OnEnable()
     {
         inspectItem += SpawnItem;
+        destroyItem += StopInspecting;
     }
 
     private void OnDisable()
     {
         inspectItem -= SpawnItem;
+        destroyItem -= StopInspecting;
     }
 
     private void Update()
@@ -64,6 +69,7 @@ public class ItemInspector : MonoBehaviour
     {
         Destroy(itemGameObject);
         currentItemInstance = null;
+        isInspecting = false;
     }
 
     // called by 'InventoryController' using Unity's "mouse drag" interface

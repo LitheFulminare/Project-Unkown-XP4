@@ -21,7 +21,6 @@ public class TankMovement : MonoBehaviour
 
     private EventInstance playerFootsteps;
 
-
     private bool isThermalActive = false;
     private List<GameObject> thermalObjects = new List<GameObject>();
 
