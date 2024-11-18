@@ -69,7 +69,7 @@ public class TabManager : MonoBehaviour
 
         if (tabName == Tabs.Map)
         {
-            ShowMap();
+            //ShowMap();
             return;
         }
     }
