@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +17,10 @@ public class TabManager : MonoBehaviour
     [SerializeField] private Sprite inventoryBackground;
     [SerializeField] private Sprite documentBackgroud;
     [SerializeField] private Sprite mapBackground;
+
+    [SerializeField] private DocumentSO mapSO;
+    [SerializeField] private GameObject documentInspector;
+
 
     [SerializeField] Image canvas;
 
@@ -49,25 +48,28 @@ public class TabManager : MonoBehaviour
     private void ButtonClick(Tabs tabName)
     {
         currentTab = tabName;
-        documentTexts.SetActive(false);
-        slots.SetActive(false);
-        DocumentImageManager.HideImage();
 
         if (tabName == Tabs.Inventory)
         {
+            documentTexts.SetActive(false);
+            slots.SetActive(false);
+            DocumentImageManager.HideImage();
             ShowInventory();
             return;
         }       
 
         if (tabName == Tabs.Documents)
         {
+            documentTexts.SetActive(false);
+            slots.SetActive(false);
+            DocumentImageManager.HideImage();
             ShowDocuments();
             return;
         }
 
         if (tabName == Tabs.Map)
         {
-            //ShowMap();
+            ShowMap();
             return;
         }
     }
@@ -84,6 +86,14 @@ public class TabManager : MonoBehaviour
         canvas.sprite = documentBackgroud;
         DocumentTextManager.updateText();
         if (PlayerVars.documentList.Count > 0) DocumentImageManager.UpdateImage(PlayerVars.documentList[0]);
+    }
+
+    private void ShowMap()
+    {
+        if (mapSO == null) return;
+
+        Instantiate(documentInspector);
+        DocumentInspector.setDocument(mapSO);
     }
 
     // these funcs are called by their respective buttons

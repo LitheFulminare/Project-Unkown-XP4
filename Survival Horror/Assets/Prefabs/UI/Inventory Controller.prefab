@@ -624,6 +624,8 @@ MonoBehaviour:
   inventoryBackground: {fileID: 21300000, guid: 6a0d078391d95834fab5f77c24dfe0a2, type: 3}
   documentBackgroud: {fileID: 21300000, guid: 615bd9a703e1e9243a9eae4f716ef6d9, type: 3}
   mapBackground: {fileID: 0}
+  mapSO: {fileID: 11400000, guid: 85ebf0cdec7c5c34b8dd29e6cf852fb8, type: 2}
+  documentInspector: {fileID: 6338600386643862897, guid: 6e5fec01fc1fd5d4f9a99ab418ddb2ff, type: 3}
   canvas: {fileID: 7886702702671175853}
   slots: {fileID: 963379646602740759}
   documentTexts: {fileID: 3175843961527322826}
@@ -991,6 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 5929226123094481230}
+  rotationSpeed: 15
 --- !u!1 &4625025142578759701
 GameObject:
   m_ObjectHideFlags: 0
