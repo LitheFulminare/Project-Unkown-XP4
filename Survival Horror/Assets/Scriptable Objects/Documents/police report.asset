@@ -16,8 +16,12 @@ MonoBehaviour:
   isCollectable: 1
   isFullscreen: 0
   paragraphs:
-  - bla bla bla
-  skipLines: 0
+  - In the last few weeks, three different people have disappeared in the whereabouts
+    of that old museum outside of town. We need to find out what is going on, and
+    fast.
+  - No one else is available, so it's up to you, detective. Go in there and take
+    a look, see if there's anything strange happening. Good luck.
+  skipLines: 1
   centralizeText: 0
   backgroundImage: {fileID: 21300000, guid: 2510829f3d0547e499e7313aa8596e04, type: 3}
   backgroundImageAlt: {fileID: 0}
