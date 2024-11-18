@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
         PlayClickSound();
 
         SceneManager.LoadScene(firstScene);
+        AudioManager.instance.SetMenuMusicParameter("sound_intensity", 0f);
     }
 
     public void ExitButtonClick()

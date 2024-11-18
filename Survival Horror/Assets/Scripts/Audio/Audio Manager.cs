@@ -30,11 +30,6 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);    
     }
 
-    private void Start()
-    {
-
-    }
-
     public EventInstance CreateInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
@@ -57,6 +52,16 @@ public class AudioManager : MonoBehaviour
         menuEventInstance = CreateInstance(menuEventReference);
         menuEventInstance.start();
         menuEventInstance.setParameterByName("sound_intensity", 1f);
+    }
+
+    public void SetMenuMusicParameter(string parameterName, float value)
+    {
+        menuEventInstance.setParameterByName(parameterName, value);
+    }
+
+    public void StopMenuMusic()
+    {
+        menuEventInstance.setPaused(true);
     }
 
     public StudioEventEmitter InitializeEventEmitter(EventReference eventReference, GameObject emitterGameObject)
