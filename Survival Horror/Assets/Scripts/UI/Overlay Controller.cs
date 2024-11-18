@@ -19,6 +19,10 @@ public class OverlayController : MonoBehaviour
     public delegate void InteractOverlay(GameObject interactedItem, CollectableSO neededItem, string description, string prompt, bool r, CollectableSO cSO);
     public static InteractOverlay interactOverlay; // // this is used to show the overlay when the player interacts and a custom text is needed
 
+    public delegate void Overlay();
+    public static Overlay overlayOpened;
+    public static Overlay overlayClosed;
+
     public GameObject canvas;
 
     // used to call their functions to be collected / interacted with
@@ -79,6 +83,7 @@ public class OverlayController : MonoBehaviour
         //    case Items.bustEHorse: redText.text = "horse bust statue"; break;
         //}
 
+        OverlayController.overlayOpened?.Invoke();
         _isCollectable = true;
         currentItem = null;
         isRetrieving = false;
@@ -87,6 +92,8 @@ public class OverlayController : MonoBehaviour
     // this is too messy, I think I should break this down
     public void setActiveInteract(GameObject interactedItem, CollectableSO itemNeeded, string description, string prompt, bool isRetrieving, CollectableSO currentItem)
     {
+        OverlayController.overlayOpened?.Invoke();
+
         // prob wont be used
         //AudioManager.instance.PlayOneShot(FMODEvents.instance.open, this.transform.position);
 
@@ -141,6 +148,7 @@ public class OverlayController : MonoBehaviour
         }
 
         PlayerVars.BlockPlayer(false);
+        OverlayController.overlayClosed?.Invoke();
         ItemInspector.destroyItem?.Invoke();
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonSelected, this.transform.position);
     }

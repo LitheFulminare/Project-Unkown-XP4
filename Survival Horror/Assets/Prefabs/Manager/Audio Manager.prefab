@@ -130,3 +130,10 @@ MonoBehaviour:
       Data3: -1389495110
       Data4: -1358353772
     Path: event:/SFX/Open
+  <flickeringLight>k__BackingField:
+    Guid:
+      Data1: 300395656
+      Data2: 1138471709
+      Data3: 833461637
+      Data4: -1568366206
+    Path: event:/SFX/FlickeringLight

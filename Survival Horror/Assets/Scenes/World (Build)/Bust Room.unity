@@ -2671,6 +2671,7 @@ GameObject:
   - component: {fileID: 1422868456}
   - component: {fileID: 1422868457}
   - component: {fileID: 1422868458}
+  - component: {fileID: 1422868459}
   m_Layer: 0
   m_Name: Lamp light
   m_TagString: Untagged
@@ -2923,6 +2924,37 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+--- !u!114 &1422868459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422868453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 300395656
+      Data2: 1138471709
+      Data3: 833461637
+      Data4: -1568366206
+    Path: event:/SFX/FlickeringLight
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1.18
+  OverrideMaxDistance: 5.93
 --- !u!1 &1457230087
 GameObject:
   m_ObjectHideFlags: 0

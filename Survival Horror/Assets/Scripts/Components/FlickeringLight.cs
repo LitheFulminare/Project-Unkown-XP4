@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using FMODUnity;
 
+[RequireComponent(typeof(StudioEventEmitter))]
 public class FlickeringLight : MonoBehaviour
 {
     [Header("Light")]
@@ -25,6 +27,20 @@ public class FlickeringLight : MonoBehaviour
 
     private LensFlareComponentSRP _lensFlare;  
 
+    private StudioEventEmitter _emitter;
+
+    private void OnEnable()
+    {
+        OverlayController.overlayOpened += StopAudio;
+        OverlayController.overlayClosed += PlayAudio;
+    }
+
+    private void OnDisable()
+    {
+        OverlayController.overlayOpened -= StopAudio;
+        OverlayController.overlayClosed -= PlayAudio;
+    }
+
     private void Start()
     {
         if (!TryGetComponent<Light>(out _lightComponent))
@@ -33,6 +49,9 @@ public class FlickeringLight : MonoBehaviour
         }
 
         TryGetComponent<LensFlareComponentSRP>(out _lensFlare);
+
+        _emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.flickeringLight, this.gameObject);
+        _emitter.Play();
     }
 
     void Update()
@@ -64,4 +83,14 @@ public class FlickeringLight : MonoBehaviour
     {
         return (value - minOriginal) / (maxOriginal - minOriginal) * (maxTarget - minTarget) + minTarget;
     }
+
+    private void PlayAudio()
+    {
+        _emitter.Play();
+    }
+
+    private void StopAudio()
+    {
+        _emitter.Stop();
+    }   
 }
