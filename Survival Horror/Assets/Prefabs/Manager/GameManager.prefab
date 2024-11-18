@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryController: {fileID: 6429811021614493775}
+  startingDocument: {fileID: 11400000, guid: 34639327e7b5ca84680753861e460c9c, type: 2}
 --- !u!114 &3066471780158199710
 MonoBehaviour:
   m_ObjectHideFlags: 0

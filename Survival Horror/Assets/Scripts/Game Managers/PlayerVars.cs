@@ -26,11 +26,16 @@ public class PlayerVars : MonoBehaviour
     public static Vector3 spawnPosition;
 
     [SerializeField] InventoryController inventoryController;
+    [SerializeField] DocumentSO startingDocument;
 
     private void Start()
     {
         // loads the inventory data if there is any
         if (itemList != null && itemCount != null) inventoryController.LoadInventory(itemList, itemCount);
+        if (startingDocument != null && !documentList.Contains(startingDocument))
+        {
+            documentList.Add(startingDocument);
+        }
     }
 
     // used by UI elements and some other things to block player movement
